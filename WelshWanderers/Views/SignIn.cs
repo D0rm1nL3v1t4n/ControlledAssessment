@@ -31,6 +31,8 @@ namespace WelshWanderers
                 MessageBox.Show("That username does not exist.");
         }
 
+
+
         private void NavRegisterRequest_Click(object sender, EventArgs e)
         {
             new WelshWanderers.RegisterRequest().Show();
