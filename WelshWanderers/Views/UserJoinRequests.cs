@@ -19,9 +19,20 @@ namespace WelshWanderers
 
         public static string password = "";
 
-        private void UserJoinRequests_Load(object sender, EventArgs e) 
+        private void UserJoinRequests_Load(object sender, EventArgs e)
         {
             LoadNextUser();
+            MakeReadOnly();
+        }
+
+        private void MakeReadOnly()
+        {
+            InputFirstName.ReadOnly = true;
+            InputLastName.ReadOnly = true;
+            InputEmailAddress.ReadOnly = true;
+            InputTelephoneNumber.ReadOnly = true;
+            InputPostcode.ReadOnly = true;
+            InputUsername.ReadOnly = true;
         }
 
         private void LoadNextUser()
@@ -39,6 +50,7 @@ namespace WelshWanderers
                 InputPostcode.Text = section[7];
                 InputUsername.Text = section[8];
                 password = section[9];
+                InputTeam.Text = section[10];
             }
             else
             {
@@ -66,7 +78,7 @@ namespace WelshWanderers
         {
             string personalDetailsData = id + "|" + InputTitle.Text + "|" + InputFirstName.Text + "|" + InputLastName.Text + "|" + InputDateOfBirth.Text + "|" + 
                 InputEmailAddress.Text + "|" + InputTelephoneNumber.Text + "|" + InputPostcode.Text + "|";
-            string accountDetailsData = id + "|" + InputUsername.Text.ToLower() + "|" + Functions.HashAlgorithm.HashPassword(password) + "|" + InputAccessLevel.Text + "|";
+            string accountDetailsData = id + "|" + InputUsername.Text.ToLower() + "|" + Functions.HashAlgorithm.HashPassword(password) + "|" + InputAccessLevel.Text + "|" + InputTeam.Text + "|";
             Functions.FileWrite.WriteData("userPersonalDetails", personalDetailsData);
             Functions.FileWrite.WriteData("userAccountDetails", accountDetailsData);
         }

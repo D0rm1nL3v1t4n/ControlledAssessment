@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.InputType = new System.Windows.Forms.ComboBox();
+            this.InputTeam = new System.Windows.Forms.ComboBox();
             this.LabelHeader = new System.Windows.Forms.Label();
             this.InputDate = new System.Windows.Forms.DateTimePicker();
             this.EventNavSave = new System.Windows.Forms.Button();
@@ -36,25 +36,24 @@
             this.InputDuration = new System.Windows.Forms.TextBox();
             this.InputTimeM = new System.Windows.Forms.TextBox();
             this.InputTimeH = new System.Windows.Forms.TextBox();
-            this.LabelType = new System.Windows.Forms.Label();
+            this.LabelTeam = new System.Windows.Forms.Label();
             this.LabelDate = new System.Windows.Forms.Label();
             this.LabelDuration = new System.Windows.Forms.Label();
             this.LabelTime = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // InputType
+            // InputTeam
             // 
-            this.InputType.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputType.FormattingEnabled = true;
-            this.InputType.Items.AddRange(new object[] {
-            "Clinic",
+            this.InputTeam.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputTeam.FormattingEnabled = true;
+            this.InputTeam.Items.AddRange(new object[] {
             "Junior",
             "Men",
             "Women"});
-            this.InputType.Location = new System.Drawing.Point(154, 75);
-            this.InputType.Name = "InputType";
-            this.InputType.Size = new System.Drawing.Size(161, 27);
-            this.InputType.TabIndex = 7;
+            this.InputTeam.Location = new System.Drawing.Point(154, 75);
+            this.InputTeam.Name = "InputTeam";
+            this.InputTeam.Size = new System.Drawing.Size(161, 27);
+            this.InputTeam.TabIndex = 7;
             // 
             // LabelHeader
             // 
@@ -124,15 +123,15 @@
             this.InputTimeH.Size = new System.Drawing.Size(57, 27);
             this.InputTimeH.TabIndex = 32;
             // 
-            // LabelType
+            // LabelTeam
             // 
-            this.LabelType.AutoSize = true;
-            this.LabelType.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelType.Location = new System.Drawing.Point(104, 78);
-            this.LabelType.Name = "LabelType";
-            this.LabelType.Size = new System.Drawing.Size(44, 19);
-            this.LabelType.TabIndex = 33;
-            this.LabelType.Text = "Type";
+            this.LabelTeam.AutoSize = true;
+            this.LabelTeam.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelTeam.Location = new System.Drawing.Point(99, 78);
+            this.LabelTeam.Name = "LabelTeam";
+            this.LabelTeam.Size = new System.Drawing.Size(49, 19);
+            this.LabelTeam.TabIndex = 33;
+            this.LabelTeam.Text = "Team";
             // 
             // LabelDate
             // 
@@ -172,7 +171,7 @@
             this.Controls.Add(this.LabelTime);
             this.Controls.Add(this.LabelDuration);
             this.Controls.Add(this.LabelDate);
-            this.Controls.Add(this.LabelType);
+            this.Controls.Add(this.LabelTeam);
             this.Controls.Add(this.InputTimeH);
             this.Controls.Add(this.InputTimeM);
             this.Controls.Add(this.InputDuration);
@@ -180,7 +179,7 @@
             this.Controls.Add(this.EventNavSave);
             this.Controls.Add(this.InputDate);
             this.Controls.Add(this.LabelHeader);
-            this.Controls.Add(this.InputType);
+            this.Controls.Add(this.InputTeam);
             this.Name = "AddTraining";
             this.Text = "AddTraining";
             this.ResumeLayout(false);
@@ -190,7 +189,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox InputType;
+        private System.Windows.Forms.ComboBox InputTeam;
         private System.Windows.Forms.Label LabelHeader;
         private System.Windows.Forms.DateTimePicker InputDate;
         private System.Windows.Forms.Button EventNavSave;
@@ -198,7 +197,7 @@
         private System.Windows.Forms.TextBox InputDuration;
         private System.Windows.Forms.TextBox InputTimeM;
         private System.Windows.Forms.TextBox InputTimeH;
-        private System.Windows.Forms.Label LabelType;
+        private System.Windows.Forms.Label LabelTeam;
         private System.Windows.Forms.Label LabelDate;
         private System.Windows.Forms.Label LabelDuration;
         private System.Windows.Forms.Label LabelTime;

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace WelshWanderers
 {
@@ -15,6 +16,29 @@ namespace WelshWanderers
         public ViewMatch()
         {
             InitializeComponent();
+        }
+
+        private void ViewMatch_Load(object sender, EventArgs e)
+        {
+            HideButtons();
+            FillTableData();
+        }
+
+        private void FillTableData()
+        {
+            StreamReader file = new StreamReader("matchDetails.txt");
+            string line;
+            while (null != (line = file.ReadLine()))
+            {
+                string[] section = line.Split('|');
+                TableViewMatches.Rows.Add(section[0], section[1], section[2], section[3], section[4], section[5], section[6], section[7], section[8]);
+            }
+        }
+
+        private void HideButtons()
+        {
+            NavMatchAddResult.Hide();
+            NavEditMatch.Hide();
         }
 
         private void NavHome_Click(object sender, EventArgs e)

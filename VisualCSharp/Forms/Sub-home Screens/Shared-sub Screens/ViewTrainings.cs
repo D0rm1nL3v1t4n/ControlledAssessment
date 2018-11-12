@@ -36,8 +36,6 @@ namespace VisualCSharp.Forms.Sub_home_Screens.Shared_sub_Screens
             }
             trainingDetailsFile.Close();
         }
-                
-
 
         private void HideButtons()
         {
@@ -77,7 +75,5 @@ namespace VisualCSharp.Forms.Sub_home_Screens.Shared_sub_Screens
             }
             this.Hide();
         }
-
-  
     }
 }

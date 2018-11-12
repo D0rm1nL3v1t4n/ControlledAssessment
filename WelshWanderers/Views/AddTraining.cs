@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WelshWanderers
@@ -19,7 +12,10 @@ namespace WelshWanderers
 
         private void NavCancel_Click(object sender, EventArgs e)
         {
-            NavToHome();
+            if (MessageBox.Show("Are you sure? Training will not be saved.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                NavToHome();
+            }
         }
 
         private void NavToHome()
@@ -33,26 +29,41 @@ namespace WelshWanderers
             if (ValidInputs() == true)
             {
                 SaveData();
+                SendEmail();
+                MessageBox.Show("Training saveed & email sent.");
+                NavToHome();
             }
         }
 
         private void SaveData()
         {
-            
+            int trainingID = Functions.FileSearch.GetNextId("trainingDetails");
+            string line = trainingID.ToString() + "|" + InputTeam.Text + "|" + InputTimeH.Text + "|" + InputTimeM.Text + "|" + InputDate.Text + "|";
+            Functions.FileWrite.WriteData("trainingDetails", line);
+        }
+
+        private void SendEmail()
+        {
+            string[] emails = GetPlayerEmails();
+            string body = "New" + InputTeam.Text + "'s training:\n\nDate: " + InputDate.Text + "\nStart time: " + InputTimeH.Text + ":" + InputTimeM.Text + "\nLength: " + InputDuration.Text + "\n\nThanks,\nWelsh Wanderers";
+            Functions.SendEmail.Email("Training information", body, emails);
+        }
+
+        private string[] GetPlayerEmails()
+        {
+            string[] playerIDs = Functions.FileSearch.ReturnSegment("userAccountDetails", InputTeam.Text, 4, 0, true).Split('|');
+            string[] emails = new string[playerIDs.Length];
+            for (int i = 0; i < playerIDs.Length; ++i)
+                emails[i] = Functions.FileSearch.ReturnSegment("userPersonalDetails", playerIDs[i], 0, 5, false);   //Quicker method?
+            return emails;
         }
 
         private bool ValidInputs()
         {
-            if (ValidType() == false)
-                return false;
-            else if (ValidTime() == false)
-                return false;
-            else if (ValidDuration() == false)
-                return false;
-            else if (ValidDate() == false)
-                return false;
-            else
+            if (ValidTeam() == true && ValidTime() == true && ValidDuration() == true && ValidDate() == true)
                 return true;
+            else
+                return false;
         }
 
         private bool ValidDate()
@@ -61,7 +72,7 @@ namespace WelshWanderers
                 return false;
             else
             {
-                MessageBox.Show("Date entered must be after today.");
+                MessageBox.Show("Hey Doc, pretty sure we ain't time travelling yet - Marty.");
                 return true;
             }
         }
@@ -96,10 +107,10 @@ namespace WelshWanderers
             }  
         }
         
-        private bool  ValidType()
+        private bool ValidTeam()
         {
-            if (InputType.Text == "Clinic" || InputType.Text == "Junior" ||
-                InputType.Text == "Men" || InputType.Text == "Women")
+            if (InputTeam.Text == "Clinic" || InputTeam.Text == "Junior" ||
+                InputTeam.Text == "Men" || InputTeam.Text == "Women")
                 return true;
             else
             {

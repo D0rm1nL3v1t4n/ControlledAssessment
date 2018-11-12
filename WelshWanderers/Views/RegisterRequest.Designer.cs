@@ -52,6 +52,8 @@
             this.LabelUsername = new System.Windows.Forms.Label();
             this.NavCancel = new System.Windows.Forms.Button();
             this.EventShowHelp = new System.Windows.Forms.Button();
+            this.LabelTeam = new System.Windows.Forms.Label();
+            this.InputTeam = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // LabelHeader
@@ -231,7 +233,7 @@
             // InputUsername
             // 
             this.InputUsername.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputUsername.Location = new System.Drawing.Point(148, 265);
+            this.InputUsername.Location = new System.Drawing.Point(152, 293);
             this.InputUsername.Name = "InputUsername";
             this.InputUsername.Size = new System.Drawing.Size(161, 27);
             this.InputUsername.TabIndex = 23;
@@ -258,7 +260,7 @@
             // 
             this.LabelUsername.AutoSize = true;
             this.LabelUsername.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelUsername.Location = new System.Drawing.Point(62, 268);
+            this.LabelUsername.Location = new System.Drawing.Point(66, 296);
             this.LabelUsername.Name = "LabelUsername";
             this.LabelUsername.Size = new System.Drawing.Size(80, 19);
             this.LabelUsername.TabIndex = 26;
@@ -286,11 +288,36 @@
             this.EventShowHelp.UseVisualStyleBackColor = true;
             this.EventShowHelp.Click += new System.EventHandler(this.EventShowHelp_Click);
             // 
+            // LabelTeam
+            // 
+            this.LabelTeam.AutoSize = true;
+            this.LabelTeam.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelTeam.Location = new System.Drawing.Point(97, 265);
+            this.LabelTeam.Name = "LabelTeam";
+            this.LabelTeam.Size = new System.Drawing.Size(49, 19);
+            this.LabelTeam.TabIndex = 30;
+            this.LabelTeam.Text = "Team";
+            // 
+            // InputTeam
+            // 
+            this.InputTeam.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputTeam.FormattingEnabled = true;
+            this.InputTeam.Items.AddRange(new object[] {
+            "Junior",
+            "Men",
+            "Women"});
+            this.InputTeam.Location = new System.Drawing.Point(152, 260);
+            this.InputTeam.Name = "InputTeam";
+            this.InputTeam.Size = new System.Drawing.Size(161, 27);
+            this.InputTeam.TabIndex = 29;
+            // 
             // RegisterRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 450);
+            this.Controls.Add(this.LabelTeam);
+            this.Controls.Add(this.InputTeam);
             this.Controls.Add(this.EventShowHelp);
             this.Controls.Add(this.NavCancel);
             this.Controls.Add(this.LabelUsername);
@@ -348,5 +375,7 @@
         private System.Windows.Forms.Label LabelUsername;
         private System.Windows.Forms.Button NavCancel;
         private System.Windows.Forms.Button EventShowHelp;
+        private System.Windows.Forms.Label LabelTeam;
+        private System.Windows.Forms.ComboBox InputTeam;
     }
 }

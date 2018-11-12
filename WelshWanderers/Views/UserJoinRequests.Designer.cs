@@ -50,6 +50,8 @@
             this.EventAcceptUser = new System.Windows.Forms.Button();
             this.EventRejectUser = new System.Windows.Forms.Button();
             this.NavHome = new System.Windows.Forms.Button();
+            this.LabelTeam = new System.Windows.Forms.Label();
+            this.InputTeam = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // LabelHeader
@@ -66,7 +68,7 @@
             // 
             this.LabelUsername.AutoSize = true;
             this.LabelUsername.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelUsername.Location = new System.Drawing.Point(366, 90);
+            this.LabelUsername.Location = new System.Drawing.Point(366, 238);
             this.LabelUsername.Name = "LabelUsername";
             this.LabelUsername.Size = new System.Drawing.Size(80, 19);
             this.LabelUsername.TabIndex = 42;
@@ -75,13 +77,14 @@
             // InputUsername
             // 
             this.InputUsername.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputUsername.Location = new System.Drawing.Point(452, 87);
+            this.InputUsername.Location = new System.Drawing.Point(452, 235);
             this.InputUsername.Name = "InputUsername";
             this.InputUsername.Size = new System.Drawing.Size(161, 27);
             this.InputUsername.TabIndex = 41;
             // 
             // InputDateOfBirth
             // 
+            this.InputDateOfBirth.Enabled = false;
             this.InputDateOfBirth.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputDateOfBirth.Location = new System.Drawing.Point(128, 187);
             this.InputDateOfBirth.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
@@ -203,6 +206,7 @@
             // 
             // InputTitle
             // 
+            this.InputTitle.Enabled = false;
             this.InputTitle.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputTitle.FormattingEnabled = true;
             this.InputTitle.Location = new System.Drawing.Point(128, 87);
@@ -218,7 +222,7 @@
             "Player",
             "Coach",
             "Admin"});
-            this.InputAccessLevel.Location = new System.Drawing.Point(384, 260);
+            this.InputAccessLevel.Location = new System.Drawing.Point(384, 293);
             this.InputAccessLevel.Name = "InputAccessLevel";
             this.InputAccessLevel.Size = new System.Drawing.Size(134, 27);
             this.InputAccessLevel.TabIndex = 43;
@@ -227,7 +231,7 @@
             // 
             this.LabelAccessLevel.AutoSize = true;
             this.LabelAccessLevel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelAccessLevel.Location = new System.Drawing.Point(281, 263);
+            this.LabelAccessLevel.Location = new System.Drawing.Point(281, 296);
             this.LabelAccessLevel.Name = "LabelAccessLevel";
             this.LabelAccessLevel.Size = new System.Drawing.Size(97, 19);
             this.LabelAccessLevel.TabIndex = 44;
@@ -236,7 +240,7 @@
             // EventAcceptUser
             // 
             this.EventAcceptUser.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventAcceptUser.Location = new System.Drawing.Point(524, 250);
+            this.EventAcceptUser.Location = new System.Drawing.Point(524, 283);
             this.EventAcceptUser.Name = "EventAcceptUser";
             this.EventAcceptUser.Size = new System.Drawing.Size(89, 48);
             this.EventAcceptUser.TabIndex = 45;
@@ -247,7 +251,7 @@
             // EventRejectUser
             // 
             this.EventRejectUser.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventRejectUser.Location = new System.Drawing.Point(128, 250);
+            this.EventRejectUser.Location = new System.Drawing.Point(128, 283);
             this.EventRejectUser.Name = "EventRejectUser";
             this.EventRejectUser.Size = new System.Drawing.Size(89, 48);
             this.EventRejectUser.TabIndex = 46;
@@ -258,7 +262,7 @@
             // NavHome
             // 
             this.NavHome.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavHome.Location = new System.Drawing.Point(28, 250);
+            this.NavHome.Location = new System.Drawing.Point(28, 283);
             this.NavHome.Name = "NavHome";
             this.NavHome.Size = new System.Drawing.Size(89, 48);
             this.NavHome.TabIndex = 47;
@@ -266,11 +270,33 @@
             this.NavHome.UseVisualStyleBackColor = true;
             this.NavHome.Click += new System.EventHandler(this.NavHome_Click);
             // 
+            // LabelTeam
+            // 
+            this.LabelTeam.AutoSize = true;
+            this.LabelTeam.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelTeam.Location = new System.Drawing.Point(73, 238);
+            this.LabelTeam.Name = "LabelTeam";
+            this.LabelTeam.Size = new System.Drawing.Size(49, 19);
+            this.LabelTeam.TabIndex = 49;
+            this.LabelTeam.Text = "Team";
+            // 
+            // InputTeam
+            // 
+            this.InputTeam.Enabled = false;
+            this.InputTeam.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputTeam.FormattingEnabled = true;
+            this.InputTeam.Location = new System.Drawing.Point(128, 235);
+            this.InputTeam.Name = "InputTeam";
+            this.InputTeam.Size = new System.Drawing.Size(161, 27);
+            this.InputTeam.TabIndex = 50;
+            // 
             // UserJoinRequests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 339);
+            this.ClientSize = new System.Drawing.Size(636, 351);
+            this.Controls.Add(this.InputTeam);
+            this.Controls.Add(this.LabelTeam);
             this.Controls.Add(this.NavHome);
             this.Controls.Add(this.EventRejectUser);
             this.Controls.Add(this.EventAcceptUser);
@@ -325,5 +351,7 @@
         private System.Windows.Forms.Button EventAcceptUser;
         private System.Windows.Forms.Button EventRejectUser;
         private System.Windows.Forms.Button NavHome;
+        private System.Windows.Forms.Label LabelTeam;
+        private System.Windows.Forms.ComboBox InputTeam;
     }
 }

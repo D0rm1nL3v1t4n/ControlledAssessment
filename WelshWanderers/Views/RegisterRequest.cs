@@ -43,7 +43,7 @@ namespace WelshWanderers
         private void WriteRequestData()
         {
             Functions.FileWrite.WriteData("userJoinRequests", "0" + "|" + InputTitle.Text + "|" + InputFirstName.Text + "|" + InputLastName.Text + "|" + InputDateOfBirth.Text
-                 + "|" + InputEmailAddress.Text + "|" + InputTelephoneNumber.Text + "|" + InputPostcode.Text + "|" + InputUsername.Text + "|" + InputPassword.Text + "|");
+                 + "|" + InputEmailAddress.Text + "|" + InputTelephoneNumber.Text + "|" + InputPostcode.Text + "|" + InputUsername.Text + "|" + InputPassword.Text + "|" + InputTeam.Text + "|");
         }
 
         private int ValidTitle()
@@ -72,9 +72,9 @@ namespace WelshWanderers
 
         private int ValidDateOfBirth()
         {
-            if (InputDateOfBirth.Value.Year < DateTime.Now.Year - 5)
+            if (InputDateOfBirth.Value <= DateTime.Now)
                 return 0;
-            MessageBox.Show("Date of birth must not within 5 years of today.");
+            MessageBox.Show("Hey Doc, pretty sure we ain't time travelling yet - Marty.");
             return 1;
         }
 

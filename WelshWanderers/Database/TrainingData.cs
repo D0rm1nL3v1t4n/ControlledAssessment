@@ -9,7 +9,7 @@ namespace WelshWanderers.Database
     class TrainingData
     {
         public static int id = -1;
-        public static string type = "";
+        public static string team = "";
         public static int timeHour = -1;
         public static int timeMin = -1;
         public static int duration = -1;
@@ -18,7 +18,7 @@ namespace WelshWanderers.Database
         public void ClearTrainingData()
         {
             id = -1;
-            type = "";
+            team = "";
             timeHour = -1;
             timeMin = -1;
             duration = -1;

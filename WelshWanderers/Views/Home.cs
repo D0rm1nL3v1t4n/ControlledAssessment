@@ -40,7 +40,6 @@ namespace WelshWanderers
             NavMatchNotifications.Hide();
             NavUserJoinRequests.Hide();
             NavManageUsers.Hide();
-            NavMyEmails.Hide();
         }
 
         private void ShowAdminHome()
@@ -56,7 +55,6 @@ namespace WelshWanderers
             NavAddTraining.Show();
             NavViewMatches.Show();
             NavViewTrainings.Show();
-            NavMyEmails.Show();
         }
 
         private void ShowPlayerHome()
