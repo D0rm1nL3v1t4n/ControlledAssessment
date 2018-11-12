@@ -36,7 +36,6 @@
             this.NavViewTrainings = new System.Windows.Forms.Button();
             this.NavAddTraining = new System.Windows.Forms.Button();
             this.NavViewMatches = new System.Windows.Forms.Button();
-            this.NavMyEmails = new System.Windows.Forms.Button();
             this.NavLeagueStatistics = new System.Windows.Forms.Button();
             this.NavMatchNotifications = new System.Windows.Forms.Button();
             this.EventNavSignOut = new System.Windows.Forms.Button();
@@ -47,7 +46,7 @@
             // 
             this.LabelHeader.AutoSize = true;
             this.LabelHeader.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeader.Location = new System.Drawing.Point(159, 9);
+            this.LabelHeader.Location = new System.Drawing.Point(120, 9);
             this.LabelHeader.Name = "LabelHeader";
             this.LabelHeader.Size = new System.Drawing.Size(99, 33);
             this.LabelHeader.TabIndex = 5;
@@ -56,7 +55,7 @@
             // NavManageUsers
             // 
             this.NavManageUsers.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavManageUsers.Location = new System.Drawing.Point(160, 68);
+            this.NavManageUsers.Location = new System.Drawing.Point(121, 62);
             this.NavManageUsers.Name = "NavManageUsers";
             this.NavManageUsers.Size = new System.Drawing.Size(95, 48);
             this.NavManageUsers.TabIndex = 6;
@@ -67,7 +66,7 @@
             // NavViewLeagues
             // 
             this.NavViewLeagues.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavViewLeagues.Location = new System.Drawing.Point(162, 176);
+            this.NavViewLeagues.Location = new System.Drawing.Point(123, 170);
             this.NavViewLeagues.Name = "NavViewLeagues";
             this.NavViewLeagues.Size = new System.Drawing.Size(95, 48);
             this.NavViewLeagues.TabIndex = 8;
@@ -78,7 +77,7 @@
             // NavUserJoinRequests
             // 
             this.NavUserJoinRequests.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavUserJoinRequests.Location = new System.Drawing.Point(162, 122);
+            this.NavUserJoinRequests.Location = new System.Drawing.Point(123, 116);
             this.NavUserJoinRequests.Name = "NavUserJoinRequests";
             this.NavUserJoinRequests.Size = new System.Drawing.Size(95, 48);
             this.NavUserJoinRequests.TabIndex = 9;
@@ -89,7 +88,7 @@
             // NavAddMatch
             // 
             this.NavAddMatch.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavAddMatch.Location = new System.Drawing.Point(110, 84);
+            this.NavAddMatch.Location = new System.Drawing.Point(71, 66);
             this.NavAddMatch.Name = "NavAddMatch";
             this.NavAddMatch.Size = new System.Drawing.Size(95, 48);
             this.NavAddMatch.TabIndex = 10;
@@ -100,7 +99,7 @@
             // NavViewTrainings
             // 
             this.NavViewTrainings.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavViewTrainings.Location = new System.Drawing.Point(211, 153);
+            this.NavViewTrainings.Location = new System.Drawing.Point(172, 134);
             this.NavViewTrainings.Name = "NavViewTrainings";
             this.NavViewTrainings.Size = new System.Drawing.Size(95, 48);
             this.NavViewTrainings.TabIndex = 11;
@@ -111,7 +110,7 @@
             // NavAddTraining
             // 
             this.NavAddTraining.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavAddTraining.Location = new System.Drawing.Point(211, 84);
+            this.NavAddTraining.Location = new System.Drawing.Point(172, 66);
             this.NavAddTraining.Name = "NavAddTraining";
             this.NavAddTraining.Size = new System.Drawing.Size(95, 48);
             this.NavAddTraining.TabIndex = 12;
@@ -122,7 +121,7 @@
             // NavViewMatches
             // 
             this.NavViewMatches.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavViewMatches.Location = new System.Drawing.Point(110, 153);
+            this.NavViewMatches.Location = new System.Drawing.Point(71, 134);
             this.NavViewMatches.Name = "NavViewMatches";
             this.NavViewMatches.Size = new System.Drawing.Size(95, 48);
             this.NavViewMatches.TabIndex = 13;
@@ -130,20 +129,10 @@
             this.NavViewMatches.UseVisualStyleBackColor = true;
             this.NavViewMatches.Click += new System.EventHandler(this.NavViewMatches_Click);
             // 
-            // NavMyEmails
-            // 
-            this.NavMyEmails.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavMyEmails.Location = new System.Drawing.Point(160, 207);
-            this.NavMyEmails.Name = "NavMyEmails";
-            this.NavMyEmails.Size = new System.Drawing.Size(95, 48);
-            this.NavMyEmails.TabIndex = 14;
-            this.NavMyEmails.Text = "My Emails";
-            this.NavMyEmails.UseVisualStyleBackColor = true;
-            // 
             // NavLeagueStatistics
             // 
             this.NavLeagueStatistics.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavLeagueStatistics.Location = new System.Drawing.Point(110, 76);
+            this.NavLeagueStatistics.Location = new System.Drawing.Point(71, 67);
             this.NavLeagueStatistics.Name = "NavLeagueStatistics";
             this.NavLeagueStatistics.Size = new System.Drawing.Size(95, 48);
             this.NavLeagueStatistics.TabIndex = 15;
@@ -154,7 +143,7 @@
             // NavMatchNotifications
             // 
             this.NavMatchNotifications.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavMatchNotifications.Location = new System.Drawing.Point(211, 76);
+            this.NavMatchNotifications.Location = new System.Drawing.Point(172, 67);
             this.NavMatchNotifications.Name = "NavMatchNotifications";
             this.NavMatchNotifications.Size = new System.Drawing.Size(95, 48);
             this.NavMatchNotifications.TabIndex = 16;
@@ -165,7 +154,7 @@
             // EventNavSignOut
             // 
             this.EventNavSignOut.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventNavSignOut.Location = new System.Drawing.Point(37, 264);
+            this.EventNavSignOut.Location = new System.Drawing.Point(11, 210);
             this.EventNavSignOut.Name = "EventNavSignOut";
             this.EventNavSignOut.Size = new System.Drawing.Size(95, 48);
             this.EventNavSignOut.TabIndex = 17;
@@ -176,7 +165,7 @@
             // NavMyAccount
             // 
             this.NavMyAccount.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavMyAccount.Location = new System.Drawing.Point(284, 264);
+            this.NavMyAccount.Location = new System.Drawing.Point(233, 210);
             this.NavMyAccount.Name = "NavMyAccount";
             this.NavMyAccount.Size = new System.Drawing.Size(95, 48);
             this.NavMyAccount.TabIndex = 18;
@@ -188,12 +177,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(416, 384);
+            this.ClientSize = new System.Drawing.Size(338, 278);
             this.Controls.Add(this.NavMyAccount);
             this.Controls.Add(this.EventNavSignOut);
             this.Controls.Add(this.NavMatchNotifications);
             this.Controls.Add(this.NavLeagueStatistics);
-            this.Controls.Add(this.NavMyEmails);
             this.Controls.Add(this.NavViewMatches);
             this.Controls.Add(this.NavAddTraining);
             this.Controls.Add(this.NavViewTrainings);
@@ -220,7 +208,6 @@
         private System.Windows.Forms.Button NavViewTrainings;
         private System.Windows.Forms.Button NavAddTraining;
         private System.Windows.Forms.Button NavViewMatches;
-        private System.Windows.Forms.Button NavMyEmails;
         private System.Windows.Forms.Button NavLeagueStatistics;
         private System.Windows.Forms.Button NavMatchNotifications;
         private System.Windows.Forms.Button EventNavSignOut;

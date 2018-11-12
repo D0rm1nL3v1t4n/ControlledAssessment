@@ -12,11 +12,17 @@ namespace WelshWanderers
 {
     public partial class UserJoinRequests : Form
     {
-        public UserJoinRequests() => InitializeComponent();
+        public UserJoinRequests() 
+        { 
+            InitializeComponent();
+        }
 
         public static string password = "";
 
-        private void UserJoinRequests_Load(object sender, EventArgs e) => LoadNextUser();
+        private void UserJoinRequests_Load(object sender, EventArgs e) 
+        {
+            LoadNextUser();
+        }
 
         private void LoadNextUser()
         {
@@ -72,9 +78,15 @@ namespace WelshWanderers
             LoadNextUser();
         }
 
-        private void DeleteRequest() => Functions.FileDelete.RemoveLine("userJoinRequests", 10, 1);
+        private void DeleteRequest()
+        {
+            Functions.FileDelete.RemoveLine("userJoinRequests", 10, 1);
+        }
 
-        private void NavHome_Click(object sender, EventArgs e) => NavToHome();
+        private void NavHome_Click(object sender, EventArgs e)
+        {
+            NavToHome();
+        }
 
         private void NavToHome()
         {

@@ -16,5 +16,35 @@ namespace WelshWanderers
         {
             InitializeComponent();
         }
+
+        private void ManageLeagues_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        
+        private void NavHome_Click(object sender, EventArgs e)
+        {
+            NavToHome();
+        }
+
+        private void NavToHome()
+        {
+            new WelshWanderers.Home().Show();
+            this.Hide();
+        }
+
+        private void EventNavCreate_Click(object sender, EventArgs e)
+        {
+            new WelshWanderers.Views.CreateLeague().Show();
+            this.Hide();
+        }
+
+        private void EventNavEdit_Click(object sender, EventArgs e)
+        {
+            new WelshWanderers.Views.EditLeague().Show();
+        }
+
+        
     }
 }

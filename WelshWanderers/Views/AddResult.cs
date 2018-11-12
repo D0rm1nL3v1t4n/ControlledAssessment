@@ -17,7 +17,10 @@ namespace WelshWanderers
             InitializeComponent();
         }
 
-        private void NavCancel_Click(object sender, EventArgs e) => NavToViewMatches();
+        private void NavCancel_Click(object sender, EventArgs e)
+        {
+            NavToViewMatches();
+        }
 
         private void NavToViewMatches()
         {

@@ -87,6 +87,7 @@
             this.EventNavSave.TabIndex = 28;
             this.EventNavSave.Text = "Save";
             this.EventNavSave.UseVisualStyleBackColor = true;
+            this.EventNavSave.Click += new System.EventHandler(this.EventNavSave_Click);
             // 
             // NavCancel
             // 

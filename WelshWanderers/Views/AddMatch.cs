@@ -21,9 +21,15 @@ namespace WelshWanderers
         List<string> searchID;
         List<string> selectedID;
 
-        private void InputFilter_TextChanged(object sender, EventArgs e) => UpdateSearchFilter();
+        private void InputFilter_TextChanged(object sender, EventArgs e)
+        {
+            UpdateSearchFilter();
+        }
 
-        private void AddMatch_Load(object sender, EventArgs e) => LoadLeagues();
+        private void AddMatch_Load(object sender, EventArgs e)
+        {
+            LoadLeagues();
+        }
 
         private void LoadLeagues()
         {
@@ -101,7 +107,10 @@ namespace WelshWanderers
             }
         }
 
-        private void ShowPlayersAdded() => LabelPlayersAdded.Text = ListSelectedPlayers.Items.Count + " player(s) added.";
+        private void ShowPlayersAdded() 
+        {
+            LabelPlayersAdded.Text = ListSelectedPlayers.Items.Count + " player(s) added.";
+        }
 
         private void EventClear_Click(object sender, EventArgs e)
         {
@@ -157,7 +166,10 @@ namespace WelshWanderers
             return body;
         }
 
-        private void NavSignIn_Click(object sender, EventArgs e) => NavToHome();
+        private void NavSignIn_Click(object sender, EventArgs e)
+        {
+            NavToHome();
+        }
 
         private void NavToHome()
         {

@@ -17,7 +17,10 @@ namespace WelshWanderers
             InitializeComponent();
         }
 
-        private void NavHome_Click(object sender, EventArgs e) => NavToHome();
+        private void NavHome_Click(object sender, EventArgs e)
+        {
+            NavToHome();
+        }
 
         private void NavToHome()
         {

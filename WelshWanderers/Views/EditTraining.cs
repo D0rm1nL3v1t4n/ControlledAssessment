@@ -17,7 +17,10 @@ namespace WelshWanderers
             InitializeComponent();
         }
 
-        private void NavSignIn_Click(object sender, EventArgs e) => NavToViewTraining();
+        private void NavSignIn_Click(object sender, EventArgs e)
+        {
+            NavToViewTraining();
+        }
 
         private void NavToViewTraining()
         {

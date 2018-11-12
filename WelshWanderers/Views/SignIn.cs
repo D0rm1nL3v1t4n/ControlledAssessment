@@ -12,7 +12,10 @@ namespace WelshWanderers
 {
     public partial class SignIn : Form
     {
-        public SignIn() => InitializeComponent();
+        public SignIn()
+        {
+            InitializeComponent();
+        }        
 
         private void EventNavSignIn_Click(object sender, EventArgs e)
         {
@@ -31,15 +34,16 @@ namespace WelshWanderers
                 MessageBox.Show("That username does not exist.");
         }
 
-
-
         private void NavRegisterRequest_Click(object sender, EventArgs e)
         {
             new WelshWanderers.RegisterRequest().Show();
             this.Hide();
         }
 
-        private bool ComparePasswords(string password) => Functions.HashAlgorithm.CompareHashes(password, Functions.HashAlgorithm.HashPassword(InputPassword.Text));
+        private bool ComparePasswords(string password) 
+        {
+            return Functions.HashAlgorithm.CompareHashes(password, Functions.HashAlgorithm.HashPassword(InputPassword.Text));
+        }
 
         private void LoadPersonalDetails()
         {
