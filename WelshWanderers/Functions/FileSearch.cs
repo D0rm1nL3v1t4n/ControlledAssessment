@@ -77,17 +77,34 @@ namespace WelshWanderers.Functions
         public static int GetNextId(string fileName)
         {
             StreamReader file = new StreamReader(fileName + ".txt");
-            string line = file.ReadLine();
+            string line;
             string id = "";
-            while (null != line)
+            while (null != (line = file.ReadLine()))
             {
                 string[] section = line.Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
                 id = section[0];
-                line = file.ReadLine();
             }
             file.Close();
             return System.Convert.ToInt16(id) + 1;
             
+        }
+
+        public static string ManyToMany(string fileName, string searchDataA, int searchIndexA, string searchDataB, int searchIndexB)
+        {
+            StreamReader file = new StreamReader(fileName + ".txt");
+            string line = file.ReadLine();
+            while (null != line)
+            {
+                string[] section = line.Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+                if (section[searchIndexA] == searchDataA && section[searchIndexB] == searchDataB)
+                {
+                    file.Close();
+                    return line;
+                }
+                line = file.ReadLine();
+            }
+            file.Close();
+            return null;
         }
     }
 }

@@ -40,17 +40,18 @@
             this.NavMatchNotifications = new System.Windows.Forms.Button();
             this.EventNavSignOut = new System.Windows.Forms.Button();
             this.NavMyAccount = new System.Windows.Forms.Button();
+            this.NavViewMatchResults = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LabelHeader
             // 
             this.LabelHeader.AutoSize = true;
             this.LabelHeader.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeader.Location = new System.Drawing.Point(120, 9);
+            this.LabelHeader.Location = new System.Drawing.Point(127, 9);
             this.LabelHeader.Name = "LabelHeader";
-            this.LabelHeader.Size = new System.Drawing.Size(99, 33);
+            this.LabelHeader.Size = new System.Drawing.Size(85, 33);
             this.LabelHeader.TabIndex = 5;
-            this.LabelHeader.Text = "Sign In";
+            this.LabelHeader.Text = "Home";
             // 
             // NavManageUsers
             // 
@@ -66,7 +67,7 @@
             // NavViewLeagues
             // 
             this.NavViewLeagues.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavViewLeagues.Location = new System.Drawing.Point(123, 170);
+            this.NavViewLeagues.Location = new System.Drawing.Point(123, 178);
             this.NavViewLeagues.Name = "NavViewLeagues";
             this.NavViewLeagues.Size = new System.Drawing.Size(95, 48);
             this.NavViewLeagues.TabIndex = 8;
@@ -77,7 +78,7 @@
             // NavUserJoinRequests
             // 
             this.NavUserJoinRequests.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavUserJoinRequests.Location = new System.Drawing.Point(123, 116);
+            this.NavUserJoinRequests.Location = new System.Drawing.Point(123, 120);
             this.NavUserJoinRequests.Name = "NavUserJoinRequests";
             this.NavUserJoinRequests.Size = new System.Drawing.Size(95, 48);
             this.NavUserJoinRequests.TabIndex = 9;
@@ -154,7 +155,7 @@
             // EventNavSignOut
             // 
             this.EventNavSignOut.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventNavSignOut.Location = new System.Drawing.Point(11, 210);
+            this.EventNavSignOut.Location = new System.Drawing.Point(11, 235);
             this.EventNavSignOut.Name = "EventNavSignOut";
             this.EventNavSignOut.Size = new System.Drawing.Size(95, 48);
             this.EventNavSignOut.TabIndex = 17;
@@ -165,7 +166,7 @@
             // NavMyAccount
             // 
             this.NavMyAccount.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavMyAccount.Location = new System.Drawing.Point(233, 210);
+            this.NavMyAccount.Location = new System.Drawing.Point(233, 235);
             this.NavMyAccount.Name = "NavMyAccount";
             this.NavMyAccount.Size = new System.Drawing.Size(95, 48);
             this.NavMyAccount.TabIndex = 18;
@@ -173,11 +174,23 @@
             this.NavMyAccount.UseVisualStyleBackColor = true;
             this.NavMyAccount.Click += new System.EventHandler(this.NavMyAccount_Click);
             // 
+            // NavViewMatchResults
+            // 
+            this.NavViewMatchResults.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NavViewMatchResults.Location = new System.Drawing.Point(123, 197);
+            this.NavViewMatchResults.Name = "NavViewMatchResults";
+            this.NavViewMatchResults.Size = new System.Drawing.Size(95, 48);
+            this.NavViewMatchResults.TabIndex = 19;
+            this.NavViewMatchResults.Text = "View Match Results";
+            this.NavViewMatchResults.UseVisualStyleBackColor = true;
+            this.NavViewMatchResults.Click += new System.EventHandler(this.NavViewMatchResults_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 278);
+            this.ClientSize = new System.Drawing.Size(338, 294);
+            this.Controls.Add(this.NavViewMatchResults);
             this.Controls.Add(this.NavMyAccount);
             this.Controls.Add(this.EventNavSignOut);
             this.Controls.Add(this.NavMatchNotifications);
@@ -212,5 +225,6 @@
         private System.Windows.Forms.Button NavMatchNotifications;
         private System.Windows.Forms.Button EventNavSignOut;
         private System.Windows.Forms.Button NavMyAccount;
+        private System.Windows.Forms.Button NavViewMatchResults;
     }
 }

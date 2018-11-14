@@ -13,10 +13,10 @@ namespace WelshWanderers.Database
         public static string opponent = "";
         public static string team = "";
         public static string date = "";
-        public static int timeHour = -1;
-        public static int timeMin = -1;
-        public static string addressLine1 = "";
-        public static string addressLine2 = "";
+        public static int timeH = -1;
+        public static int timeM = -1;
+        public static string addressLineA = "";
+        public static string addressLineB = "";
         public static string postcode = "";
 
         public void ClearMatchData()
@@ -26,10 +26,10 @@ namespace WelshWanderers.Database
             opponent = "";
             team = "";
             date = "";
-            timeHour = -1;
-            timeMin = -1;
-            addressLine1 = "";
-            addressLine2 = "";
+            timeH = -1;
+            timeM = -1;
+            addressLineA = "";
+            addressLineB = "";
             postcode = "";
         }
     }

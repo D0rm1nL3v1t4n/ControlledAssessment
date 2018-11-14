@@ -33,6 +33,7 @@ namespace WelshWanderers
         {
             NavAddMatch.Hide();
             NavViewMatches.Hide();
+            NavViewMatchResults.Hide();
             NavAddTraining.Hide();
             NavViewTrainings.Hide();
             NavViewLeagues.Hide();
@@ -55,6 +56,7 @@ namespace WelshWanderers
             NavAddTraining.Show();
             NavViewMatches.Show();
             NavViewTrainings.Show();
+            NavViewMatchResults.Show();
         }
 
         private void ShowPlayerHome()
@@ -63,6 +65,7 @@ namespace WelshWanderers
             NavViewTrainings.Show();
             NavLeagueStatistics.Show();
             NavMatchNotifications.Show();
+            NavViewMatchResults.Show();
         }
 
         private void HideHome()
@@ -135,6 +138,12 @@ namespace WelshWanderers
         private void NavMyAccount_Click(object sender, EventArgs e)
         {
             new WelshWanderers.MyAccount().Show();
+            HideHome();
+        }
+        
+        private void NavViewMatchResults_Click(object sender, EventArgs e)
+        {
+            new WelshWanderers.ViewMatchResults().Show();
             HideHome();
         }
 

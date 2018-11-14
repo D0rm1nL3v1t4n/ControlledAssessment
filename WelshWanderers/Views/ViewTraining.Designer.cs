@@ -1,6 +1,6 @@
 ﻿namespace WelshWanderers
 {
-    partial class ViewTraining
+    partial class EditTraining
     {
         /// <summary>
         /// Required designer variable.
@@ -28,125 +28,194 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.TableViewTrainings = new System.Windows.Forms.DataGridView();
             this.LabelHeader = new System.Windows.Forms.Label();
-            this.NavHome = new System.Windows.Forms.Button();
-            this.NavEdit = new System.Windows.Forms.Button();
-            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColTeam = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColLength = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.TableViewTrainings)).BeginInit();
+            this.InputDate = new System.Windows.Forms.DateTimePicker();
+            this.InputTimeM = new System.Windows.Forms.TextBox();
+            this.InputTimeH = new System.Windows.Forms.TextBox();
+            this.LabelTime = new System.Windows.Forms.Label();
+            this.LabelDate = new System.Windows.Forms.Label();
+            this.InputLeague = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.LabelType = new System.Windows.Forms.Label();
+            this.LabelDuration = new System.Windows.Forms.Label();
+            this.LabelChangesMade = new System.Windows.Forms.Label();
+            this.EventNavSave = new System.Windows.Forms.Button();
+            this.NavSignIn = new System.Windows.Forms.Button();
+            this.EventEdit = new System.Windows.Forms.Button();
+            this.EventCancelEdit = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // TableViewTrainings
-            // 
-            this.TableViewTrainings.AllowUserToAddRows = false;
-            this.TableViewTrainings.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TableViewTrainings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.TableViewTrainings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TableViewTrainings.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColID,
-            this.ColTeam,
-            this.ColTime,
-            this.ColLength,
-            this.ColDate});
-            this.TableViewTrainings.Location = new System.Drawing.Point(28, 78);
-            this.TableViewTrainings.Name = "TableViewTrainings";
-            this.TableViewTrainings.ReadOnly = true;
-            this.TableViewTrainings.RowHeadersVisible = false;
-            this.TableViewTrainings.RowHeadersWidth = 10;
-            this.TableViewTrainings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.TableViewTrainings.ShowCellToolTips = false;
-            this.TableViewTrainings.Size = new System.Drawing.Size(428, 313);
-            this.TableViewTrainings.TabIndex = 16;
             // 
             // LabelHeader
             // 
             this.LabelHeader.AutoSize = true;
             this.LabelHeader.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeader.Location = new System.Drawing.Point(148, 22);
+            this.LabelHeader.Location = new System.Drawing.Point(91, 22);
             this.LabelHeader.Name = "LabelHeader";
-            this.LabelHeader.Size = new System.Drawing.Size(188, 33);
-            this.LabelHeader.TabIndex = 17;
-            this.LabelHeader.Text = "View Trainings";
+            this.LabelHeader.Size = new System.Drawing.Size(176, 33);
+            this.LabelHeader.TabIndex = 8;
+            this.LabelHeader.Text = "View Training";
             // 
-            // NavHome
+            // InputDate
             // 
-            this.NavHome.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavHome.Location = new System.Drawing.Point(28, 397);
-            this.NavHome.Name = "NavHome";
-            this.NavHome.Size = new System.Drawing.Size(89, 48);
-            this.NavHome.TabIndex = 30;
-            this.NavHome.Text = "Home";
-            this.NavHome.UseVisualStyleBackColor = true;
-            this.NavHome.Click += new System.EventHandler(this.NavHome_Click);
+            this.InputDate.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputDate.Location = new System.Drawing.Point(154, 183);
+            this.InputDate.Name = "InputDate";
+            this.InputDate.Size = new System.Drawing.Size(161, 27);
+            this.InputDate.TabIndex = 64;
+            this.InputDate.Value = new System.DateTime(2018, 11, 4, 0, 0, 0, 0);
             // 
-            // NavEdit
+            // InputTimeM
             // 
-            this.NavEdit.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavEdit.Location = new System.Drawing.Point(367, 397);
-            this.NavEdit.Name = "NavEdit";
-            this.NavEdit.Size = new System.Drawing.Size(89, 48);
-            this.NavEdit.TabIndex = 31;
-            this.NavEdit.Text = "Edit";
-            this.NavEdit.UseVisualStyleBackColor = true;
-            this.NavEdit.Click += new System.EventHandler(this.NavEdit_Click);
+            this.InputTimeM.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputTimeM.Location = new System.Drawing.Point(219, 117);
+            this.InputTimeM.Name = "InputTimeM";
+            this.InputTimeM.Size = new System.Drawing.Size(59, 27);
+            this.InputTimeM.TabIndex = 63;
             // 
-            // ColID
+            // InputTimeH
             // 
-            this.ColID.HeaderText = " ";
-            this.ColID.Name = "ColID";
-            this.ColID.ReadOnly = true;
-            this.ColID.Width = 35;
+            this.InputTimeH.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputTimeH.Location = new System.Drawing.Point(154, 117);
+            this.InputTimeH.Name = "InputTimeH";
+            this.InputTimeH.Size = new System.Drawing.Size(59, 27);
+            this.InputTimeH.TabIndex = 62;
             // 
-            // ColTeam
+            // LabelTime
             // 
-            this.ColTeam.HeaderText = "Team";
-            this.ColTeam.Name = "ColTeam";
-            this.ColTeam.ReadOnly = true;
-            this.ColTeam.Width = 90;
+            this.LabelTime.AutoSize = true;
+            this.LabelTime.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelTime.Location = new System.Drawing.Point(36, 120);
+            this.LabelTime.Name = "LabelTime";
+            this.LabelTime.Size = new System.Drawing.Size(45, 19);
+            this.LabelTime.TabIndex = 61;
+            this.LabelTime.Text = "Time";
             // 
-            // ColTime
+            // LabelDate
             // 
-            this.ColTime.HeaderText = "Time";
-            this.ColTime.Name = "ColTime";
-            this.ColTime.ReadOnly = true;
+            this.LabelDate.AutoSize = true;
+            this.LabelDate.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelDate.Location = new System.Drawing.Point(36, 189);
+            this.LabelDate.Name = "LabelDate";
+            this.LabelDate.Size = new System.Drawing.Size(41, 19);
+            this.LabelDate.TabIndex = 60;
+            this.LabelDate.Text = "Date";
             // 
-            // ColLength
+            // InputLeague
             // 
-            this.ColLength.HeaderText = "Length";
-            this.ColLength.Name = "ColLength";
-            this.ColLength.ReadOnly = true;
+            this.InputLeague.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputLeague.FormattingEnabled = true;
+            this.InputLeague.Items.AddRange(new object[] {
+            "Clinic",
+            "Junior",
+            "Men",
+            "Women"});
+            this.InputLeague.Location = new System.Drawing.Point(155, 84);
+            this.InputLeague.Name = "InputLeague";
+            this.InputLeague.Size = new System.Drawing.Size(161, 27);
+            this.InputLeague.TabIndex = 65;
             // 
-            // ColDate
+            // textBox1
             // 
-            this.ColDate.HeaderText = "Date";
-            this.ColDate.Name = "ColDate";
-            this.ColDate.ReadOnly = true;
+            this.textBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(154, 150);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(124, 27);
+            this.textBox1.TabIndex = 66;
             // 
-            // ViewTraining
+            // LabelType
+            // 
+            this.LabelType.AutoSize = true;
+            this.LabelType.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelType.Location = new System.Drawing.Point(36, 87);
+            this.LabelType.Name = "LabelType";
+            this.LabelType.Size = new System.Drawing.Size(44, 19);
+            this.LabelType.TabIndex = 67;
+            this.LabelType.Text = "Type";
+            // 
+            // LabelDuration
+            // 
+            this.LabelDuration.AutoSize = true;
+            this.LabelDuration.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelDuration.Location = new System.Drawing.Point(36, 153);
+            this.LabelDuration.Name = "LabelDuration";
+            this.LabelDuration.Size = new System.Drawing.Size(114, 19);
+            this.LabelDuration.TabIndex = 68;
+            this.LabelDuration.Text = "Duration (min)";
+            // 
+            // LabelChangesMade
+            // 
+            this.LabelChangesMade.AutoSize = true;
+            this.LabelChangesMade.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelChangesMade.Location = new System.Drawing.Point(223, 267);
+            this.LabelChangesMade.Name = "LabelChangesMade";
+            this.LabelChangesMade.Size = new System.Drawing.Size(91, 19);
+            this.LabelChangesMade.TabIndex = 71;
+            this.LabelChangesMade.Text = "No changes";
+            // 
+            // EventNavSave
+            // 
+            this.EventNavSave.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EventNavSave.Location = new System.Drawing.Point(229, 216);
+            this.EventNavSave.Name = "EventNavSave";
+            this.EventNavSave.Size = new System.Drawing.Size(89, 48);
+            this.EventNavSave.TabIndex = 70;
+            this.EventNavSave.Text = "Save";
+            this.EventNavSave.UseVisualStyleBackColor = true;
+            // 
+            // NavSignIn
+            // 
+            this.NavSignIn.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NavSignIn.Location = new System.Drawing.Point(39, 216);
+            this.NavSignIn.Name = "NavSignIn";
+            this.NavSignIn.Size = new System.Drawing.Size(89, 48);
+            this.NavSignIn.TabIndex = 69;
+            this.NavSignIn.Text = "Back";
+            this.NavSignIn.UseVisualStyleBackColor = true;
+            this.NavSignIn.Click += new System.EventHandler(this.NavSignIn_Click);
+            // 
+            // EventEdit
+            // 
+            this.EventEdit.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EventEdit.Location = new System.Drawing.Point(229, 216);
+            this.EventEdit.Name = "EventEdit";
+            this.EventEdit.Size = new System.Drawing.Size(89, 48);
+            this.EventEdit.TabIndex = 72;
+            this.EventEdit.Text = "Edit";
+            this.EventEdit.UseVisualStyleBackColor = true;
+            // 
+            // EventCancelEdit
+            // 
+            this.EventCancelEdit.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EventCancelEdit.Location = new System.Drawing.Point(134, 216);
+            this.EventCancelEdit.Name = "EventCancelEdit";
+            this.EventCancelEdit.Size = new System.Drawing.Size(89, 48);
+            this.EventCancelEdit.TabIndex = 73;
+            this.EventCancelEdit.Text = "Cancel Edit";
+            this.EventCancelEdit.UseVisualStyleBackColor = true;
+            // 
+            // EditTraining
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(485, 465);
-            this.Controls.Add(this.NavEdit);
-            this.Controls.Add(this.NavHome);
+            this.ClientSize = new System.Drawing.Size(346, 306);
+            this.Controls.Add(this.EventCancelEdit);
+            this.Controls.Add(this.EventEdit);
+            this.Controls.Add(this.LabelChangesMade);
+            this.Controls.Add(this.EventNavSave);
+            this.Controls.Add(this.NavSignIn);
+            this.Controls.Add(this.LabelDuration);
+            this.Controls.Add(this.LabelType);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.InputLeague);
+            this.Controls.Add(this.InputDate);
+            this.Controls.Add(this.InputTimeM);
+            this.Controls.Add(this.InputTimeH);
+            this.Controls.Add(this.LabelTime);
+            this.Controls.Add(this.LabelDate);
             this.Controls.Add(this.LabelHeader);
-            this.Controls.Add(this.TableViewTrainings);
-            this.Name = "ViewTraining";
-            this.Text = "ViewTraining";
-            this.Load += new System.EventHandler(this.ViewTraining_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.TableViewTrainings)).EndInit();
+            this.Name = "EditTraining";
+            this.Text = "EditTraining";
+            this.Load += new System.EventHandler(this.EditTraining_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,14 +223,20 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView TableViewTrainings;
         private System.Windows.Forms.Label LabelHeader;
-        private System.Windows.Forms.Button NavHome;
-        private System.Windows.Forms.Button NavEdit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColTeam;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColLength;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColDate;
+        private System.Windows.Forms.DateTimePicker InputDate;
+        private System.Windows.Forms.TextBox InputTimeM;
+        private System.Windows.Forms.TextBox InputTimeH;
+        private System.Windows.Forms.Label LabelTime;
+        private System.Windows.Forms.Label LabelDate;
+        private System.Windows.Forms.ComboBox InputLeague;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label LabelType;
+        private System.Windows.Forms.Label LabelDuration;
+        private System.Windows.Forms.Label LabelChangesMade;
+        private System.Windows.Forms.Button EventNavSave;
+        private System.Windows.Forms.Button NavSignIn;
+        private System.Windows.Forms.Button EventEdit;
+        private System.Windows.Forms.Button EventCancelEdit;
     }
 }
