@@ -26,7 +26,10 @@ namespace WelshWanderers
         public static bool telephoneNumber = false;
         public static bool postcode = false;
 
-        private void MyAccount_Load(object sender, EventArgs e) => ShowDetails();
+        private void MyAccount_Load(object sender, EventArgs e)
+        {
+            ShowDetails();
+        }
 
         private void ShowDetails()
         {
@@ -77,9 +80,15 @@ namespace WelshWanderers
             Database.UserData.postcode = InputPostcode.Text;
         }
 
-        private void ShowChangesMade() => LabelChangesMade.Text = changesMade + " change(s)\nmade.";
+        private void ShowChangesMade()
+        {
+            LabelChangesMade.Text = changesMade + " change(s)\nmade.";
+        }
 
-        private void NavHome_Click(object sender, EventArgs e) => NavToHome();
+        private void NavHome_Click(object sender, EventArgs e)
+        {
+            NavToHome();
+        }
 
         private void NavToHome()
         {
@@ -106,21 +115,41 @@ namespace WelshWanderers
                 return true;
             else
                 return false;
-
         }
 
-        private void InputTitle_SelectedIndexChanged(object sender, EventArgs e) => title = DetailsChanged(InputTitle.Text, Database.UserData.title, title);
+        private void InputTitle_SelectedIndexChanged(object sender, EventArgs e) 
+        { 
+            title = DetailsChanged(InputTitle.Text, Database.UserData.title, title);
+        }
 
-        private void InputFirstName_TextChanged(object sender, EventArgs e) => firstName = DetailsChanged(InputFirstName.Text, Database.UserData.firstName, firstName);
+        private void InputFirstName_TextChanged(object sender, EventArgs e) 
+        { 
+            firstName = DetailsChanged(InputFirstName.Text, Database.UserData.firstName, firstName);
+        }
 
-        private void InputLastName_TextChanged(object sender, EventArgs e) => lastName = DetailsChanged(InputLastName.Text, Database.UserData.lastName, lastName);
+        private void InputLastName_TextChanged(object sender, EventArgs e) 
+        { 
+            lastName = DetailsChanged(InputLastName.Text, Database.UserData.lastName, lastName);
+        }
 
-        private void InputDateOfBirth_ValueChanged(object sender, EventArgs e) => dateOfBirth = DetailsChanged(InputDateOfBirth.Text, Database.UserData.dateOfBirth, dateOfBirth);
+        private void InputDateOfBirth_ValueChanged(object sender, EventArgs e) 
+        {
+            dateOfBirth = DetailsChanged(InputDateOfBirth.Text, Database.UserData.dateOfBirth, dateOfBirth);
+        }
 
-        private void InputEmailAddress_TextChanged(object sender, EventArgs e) => emailAddress = DetailsChanged(InputEmailAddress.Text, Database.UserData.emailAddress, emailAddress);
+        private void InputEmailAddress_TextChanged(object sender, EventArgs e) 
+        { 
+            emailAddress = DetailsChanged(InputEmailAddress.Text, Database.UserData.emailAddress, emailAddress);
+        }
 
-        private void InputTelephoneNumber_TextChanged(object sender, EventArgs e) => telephoneNumber = DetailsChanged(InputTelephoneNumber.Text, Database.UserData.telephoneNumber, telephoneNumber);
+        private void InputTelephoneNumber_TextChanged(object sender, EventArgs e)
+        {
+            telephoneNumber = DetailsChanged(InputTelephoneNumber.Text, Database.UserData.telephoneNumber, telephoneNumber);
+        }
 
-        private void InputPostcode_TextChanged(object sender, EventArgs e) => postcode = DetailsChanged(InputPostcode.Text, Database.UserData.postcode, postcode);
+        private void InputPostcode_TextChanged(object sender, EventArgs e)
+        { 
+            postcode = DetailsChanged(InputPostcode.Text, Database.UserData.postcode, postcode);
+        }
     }
 }

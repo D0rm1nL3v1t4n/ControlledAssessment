@@ -38,8 +38,10 @@ namespace WelshWanderers
         private void SaveData()
         {
             int trainingID = Functions.FileSearch.GetNextId("trainingDetails");
-            string line = trainingID.ToString() + "|" + InputTeam.Text + "|" + InputTimeH.Text + "|" + InputTimeM.Text + "|" + InputDate.Text + "|";
+            string line = trainingID.ToString() + "|" + InputTeam.Text + "|" + InputTimeH.Text + "|" + InputTimeM.Text + InputDuration.Text + "|" + "|" + InputDate.Text + "|";
             Functions.FileWrite.WriteData("trainingDetails", line);
+            MessageBox.Show("Training saved.");
+            NavToHome();
         }
 
         private void SendEmail()
@@ -69,12 +71,12 @@ namespace WelshWanderers
         private bool ValidDate()
         {
             if (InputDate.Value <= DateTime.Now)
-                return false;
-            else
             {
-                MessageBox.Show("Hey Doc, pretty sure we ain't time travelling yet - Marty.");
-                return true;
+                MessageBox.Show("Enter a date after today.");
+                return false;
             }
+            else
+                return true;
         }
 
         private bool ValidDuration()
@@ -109,8 +111,7 @@ namespace WelshWanderers
         
         private bool ValidTeam()
         {
-            if (InputTeam.Text == "Clinic" || InputTeam.Text == "Junior" ||
-                InputTeam.Text == "Men" || InputTeam.Text == "Women")
+            if (InputTeam.Text != null)
                 return true;
             else
             {

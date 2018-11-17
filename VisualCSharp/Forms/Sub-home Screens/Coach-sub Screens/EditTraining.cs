@@ -24,7 +24,7 @@ namespace VisualCSharp.Forms.Sub_home_Screens.Coach_sub_Screens
             public static bool date = false;
         }
         
-                public EditTrainingForm()
+        public EditTrainingForm()
         {
             InitializeComponent();
         }

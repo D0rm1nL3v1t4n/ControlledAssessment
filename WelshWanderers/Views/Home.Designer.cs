@@ -33,14 +33,14 @@
             this.NavViewLeagues = new System.Windows.Forms.Button();
             this.NavUserJoinRequests = new System.Windows.Forms.Button();
             this.NavAddMatch = new System.Windows.Forms.Button();
-            this.NavViewTrainings = new System.Windows.Forms.Button();
+            this.NavUpcomingTrainings = new System.Windows.Forms.Button();
             this.NavAddTraining = new System.Windows.Forms.Button();
-            this.NavViewMatches = new System.Windows.Forms.Button();
+            this.NavUpcomingMatches = new System.Windows.Forms.Button();
             this.NavLeagueStatistics = new System.Windows.Forms.Button();
             this.NavMatchNotifications = new System.Windows.Forms.Button();
             this.EventNavSignOut = new System.Windows.Forms.Button();
             this.NavMyAccount = new System.Windows.Forms.Button();
-            this.NavViewMatchResults = new System.Windows.Forms.Button();
+            this.NavMatchResults = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LabelHeader
@@ -97,16 +97,16 @@
             this.NavAddMatch.UseVisualStyleBackColor = true;
             this.NavAddMatch.Click += new System.EventHandler(this.NavAddMatch_Click);
             // 
-            // NavViewTrainings
+            // NavUpcomingTrainings
             // 
-            this.NavViewTrainings.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavViewTrainings.Location = new System.Drawing.Point(172, 134);
-            this.NavViewTrainings.Name = "NavViewTrainings";
-            this.NavViewTrainings.Size = new System.Drawing.Size(95, 48);
-            this.NavViewTrainings.TabIndex = 11;
-            this.NavViewTrainings.Text = "View Trainings";
-            this.NavViewTrainings.UseVisualStyleBackColor = true;
-            this.NavViewTrainings.Click += new System.EventHandler(this.NavViewTrainings_Click);
+            this.NavUpcomingTrainings.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NavUpcomingTrainings.Location = new System.Drawing.Point(172, 134);
+            this.NavUpcomingTrainings.Name = "NavUpcomingTrainings";
+            this.NavUpcomingTrainings.Size = new System.Drawing.Size(95, 48);
+            this.NavUpcomingTrainings.TabIndex = 11;
+            this.NavUpcomingTrainings.Text = "Upcoming Trainings";
+            this.NavUpcomingTrainings.UseVisualStyleBackColor = true;
+            this.NavUpcomingTrainings.Click += new System.EventHandler(this.NavUpcomingTrainings_Click);
             // 
             // NavAddTraining
             // 
@@ -119,16 +119,16 @@
             this.NavAddTraining.UseVisualStyleBackColor = true;
             this.NavAddTraining.Click += new System.EventHandler(this.NavAddTraining_Click);
             // 
-            // NavViewMatches
+            // NavUpcomingMatches
             // 
-            this.NavViewMatches.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavViewMatches.Location = new System.Drawing.Point(71, 134);
-            this.NavViewMatches.Name = "NavViewMatches";
-            this.NavViewMatches.Size = new System.Drawing.Size(95, 48);
-            this.NavViewMatches.TabIndex = 13;
-            this.NavViewMatches.Text = "View Matches";
-            this.NavViewMatches.UseVisualStyleBackColor = true;
-            this.NavViewMatches.Click += new System.EventHandler(this.NavViewMatches_Click);
+            this.NavUpcomingMatches.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NavUpcomingMatches.Location = new System.Drawing.Point(71, 134);
+            this.NavUpcomingMatches.Name = "NavUpcomingMatches";
+            this.NavUpcomingMatches.Size = new System.Drawing.Size(95, 48);
+            this.NavUpcomingMatches.TabIndex = 13;
+            this.NavUpcomingMatches.Text = "Upcoming Matches";
+            this.NavUpcomingMatches.UseVisualStyleBackColor = true;
+            this.NavUpcomingMatches.Click += new System.EventHandler(this.NavUpcomingMatches_Click);
             // 
             // NavLeagueStatistics
             // 
@@ -174,30 +174,30 @@
             this.NavMyAccount.UseVisualStyleBackColor = true;
             this.NavMyAccount.Click += new System.EventHandler(this.NavMyAccount_Click);
             // 
-            // NavViewMatchResults
+            // NavMatchResults
             // 
-            this.NavViewMatchResults.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavViewMatchResults.Location = new System.Drawing.Point(123, 197);
-            this.NavViewMatchResults.Name = "NavViewMatchResults";
-            this.NavViewMatchResults.Size = new System.Drawing.Size(95, 48);
-            this.NavViewMatchResults.TabIndex = 19;
-            this.NavViewMatchResults.Text = "View Match Results";
-            this.NavViewMatchResults.UseVisualStyleBackColor = true;
-            this.NavViewMatchResults.Click += new System.EventHandler(this.NavViewMatchResults_Click);
+            this.NavMatchResults.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NavMatchResults.Location = new System.Drawing.Point(123, 197);
+            this.NavMatchResults.Name = "NavMatchResults";
+            this.NavMatchResults.Size = new System.Drawing.Size(95, 48);
+            this.NavMatchResults.TabIndex = 19;
+            this.NavMatchResults.Text = "Match Results";
+            this.NavMatchResults.UseVisualStyleBackColor = true;
+            this.NavMatchResults.Click += new System.EventHandler(this.NavViewMatchResults_Click);
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(338, 294);
-            this.Controls.Add(this.NavViewMatchResults);
+            this.Controls.Add(this.NavMatchResults);
             this.Controls.Add(this.NavMyAccount);
             this.Controls.Add(this.EventNavSignOut);
             this.Controls.Add(this.NavMatchNotifications);
             this.Controls.Add(this.NavLeagueStatistics);
-            this.Controls.Add(this.NavViewMatches);
+            this.Controls.Add(this.NavUpcomingMatches);
             this.Controls.Add(this.NavAddTraining);
-            this.Controls.Add(this.NavViewTrainings);
+            this.Controls.Add(this.NavUpcomingTrainings);
             this.Controls.Add(this.NavAddMatch);
             this.Controls.Add(this.NavUserJoinRequests);
             this.Controls.Add(this.NavViewLeagues);
@@ -218,13 +218,13 @@
         private System.Windows.Forms.Button NavViewLeagues;
         private System.Windows.Forms.Button NavUserJoinRequests;
         private System.Windows.Forms.Button NavAddMatch;
-        private System.Windows.Forms.Button NavViewTrainings;
+        private System.Windows.Forms.Button NavUpcomingTrainings;
         private System.Windows.Forms.Button NavAddTraining;
-        private System.Windows.Forms.Button NavViewMatches;
+        private System.Windows.Forms.Button NavUpcomingMatches;
         private System.Windows.Forms.Button NavLeagueStatistics;
         private System.Windows.Forms.Button NavMatchNotifications;
         private System.Windows.Forms.Button EventNavSignOut;
         private System.Windows.Forms.Button NavMyAccount;
-        private System.Windows.Forms.Button NavViewMatchResults;
+        private System.Windows.Forms.Button NavMatchResults;
     }
 }

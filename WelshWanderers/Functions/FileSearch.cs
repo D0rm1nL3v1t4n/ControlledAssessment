@@ -78,14 +78,14 @@ namespace WelshWanderers.Functions
         {
             StreamReader file = new StreamReader(fileName + ".txt");
             string line;
-            string id = "";
+            int id = 0;
             while (null != (line = file.ReadLine()))
             {
                 string[] section = line.Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
-                id = section[0];
+                id = Convert.ToInt16(section[0]);
             }
             file.Close();
-            return System.Convert.ToInt16(id) + 1;
+            return id + 1;
             
         }
 

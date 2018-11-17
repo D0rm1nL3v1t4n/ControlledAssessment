@@ -1,6 +1,6 @@
 ﻿namespace WelshWanderers
 {
-    partial class ViewTraining
+    partial class UpcomingTrainings
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTeam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColLength = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TableViewTrainings)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +58,7 @@
             this.ColID,
             this.ColTeam,
             this.ColTime,
-            this.ColLength,
+            this.ColDuration,
             this.ColDate});
             this.TableViewTrainings.Location = new System.Drawing.Point(28, 78);
             this.TableViewTrainings.Name = "TableViewTrainings";
@@ -121,12 +121,14 @@
             this.ColTime.HeaderText = "Time";
             this.ColTime.Name = "ColTime";
             this.ColTime.ReadOnly = true;
+            this.ColTime.Width = 80;
             // 
-            // ColLength
+            // ColDuration
             // 
-            this.ColLength.HeaderText = "Length";
-            this.ColLength.Name = "ColLength";
-            this.ColLength.ReadOnly = true;
+            this.ColDuration.HeaderText = "Duration (min)";
+            this.ColDuration.Name = "ColDuration";
+            this.ColDuration.ReadOnly = true;
+            this.ColDuration.Width = 120;
             // 
             // ColDate
             // 
@@ -134,7 +136,7 @@
             this.ColDate.Name = "ColDate";
             this.ColDate.ReadOnly = true;
             // 
-            // ViewTraining
+            // UpcomingTrainings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -143,7 +145,7 @@
             this.Controls.Add(this.NavHome);
             this.Controls.Add(this.LabelHeader);
             this.Controls.Add(this.TableViewTrainings);
-            this.Name = "ViewTraining";
+            this.Name = "UpcomingTrainings";
             this.Text = "ViewTraining";
             this.Load += new System.EventHandler(this.ViewTraining_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TableViewTrainings)).EndInit();
@@ -161,7 +163,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTeam;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColLength;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColDuration;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColDate;
     }
 }

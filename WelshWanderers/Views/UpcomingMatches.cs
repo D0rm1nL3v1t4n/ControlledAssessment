@@ -11,9 +11,9 @@ using System.IO;
 
 namespace WelshWanderers
 {
-    public partial class ViewMatch : Form
+    public partial class UpcomingMatches : Form
     {
-        public ViewMatch()
+        public UpcomingMatches()
         {
             InitializeComponent();
         }
@@ -62,7 +62,7 @@ namespace WelshWanderers
         private void NavEdit_Click(object sender, EventArgs e)
         {
             LoadMatchData();
-            new WelshWanderers.EditMatch().Show();
+            new WelshWanderers.ViewMatch().Show();
             this.Hide();
         }
 
@@ -84,13 +84,20 @@ namespace WelshWanderers
         private void NavViewResult_Click(object sender, EventArgs e)
         {
             //Change to prevent navigation if match result for that match does not exist.
-            if (Convert.ToDateTime(TableViewMatches.SelectedRows[0].Cells[4].Value) > DateTime.Now)
-            {
-                MessageBox.Show("Match not taken place yet.\n\nHey Doc, pretty sure we ain't time travelling yet - Marty.");
+            if (TableViewMatches.SelectedRows.Count > 0)
+            { 
+                if (Convert.ToDateTime(TableViewMatches.SelectedRows[0].Cells[4].Value) > DateTime.Now)
+                {
+                    MessageBox.Show("Match not taken place yet.\n\nHey Doc, pretty sure we ain't time travelling yet - Marty.");
+                }
+                else
+                {
+                    NavToMatchResult();
+                }
             }
             else
             {
-                NavToMatchResult();
+                MessageBox.Show("Please select a match to view a result.");
             }
         }
 

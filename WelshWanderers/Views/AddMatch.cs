@@ -66,7 +66,7 @@ namespace WelshWanderers
                 string playerName = section[2] + " " + section[3];
                 if (playerName.ToLower().Contains(InputFilter.Text.ToLower()))
                 {
-                    if ("Player" == Functions.FileSearch.ReturnSegment("userAccountDetails", section[0], 0, 3, false))
+                    if ("Player" == Functions.FileSearch.ReturnSegment("userAccountDetails", section[0], 0, 3, false) && searchID != null)
                     {
                         searchID.Add(section[0]);
                         ListFindPlayers.Items.Add(playerName);
@@ -168,7 +168,10 @@ namespace WelshWanderers
 
         private void NavSignIn_Click(object sender, EventArgs e)
         {
-            NavToHome();
+            if (MessageBox.Show("Are you sure? Match will not be saved.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                NavToHome();
+            }
         }
 
         private void NavToHome()

@@ -11,9 +11,9 @@ using System.IO;
 
 namespace WelshWanderers
 {
-    public partial class ViewTraining : Form
+    public partial class UpcomingTrainings : Form
     {
-        public ViewTraining()
+        public UpcomingTrainings()
         {
             InitializeComponent();
         }
@@ -48,15 +48,15 @@ namespace WelshWanderers
             string[] time = TableViewTrainings.SelectedRows[0].Cells[2].Value.ToString().Split(':');
             Database.TrainingData.id = Convert.ToInt16(TableViewTrainings.SelectedRows[0].Cells[0].Value);
             Database.TrainingData.team = TableViewTrainings.SelectedRows[0].Cells[1].Value.ToString();
-            Database.TrainingData.timeHour = Convert.ToInt16(time[0]);
-            Database.TrainingData.timeMin = Convert.ToInt16(time[1]);
+            Database.TrainingData.timeH = Convert.ToInt16(time[0]);
+            Database.TrainingData.timeM = Convert.ToInt16(time[1]);
             Database.TrainingData.duration = Convert.ToInt16(TableViewTrainings.SelectedRows[0].Cells[3].Value);
             Database.TrainingData.date = TableViewTrainings.SelectedRows[0].Cells[4].Value.ToString();
         }
 
         private void NavToEditTraining()
         {
-            new WelshWanderers.EditTraining().Show();
+            new WelshWanderers.ViewTrainings().Show();
             this.Hide();
         }
 

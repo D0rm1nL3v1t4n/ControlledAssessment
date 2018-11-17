@@ -1,6 +1,6 @@
 ﻿namespace WelshWanderers
 {
-    partial class ViewMatch
+    partial class UpcomingMatches
     {
         /// <summary>
         /// Required designer variable.

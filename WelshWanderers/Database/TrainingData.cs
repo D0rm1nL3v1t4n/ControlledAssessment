@@ -10,8 +10,8 @@ namespace WelshWanderers.Database
     {
         public static int id = -1;
         public static string team = "";
-        public static int timeHour = -1;
-        public static int timeMin = -1;
+        public static int timeH = -1;
+        public static int timeM = -1;
         public static int duration = -1;
         public static string date = "";
 
@@ -19,8 +19,8 @@ namespace WelshWanderers.Database
         {
             id = -1;
             team = "";
-            timeHour = -1;
-            timeMin = -1;
+            timeH = -1;
+            timeM = -1;
             duration = -1;
             date = "";
         }

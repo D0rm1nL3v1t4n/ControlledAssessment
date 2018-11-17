@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LabelHeader = new System.Windows.Forms.Label();
             this.TableViewLeagues = new System.Windows.Forms.DataGridView();
-            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColAgeGroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NavHome = new System.Windows.Forms.Button();
             this.EventNavCreate = new System.Windows.Forms.Button();
             this.EventNavEdit = new System.Windows.Forms.Button();
             this.EventDelete = new System.Windows.Forms.Button();
+            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColTeam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TableViewLeagues)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,19 +56,20 @@
             // 
             this.TableViewLeagues.AllowUserToAddRows = false;
             this.TableViewLeagues.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TableViewLeagues.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TableViewLeagues.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.TableViewLeagues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TableViewLeagues.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColID,
             this.ColName,
-            this.ColAgeGroup});
+            this.ColFileName,
+            this.ColTeam});
             this.TableViewLeagues.Location = new System.Drawing.Point(36, 75);
             this.TableViewLeagues.Name = "TableViewLeagues";
             this.TableViewLeagues.ReadOnly = true;
@@ -77,26 +79,6 @@
             this.TableViewLeagues.ShowCellToolTips = false;
             this.TableViewLeagues.Size = new System.Drawing.Size(263, 244);
             this.TableViewLeagues.TabIndex = 19;
-            // 
-            // ColID
-            // 
-            this.ColID.HeaderText = " ";
-            this.ColID.Name = "ColID";
-            this.ColID.ReadOnly = true;
-            this.ColID.Width = 40;
-            // 
-            // ColName
-            // 
-            this.ColName.HeaderText = "Name";
-            this.ColName.Name = "ColName";
-            this.ColName.ReadOnly = true;
-            this.ColName.Width = 120;
-            // 
-            // ColAgeGroup
-            // 
-            this.ColAgeGroup.HeaderText = "Age Group";
-            this.ColAgeGroup.Name = "ColAgeGroup";
-            this.ColAgeGroup.ReadOnly = true;
             // 
             // NavHome
             // 
@@ -140,6 +122,34 @@
             this.EventDelete.TabIndex = 35;
             this.EventDelete.Text = "Delete";
             this.EventDelete.UseVisualStyleBackColor = true;
+            this.EventDelete.Click += new System.EventHandler(this.EventDelete_Click);
+            // 
+            // ColID
+            // 
+            this.ColID.HeaderText = " ";
+            this.ColID.Name = "ColID";
+            this.ColID.ReadOnly = true;
+            this.ColID.Width = 40;
+            // 
+            // ColName
+            // 
+            this.ColName.HeaderText = "Name";
+            this.ColName.Name = "ColName";
+            this.ColName.ReadOnly = true;
+            this.ColName.Width = 120;
+            // 
+            // ColFileName
+            // 
+            this.ColFileName.HeaderText = "FileName";
+            this.ColFileName.Name = "ColFileName";
+            this.ColFileName.ReadOnly = true;
+            this.ColFileName.Visible = false;
+            // 
+            // ColTeam
+            // 
+            this.ColTeam.HeaderText = "Team";
+            this.ColTeam.Name = "ColTeam";
+            this.ColTeam.ReadOnly = true;
             // 
             // ManageLeagues
             // 
@@ -165,12 +175,13 @@
 
         private System.Windows.Forms.Label LabelHeader;
         private System.Windows.Forms.DataGridView TableViewLeagues;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColAgeGroup;
         private System.Windows.Forms.Button NavHome;
         private System.Windows.Forms.Button EventNavCreate;
         private System.Windows.Forms.Button EventNavEdit;
         private System.Windows.Forms.Button EventDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColTeam;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColFileName;
     }
 }

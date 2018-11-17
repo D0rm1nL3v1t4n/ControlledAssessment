@@ -32,10 +32,10 @@ namespace WelshWanderers
         private void HideAllButtons()
         {
             NavAddMatch.Hide();
-            NavViewMatches.Hide();
-            NavViewMatchResults.Hide();
+            NavUpcomingMatches.Hide();
+            NavMatchResults.Hide();
             NavAddTraining.Hide();
-            NavViewTrainings.Hide();
+            NavUpcomingTrainings.Hide();
             NavViewLeagues.Hide();
             NavLeagueStatistics.Hide();
             NavMatchNotifications.Hide();
@@ -54,18 +54,18 @@ namespace WelshWanderers
         {
             NavAddMatch.Show();
             NavAddTraining.Show();
-            NavViewMatches.Show();
-            NavViewTrainings.Show();
-            NavViewMatchResults.Show();
+            NavUpcomingMatches.Show();
+            NavUpcomingTrainings.Show();
+            NavMatchResults.Show();
         }
 
         private void ShowPlayerHome()
         {
-            NavViewMatches.Show();
-            NavViewTrainings.Show();
+            NavUpcomingMatches.Show();
+            NavUpcomingTrainings.Show();
             NavLeagueStatistics.Show();
             NavMatchNotifications.Show();
-            NavViewMatchResults.Show();
+            NavMatchResults.Show();
         }
 
         private void HideHome()
@@ -123,15 +123,15 @@ namespace WelshWanderers
             HideHome();
         }
 
-        private void NavViewMatches_Click(object sender, EventArgs e)
+        private void NavUpcomingMatches_Click(object sender, EventArgs e)
         {
-            new WelshWanderers.ViewMatch().Show();
+            new WelshWanderers.UpcomingMatches().Show();
             HideHome();
         }
 
-        private void NavViewTrainings_Click(object sender, EventArgs e)
+        private void NavUpcomingTrainings_Click(object sender, EventArgs e)
         {
-            new WelshWanderers.ViewTraining().Show();
+            new WelshWanderers.UpcomingTrainings().Show();
             HideHome();
         }
 

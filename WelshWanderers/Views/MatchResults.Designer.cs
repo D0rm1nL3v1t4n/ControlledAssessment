@@ -134,6 +134,7 @@
             this.NavBack.TabIndex = 31;
             this.NavBack.Text = "Back";
             this.NavBack.UseVisualStyleBackColor = true;
+            this.NavBack.Click += new System.EventHandler(this.NavBack_Click);
             // 
             // NavViewMatch
             // 

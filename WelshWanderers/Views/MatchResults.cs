@@ -16,5 +16,16 @@ namespace WelshWanderers
         {
             InitializeComponent();
         }
+
+        private void NavBack_Click(object sender, EventArgs e)
+        {
+            NavToHome();
+        }
+
+        private void NavToHome()
+        {
+            new WelshWanderers.Home().Show();
+            Hide();
+        }
     }
 }

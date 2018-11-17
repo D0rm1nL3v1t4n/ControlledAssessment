@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\LeagueData.cs" />
     <Compile Include="Database\MatchData.cs" />
     <Compile Include="Database\TrainingData.cs" />
     <Compile Include="Database\UserData.cs" />
@@ -132,11 +133,11 @@
     <Compile Include="Views\AddTraining.Designer.cs">
       <DependentUpon>AddTraining.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\EditMatch.cs">
+    <Compile Include="Views\ViewMatch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\EditMatch.Designer.cs">
-      <DependentUpon>EditMatch.cs</DependentUpon>
+    <Compile Include="Views\ViewMatch.Designer.cs">
+      <DependentUpon>ViewMatch.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ViewTraining.cs">
       <SubType>Form</SubType>
@@ -225,8 +226,14 @@
     <EmbeddedResource Include="Views\AddTraining.resx">
       <DependentUpon>AddTraining.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\EditMatch.resx">
-      <DependentUpon>EditMatch.cs</DependentUpon>
+    <EmbeddedResource Include="Views\CreateLeague.resx">
+      <DependentUpon>CreateLeague.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EditLeague.resx">
+      <DependentUpon>EditLeague.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewMatch.resx">
+      <DependentUpon>ViewMatch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ViewTraining.resx">
       <DependentUpon>ViewTraining.cs</DependentUpon>

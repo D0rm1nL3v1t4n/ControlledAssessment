@@ -24,7 +24,7 @@ namespace WelshWanderers
 
         private void NavToViewMatches()
         {
-            new WelshWanderers.ViewMatch().Show();
+            new WelshWanderers.UpcomingMatches().Show();
             this.Hide();
         }
     }
