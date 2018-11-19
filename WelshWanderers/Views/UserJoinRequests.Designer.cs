@@ -52,6 +52,7 @@
             this.NavHome = new System.Windows.Forms.Button();
             this.LabelTeam = new System.Windows.Forms.Label();
             this.InputTeam = new System.Windows.Forms.ComboBox();
+            this.EventHelp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LabelHeader
@@ -226,6 +227,7 @@
             this.InputAccessLevel.Name = "InputAccessLevel";
             this.InputAccessLevel.Size = new System.Drawing.Size(134, 27);
             this.InputAccessLevel.TabIndex = 43;
+            this.InputAccessLevel.SelectedIndexChanged += new System.EventHandler(this.InputAccessLevel_SelectedIndexChanged);
             // 
             // LabelAccessLevel
             // 
@@ -287,14 +289,26 @@
             this.InputTeam.FormattingEnabled = true;
             this.InputTeam.Location = new System.Drawing.Point(128, 235);
             this.InputTeam.Name = "InputTeam";
-            this.InputTeam.Size = new System.Drawing.Size(161, 27);
+            this.InputTeam.Size = new System.Drawing.Size(125, 27);
             this.InputTeam.TabIndex = 50;
+            // 
+            // EventHelp
+            // 
+            this.EventHelp.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EventHelp.Location = new System.Drawing.Point(259, 235);
+            this.EventHelp.Name = "EventHelp";
+            this.EventHelp.Size = new System.Drawing.Size(30, 27);
+            this.EventHelp.TabIndex = 51;
+            this.EventHelp.Text = "?";
+            this.EventHelp.UseVisualStyleBackColor = true;
+            this.EventHelp.Click += new System.EventHandler(this.EventHelp_Click);
             // 
             // UserJoinRequests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(636, 351);
+            this.Controls.Add(this.EventHelp);
             this.Controls.Add(this.InputTeam);
             this.Controls.Add(this.LabelTeam);
             this.Controls.Add(this.NavHome);
@@ -353,5 +367,6 @@
         private System.Windows.Forms.Button NavHome;
         private System.Windows.Forms.Label LabelTeam;
         private System.Windows.Forms.ComboBox InputTeam;
+        private System.Windows.Forms.Button EventHelp;
     }
 }

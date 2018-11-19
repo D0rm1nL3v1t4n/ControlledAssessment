@@ -46,17 +46,20 @@
             this.LabelName = new System.Windows.Forms.Label();
             this.LabelPassword = new System.Windows.Forms.Label();
             this.EventNavDeleteUser = new System.Windows.Forms.Button();
+            this.InputReason = new System.Windows.Forms.TextBox();
+            this.LabelReason = new System.Windows.Forms.Label();
+            this.NavCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LabelDeleteMessage
             // 
             this.LabelDeleteMessage.AutoSize = true;
             this.LabelDeleteMessage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelDeleteMessage.Location = new System.Drawing.Point(61, 9);
+            this.LabelDeleteMessage.Location = new System.Drawing.Point(31, 9);
             this.LabelDeleteMessage.Name = "LabelDeleteMessage";
-            this.LabelDeleteMessage.Size = new System.Drawing.Size(272, 38);
+            this.LabelDeleteMessage.Size = new System.Drawing.Size(235, 38);
             this.LabelDeleteMessage.TabIndex = 46;
-            this.LabelDeleteMessage.Text = "You are about to delete the following\r\nuser from the system:";
+            this.LabelDeleteMessage.Text = "You are about to delete the\r\nfollowing user from the system:";
             // 
             // InputFirstName
             // 
@@ -163,7 +166,7 @@
             // 
             this.LabelConfirmMessage.AutoSize = true;
             this.LabelConfirmMessage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelConfirmMessage.Location = new System.Drawing.Point(31, 247);
+            this.LabelConfirmMessage.Location = new System.Drawing.Point(31, 298);
             this.LabelConfirmMessage.Name = "LabelConfirmMessage";
             this.LabelConfirmMessage.Size = new System.Drawing.Size(341, 38);
             this.LabelConfirmMessage.TabIndex = 58;
@@ -172,25 +175,25 @@
             // 
             // InputName
             // 
-            this.InputName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputName.Location = new System.Drawing.Point(100, 303);
+            this.InputName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputName.Location = new System.Drawing.Point(140, 349);
             this.InputName.Name = "InputName";
-            this.InputName.Size = new System.Drawing.Size(151, 23);
+            this.InputName.Size = new System.Drawing.Size(132, 27);
             this.InputName.TabIndex = 59;
             // 
             // InputPassword
             // 
-            this.InputPassword.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputPassword.Location = new System.Drawing.Point(100, 332);
+            this.InputPassword.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputPassword.Location = new System.Drawing.Point(140, 382);
             this.InputPassword.Name = "InputPassword";
-            this.InputPassword.Size = new System.Drawing.Size(151, 23);
+            this.InputPassword.Size = new System.Drawing.Size(132, 27);
             this.InputPassword.TabIndex = 60;
             // 
             // LabelName
             // 
             this.LabelName.AutoSize = true;
             this.LabelName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelName.Location = new System.Drawing.Point(44, 303);
+            this.LabelName.Location = new System.Drawing.Point(84, 352);
             this.LabelName.Name = "LabelName";
             this.LabelName.Size = new System.Drawing.Size(50, 19);
             this.LabelName.TabIndex = 61;
@@ -200,27 +203,59 @@
             // 
             this.LabelPassword.AutoSize = true;
             this.LabelPassword.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelPassword.Location = new System.Drawing.Point(18, 336);
+            this.LabelPassword.Location = new System.Drawing.Point(19, 385);
             this.LabelPassword.Name = "LabelPassword";
-            this.LabelPassword.Size = new System.Drawing.Size(76, 19);
+            this.LabelPassword.Size = new System.Drawing.Size(115, 19);
             this.LabelPassword.TabIndex = 62;
-            this.LabelPassword.Text = "Password";
+            this.LabelPassword.Text = "Your password";
             // 
             // EventNavDeleteUser
             // 
             this.EventNavDeleteUser.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventNavDeleteUser.Location = new System.Drawing.Point(257, 303);
+            this.EventNavDeleteUser.Location = new System.Drawing.Point(278, 352);
             this.EventNavDeleteUser.Name = "EventNavDeleteUser";
             this.EventNavDeleteUser.Size = new System.Drawing.Size(89, 52);
             this.EventNavDeleteUser.TabIndex = 63;
             this.EventNavDeleteUser.Text = "Delete User";
             this.EventNavDeleteUser.UseVisualStyleBackColor = true;
+            this.EventNavDeleteUser.Click += new System.EventHandler(this.EventNavDeleteUser_Click);
+            // 
+            // InputReason
+            // 
+            this.InputReason.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputReason.Location = new System.Drawing.Point(101, 254);
+            this.InputReason.Name = "InputReason";
+            this.InputReason.Size = new System.Drawing.Size(240, 27);
+            this.InputReason.TabIndex = 64;
+            // 
+            // LabelReason
+            // 
+            this.LabelReason.AutoSize = true;
+            this.LabelReason.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelReason.Location = new System.Drawing.Point(29, 257);
+            this.LabelReason.Name = "LabelReason";
+            this.LabelReason.Size = new System.Drawing.Size(66, 19);
+            this.LabelReason.TabIndex = 65;
+            this.LabelReason.Text = "Reason:";
+            // 
+            // NavCancel
+            // 
+            this.NavCancel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NavCancel.Location = new System.Drawing.Point(294, 5);
+            this.NavCancel.Name = "NavCancel";
+            this.NavCancel.Size = new System.Drawing.Size(89, 52);
+            this.NavCancel.TabIndex = 66;
+            this.NavCancel.Text = "Cancel";
+            this.NavCancel.UseVisualStyleBackColor = true;
             // 
             // DeleteUserConfirm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(395, 392);
+            this.ClientSize = new System.Drawing.Size(395, 429);
+            this.Controls.Add(this.NavCancel);
+            this.Controls.Add(this.LabelReason);
+            this.Controls.Add(this.InputReason);
             this.Controls.Add(this.EventNavDeleteUser);
             this.Controls.Add(this.LabelPassword);
             this.Controls.Add(this.LabelName);
@@ -267,5 +302,8 @@
         private System.Windows.Forms.Label LabelName;
         private System.Windows.Forms.Label LabelPassword;
         private System.Windows.Forms.Button EventNavDeleteUser;
+        private System.Windows.Forms.TextBox InputReason;
+        private System.Windows.Forms.Label LabelReason;
+        private System.Windows.Forms.Button NavCancel;
     }
 }

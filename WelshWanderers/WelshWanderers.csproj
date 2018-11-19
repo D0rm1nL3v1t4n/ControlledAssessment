@@ -213,10 +213,10 @@
     <Compile Include="Views\UpcomingTrainings.Designer.cs">
       <DependentUpon>UpcomingTrainings.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewUser.cs">
+    <Compile Include="Views\ViewUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewUser.Designer.cs">
+    <Compile Include="Views\ViewUser.Designer.cs">
       <DependentUpon>ViewUser.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -294,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UpcomingTrainings.resx">
       <DependentUpon>UpcomingTrainings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewUser.resx">
+      <DependentUpon>ViewUser.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

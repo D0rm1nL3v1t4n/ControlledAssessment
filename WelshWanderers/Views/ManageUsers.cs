@@ -29,7 +29,7 @@ namespace WelshWanderers
                 string[] sectionB = lineB.Split('|');
                 if (sectionA[3] == InputAccessLevel.Text || InputAccessLevel.Text == null)
                 {
-                    if ((sectionB[2] + " " + sectionB[3]).Contains(InputName.Text))
+                    if ((sectionB[2] + " " + sectionB[3]).Contains(InputName.Text) || InputName.Text == null)
                     {
                         TableManageUsers.Rows.Add(sectionA[0], sectionA[1], sectionB[2], sectionB[3], sectionA[3], sectionA[4]);
                     }
@@ -63,20 +63,7 @@ namespace WelshWanderers
 
         private void EventDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure? This user and all its data will be permanently deleted.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) ;
-                OpenDeleteUser();
-        }
-
-        private void OpenDeleteUser()
-        {
             new Views.DeleteUserConfirm(TableManageUsers.SelectedRows[0].Cells[0].Value.ToString()).Show();
-        }
-
-        private void DeleteUser()
-        {
-            int lineNo = Functions.FileSearch.LineNumber("userAccountDetails", TableManageUsers.SelectedRows[0].Cells[0].Value.ToString(), 0);
-            Functions.FileDelete.RemoveLine("userAccountDetails", 5, lineNo);
-            Functions.FileDelete.RemoveLine("userPersonalDetails", 8, lineNo);
         }
     }
 }

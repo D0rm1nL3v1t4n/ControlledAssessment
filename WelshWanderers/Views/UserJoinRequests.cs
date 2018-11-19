@@ -105,5 +105,21 @@ namespace WelshWanderers
             new WelshWanderers.Home().Show();
             this.Hide();
         }
+
+        private void EventHelp_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This is the team the user plays for within the club. This is only applicable to players.");
+        }
+
+        private void InputAccessLevel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (InputAccessLevel.Text == "Player")
+            {
+                LabelTeam.Enabled = true;
+                LabelTeam.Text = "";
+            }
+            else
+                LabelTeam.Enabled = false;
+        }
     }
 }
