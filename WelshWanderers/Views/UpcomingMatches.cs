@@ -33,6 +33,7 @@ namespace WelshWanderers
                 string[] section = line.Split('|');
                 TableViewMatches.Rows.Add(section[0], section[1], section[2], section[3], section[4], section[5], section[6], section[7], section[8]);
             }
+            file.Close();
         }
 
         private void HideButtons()

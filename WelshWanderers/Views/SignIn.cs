@@ -63,6 +63,7 @@ namespace WelshWanderers
             string[] section = Functions.FileSearch.ReturnLine("userAccountDetails", Database.UserData.id.ToString(), 0).Split('|');
             Database.UserData.username = section[1];
             Database.UserData.accessLevel = section[3];
+            Database.UserData.team = section[4];
         }
         private void LoadHome()
         {

@@ -18,6 +18,7 @@ namespace WelshWanderers.Database
         public static string postcode = "";
         public static string username = "";
         public static string accessLevel = "";
+        public static string team = "";
 
         public void ClearUserData()
         {
@@ -30,6 +31,7 @@ namespace WelshWanderers.Database
             postcode = "";
             username = "";
             accessLevel = "";
+            team = "";
         }
     }
 }
