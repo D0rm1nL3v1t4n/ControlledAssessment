@@ -215,7 +215,7 @@
             // InputPassword
             // 
             this.InputPassword.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputPassword.Location = new System.Drawing.Point(472, 265);
+            this.InputPassword.Location = new System.Drawing.Point(472, 260);
             this.InputPassword.Name = "InputPassword";
             this.InputPassword.Size = new System.Drawing.Size(161, 27);
             this.InputPassword.TabIndex = 21;
@@ -224,7 +224,7 @@
             // 
             this.LabelPassword.AutoSize = true;
             this.LabelPassword.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelPassword.Location = new System.Drawing.Point(390, 268);
+            this.LabelPassword.Location = new System.Drawing.Point(390, 263);
             this.LabelPassword.Name = "LabelPassword";
             this.LabelPassword.Size = new System.Drawing.Size(76, 19);
             this.LabelPassword.TabIndex = 22;
@@ -241,7 +241,7 @@
             // InputConfirmPassword
             // 
             this.InputConfirmPassword.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputConfirmPassword.Location = new System.Drawing.Point(472, 298);
+            this.InputConfirmPassword.Location = new System.Drawing.Point(472, 293);
             this.InputConfirmPassword.Name = "InputConfirmPassword";
             this.InputConfirmPassword.Size = new System.Drawing.Size(161, 27);
             this.InputConfirmPassword.TabIndex = 24;
@@ -250,7 +250,7 @@
             // 
             this.LabelConfirmPassword.AutoSize = true;
             this.LabelConfirmPassword.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelConfirmPassword.Location = new System.Drawing.Point(328, 301);
+            this.LabelConfirmPassword.Location = new System.Drawing.Point(328, 296);
             this.LabelConfirmPassword.Name = "LabelConfirmPassword";
             this.LabelConfirmPassword.Size = new System.Drawing.Size(138, 19);
             this.LabelConfirmPassword.TabIndex = 25;
@@ -292,7 +292,7 @@
             // 
             this.LabelTeam.AutoSize = true;
             this.LabelTeam.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelTeam.Location = new System.Drawing.Point(97, 265);
+            this.LabelTeam.Location = new System.Drawing.Point(97, 263);
             this.LabelTeam.Name = "LabelTeam";
             this.LabelTeam.Size = new System.Drawing.Size(49, 19);
             this.LabelTeam.TabIndex = 30;

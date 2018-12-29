@@ -38,7 +38,7 @@ namespace WelshWanderers
         private void SaveData()
         {
             int trainingID = Functions.FileSearch.GetNextId("trainingDetails");
-            string line = trainingID.ToString() + "|" + InputTeam.Text + "|" + InputTimeH.Text + "|" + InputTimeM.Text + InputDuration.Text + "|" + "|" + InputDate.Text + "|";
+            string line = trainingID.ToString() + "|" + InputTeam.Text + "|" + InputTimeH.Text + "|" + InputTimeM.Text + "|" + InputDuration.Text + "|" + "|" + InputDate.Text + "|";
             Functions.FileWrite.WriteData("trainingDetails", line);
             MessageBox.Show("Training saved.");
             NavToHome();

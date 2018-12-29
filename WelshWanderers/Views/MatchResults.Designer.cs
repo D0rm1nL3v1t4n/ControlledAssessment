@@ -1,6 +1,6 @@
 ﻿namespace WelshWanderers
 {
-    partial class ViewMatchResults
+    partial class MatchResults
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LabelHeader = new System.Windows.Forms.Label();
             this.TableMatchResults = new System.Windows.Forms.DataGridView();
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,14 +57,14 @@
             // 
             this.TableMatchResults.AllowUserToAddRows = false;
             this.TableMatchResults.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TableMatchResults.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TableMatchResults.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.TableMatchResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TableMatchResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColID,
@@ -145,6 +145,7 @@
             this.NavViewMatch.TabIndex = 32;
             this.NavViewMatch.Text = "View Match";
             this.NavViewMatch.UseVisualStyleBackColor = true;
+            this.NavViewMatch.Click += new System.EventHandler(this.NavViewMatch_Click);
             // 
             // NavMatchDetails
             // 
@@ -155,19 +156,21 @@
             this.NavMatchDetails.TabIndex = 33;
             this.NavMatchDetails.Text = "Match Details";
             this.NavMatchDetails.UseVisualStyleBackColor = true;
+            this.NavMatchDetails.Click += new System.EventHandler(this.NavMatchDetails_Click);
             // 
-            // ViewMatchResults
+            // MatchResults
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(557, 450);
+            this.ClientSize = new System.Drawing.Size(557, 439);
             this.Controls.Add(this.NavMatchDetails);
             this.Controls.Add(this.NavViewMatch);
             this.Controls.Add(this.NavBack);
             this.Controls.Add(this.TableMatchResults);
             this.Controls.Add(this.LabelHeader);
-            this.Name = "ViewMatchResults";
+            this.Name = "MatchResults";
             this.Text = "ViewMatchResults";
+            this.Load += new System.EventHandler(this.ViewMatchResults_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TableMatchResults)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace WelshWanderers
 {
     public partial class LeagueStats : Form
     {
+        private static string[,] allLeagues;
+
         public LeagueStats()
         {
             InitializeComponent();
@@ -26,6 +29,58 @@ namespace WelshWanderers
         {
             new WelshWanderers.Home().Show();
             this.Hide();
+        }
+
+        private void LeagueStats_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            GetAllLeagues();
+            ShowLeagues();
+            LoadAllPlayers();
+        }
+
+        private void ShowLeagues()
+        {
+            foreach (string league in allLeagues)
+                InputLeague.Items.Add(league[0]);
+        }
+
+        private void GetAllLeagues()
+        {
+            StreamReader file = new StreamReader("leagues.txt");
+            string line;
+            int i = 0;
+            while (null != (line = file.ReadLine()))
+            {
+                string[] section = line.Split('|');
+                allLeagues[i,0] = section[1];
+                allLeagues[i,1] = section[2];
+                ++i;
+            }
+        }
+
+        private void LoadAllPlayers()
+        {
+            //Check if selected index count starts at 0 or 1 by default.
+            //This could be because 0 is first item which could be null.
+            //Fix if that is the case: 'allLeagues[InputLeague.SelectedIndex - 1, 0]'
+            string leagueFileName = allLeagues[InputLeague.SelectedIndex, 0];   
+            StreamReader file = new StreamReader(leagueFileName + "leagueStats.txt");   //Work out which file to read
+            string line;
+            while (null != (line = file.ReadLine()))
+            {
+                string[] section = line.Split('|');
+                
+            }
+        }
+
+        private void InputLeague_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

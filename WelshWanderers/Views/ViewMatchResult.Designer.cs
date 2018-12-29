@@ -33,7 +33,6 @@
             this.TableMatchResult = new System.Windows.Forms.DataGridView();
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPlayerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPlayed = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ColGoals = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColMajors = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColOther = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -51,6 +50,7 @@
             this.EventEditMatchResult = new System.Windows.Forms.Button();
             this.EventSave = new System.Windows.Forms.Button();
             this.EventCancelEdit = new System.Windows.Forms.Button();
+            this.LabelChangesMade = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.TableMatchResult)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,13 +80,12 @@
             this.TableMatchResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColID,
             this.ColPlayerName,
-            this.ColPlayed,
             this.ColGoals,
             this.ColMajors,
             this.ColOther});
             this.TableMatchResult.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.TableMatchResult.Enabled = false;
-            this.TableMatchResult.Location = new System.Drawing.Point(50, 195);
+            this.TableMatchResult.Location = new System.Drawing.Point(50, 204);
             this.TableMatchResult.Name = "TableMatchResult";
             this.TableMatchResult.RowHeadersVisible = false;
             this.TableMatchResult.RowHeadersWidth = 10;
@@ -107,13 +106,7 @@
             this.ColPlayerName.HeaderText = "Player";
             this.ColPlayerName.Name = "ColPlayerName";
             this.ColPlayerName.ReadOnly = true;
-            this.ColPlayerName.Width = 130;
-            // 
-            // ColPlayed
-            // 
-            this.ColPlayed.HeaderText = "Played?";
-            this.ColPlayed.Name = "ColPlayed";
-            this.ColPlayed.Width = 80;
+            this.ColPlayerName.Width = 145;
             // 
             // ColGoals
             // 
@@ -121,12 +114,13 @@
             this.ColGoals.Name = "ColGoals";
             this.ColGoals.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ColGoals.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ColGoals.Width = 80;
+            this.ColGoals.Width = 95;
             // 
             // ColMajors
             // 
             this.ColMajors.HeaderText = "Major Fouls";
             this.ColMajors.Name = "ColMajors";
+            this.ColMajors.Width = 135;
             // 
             // ColOther
             // 
@@ -138,22 +132,24 @@
             "Yellow Card",
             "Red Card"});
             this.ColOther.Name = "ColOther";
+            this.ColOther.Width = 115;
             // 
             // NavBack
             // 
             this.NavBack.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavBack.Location = new System.Drawing.Point(49, 452);
+            this.NavBack.Location = new System.Drawing.Point(49, 461);
             this.NavBack.Name = "NavBack";
             this.NavBack.Size = new System.Drawing.Size(89, 48);
             this.NavBack.TabIndex = 30;
             this.NavBack.Text = "Back";
             this.NavBack.UseVisualStyleBackColor = true;
+            this.NavBack.Click += new System.EventHandler(this.NavBack_Click);
             // 
             // LabelOpponentGoals
             // 
             this.LabelOpponentGoals.AutoSize = true;
             this.LabelOpponentGoals.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelOpponentGoals.Location = new System.Drawing.Point(373, 126);
+            this.LabelOpponentGoals.Location = new System.Drawing.Point(373, 124);
             this.LabelOpponentGoals.Name = "LabelOpponentGoals";
             this.LabelOpponentGoals.Size = new System.Drawing.Size(123, 19);
             this.LabelOpponentGoals.TabIndex = 34;
@@ -163,7 +159,7 @@
             // 
             this.LabelOpponentMajorFouls.AutoSize = true;
             this.LabelOpponentMajorFouls.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelOpponentMajorFouls.Location = new System.Drawing.Point(330, 159);
+            this.LabelOpponentMajorFouls.Location = new System.Drawing.Point(330, 157);
             this.LabelOpponentMajorFouls.Name = "LabelOpponentMajorFouls";
             this.LabelOpponentMajorFouls.Size = new System.Drawing.Size(166, 19);
             this.LabelOpponentMajorFouls.TabIndex = 33;
@@ -173,25 +169,27 @@
             // 
             this.InputOpponentGoals.Enabled = false;
             this.InputOpponentGoals.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputOpponentGoals.Location = new System.Drawing.Point(502, 123);
+            this.InputOpponentGoals.Location = new System.Drawing.Point(502, 121);
             this.InputOpponentGoals.Name = "InputOpponentGoals";
             this.InputOpponentGoals.Size = new System.Drawing.Size(81, 27);
             this.InputOpponentGoals.TabIndex = 32;
+            this.InputOpponentGoals.TextChanged += new System.EventHandler(this.InputOpponentGoals_TextChanged);
             // 
             // InputOpponentMajorFouls
             // 
             this.InputOpponentMajorFouls.Enabled = false;
             this.InputOpponentMajorFouls.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputOpponentMajorFouls.Location = new System.Drawing.Point(502, 156);
+            this.InputOpponentMajorFouls.Location = new System.Drawing.Point(502, 154);
             this.InputOpponentMajorFouls.Name = "InputOpponentMajorFouls";
             this.InputOpponentMajorFouls.Size = new System.Drawing.Size(81, 27);
             this.InputOpponentMajorFouls.TabIndex = 31;
+            this.InputOpponentMajorFouls.TextChanged += new System.EventHandler(this.InputOpponentMajorFouls_TextChanged);
             // 
             // LabelOpponent
             // 
             this.LabelOpponent.AutoSize = true;
             this.LabelOpponent.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelOpponent.Location = new System.Drawing.Point(372, 93);
+            this.LabelOpponent.Location = new System.Drawing.Point(93, 91);
             this.LabelOpponent.Name = "LabelOpponent";
             this.LabelOpponent.Size = new System.Drawing.Size(79, 19);
             this.LabelOpponent.TabIndex = 35;
@@ -201,16 +199,17 @@
             // 
             this.InputOpponent.Enabled = false;
             this.InputOpponent.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputOpponent.Location = new System.Drawing.Point(457, 90);
+            this.InputOpponent.Location = new System.Drawing.Point(178, 88);
             this.InputOpponent.Name = "InputOpponent";
             this.InputOpponent.Size = new System.Drawing.Size(126, 27);
             this.InputOpponent.TabIndex = 36;
+            this.InputOpponent.TextChanged += new System.EventHandler(this.InputOpponent_TextChanged);
             // 
             // LabelWanderersGoals
             // 
             this.LabelWanderersGoals.AutoSize = true;
             this.LabelWanderersGoals.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelWanderersGoals.Location = new System.Drawing.Point(89, 126);
+            this.LabelWanderersGoals.Location = new System.Drawing.Point(89, 124);
             this.LabelWanderersGoals.Name = "LabelWanderersGoals";
             this.LabelWanderersGoals.Size = new System.Drawing.Size(128, 19);
             this.LabelWanderersGoals.TabIndex = 42;
@@ -220,7 +219,7 @@
             // 
             this.LabelWanderersMajors.AutoSize = true;
             this.LabelWanderersMajors.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelWanderersMajors.Location = new System.Drawing.Point(46, 159);
+            this.LabelWanderersMajors.Location = new System.Drawing.Point(46, 157);
             this.LabelWanderersMajors.Name = "LabelWanderersMajors";
             this.LabelWanderersMajors.Size = new System.Drawing.Size(171, 19);
             this.LabelWanderersMajors.TabIndex = 41;
@@ -230,24 +229,26 @@
             // 
             this.InputWanderersGoals.Enabled = false;
             this.InputWanderersGoals.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputWanderersGoals.Location = new System.Drawing.Point(223, 123);
+            this.InputWanderersGoals.Location = new System.Drawing.Point(223, 121);
             this.InputWanderersGoals.Name = "InputWanderersGoals";
             this.InputWanderersGoals.Size = new System.Drawing.Size(81, 27);
             this.InputWanderersGoals.TabIndex = 40;
+            this.InputWanderersGoals.TextChanged += new System.EventHandler(this.InputWanderersGoals_TextChanged);
             // 
             // InputWanderersMajors
             // 
             this.InputWanderersMajors.Enabled = false;
             this.InputWanderersMajors.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputWanderersMajors.Location = new System.Drawing.Point(223, 156);
+            this.InputWanderersMajors.Location = new System.Drawing.Point(223, 154);
             this.InputWanderersMajors.Name = "InputWanderersMajors";
             this.InputWanderersMajors.Size = new System.Drawing.Size(81, 27);
             this.InputWanderersMajors.TabIndex = 39;
+            this.InputWanderersMajors.TextChanged += new System.EventHandler(this.InputWanderersMajors_TextChanged);
             // 
             // EventEditMatchResult
             // 
             this.EventEditMatchResult.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventEditMatchResult.Location = new System.Drawing.Point(494, 452);
+            this.EventEditMatchResult.Location = new System.Drawing.Point(494, 459);
             this.EventEditMatchResult.Name = "EventEditMatchResult";
             this.EventEditMatchResult.Size = new System.Drawing.Size(89, 48);
             this.EventEditMatchResult.TabIndex = 43;
@@ -258,28 +259,41 @@
             // EventSave
             // 
             this.EventSave.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventSave.Location = new System.Drawing.Point(494, 452);
+            this.EventSave.Location = new System.Drawing.Point(494, 460);
             this.EventSave.Name = "EventSave";
             this.EventSave.Size = new System.Drawing.Size(89, 48);
             this.EventSave.TabIndex = 44;
             this.EventSave.Text = "Save";
             this.EventSave.UseVisualStyleBackColor = true;
+            this.EventSave.Click += new System.EventHandler(this.EventSave_Click);
             // 
             // EventCancelEdit
             // 
             this.EventCancelEdit.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventCancelEdit.Location = new System.Drawing.Point(399, 452);
+            this.EventCancelEdit.Location = new System.Drawing.Point(399, 461);
             this.EventCancelEdit.Name = "EventCancelEdit";
             this.EventCancelEdit.Size = new System.Drawing.Size(89, 48);
             this.EventCancelEdit.TabIndex = 45;
             this.EventCancelEdit.Text = "Cancel Edit";
             this.EventCancelEdit.UseVisualStyleBackColor = true;
+            this.EventCancelEdit.Click += new System.EventHandler(this.EventCancelEdit_Click);
+            // 
+            // LabelChangesMade
+            // 
+            this.LabelChangesMade.AutoSize = true;
+            this.LabelChangesMade.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelChangesMade.Location = new System.Drawing.Point(490, 88);
+            this.LabelChangesMade.Name = "LabelChangesMade";
+            this.LabelChangesMade.Size = new System.Drawing.Size(91, 19);
+            this.LabelChangesMade.TabIndex = 72;
+            this.LabelChangesMade.Text = "No changes";
             // 
             // ViewMatchResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 516);
+            this.ClientSize = new System.Drawing.Size(633, 523);
+            this.Controls.Add(this.LabelChangesMade);
             this.Controls.Add(this.EventCancelEdit);
             this.Controls.Add(this.EventSave);
             this.Controls.Add(this.EventEditMatchResult);
@@ -323,9 +337,9 @@
         private System.Windows.Forms.Button EventEditMatchResult;
         private System.Windows.Forms.Button EventSave;
         private System.Windows.Forms.Button EventCancelEdit;
+        private System.Windows.Forms.Label LabelChangesMade;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColPlayerName;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn ColPlayed;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColGoals;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColMajors;
         private System.Windows.Forms.DataGridViewComboBoxColumn ColOther;

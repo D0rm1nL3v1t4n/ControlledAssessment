@@ -60,7 +60,9 @@ namespace WelshWanderers
             {
                 string userAccessLevel = Functions.FileSearch.ReturnSegment("userAccountDetails", userID, 0, 3, false);
                 string[] data = { InputUsername.Text, Functions.HashAlgorithm.HashPassword(InputNewPassword.Text), userAccessLevel };
-                Functions.FileEdit.EditLine("userAccountDetails", 4, data, 0, userID);
+                int[] searchIndex = { 0 };
+                string[] searchData = { userID };
+                Functions.FileEdit.EditLine("userAccountDetails", 4, data, searchIndex, searchData);
                 MessageBox.Show("Your password has been changed.");
                 NavToSignIn();
             }

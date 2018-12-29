@@ -49,7 +49,9 @@ namespace WelshWanderers.Views
         private void TestEditData()
         {
             string[] data = new string[3] { "Edo", "Levitan", "Wales" };
-            Functions.FileEdit.EditLine("testingFile", 4, data, 0, "2");
+            int[] searchIndex = { 0 };
+            string[] searchData = { "2" };
+            Functions.FileEdit.EditLine("testingFile", 4, data, searchIndex, searchData);
         }
 
         private void TestDeleteData(int lineNo)

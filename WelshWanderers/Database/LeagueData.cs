@@ -21,5 +21,4 @@ namespace WelshWanderers.Database
             team = "";
         }
     }
-    }
 }

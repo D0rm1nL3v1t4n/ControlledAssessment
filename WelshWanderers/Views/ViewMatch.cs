@@ -148,7 +148,9 @@ namespace WelshWanderers
         private void ChangeMatchData()
         {
             string[] data = { InputLeague.Text, InputOpponent.Text, InputDate.Text, InputTimeH.Text, InputTimeM.Text, InputAddressA.Text, InputAddressB.Text, InputPostcode.Text };
-            Functions.FileEdit.EditLine("matchDetails", 9, data, 0, Database.MatchData.id.ToString());
+            int[] searchIndex = { 0 };
+            string[] searchData = { Database.MatchData.id.ToString() };
+            Functions.FileEdit.EditLine("matchDetails", 9, data, searchIndex, searchData);
 
             Database.MatchData.league = InputLeague.Text;
             Database.MatchData.opponent = InputOpponent.Text;

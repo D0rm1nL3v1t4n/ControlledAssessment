@@ -32,6 +32,7 @@ namespace WelshWanderers
         {
             SaveLeagueDatabase();
             new WelshWanderers.Views.EditLeague().Show();
+            this.Hide();
         }
 
         private void SaveLeagueDatabase()
@@ -53,7 +54,7 @@ namespace WelshWanderers
         private void DeleteLeague()
         {
             string fileName = TableViewLeagues.SelectedRows[0].Cells[2].Value.ToString();
-            Functions.FileDelete.RemoveLine(fileName, 4, Functions.FileSearch.LineNumber(fileName, TableViewLeagues.SelectedRows[0].Cells[0].Value.ToString(), 0));
+            Functions.FileDelete.RemoveLine(@"Leagues\" + fileName, 4, Functions.FileSearch.LineNumber(@"Leagues\" + fileName, TableViewLeagues.SelectedRows[0].Cells[0].Value.ToString(), 0));
             MessageBox.Show("League has been deleted.");
             TableViewLeagues.Rows.Clear();
             LoadAllLeagues();

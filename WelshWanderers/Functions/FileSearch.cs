@@ -9,14 +9,14 @@ namespace WelshWanderers.Functions
 {
     class FileSearch
     {
-        public static string ReturnSegment(string fileName, string searchData, int searchIndex, int returnIndex, bool multiReturn)
+        public static string ReturnSegment(string fileName, string searchData, int searchIndex, int returnIndex, bool multiReturn = false)
         {
             StreamReader file = new StreamReader(fileName + ".txt");
             string line = file.ReadLine();
             string multiReturnValue = "";
             while (null != line)
             {
-                string[] section = line.Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] section = line.Split('|');
                 if (section[searchIndex] == searchData)
                 {
                     if (multiReturn == false)

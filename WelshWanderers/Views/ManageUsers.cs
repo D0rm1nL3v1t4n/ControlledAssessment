@@ -57,7 +57,7 @@ namespace WelshWanderers
 
         private void NavView_Click(object sender, EventArgs e)
         {
-            new WelshWanderers.ViewUser().Show();
+            new WelshWanderers.ViewUser(TableManageUsers.SelectedRows[0].Cells[0].Value.ToString()).Show();
             this.Hide();
         }
 

@@ -143,7 +143,7 @@ namespace WelshWanderers
         
         private void NavViewMatchResults_Click(object sender, EventArgs e)
         {
-            new WelshWanderers.ViewMatchResults().Show();
+            new WelshWanderers.MatchResults().Show();
             HideHome();
         }
 

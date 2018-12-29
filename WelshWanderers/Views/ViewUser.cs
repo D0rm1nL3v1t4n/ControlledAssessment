@@ -13,6 +13,7 @@ namespace WelshWanderers
     public partial class ViewUser : Form
     {
         private static string userID;
+        private static string password;
         private static string accessLevel = "";
         private static string team = "";
         private static int changesMade = 0;
@@ -41,7 +42,23 @@ namespace WelshWanderers
 
         private void EventSave_Click(object sender, EventArgs e)
         {
-           
+            if (changesMade > 0)
+            {
+                ChangeData();
+                MessageBox.Show("User details have been updated.");
+            }
+            else
+            {
+                MessageBox.Show("You have not made any changes.");
+            }
+        }
+
+        private void ChangeData()
+        {
+            string[] data = { InputUsername.Text, password, InputAccessLevel.Text, InputTeam.Text };
+            int[] searchIndex = { 0 };
+            string[] searchData = { userID };
+            Functions.FileEdit.EditLine("userAccountDetails", 5, data, searchIndex, searchData);
         }
 
         private void NavToManageUsers()
@@ -88,6 +105,7 @@ namespace WelshWanderers
             InputUsername.Text = data[9];
             InputAccessLevel.Text = data[11];
             InputTeam.Text = data[12];
+            password = data[10];
             accessLevel = data[11];
             team = data[12];
         }

@@ -12,8 +12,10 @@ namespace WelshWanderers.Functions
         public static void RemoveLine(string fileName, int recordLength, int lineNumber)
         {
             int fileLength = File.ReadLines(fileName + ".txt").Count();
-            string[] data = new string[1] {""};
-            string[,] localFile = Functions.FileRead.StoreLocal(fileName, fileLength, recordLength, lineNumber, "Remove", data, 0, "");
+            string[] data = {""};
+            int[] indexData = { 0 };
+            string[] searchData = { "" };
+            string[,] localFile = Functions.FileRead.StoreLocal(fileName, fileLength, recordLength, lineNumber, "Remove", data, indexData , searchData);
             Functions.FileWrite.RewriteData(fileName, recordLength, localFile);
         }
  

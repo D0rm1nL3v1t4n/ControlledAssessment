@@ -46,6 +46,7 @@
             this.EventNavSave.TabIndex = 45;
             this.EventNavSave.Text = "Save";
             this.EventNavSave.UseVisualStyleBackColor = true;
+            this.EventNavSave.Click += new System.EventHandler(this.EventNavSave_Click);
             // 
             // NavCancel
             // 
@@ -56,6 +57,7 @@
             this.NavCancel.TabIndex = 44;
             this.NavCancel.Text = "Cancel";
             this.NavCancel.UseVisualStyleBackColor = true;
+            this.NavCancel.Click += new System.EventHandler(this.NavCancel_Click);
             // 
             // LabelName
             // 
@@ -123,6 +125,7 @@
             this.Controls.Add(this.LabelHeader);
             this.Name = "EditLeague";
             this.Text = "EditLeague";
+            this.Load += new System.EventHandler(this.EditLeague_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

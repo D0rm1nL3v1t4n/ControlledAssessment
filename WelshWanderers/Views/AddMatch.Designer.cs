@@ -74,6 +74,7 @@
             this.InputLeague.Name = "InputLeague";
             this.InputLeague.Size = new System.Drawing.Size(161, 27);
             this.InputLeague.TabIndex = 7;
+            this.InputLeague.SelectedIndexChanged += new System.EventHandler(this.InputLeague_SelectedIndexChanged);
             // 
             // LabelLeague
             // 
@@ -257,6 +258,7 @@
             this.InputHomeMatch.TabIndex = 45;
             this.InputHomeMatch.Text = "Home Match";
             this.InputHomeMatch.UseVisualStyleBackColor = true;
+            this.InputHomeMatch.CheckedChanged += new System.EventHandler(this.InputHomeMatch_CheckedChanged);
             // 
             // ListFindPlayers
             // 

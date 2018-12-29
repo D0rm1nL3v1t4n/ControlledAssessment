@@ -112,7 +112,7 @@ namespace WelshWanderers
         {
             if (InputUsername.TextLength > 5 && InputUsername.Text.Length < 21 && !InputUsername.Text.Contains('|'))
                 return 0;
-            MessageBox.Show("Username must be between 5 and 20 characters.");
+            MessageBox.Show("Username must be between 6 and 20 characters.");
             return 1;
         }
 

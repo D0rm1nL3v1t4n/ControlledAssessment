@@ -63,7 +63,9 @@ namespace WelshWanderers
         private void ChangeDetails()
         {
             string[] newData = { InputTitle.Text, InputFirstName.Text, InputLastName.Text, InputDateOfBirth.Text, InputEmailAddress.Text, InputTelephoneNumber.Text, InputPostcode.Text };
-            Functions.FileEdit.EditLine("userPersonalDetails", 8, newData, 0, Database.UserData.id.ToString());
+            int[] searchIndex = { 0 };
+            string[] searchData = { Database.UserData.id.ToString() };
+            Functions.FileEdit.EditLine("userPersonalDetails", 8, newData, searchIndex, searchData);
             UpdateDetails();
             MessageBox.Show("Your details have been updated.");
             NavToHome();

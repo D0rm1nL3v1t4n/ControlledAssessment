@@ -12,7 +12,7 @@ namespace WelshWanderers.Functions
     {
         public static bool skippedLine = false;
 
-        public static string[,] StoreLocal(string fileName, int fileLength, int recordLength, int lineNumber, string operation, string[] data, int searchIndex, string searchData)
+        public static string[,] StoreLocal(string fileName, int fileLength, int recordLength, int lineNumber, string operation, string[] data, int[] searchIndex, string[] searchData)
         {
             skippedLine = false;
             int lineCount = 0;
@@ -58,9 +58,20 @@ namespace WelshWanderers.Functions
         }
 
 
-        private static void ChangeFunc(int lineCount, int recordLength, string[] data, string[,] localFile, string[] section, int searchIndex, string searchData)
+        private static void ChangeFunc(int lineCount, int recordLength, string[] data, string[,] localFile, string[] section, int[] searchIndex, string[] searchData)
         {
-            if (section[searchIndex] == searchData)
+            //// Compares for one-to-one function & many-to-many function.
+            //if (searchIndex.Length == 1 && )
+            //{
+            //    //One to one
+            //}
+            //else if (searchIndex.Length == 2)
+            //{
+            //    //Many to many
+            //}
+
+
+            if ((section[searchIndex[0]] == searchData[0] && section[searchIndex[1]] == searchData[1]) || (section[searchIndex[0]] == searchData[0] && searchData[1] == null))
             {
                 localFile[lineCount, 0] = section[0];
                 for (int i = 1; i < recordLength; ++i)

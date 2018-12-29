@@ -39,13 +39,14 @@ namespace WelshWanderers.Views
             {
                 SaveLeague(fileName);
                 MessageBox.Show("League created.");
+                NavToManageLeagues();
             }
         }
 
         private void SaveLeague(string fileName)
         {
             string line = Functions.FileSearch.GetNextId("leagues").ToString() + "|" + InputName.Text + "|" + fileName + "|" + InputTeam.Text + "|";
-            Functions.FileWrite.WriteData(fileName, line);
+            Functions.FileWrite.WriteData("leagues", line);
         }
 
         private string GenerateLeagueName()
@@ -61,7 +62,7 @@ namespace WelshWanderers.Views
 
         private bool CreateLeagueFile(string fileName)
         {
-            string path = fileName + ".txt";
+            string path = @"Leagues\" + fileName + ".txt";
             if (!File.Exists(path))
             {
                 File.Create(path);
@@ -87,5 +88,6 @@ namespace WelshWanderers.Views
             MessageBox.Show("Select a team.");
             return false;
         }
+
     }
 }

@@ -18,8 +18,7 @@ namespace WelshWanderers
             InitializeComponent();
         }
 
-        List<string> searchID;
-        List<string> selectedID;
+        private static string leagueTeam = "";
 
         private void InputFilter_TextChanged(object sender, EventArgs e)
         {
@@ -33,23 +32,18 @@ namespace WelshWanderers
 
         private void LoadLeagues()
         {
-            DirectoryInfo dir = new DirectoryInfo(@"F:\VisualCSharp\VisualCSharp\bin\Debug");
-            FileInfo[] filesList = dir.GetFiles("*League*", SearchOption.TopDirectoryOnly); //Check if two * are for containing
-            foreach (var file in filesList)
+            StreamReader file = new StreamReader("leagues.txt");
+            string line;
+            while (null != (line = file.ReadLine()))
             {
-                string[] fileName = file.ToString().Split('_');
-                string newFileName = "";
-                int fileNameLength = fileName.Count();
-                for (int i = 0; i < fileNameLength - 1; ++i)
-                {
-                    newFileName += fileName[i];
-                }
-                InputLeague.Items.Add(newFileName);
+                string[] section = line.Split('|');
+                InputLeague.Items.Add(section[1]);
             }
         }
 
         private void UpdateSearchFilter()
         {
+            leagueTeam = Functions.FileSearch.ReturnSegment("leagues",InputLeague.Text, 1, 3);
             ListFindPlayers.Items.Clear();
             ShowFilteredPlayers();
         }
@@ -59,23 +53,25 @@ namespace WelshWanderers
             int index = InputLeague.SelectedIndex - 1;
             //Dont want this here.
             StreamReader file = new StreamReader("userPersonalDetails.txt");
-            string line = file.ReadLine();
-            while (null != line)
+            string line;
+            while (null != (line = file.ReadLine()))
             {
                 string[] section = line.Split('|');
-                string playerName = section[2] + " " + section[3];
-                if (playerName.ToLower().Contains(InputFilter.Text.ToLower()))
+                string[] playerInfo = Functions.FileSearch.ReturnLine("userPersonalDetails", section[0], 0).Split('|');
+                string playerName = playerInfo[2] + " " + playerInfo[3];
+
+                string team = Functions.FileSearch.ReturnSegment("userAccountDetails", section[0], 0, 4, false);
+                if (leagueTeam == team)
                 {
-                    if ("Player" == Functions.FileSearch.ReturnSegment("userAccountDetails", section[0], 0, 3, false) && searchID != null)
+                    if (playerName.ToLower().Contains(InputFilter.Text.ToLower()))
                     {
-                        searchID.Add(section[0]);
                         ListFindPlayers.Items.Add(playerName);
                     }
                 }
-                line = file.ReadLine();
             }
             file.Close();
         }
+
         
         private void EventAddPlayers_Click(object sender, EventArgs e)
         {
@@ -89,7 +85,6 @@ namespace WelshWanderers
                 if (!ListSelectedPlayers.Items.Contains(selectedPlayer))
                 {
                     ListSelectedPlayers.Items.Add(selectedPlayer);
-                    selectedID.Add(searchID[ListFindPlayers.Items.IndexOf(selectedPlayer)]);
                     ShowPlayersAdded();
                 }
             }
@@ -120,13 +115,19 @@ namespace WelshWanderers
 
         private void EventNavSave_Click(object sender, EventArgs e)
         {
+            SendMatchEmail();
+            SaveMatchData();
+        }
+
+        private void SendMatchEmail()
+        {
             if (ListSelectedPlayers.Items.Count > 0)
             {
                 string[] emails = new string[ListSelectedPlayers.Items.Count];
                 int i = 0;
-                foreach (string id in selectedID)
+                foreach (string player in ListSelectedPlayers.Items)
                 {
-                    emails[i] = Functions.FileSearch.ReturnSegment("userPersonalDetails", id, 0, 5, false);
+                    emails[i] = GetPlayerEmails(player);
                     ++i;
                 }
                 Functions.SendEmail.Email("Upcoming Match", MatchInfo(), emails);
@@ -137,6 +138,27 @@ namespace WelshWanderers
             {
                 MessageBox.Show("Please select players for this match.");
             }
+        }
+
+        private void SaveMatchData()
+        {
+            string data = Functions.FileSearch.GetNextId("matchDetails") + "|" + InputLeague.Text + "|" + InputOpponent.Text + "|" + InputDate.Text + "|" + InputTimeH.Text + "|" + InputTimeM.Text + "|" + InputAddressA.Text + "|" + InputAddressB.Text + "|" + InputPostcode.Text + "|";
+            Functions.FileWrite.WriteData("matchDetails", data);
+        }
+
+
+        private string GetPlayerEmails(string playerName)
+        {
+            StreamReader file = new StreamReader("userPersonalDetails.txt");
+            string line;
+            while (null != (line = file.ReadLine()))
+            {
+                string[] section = line.Split('|');
+                MessageBox.Show(playerName + " | " + section[2] + " " + section[3]);
+                if (playerName == (section[2] + " " + section[3]))
+                    return section[5];
+            }
+            return "";
         }
 
         private string MatchInfo()
@@ -159,8 +181,8 @@ namespace WelshWanderers
                 location = "Location:" + InputAddressA.Text + ",\n         " + InputAddressB.Text + ",\n         " + InputPostcode.Text + ".";
             }
             string body = "Hello all,\n\nUpcoming " + homeAway + ", " + InputLeague.Text
-                + "match against " + InputOpponent.Text + "." + "\n\nTeam is as follows:" + team
-                + "\n\nDate & Time: " + InputDate.Text + ", " + InputTimeH + ":" + InputTimeM + ".\n" + location + "Please respond regarding availability."
+                + " leauge match against " + InputOpponent.Text + "." + "\n\nTeam is as follows:" + team
+                + "\n\nDate & Time: " + InputDate.Text + ", " + InputTimeH.Text + ":" + InputTimeM.Text + ".\n" + location + "Please respond regarding availability."
                 + "\n\nThanks,\n" + Database.UserData.firstName + " " + Database.UserData.lastName + "\nWelsh Wanderers";
 
             return body;
@@ -178,6 +200,28 @@ namespace WelshWanderers
         {
             new WelshWanderers.Home().Show();
             this.Hide();
+        }
+
+        private void InputLeague_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ListSelectedPlayers.Items.Clear();
+            UpdateSearchFilter();
+        }
+
+        private void InputHomeMatch_CheckedChanged(object sender, EventArgs e)
+        {
+            if (InputHomeMatch.Checked == true)
+            {
+                InputAddressA.Text = "Internation Pool";
+                InputAddressB.Text = "Olympian Drive, Cardiff";
+                InputPostcode.Text = "CF11 0JS";
+            }
+            else if (InputHomeMatch.Checked == false)
+            {
+                InputAddressA.Text = "";
+                InputAddressB.Text = "";
+                InputPostcode.Text = "";
+            }
         }
     }
 }

@@ -66,14 +66,14 @@ namespace WelshWanderers
         private void EditOn()
         {
             ShowEditButtons();
-            EnableEditing();
+            EditingEnableChange(true);
         }
 
         private void EditOff()
         {
             LoadTrainingData();
             HideEditButtons();
-            UnenableEditing();
+            EditingEnableChange(false);
             LabelChangesMade.Text = "No Changes";
         }
 
@@ -85,13 +85,13 @@ namespace WelshWanderers
             LabelChangesMade.Show();
         }
 
-        private void EnableEditing()
+        private void EditingEnableChange(bool state)
         {
-            InputTeam.Enabled = true;
-            InputTimeH.Enabled = true;
-            InputTimeM.Enabled = true;
-            InputDuration.Enabled = true;
-            InputDate.Enabled = true;
+            InputTeam.Enabled = state;
+            InputTimeH.Enabled = state;
+            InputTimeM.Enabled = state;
+            InputDuration.Enabled = state;
+            InputDate.Enabled = state;
         }
 
         private void HideEditButtons()
@@ -102,14 +102,6 @@ namespace WelshWanderers
             LabelChangesMade.Hide();
         }
 
-        private void UnenableEditing()
-        {
-            InputTeam.Enabled = false;
-            InputTimeH.Enabled = false;
-            InputTimeM.Enabled = false;
-            InputDuration.Enabled = false;
-            InputDate.Enabled = false;
-        }
 
         private void NavToUpcomingTraining()
         {
@@ -129,7 +121,9 @@ namespace WelshWanderers
         private void ChangeTrainingData()
         {
             string[] data = { InputTeam.Text, InputTimeH.Text, InputTimeM.Text, InputDuration.Text, InputDate.Text };
-            Functions.FileEdit.EditLine("trainingDetails", 6, data, 0, Database.TrainingData.id.ToString());
+            int[] searchIndex = { 0 };
+            string[] searchData = { Database.TrainingData.id.ToString() };
+            Functions.FileEdit.EditLine("trainingDetails", 6, data, searchIndex, searchData);
         
             Database.TrainingData.team = InputTeam.Text;
             Database.TrainingData.timeH = Convert.ToInt16(InputTimeH.Text);
