@@ -25,7 +25,7 @@ namespace WelshWanderers.Functions
             string line = file.ReadLine();
             while (null != line)
             {
-                string[] section = line.Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] section = line.Split('|');
                 if (operation == "Remove")
                     RemoveFunc(lineNumber, lineCount, recordLength, localFile, section);
                 else if (operation == "Change")
@@ -60,30 +60,28 @@ namespace WelshWanderers.Functions
 
         private static void ChangeFunc(int lineCount, int recordLength, string[] data, string[,] localFile, string[] section, int[] searchIndex, string[] searchData)
         {
-            //// Compares for one-to-one function & many-to-many function.
-            //if (searchIndex.Length == 1 && )
-            //{
-            //    //One to one
-            //}
-            //else if (searchIndex.Length == 2)
-            //{
-            //    //Many to many
-            //}
-
-
-            if ((section[searchIndex[0]] == searchData[0] && section[searchIndex[1]] == searchData[1]) || (section[searchIndex[0]] == searchData[0] && searchData[1] == null))
+            int counter = 0;
+            for (int i = 0; i < searchIndex.Length; ++i)
             {
-                localFile[lineCount, 0] = section[0];
-                for (int i = 1; i < recordLength; ++i)
+                if (section[searchIndex[i]] == searchData[i])
+                    counter += 1;
+            }
+
+            if (counter == searchIndex.Length)
+            {
+                for (int j = 0; j < recordLength; ++j)
                 {
-                    localFile[lineCount, i] = data[i-1];
+                    if (j < searchIndex.Length)
+                        localFile[lineCount, j] = section[j];
+                    else
+                        localFile[lineCount, j] = data[j - searchIndex.Length];
                 }
             }
             else
             {
-                for (int j = 0; j < recordLength; ++j)
+                for (int k = 0; k < recordLength; ++k)
                 {
-                    localFile[lineCount, j] = section[j];
+                    localFile[lineCount, k] = section[k];
                 }
             }
         }

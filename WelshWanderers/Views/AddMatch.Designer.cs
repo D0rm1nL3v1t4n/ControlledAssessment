@@ -54,6 +54,7 @@
             this.InputFilter = new System.Windows.Forms.TextBox();
             this.ListSelectedPlayers = new System.Windows.Forms.CheckedListBox();
             this.LabelPlayersAdded = new System.Windows.Forms.Label();
+            this.EventPreviewEmail = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LabelHeader
@@ -307,11 +308,23 @@
             this.LabelPlayersAdded.TabIndex = 52;
             this.LabelPlayersAdded.Text = "No players\r\nadded";
             // 
+            // EventPreviewEmail
+            // 
+            this.EventPreviewEmail.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EventPreviewEmail.Location = new System.Drawing.Point(443, 492);
+            this.EventPreviewEmail.Name = "EventPreviewEmail";
+            this.EventPreviewEmail.Size = new System.Drawing.Size(89, 48);
+            this.EventPreviewEmail.TabIndex = 53;
+            this.EventPreviewEmail.Text = "Preview Email";
+            this.EventPreviewEmail.UseVisualStyleBackColor = true;
+            this.EventPreviewEmail.Click += new System.EventHandler(this.EventPreviewEmail_Click);
+            // 
             // AddMatch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(707, 552);
+            this.Controls.Add(this.EventPreviewEmail);
             this.Controls.Add(this.LabelPlayersAdded);
             this.Controls.Add(this.ListSelectedPlayers);
             this.Controls.Add(this.InputFilter);
@@ -346,6 +359,7 @@
 
         }
 
+
         #endregion
 
         private System.Windows.Forms.Label LabelHeader;
@@ -374,5 +388,6 @@
         private System.Windows.Forms.TextBox InputFilter;
         private System.Windows.Forms.CheckedListBox ListSelectedPlayers;
         private System.Windows.Forms.Label LabelPlayersAdded;
+        private System.Windows.Forms.Button EventPreviewEmail;
     }
 }

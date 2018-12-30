@@ -65,11 +65,8 @@ namespace WelshWanderers
 
         private void LoadAllPlayers()
         {
-            //Check if selected index count starts at 0 or 1 by default.
-            //This could be because 0 is first item which could be null.
-            //Fix if that is the case: 'allLeagues[InputLeague.SelectedIndex - 1, 0]'
-            string leagueFileName = allLeagues[InputLeague.SelectedIndex, 0];   
-            StreamReader file = new StreamReader(leagueFileName + "leagueStats.txt");   //Work out which file to read
+            string leagueFileName = allLeagues[InputLeague.SelectedIndex, 0];
+            StreamReader file = new StreamReader(@"Leagues\" + leagueFileName);   //Work out which file to read
             string line;
             while (null != (line = file.ReadLine()))
             {

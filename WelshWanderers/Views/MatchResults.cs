@@ -70,7 +70,7 @@ namespace WelshWanderers
 
         private void NavToViewMatchDetails()
         {
-            new ViewMatch().Show();
+            new ViewMatch("Match Results").Show();
             this.Hide();
         }
 

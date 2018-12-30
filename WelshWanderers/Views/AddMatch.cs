@@ -19,6 +19,7 @@ namespace WelshWanderers
         }
 
         private static string leagueTeam = "";
+        private static int matchID = -1;
 
         private void InputFilter_TextChanged(object sender, EventArgs e)
         {
@@ -51,7 +52,6 @@ namespace WelshWanderers
         private void ShowFilteredPlayers()
         {
             int index = InputLeague.SelectedIndex - 1;
-            //Dont want this here.
             StreamReader file = new StreamReader("userPersonalDetails.txt");
             string line;
             while (null != (line = file.ReadLine()))
@@ -115,23 +115,10 @@ namespace WelshWanderers
 
         private void EventNavSave_Click(object sender, EventArgs e)
         {
-            SendMatchEmail();
-            SaveMatchData();
-        }
-
-        private void SendMatchEmail()
-        {
             if (ListSelectedPlayers.Items.Count > 0)
             {
-                string[] emails = new string[ListSelectedPlayers.Items.Count];
-                int i = 0;
-                foreach (string player in ListSelectedPlayers.Items)
-                {
-                    emails[i] = GetPlayerEmails(player);
-                    ++i;
-                }
-                Functions.SendEmail.Email("Upcoming Match", MatchInfo(), emails);
-                MessageBox.Show("Email sent!");
+                SaveMatchData();
+                SaveAvailabilityData();
                 NavToHome();
             }
             else
@@ -140,23 +127,32 @@ namespace WelshWanderers
             }
         }
 
+        private void SaveAvailabilityData()
+        {
+            foreach (string player in ListSelectedPlayers.Items)
+            {
+                string userID = GetPlayerInfo(player, 0);
+                Functions.FileWrite.WriteData("matchAvailability", matchID + "|" + userID + "|" + "|");
+            }
+        }
+
         private void SaveMatchData()
         {
-            string data = Functions.FileSearch.GetNextId("matchDetails") + "|" + InputLeague.Text + "|" + InputOpponent.Text + "|" + InputDate.Text + "|" + InputTimeH.Text + "|" + InputTimeM.Text + "|" + InputAddressA.Text + "|" + InputAddressB.Text + "|" + InputPostcode.Text + "|";
+            matchID = Functions.FileSearch.GetNextId("matchDetails");
+            string data = matchID + "|" + InputLeague.Text + "|" + InputOpponent.Text + "|" + InputDate.Text + "|" + InputTimeH.Text + "|" + InputTimeM.Text + "|" + InputAddressA.Text + "|" + InputAddressB.Text + "|" + InputPostcode.Text + "|";
             Functions.FileWrite.WriteData("matchDetails", data);
         }
 
 
-        private string GetPlayerEmails(string playerName)
+        private string GetPlayerInfo(string playerName, int returnIndex)
         {
             StreamReader file = new StreamReader("userPersonalDetails.txt");
             string line;
             while (null != (line = file.ReadLine()))
             {
                 string[] section = line.Split('|');
-                MessageBox.Show(playerName + " | " + section[2] + " " + section[3]);
                 if (playerName == (section[2] + " " + section[3]))
-                    return section[5];
+                    return section[returnIndex];
             }
             return "";
         }
@@ -222,6 +218,36 @@ namespace WelshWanderers
                 InputAddressB.Text = "";
                 InputPostcode.Text = "";
             }
+        }
+
+        private void EventPreviewEmail_Click(object sender, EventArgs e)
+        {
+            if (ListSelectedPlayers.Items.Count > 0)
+            {
+                ShowPreviewEmail();
+                EventPreviewEmail.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Please select players for this match.");
+            }
+        }
+
+        private void ShowPreviewEmail()
+        {
+            Database.EmailData.body = MatchInfo();
+            Database.EmailData.subject = "Upcoming match";
+
+            string[] emails = new string[ListSelectedPlayers.Items.Count];
+            int i = 0;
+            foreach (string player in ListSelectedPlayers.Items)
+            {
+                emails[i] = GetPlayerInfo(player,5);
+                ++i;
+            }
+            Database.EmailData.recipients = emails;
+
+            new Views.PreviewEmail().Show();
         }
     }
 }

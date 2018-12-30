@@ -37,7 +37,7 @@
             this.NavAddTraining = new System.Windows.Forms.Button();
             this.NavUpcomingMatches = new System.Windows.Forms.Button();
             this.NavLeagueStatistics = new System.Windows.Forms.Button();
-            this.NavMatchNotifications = new System.Windows.Forms.Button();
+            this.NavMatchAvailability = new System.Windows.Forms.Button();
             this.EventNavSignOut = new System.Windows.Forms.Button();
             this.NavMyAccount = new System.Windows.Forms.Button();
             this.NavMatchResults = new System.Windows.Forms.Button();
@@ -141,16 +141,16 @@
             this.NavLeagueStatistics.UseVisualStyleBackColor = true;
             this.NavLeagueStatistics.Click += new System.EventHandler(this.NavLeagueStatistics_Click);
             // 
-            // NavMatchNotifications
+            // NavMatchAvailability
             // 
-            this.NavMatchNotifications.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavMatchNotifications.Location = new System.Drawing.Point(172, 67);
-            this.NavMatchNotifications.Name = "NavMatchNotifications";
-            this.NavMatchNotifications.Size = new System.Drawing.Size(95, 48);
-            this.NavMatchNotifications.TabIndex = 16;
-            this.NavMatchNotifications.Text = "Match Notifications";
-            this.NavMatchNotifications.UseVisualStyleBackColor = true;
-            this.NavMatchNotifications.Click += new System.EventHandler(this.NavMatchNotifications_Click);
+            this.NavMatchAvailability.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NavMatchAvailability.Location = new System.Drawing.Point(172, 67);
+            this.NavMatchAvailability.Name = "NavMatchAvailability";
+            this.NavMatchAvailability.Size = new System.Drawing.Size(95, 48);
+            this.NavMatchAvailability.TabIndex = 16;
+            this.NavMatchAvailability.Text = "Match Availability";
+            this.NavMatchAvailability.UseVisualStyleBackColor = true;
+            this.NavMatchAvailability.Click += new System.EventHandler(this.NavMatchNotifications_Click);
             // 
             // EventNavSignOut
             // 
@@ -193,7 +193,7 @@
             this.Controls.Add(this.NavMatchResults);
             this.Controls.Add(this.NavMyAccount);
             this.Controls.Add(this.EventNavSignOut);
-            this.Controls.Add(this.NavMatchNotifications);
+            this.Controls.Add(this.NavMatchAvailability);
             this.Controls.Add(this.NavLeagueStatistics);
             this.Controls.Add(this.NavUpcomingMatches);
             this.Controls.Add(this.NavAddTraining);
@@ -222,7 +222,7 @@
         private System.Windows.Forms.Button NavAddTraining;
         private System.Windows.Forms.Button NavUpcomingMatches;
         private System.Windows.Forms.Button NavLeagueStatistics;
-        private System.Windows.Forms.Button NavMatchNotifications;
+        private System.Windows.Forms.Button NavMatchAvailability;
         private System.Windows.Forms.Button EventNavSignOut;
         private System.Windows.Forms.Button NavMyAccount;
         private System.Windows.Forms.Button NavMatchResults;

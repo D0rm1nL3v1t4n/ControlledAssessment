@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
 
 namespace WelshWanderers.Functions
 {
@@ -94,7 +95,7 @@ namespace WelshWanderers.Functions
             StreamReader file = new StreamReader(fileName + ".txt");
             string line = file.ReadLine();
             while (null != line)
-            {
+            { 
                 string[] section = line.Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
                 if (section[searchIndexA] == searchDataA && section[searchIndexB] == searchDataB)
                 {

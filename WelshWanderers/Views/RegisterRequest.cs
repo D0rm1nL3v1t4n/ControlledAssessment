@@ -35,6 +35,7 @@ namespace WelshWanderers
             if (allValid == 0 && Functions.ValidPassword.IsPasswordValid(InputPassword.Text, InputConfirmPassword.Text) == true)
             {
                 WriteRequestData();
+                EmailRegistrationRequest();
                 MessageBox.Show("Your registration request has been made!");
                 NavToSignIn();
             }
@@ -122,6 +123,13 @@ namespace WelshWanderers
                "Personal Details: This information is required to be stored by the club for all players & coaches.\n\n" +
                "Account Details: This information is to be used to sign into the system, or reset your password if requried.\n\n\n" +
                "You cannot use the symbol '|' in any of the inputs.");
+        }
+
+        private void EmailRegistrationRequest()
+        {
+            string body = "This is an email to confirm your registration request (username: " + InputUsername.Text + ") to the Welsh Wanderers system.\n\nYour request must be accepted for you to be able to use the system.\nYou will get a confirmation email regarding your request once it has been processed.\n\n\nWelsh Wanderers";
+            string[] recipient = { InputEmailAddress.Text };
+            Functions.SendEmail.Email("Registration Request", body, recipient);
         }
     }
 }

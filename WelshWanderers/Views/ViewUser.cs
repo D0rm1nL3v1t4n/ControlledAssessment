@@ -12,7 +12,7 @@ namespace WelshWanderers
 {
     public partial class ViewUser : Form
     {
-        private static string userID;
+        private static string userID = "-1";
         private static string password;
         private static string accessLevel = "";
         private static string team = "";

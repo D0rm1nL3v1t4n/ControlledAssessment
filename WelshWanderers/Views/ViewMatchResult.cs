@@ -57,12 +57,13 @@ namespace WelshWanderers
 
         private void LoadData()
         {
-            string[] line = Functions.FileSearch.ReturnLine("matchStats", Database.MatchData.id.ToString(), 0).Split('|');
+            string line = Functions.FileSearch.ReturnLine("matchStats", Database.MatchData.id.ToString(), 0);
+            string[] section = line.Split('|');
             InputOpponent.Text = Database.MatchData.opponent;
-            InputWanderersGoals.Text = line[1];
-            InputOpponent.Text = line[2];
-            InputWanderersMajors.Text = line[3];
-            InputOpponentMajorFouls.Text = line[4];
+            InputWanderersGoals.Text = section[1];
+            InputOpponent.Text = section[2];
+            InputWanderersMajors.Text = section[3];
+            InputOpponentMajorFouls.Text = section[4];
             StoreDataLocal();
         }
 

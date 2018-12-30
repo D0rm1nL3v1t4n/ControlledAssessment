@@ -31,7 +31,7 @@ namespace WelshWanderers
             while (null != (line = file.ReadLine()))
             {
                 string[] section = line.Split('|');
-                TableViewMatches.Rows.Add(section[0], section[1], section[2], section[3], section[4], section[5], section[6], section[7], section[8]);
+                TableViewMatches.Rows.Add(section[0], section[1], section[2], section[3], section[4] + ":" + section[5], section[6], section[7], section[8]);
             }
             file.Close();
         }
@@ -63,23 +63,22 @@ namespace WelshWanderers
         private void NavEdit_Click(object sender, EventArgs e)
         {
             LoadMatchData();
-            new WelshWanderers.ViewMatch().Show();
+            new WelshWanderers.ViewMatch("Upcoming Matches").Show();
             this.Hide();
         }
 
         private void LoadMatchData()
         {
-            string[] time = TableViewMatches.SelectedRows[0].Cells[5].Value.ToString().Split(':');
+            string[] time = TableViewMatches.SelectedRows[0].Cells[4].Value.ToString().Split(':');
             Database.MatchData.id = Convert.ToInt16(TableViewMatches.SelectedRows[0].Cells[0].Value);
             Database.MatchData.league = TableViewMatches.SelectedRows[0].Cells[1].Value.ToString();
             Database.MatchData.opponent = TableViewMatches.SelectedRows[0].Cells[2].Value.ToString();
-            Database.MatchData.team = TableViewMatches.SelectedRows[0].Cells[3].Value.ToString();
-            Database.MatchData.date = TableViewMatches.SelectedRows[0].Cells[4].Value.ToString();
+            Database.MatchData.date = TableViewMatches.SelectedRows[0].Cells[3].Value.ToString();
             Database.MatchData.timeH = Convert.ToInt16(time[0]);
             Database.MatchData.timeM= Convert.ToInt16(time[1]);
-            Database.MatchData.addressLineA = TableViewMatches.SelectedRows[0].Cells[6].Value.ToString();
-            Database.MatchData.addressLineB = TableViewMatches.SelectedRows[0].Cells[7].Value.ToString();
-            Database.MatchData.postcode= TableViewMatches.SelectedRows[0].Cells[8].Value.ToString();
+            Database.MatchData.addressLineA = TableViewMatches.SelectedRows[0].Cells[5].Value.ToString();
+            Database.MatchData.addressLineB = TableViewMatches.SelectedRows[0].Cells[6].Value.ToString();
+            Database.MatchData.postcode= TableViewMatches.SelectedRows[0].Cells[7].Value.ToString();
         }
 
         private void NavViewResult_Click(object sender, EventArgs e)
@@ -87,7 +86,7 @@ namespace WelshWanderers
             //Change to prevent navigation if match result for that match does not exist.
             if (TableViewMatches.SelectedRows.Count > 0)
             { 
-                if (Convert.ToDateTime(TableViewMatches.SelectedRows[0].Cells[4].Value) > DateTime.Now)
+                if (Convert.ToDateTime(TableViewMatches.SelectedRows[0].Cells[3].Value) > DateTime.Now)
                 {
                     MessageBox.Show("Match not taken place yet.\n\nHey Doc, pretty sure we ain't time travelling yet - Marty.");
                 }
@@ -104,9 +103,16 @@ namespace WelshWanderers
 
         private void NavToMatchResult()
         {
-            LoadMatchData();
-            new WelshWanderers.ViewMatchResult().Show();
-            this.Hide();
+            if (null != Functions.FileSearch.ReturnLine("matchStats", TableViewMatches.SelectedRows[0].Cells[0].Value.ToString(), 0))
+            {
+                LoadMatchData();
+                new WelshWanderers.ViewMatchResult().Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("No match result yet.");
+            }
         }
     }
 }

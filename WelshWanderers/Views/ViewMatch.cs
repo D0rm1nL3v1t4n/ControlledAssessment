@@ -7,10 +7,13 @@ namespace WelshWanderers
 {
     public partial class ViewMatch : Form
     {
-        public ViewMatch()
+        public ViewMatch(string previousScreen)
         {
+            previous = previousScreen;
             InitializeComponent();
         }
+
+        private static string previous;
 
         public static int changesMade = 0;
         public static bool league = false;
@@ -26,8 +29,16 @@ namespace WelshWanderers
         {
             LoadMatchData();
             EditOff();
+            AccessLevelButtons();
         }
 
+        private void AccessLevelButtons()
+        {
+            if (Database.UserData.accessLevel == "Player")
+            {
+                EventEdit.Hide();
+            }
+        }
 
         private void NavBack_Click(object sender, EventArgs e)
         {
@@ -35,9 +46,35 @@ namespace WelshWanderers
             {
                 if (MessageBox.Show("Are you sure? Changes will not be saved.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    NavToUpcomingMatches();
+                    Navigation();   
+                }
+                else
+                {
+                    return;
                 }
             }
+            Navigation();
+        }
+
+        private void Navigation()
+        {
+            if (previous == "Match Availability")
+                NavToMatchAvailability();
+            else if (previous == "Upcoming Matches")
+                NavToUpcomingMatches();
+            else if (previous == "Match Results")
+                NavToMatchResults();
+        }
+
+        private void NavToMatchResults()
+        {
+            new MatchResults().Show();
+            this.Hide();
+        }
+
+        private void NavToMatchAvailability()
+        {
+            this.Hide();
         }
 
         private void EventEdit_Click(object sender, EventArgs e)
@@ -119,7 +156,7 @@ namespace WelshWanderers
 
         private void LoadLeagues()
         {
-            string[] file = File.ReadAllLines("leagues");
+            string[] file = File.ReadAllLines("leagues.txt");
             foreach (string line in file)
             {
                 string[] section = line.Split('|');

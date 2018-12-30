@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\EmailData.cs" />
     <Compile Include="Database\LeagueData.cs" />
     <Compile Include="Database\MatchData.cs" />
     <Compile Include="Database\TrainingData.cs" />
@@ -85,6 +86,12 @@
     <Compile Include="Views\MatchResults.Designer.cs">
       <DependentUpon>MatchResults.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\PreviewEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PreviewEmail.Designer.cs">
+      <DependentUpon>PreviewEmail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ViewMatchResult.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,11 +110,11 @@
     <Compile Include="Views\EditLeague.Designer.cs">
       <DependentUpon>EditLeague.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\MatchNotifications.cs">
+    <Compile Include="Views\MatchAvailability.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\MatchNotifications.Designer.cs">
-      <DependentUpon>MatchNotifications.cs</DependentUpon>
+    <Compile Include="Views\MatchAvailability.Designer.cs">
+      <DependentUpon>MatchAvailability.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Testing.cs">
       <SubType>Form</SubType>
@@ -249,6 +256,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ManageUsers.resx">
       <DependentUpon>ManageUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MatchAvailability.resx">
+      <DependentUpon>MatchAvailability.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PreviewEmail.resx">
+      <DependentUpon>PreviewEmail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ViewMatch.resx">
       <DependentUpon>ViewMatch.cs</DependentUpon>

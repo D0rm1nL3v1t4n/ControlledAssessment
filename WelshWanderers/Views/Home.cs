@@ -38,7 +38,7 @@ namespace WelshWanderers
             NavUpcomingTrainings.Hide();
             NavViewLeagues.Hide();
             NavLeagueStatistics.Hide();
-            NavMatchNotifications.Hide();
+            NavMatchAvailability.Hide();
             NavUserJoinRequests.Hide();
             NavManageUsers.Hide();
         }
@@ -64,7 +64,7 @@ namespace WelshWanderers
             NavUpcomingMatches.Show();
             NavUpcomingTrainings.Show();
             NavLeagueStatistics.Show();
-            NavMatchNotifications.Show();
+            NavMatchAvailability.Show();
             NavMatchResults.Show();
         }
 
@@ -81,7 +81,7 @@ namespace WelshWanderers
 
         private void NavUserJoinRequests_Click(object sender, EventArgs e)
         {
-            if (File.ReadAllLines("userJoinRequests.txt").Count() == 0)
+            if (File.ReadAllLines("userJoinRequests.txt").Length == 0)
             {
                 MessageBox.Show("No new reigstration join requests have been made.");
             }
@@ -119,7 +119,7 @@ namespace WelshWanderers
 
         private void NavMatchNotifications_Click(object sender, EventArgs e)
         {
-            new WelshWanderers.MatchNotifications().Show();
+            new WelshWanderers.MatchAvailability().Show();
             HideHome();
         }
 

@@ -17,7 +17,8 @@ namespace WelshWanderers
             InitializeComponent();
         }
 
-        public static string password = "";
+        private static string password = "";
+        private static string team = "";
 
         private void UserJoinRequests_Load(object sender, EventArgs e)
         {
@@ -37,6 +38,7 @@ namespace WelshWanderers
 
         private void LoadNextUser()
         {
+            InputAccessLevel.Text = "";
             string line = Functions.FileSearch.ReturnLine("userJoinRequests", "0", 0);
             if (null != line)
             {
@@ -51,6 +53,7 @@ namespace WelshWanderers
                 InputUsername.Text = section[8];
                 password = section[9];
                 InputTeam.Text = section[10];
+                team = section[10];
             }
             else
             {
@@ -61,10 +64,17 @@ namespace WelshWanderers
 
         private void EventAcceptUser_Click(object sender, EventArgs e)
         {
+            if (InputAccessLevel.Text == "Player" && null == InputTeam.Text)
+            {
+                MessageBox.Show("Please select a team for this player.\nAll players must be assigned to a team.");
+                return;
+            }
+
             if (null != InputAccessLevel.Text)
             {
                 WriteData(Functions.FileSearch.GetNextId("userPersonalDetails").ToString());
                 DeleteRequest();
+                EmailAcceptUser();
                 MessageBox.Show("User has been accepted.");
                 LoadNextUser();
             }
@@ -86,13 +96,14 @@ namespace WelshWanderers
         private void EventRejectUser_Click(object sender, EventArgs e)
         {
             DeleteRequest();
+            EmailRejectUser();
             MessageBox.Show("User has been rejected.");
             LoadNextUser();
         }
 
         private void DeleteRequest()
         {
-            Functions.FileDelete.RemoveLine("userJoinRequests", 10, 1);
+            Functions.FileDelete.RemoveLine("userJoinRequests", 11, 1);
         }
 
         private void NavHome_Click(object sender, EventArgs e)
@@ -115,11 +126,35 @@ namespace WelshWanderers
         {
             if (InputAccessLevel.Text == "Player")
             {
-                LabelTeam.Enabled = true;
-                LabelTeam.Text = "";
+                if (team != "")
+                {
+                    InputTeam.Text = team;
+                }
+                else
+                {
+                    InputTeam.Enabled = true;
+                    MessageBox.Show("Please select a team for this player.\nAll players must be assigned to a team.");
+                }
             }
             else
-                LabelTeam.Enabled = false;
+            {
+                InputTeam.Enabled = false;
+                InputTeam.Text = "";
+            }
+        }
+
+        private void EmailAcceptUser()
+        {
+            string body = "This is an email to inform you that your registration request has been processed.\n\nWe are glad to inform you that your request has been accepted.\nYou may now access the system with your username: " + InputUsername.Text + ", and your password for your account.\n\n\nThanks,\nWelsh Wanderers";
+            string[] recipient = { InputEmailAddress.Text };
+            Functions.SendEmail.Email("Registration Request Update", body, recipient);
+        }
+
+        private void EmailRejectUser()
+        {
+            string body = "This is an email to inform you that your registration request has been processed.\n\nUnfortunatly your request has been rejected.\nAlthough you may make another request, we cannot garantee that any request is accepted.\n\n\nThanks,\nWelsh Wanderers";
+            string[] recipient = { InputEmailAddress.Text };
+            Functions.SendEmail.Email("Registration Request Update", body, recipient);
         }
     }
 }

@@ -287,6 +287,10 @@
             this.InputTeam.Enabled = false;
             this.InputTeam.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputTeam.FormattingEnabled = true;
+            this.InputTeam.Items.AddRange(new object[] {
+            "Junior",
+            "Men",
+            "Women"});
             this.InputTeam.Location = new System.Drawing.Point(128, 235);
             this.InputTeam.Name = "InputTeam";
             this.InputTeam.Size = new System.Drawing.Size(125, 27);
