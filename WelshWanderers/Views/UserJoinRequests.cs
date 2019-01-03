@@ -113,8 +113,8 @@ namespace WelshWanderers
 
         private void NavToHome()
         {
-            new WelshWanderers.Home().Show();
-            this.Hide();
+            new Home().Show();
+            Hide();
         }
 
         private void EventHelp_Click(object sender, EventArgs e)

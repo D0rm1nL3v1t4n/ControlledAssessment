@@ -13,7 +13,7 @@ namespace WelshWanderers
     public partial class ViewUser : Form
     {
         private static string userID = "-1";
-        private static string password;
+        private static string password = "";
         private static string accessLevel = "";
         private static string team = "";
         private static int changesMade = 0;
@@ -23,12 +23,13 @@ namespace WelshWanderers
         public ViewUser(string id)
         {
             InitializeComponent();
-            string userID = id;
+            userID = id;
         }
 
         private void ViewUser_Load(object sender, EventArgs e)
         {
             LoadUserData();
+            EditOff();
         }
 
         private void NavBack_Click(object sender, EventArgs e)
@@ -37,7 +38,9 @@ namespace WelshWanderers
             {
                 if (MessageBox.Show("Are you sure? Changes will not be saved.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     NavToManageUsers();
+                return;
             }
+            NavToManageUsers();
         }
 
         private void EventSave_Click(object sender, EventArgs e)
@@ -55,7 +58,10 @@ namespace WelshWanderers
 
         private void ChangeData()
         {
-            string[] data = { InputUsername.Text, password, InputAccessLevel.Text, InputTeam.Text };
+            string newTeam = InputTeam.Text;
+            if (accessLevel == "Player" && accessLevel != InputAccessLevel.Text)
+                newTeam = "";
+            string[] data = { InputUsername.Text, password, InputAccessLevel.Text, newTeam };
             int[] searchIndex = { 0 };
             string[] searchData = { userID };
             Functions.FileEdit.EditLine("userAccountDetails", 5, data, searchIndex, searchData);
@@ -63,8 +69,8 @@ namespace WelshWanderers
 
         private void NavToManageUsers()
         {
-            new WelshWanderers.ManageUsers().Show();
-            this.Hide();
+            new ManageUsers().Show();
+            Hide();
         }
 
         private void EventCancelEdit_Click(object sender, EventArgs e)
@@ -85,9 +91,9 @@ namespace WelshWanderers
 
         private string[] GetData()
         {
-            string dataLine = "";
-            dataLine += Functions.FileSearch.ReturnLine("userPersonalDetails", userID, 0);
-            dataLine += Functions.FileSearch.ReturnLine("userAccountDetails", userID, 0);
+            string personalDetails = Functions.FileSearch.ReturnLine("userPersonalDetails", userID, 0);
+            string accountDetails = Functions.FileSearch.ReturnLine("userAccountDetails", userID, 0);
+            string dataLine = personalDetails + accountDetails;
             string[] data = dataLine.Split('|');
             return data;
         }
@@ -108,6 +114,7 @@ namespace WelshWanderers
             password = data[10];
             accessLevel = data[11];
             team = data[12];
+            MessageBox.Show(accessLevel);
         }
 
         private void ReloadData()
@@ -123,6 +130,8 @@ namespace WelshWanderers
             EventEdit.Hide();
             EventCancelEdit.Show();
             EventSave.Show();
+            LabelChangesMade.Show();
+            LabelChangesMade.Text = "No Changes";
         }
 
         private void EditOff()
@@ -133,7 +142,7 @@ namespace WelshWanderers
             EventCancelEdit.Hide();
             EventSave.Hide();
             ReloadData();
-            LabelChangesMade.Text = "No Changes";
+            LabelChangesMade.Hide();
         }
 
         private void ShowChangesMade()
@@ -156,20 +165,17 @@ namespace WelshWanderers
                 return false;
             }
 
-            if (changedVal == true)
-                return true;
-            else
-                return false;
+            return changedVal;
         }
 
         private void InputAccessLevel_TextChanged(object sender, EventArgs e)
         {
-            DetailsChanged(InputAccessLevel.Text, accessLevel, accessLevelChanged);
+            accessLevelChanged = DetailsChanged(InputAccessLevel.Text, accessLevel, accessLevelChanged);
         }
 
         private void InputTeam_TextChanged(object sender, EventArgs e)
         {
-            DetailsChanged(InputTeam.Text, team, teamChanged);
+            teamChanged = DetailsChanged(InputTeam.Text, team, teamChanged);
         }
     }
 }

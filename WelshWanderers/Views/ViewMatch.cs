@@ -69,12 +69,12 @@ namespace WelshWanderers
         private void NavToMatchResults()
         {
             new MatchResults().Show();
-            this.Hide();
+            Hide();
         }
 
         private void NavToMatchAvailability()
         {
-            this.Hide();
+            Hide();
         }
 
         private void EventEdit_Click(object sender, EventArgs e)
@@ -166,8 +166,8 @@ namespace WelshWanderers
 
         private void NavToUpcomingMatches()
         {
-            new WelshWanderers.UpcomingMatches().Show();
-            this.Hide();
+            new UpcomingMatches().Show();
+            Hide();
         }
 
         private void LoadMatchData()

@@ -13,9 +13,7 @@ namespace WelshWanderers
 {
     public partial class LeagueStats : Form
     {
-        private static string[,] allLeagues;
-
-        public LeagueStats()
+         public LeagueStats()
         {
             InitializeComponent();
         }
@@ -27,8 +25,8 @@ namespace WelshWanderers
 
         private void NavToHome()
         {
-            new WelshWanderers.Home().Show();
-            this.Hide();
+            new Home().Show();
+            Hide();
         }
 
         private void LeagueStats_Load(object sender, EventArgs e)
@@ -39,45 +37,40 @@ namespace WelshWanderers
         private void LoadData()
         {
             GetAllLeagues();
-            ShowLeagues();
             LoadAllPlayers();
-        }
-
-        private void ShowLeagues()
-        {
-            foreach (string league in allLeagues)
-                InputLeague.Items.Add(league[0]);
         }
 
         private void GetAllLeagues()
         {
             StreamReader file = new StreamReader("leagues.txt");
             string line;
-            int i = 0;
             while (null != (line = file.ReadLine()))
             {
                 string[] section = line.Split('|');
-                allLeagues[i,0] = section[1];
-                allLeagues[i,1] = section[2];
-                ++i;
+                InputLeague.Items.Add(section[1]);
+                InputLeagueFile.Items.Add(section[2]);
             }
         }
 
         private void LoadAllPlayers()
         {
-            string leagueFileName = allLeagues[InputLeague.SelectedIndex, 0];
+            string leagueFileName = InputLeagueFile.SelectedItem.ToString();
             StreamReader file = new StreamReader(@"Leagues\" + leagueFileName);   //Work out which file to read
             string line;
             while (null != (line = file.ReadLine()))
             {
                 string[] section = line.Split('|');
-                
+                string[] playerName = Functions.FileSearch.ReturnLine("userPersonalDetails", section[0], 0).Split('|');
+                TableLeagueStats.Rows.Add(section[0], playerName[2] + " " + playerName[3], section[1], section[2], section[3]);
             }
+            TableLeagueStats.Sort(ColPlayed, ListSortDirection.Ascending);
         }
 
         private void InputLeague_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadData();
+            LoadAllPlayers();
         }
+
+
     }
 }

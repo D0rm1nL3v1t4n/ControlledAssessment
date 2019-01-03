@@ -27,8 +27,8 @@ namespace WelshWanderers
 
         private void NavToViewMatches()
         {
-            new WelshWanderers.UpcomingMatches().Show();
-            this.Hide();
+            new UpcomingMatches().Show();
+            Hide();
         }
 
         private void AddResult_Load(object sender, EventArgs e)
@@ -47,8 +47,11 @@ namespace WelshWanderers
             string[] userIDs = Functions.FileSearch.ReturnSegment("matchAvailability", Database.MatchData.id.ToString(), 0, 1, true).Split('|');
             for (int i = 0; i < userIDs.Length; ++i)
             {
-                string[] line = Functions.FileSearch.ReturnLine("userPersonalDetails", userIDs[i], 0).Split('|');
-                TableAddMatchResult.Rows.Add(userIDs[i], line[2] + " " + line[3]);
+                if (Functions.FileSearch.ReturnSegment("matchAvailability", userIDs[i], 1, 2) != null)
+                {
+                    string[] line = Functions.FileSearch.ReturnLine("userPersonalDetails", userIDs[i], 0).Split('|');
+                    TableAddMatchResult.Rows.Add(userIDs[i], line[2] + " " + line[3]);
+                }
             }
         }
 
@@ -56,6 +59,7 @@ namespace WelshWanderers
         {
             SavePlayerMatchData();
             SaveMatchResult();
+            SaveLeagueData();
         }
 
         private void SavePlayerMatchData()
@@ -104,6 +108,34 @@ namespace WelshWanderers
                     total += System.Convert.ToInt16(majors);
             }
             return total;
+        }
+
+        private void SaveLeagueData()
+        {
+            string fileName = Functions.FileSearch.ReturnSegment("leagues", Database.MatchData.league, 1, 2);
+            for (int i = 0; i < TableAddMatchResult.Rows.Count; ++i)
+            {
+                string line;
+                int played = 1;
+                int goals = Convert.ToInt16(TableAddMatchResult.Rows[i].Cells[2].Value.ToString());
+                int majors = Convert.ToInt16(TableAddMatchResult.Rows[i].Cells[3].Value.ToString());
+                if (null != (line = Functions.FileSearch.ReturnLine(fileName, TableAddMatchResult.Rows[i].Cells[0].Value.ToString(), 0)))
+                {
+                    string[] section = line.Split('|');
+                    played += Convert.ToInt16(section[1]);
+                    goals += Convert.ToInt16(section[2]);
+                    majors += Convert.ToInt16(section[3]);
+                    string[] data = { played.ToString(), goals.ToString(), majors.ToString() };
+                    int[] searchIndex = { 0 };
+                    string[] searchData = { TableAddMatchResult.Rows[i].Cells[0].Value.ToString() };
+                    Functions.FileEdit.EditLine(fileName, 4, data, searchIndex, searchData);
+                }
+                else
+                {
+                    string data = TableAddMatchResult.Rows[i].Cells[0] + "|" + played + "|" + goals + "|" + majors + "|";
+                    Functions.FileWrite.WriteData(fileName, data);
+                }
+            }
         }
     }
 }

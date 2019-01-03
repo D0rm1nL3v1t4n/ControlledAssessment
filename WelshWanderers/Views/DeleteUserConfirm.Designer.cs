@@ -247,6 +247,7 @@
             this.NavCancel.TabIndex = 66;
             this.NavCancel.Text = "Cancel";
             this.NavCancel.UseVisualStyleBackColor = true;
+            this.NavCancel.Click += new System.EventHandler(this.NavCancel_Click);
             // 
             // DeleteUserConfirm
             // 

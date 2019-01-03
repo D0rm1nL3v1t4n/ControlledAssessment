@@ -70,12 +70,12 @@ namespace WelshWanderers
 
         private void HideHome()
         {
-            this.Hide();
+            Hide();
         }
 
         private void NavManageUsers_Click(object sender, EventArgs e)
         {
-            new WelshWanderers.ManageUsers().Show();
+            new ManageUsers().Show();
             HideHome();
         }
 
@@ -87,63 +87,63 @@ namespace WelshWanderers
             }
             else
             {
-                new WelshWanderers.UserJoinRequests().Show();
+                new UserJoinRequests().Show();
                 HideHome();
             }
         }
 
         private void NavViewLeagues_Click(object sender, EventArgs e)
         {
-            new WelshWanderers.ManageLeagues().Show();
+            new ManageLeagues().Show();
             HideHome();
         }
 
         private void NavAddMatch_Click(object sender, EventArgs e)
         {
-            new WelshWanderers.AddMatch().Show();
+            new AddMatch().Show();
             HideHome();
         }
 
         private void NavAddTraining_Click(object sender, EventArgs e)
         {
-            new WelshWanderers.AddTraining().Show();
+            new AddTraining().Show();
             HideHome();
         }
 
 
         private void NavLeagueStatistics_Click(object sender, EventArgs e)
         {
-            new WelshWanderers.LeagueStats().Show();
+            new LeagueStats().Show();
             HideHome();
         }
 
         private void NavMatchNotifications_Click(object sender, EventArgs e)
         {
-            new WelshWanderers.MatchAvailability().Show();
+            new MatchAvailability().Show();
             HideHome();
         }
 
         private void NavUpcomingMatches_Click(object sender, EventArgs e)
         {
-            new WelshWanderers.UpcomingMatches().Show();
+            new UpcomingMatches().Show();
             HideHome();
         }
 
         private void NavUpcomingTrainings_Click(object sender, EventArgs e)
         {
-            new WelshWanderers.UpcomingTrainings().Show();
+            new UpcomingTrainings().Show();
             HideHome();
         }
 
         private void NavMyAccount_Click(object sender, EventArgs e)
         {
-            new WelshWanderers.MyAccount().Show();
+            new MyAccount().Show();
             HideHome();
         }
         
         private void NavViewMatchResults_Click(object sender, EventArgs e)
         {
-            new WelshWanderers.MatchResults().Show();
+            new MatchResults().Show();
             HideHome();
         }
 
@@ -151,14 +151,14 @@ namespace WelshWanderers
         {
             if (MessageBox.Show("Sign out?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                new WelshWanderers.SignIn().Show();
+                new SignIn().Show();
                 var userData = new Database.UserData();
                 var matchData = new Database.MatchData();
                 var trainingData = new Database.TrainingData();
                 userData.ClearUserData();
                 matchData.ClearMatchData();
                 trainingData.ClearTrainingData();
-                this.Hide();
+                Hide();
             }
         }
     }

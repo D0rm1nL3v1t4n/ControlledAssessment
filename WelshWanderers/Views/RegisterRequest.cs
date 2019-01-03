@@ -25,8 +25,8 @@ namespace WelshWanderers
 
         private void NavToSignIn()
         {
-            new WelshWanderers.SignIn().Show();
-            this.Hide();
+            new SignIn().Show();
+            Hide();
         }
 
         private void EventNavRegisterRequest_Click(object sender, EventArgs e)

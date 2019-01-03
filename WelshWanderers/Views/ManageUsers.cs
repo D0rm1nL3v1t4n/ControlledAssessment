@@ -27,9 +27,9 @@ namespace WelshWanderers
             {
                 string[] sectionA = lineA.Split('|');
                 string[] sectionB = lineB.Split('|');
-                if (sectionA[3] == InputAccessLevel.Text || InputAccessLevel.Text == null)
+                if (sectionA[3] == InputAccessLevel.Text || InputAccessLevel.Text == "")
                 {
-                    if ((sectionB[2] + " " + sectionB[3]).Contains(InputName.Text) || InputName.Text == null)
+                    if ((sectionB[2] + " " + sectionB[3]).ToLower().Contains(InputName.Text.ToLower()) || InputName.Text == "")
                     {
                         TableManageUsers.Rows.Add(sectionA[0], sectionA[1], sectionB[2], sectionB[3], sectionA[3], sectionA[4]);
                     }
@@ -41,6 +41,7 @@ namespace WelshWanderers
 
         private void EventFilter_Click(object sender, EventArgs e)
         {
+            TableManageUsers.Rows.Clear();
             LoadTableData();
         }
 
@@ -51,14 +52,14 @@ namespace WelshWanderers
 
         private void NavToHome()
         {
-            new WelshWanderers.Home().Show();
-            this.Hide();
+            new Home().Show();
+            Hide();
         }
 
         private void NavView_Click(object sender, EventArgs e)
         {
-            new WelshWanderers.ViewUser(TableManageUsers.SelectedRows[0].Cells[0].Value.ToString()).Show();
-            this.Hide();
+            new ViewUser(TableManageUsers.SelectedRows[0].Cells[0].Value.ToString()).Show();
+            Hide();
         }
 
         private void EventDelete_Click(object sender, EventArgs e)

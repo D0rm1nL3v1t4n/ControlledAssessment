@@ -54,7 +54,7 @@ namespace WelshWanderers
         private void NavToHome()
         {
             new Home().Show();
-            this.Hide();
+            Hide();
         }
 
         private void EventMatchDetails_Click(object sender, EventArgs e)

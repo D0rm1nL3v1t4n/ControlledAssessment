@@ -240,8 +240,8 @@ namespace WelshWanderers
 
         private void NavToMatchResults()
         {
-            new WelshWanderers.MatchResults().Show();
-            this.Hide();
+            new MatchResults().Show();
+            Hide();
         }
 
         private void InputWanderersGoals_TextChanged(object sender, EventArgs e)

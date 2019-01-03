@@ -36,8 +36,8 @@ namespace WelshWanderers
 
         private void NavRegisterRequest_Click(object sender, EventArgs e)
         {
-            new WelshWanderers.RegisterRequest().Show();
-            this.Hide();
+            new RegisterRequest().Show();
+            Hide();
         }
 
         private bool ComparePasswords(string password) 
@@ -67,14 +67,14 @@ namespace WelshWanderers
         }
         private void LoadHome()
         {
-            new WelshWanderers.Home().Show();
-            this.Hide();
+            new Home().Show();
+            Hide();
         }
 
         private void NavResetPassword_Click(object sender, EventArgs e)
         {
-            new WelshWanderers.ResetPassword().Show();
-            this.Hide();
+            new ResetPassword().Show();
+            Hide();
         }
     }
 }

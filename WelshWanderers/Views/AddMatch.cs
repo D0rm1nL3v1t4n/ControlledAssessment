@@ -194,8 +194,8 @@ namespace WelshWanderers
 
         private void NavToHome()
         {
-            new WelshWanderers.Home().Show();
-            this.Hide();
+            new Home().Show();
+            Hide();
         }
 
         private void InputLeague_SelectedIndexChanged(object sender, EventArgs e)

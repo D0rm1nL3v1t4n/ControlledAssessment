@@ -24,15 +24,15 @@ namespace WelshWanderers
 
         private void EventNavCreate_Click(object sender, EventArgs e)
         {
-            new WelshWanderers.Views.CreateLeague().Show();
-            this.Hide();
+            new Views.CreateLeague().Show();
+            Hide();
         }
 
         private void EventNavEdit_Click(object sender, EventArgs e)
         {
             SaveLeagueDatabase();
-            new WelshWanderers.Views.EditLeague().Show();
-            this.Hide();
+            new Views.EditLeague().Show();
+            Hide();
         }
 
         private void SaveLeagueDatabase()
@@ -74,8 +74,8 @@ namespace WelshWanderers
 
         private void NavToHome()
         {
-            new WelshWanderers.Home().Show();
-            this.Hide();
+            new Home().Show();
+            Hide();
         }
 
         

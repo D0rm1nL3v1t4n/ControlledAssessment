@@ -56,8 +56,8 @@ namespace WelshWanderers
 
         private void NavToEditTraining()
         {
-            new WelshWanderers.ViewTrainings().Show();
-            this.Hide();
+            new ViewTrainings().Show();
+            Hide();
         }
 
         private void HideEditButton()
@@ -72,8 +72,8 @@ namespace WelshWanderers
 
         private void NavToHome()
         {
-            new WelshWanderers.Home().Show();
-            this.Hide();
+            new Home().Show();
+            Hide();
         }
     }
 }

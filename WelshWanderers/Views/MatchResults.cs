@@ -25,7 +25,7 @@ namespace WelshWanderers
 
         private void NavToHome()
         {
-            new WelshWanderers.Home().Show();
+            new Home().Show();
             Hide();
         }
 
@@ -71,14 +71,14 @@ namespace WelshWanderers
         private void NavToViewMatchDetails()
         {
             new ViewMatch("Match Results").Show();
-            this.Hide();
+            Hide();
         }
 
         private void NavViewMatch_Click(object sender, EventArgs e)
         {
             Database.MatchData.opponent = TableMatchResults.SelectedRows[0].Cells[1].Value.ToString();
             new ViewMatchResult().Show();
-            this.Hide();
+            Hide();
         }
     }
 }

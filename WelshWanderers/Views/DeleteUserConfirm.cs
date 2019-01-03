@@ -117,5 +117,10 @@ namespace WelshWanderers.Views
                 return false;
             }
         }
+
+        private void NavCancel_Click(object sender, EventArgs e)
+        {
+            Hide();
+        }
     }
 }

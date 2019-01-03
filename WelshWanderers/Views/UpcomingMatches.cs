@@ -20,7 +20,8 @@ namespace WelshWanderers
 
         private void ViewMatch_Load(object sender, EventArgs e)
         {
-            HideButtons();
+            if (Database.UserData.accessLevel == "Player")
+                HideButtons();
             FillTableData();
         }
 
@@ -49,22 +50,22 @@ namespace WelshWanderers
 
         private void NavToHome()
         {
-            new WelshWanderers.Home().Show();
-            this.Hide();
+            new Home().Show();
+            Hide();
         }
 
         private void NavAddResult_Click(object sender, EventArgs e)
         {
             LoadMatchData();
-            new WelshWanderers.AddResult().Show();
-            this.Hide();
+            new AddResult().Show();
+            Hide();
         }
 
         private void NavEdit_Click(object sender, EventArgs e)
         {
             LoadMatchData();
-            new WelshWanderers.ViewMatch("Upcoming Matches").Show();
-            this.Hide();
+            new ViewMatch("Upcoming Matches").Show();
+            Hide();
         }
 
         private void LoadMatchData()
@@ -106,8 +107,8 @@ namespace WelshWanderers
             if (null != Functions.FileSearch.ReturnLine("matchStats", TableViewMatches.SelectedRows[0].Cells[0].Value.ToString(), 0))
             {
                 LoadMatchData();
-                new WelshWanderers.ViewMatchResult().Show();
-                this.Hide();
+                new ViewMatchResult().Show();
+                Hide();
             }
             else
             {

@@ -21,7 +21,7 @@ namespace WelshWanderers.Views
         private void EventTest_Click(object sender, EventArgs e)
         {
             TestPasswordHash();
-            this.Hide();
+            Hide();
         }
 
         private void TestPasswordHash()

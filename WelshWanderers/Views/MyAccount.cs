@@ -94,8 +94,8 @@ namespace WelshWanderers
 
         private void NavToHome()
         {
-            new WelshWanderers.Home().Show();
-            this.Hide();
+            new Home().Show();
+            Hide();
         }
 
         private bool DetailsChanged(string inputData, string databaseValue, bool changedVal)

@@ -42,7 +42,7 @@ namespace WelshWanderers.Views
         {
             Functions.SendEmail.Email(Database.EmailData.subject, Database.EmailData.body, Database.EmailData.recipients);
             MessageBox.Show("Email sent!");
-            this.Hide();
+            Hide();
         }
     }
 }

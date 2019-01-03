@@ -75,8 +75,8 @@ namespace WelshWanderers
 
         private void NavToSignIn()
         {
-            new WelshWanderers.SignIn().Show();
-            this.Hide();
+            new SignIn().Show();
+            Hide();
         }
     }
 }

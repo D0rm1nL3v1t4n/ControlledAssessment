@@ -105,8 +105,8 @@ namespace WelshWanderers
 
         private void NavToUpcomingTraining()
         {
-            new WelshWanderers.UpcomingTrainings().Show();
-            this.Hide();
+            new UpcomingTrainings().Show();
+            Hide();
         }
 
         private void LoadTrainingData()
