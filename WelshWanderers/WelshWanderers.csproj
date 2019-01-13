@@ -74,6 +74,12 @@
     <Compile Include="Functions\HashAlgorithm.cs" />
     <Compile Include="Functions\SendEmail.cs" />
     <Compile Include="Functions\ValidPassword.cs" />
+    <Compile Include="Views\BackupRestore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\BackupRestore.Designer.cs">
+      <DependentUpon>BackupRestore.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\DeleteUserConfirm.cs">
       <SubType>Form</SubType>
     </Compile>
