@@ -82,6 +82,7 @@ namespace WelshWanderers
                     EditAvailability(i);
                 }
             }
+            MessageBox.Show("Saved.");
         }
 
         private void EditAvailability(int i)

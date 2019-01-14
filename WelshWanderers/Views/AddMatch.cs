@@ -18,7 +18,6 @@ namespace WelshWanderers
             InitializeComponent();
         }
 
-        private static string leagueTeam = "";
         private static int matchID = -1;
 
         private void InputFilter_TextChanged(object sender, EventArgs e)
@@ -44,7 +43,6 @@ namespace WelshWanderers
 
         private void UpdateSearchFilter()
         {
-            leagueTeam = Functions.FileSearch.ReturnSegment("leagues",InputLeague.Text, 1, 3);
             ListFindPlayers.Items.Clear();
             ShowFilteredPlayers();
         }
@@ -61,7 +59,7 @@ namespace WelshWanderers
                 string playerName = playerInfo[2] + " " + playerInfo[3];
 
                 string team = Functions.FileSearch.ReturnSegment("userAccountDetails", section[0], 0, 4, false);
-                if (leagueTeam == team)
+                if (Functions.FileSearch.ReturnSegment("leagues", InputLeague.Text, 1, 2) == team)
                 {
                     if (playerName.ToLower().Contains(InputFilter.Text.ToLower()))
                     {
@@ -72,7 +70,6 @@ namespace WelshWanderers
             file.Close();
         }
 
-        
         private void EventAddPlayers_Click(object sender, EventArgs e)
         {
             if (ListSelectedPlayers.Items.Count >= 13)
@@ -176,8 +173,8 @@ namespace WelshWanderers
                 homeAway = "away";
                 location = "Location:" + InputAddressA.Text + ",\n         " + InputAddressB.Text + ",\n         " + InputPostcode.Text + ".";
             }
-            string body = "Hello all,\n\nUpcoming " + homeAway + ", " + InputLeague.Text
-                + " leauge match against " + InputOpponent.Text + "." + "\n\nTeam is as follows:" + team
+            string body = "Hello all,\n\nUpcoming " + homeAway + " match in the " + InputLeague.Text
+                + " leauge against " + InputOpponent.Text + "." + "\n\nTeam is as follows:" + team
                 + "\n\nDate & Time: " + InputDate.Text + ", " + InputTimeH.Text + ":" + InputTimeM.Text + ".\n" + location + "Please respond regarding availability."
                 + "\n\nThanks,\n" + Database.UserData.firstName + " " + Database.UserData.lastName + "\nWelsh Wanderers";
 
@@ -248,6 +245,7 @@ namespace WelshWanderers
             Database.EmailData.recipients = emails;
 
             new Views.PreviewEmail().Show();
+            EventPreviewEmail.Hide();
         }
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LabelHeader = new System.Windows.Forms.Label();
             this.TableAddMatchResult = new System.Windows.Forms.DataGridView();
             this.InputOpponentMajorFouls = new System.Windows.Forms.TextBox();
@@ -39,11 +39,11 @@
             this.EventNavSave = new System.Windows.Forms.Button();
             this.LabelOpponent = new System.Windows.Forms.Label();
             this.InputOpponent = new System.Windows.Forms.TextBox();
-            this.ColOther = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ColMajors = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColGoals = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPlayerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPlayerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColGoals = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColMajors = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColOther = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TableAddMatchResult)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,14 +61,14 @@
             // 
             this.TableAddMatchResult.AllowUserToAddRows = false;
             this.TableAddMatchResult.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TableAddMatchResult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TableAddMatchResult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.TableAddMatchResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TableAddMatchResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColID,
@@ -77,19 +77,19 @@
             this.ColMajors,
             this.ColOther});
             this.TableAddMatchResult.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
-            this.TableAddMatchResult.Location = new System.Drawing.Point(45, 139);
+            this.TableAddMatchResult.Location = new System.Drawing.Point(46, 139);
             this.TableAddMatchResult.Name = "TableAddMatchResult";
             this.TableAddMatchResult.RowHeadersVisible = false;
             this.TableAddMatchResult.RowHeadersWidth = 10;
             this.TableAddMatchResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.TableAddMatchResult.ShowCellToolTips = false;
-            this.TableAddMatchResult.Size = new System.Drawing.Size(504, 251);
+            this.TableAddMatchResult.Size = new System.Drawing.Size(498, 251);
             this.TableAddMatchResult.TabIndex = 24;
             // 
             // InputOpponentMajorFouls
             // 
             this.InputOpponentMajorFouls.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputOpponentMajorFouls.Location = new System.Drawing.Point(468, 110);
+            this.InputOpponentMajorFouls.Location = new System.Drawing.Point(463, 106);
             this.InputOpponentMajorFouls.Name = "InputOpponentMajorFouls";
             this.InputOpponentMajorFouls.Size = new System.Drawing.Size(81, 27);
             this.InputOpponentMajorFouls.TabIndex = 25;
@@ -97,7 +97,7 @@
             // InputOpponentGoals
             // 
             this.InputOpponentGoals.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputOpponentGoals.Location = new System.Drawing.Point(170, 110);
+            this.InputOpponentGoals.Location = new System.Drawing.Point(173, 106);
             this.InputOpponentGoals.Name = "InputOpponentGoals";
             this.InputOpponentGoals.Size = new System.Drawing.Size(80, 27);
             this.InputOpponentGoals.TabIndex = 26;
@@ -106,7 +106,7 @@
             // 
             this.LabelOpponentMajorFouls.AutoSize = true;
             this.LabelOpponentMajorFouls.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelOpponentMajorFouls.Location = new System.Drawing.Point(296, 113);
+            this.LabelOpponentMajorFouls.Location = new System.Drawing.Point(291, 109);
             this.LabelOpponentMajorFouls.Name = "LabelOpponentMajorFouls";
             this.LabelOpponentMajorFouls.Size = new System.Drawing.Size(166, 19);
             this.LabelOpponentMajorFouls.TabIndex = 27;
@@ -116,7 +116,7 @@
             // 
             this.LabelOpponentGoals.AutoSize = true;
             this.LabelOpponentGoals.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelOpponentGoals.Location = new System.Drawing.Point(41, 113);
+            this.LabelOpponentGoals.Location = new System.Drawing.Point(44, 109);
             this.LabelOpponentGoals.Name = "LabelOpponentGoals";
             this.LabelOpponentGoals.Size = new System.Drawing.Size(123, 19);
             this.LabelOpponentGoals.TabIndex = 28;
@@ -125,7 +125,7 @@
             // NavCancel
             // 
             this.NavCancel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavCancel.Location = new System.Drawing.Point(45, 396);
+            this.NavCancel.Location = new System.Drawing.Point(46, 396);
             this.NavCancel.Name = "NavCancel";
             this.NavCancel.Size = new System.Drawing.Size(89, 48);
             this.NavCancel.TabIndex = 29;
@@ -136,7 +136,7 @@
             // EventNavSave
             // 
             this.EventNavSave.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventNavSave.Location = new System.Drawing.Point(460, 396);
+            this.EventNavSave.Location = new System.Drawing.Point(455, 396);
             this.EventNavSave.Name = "EventNavSave";
             this.EventNavSave.Size = new System.Drawing.Size(89, 48);
             this.EventNavSave.TabIndex = 30;
@@ -148,7 +148,7 @@
             // 
             this.LabelOpponent.AutoSize = true;
             this.LabelOpponent.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelOpponent.Location = new System.Drawing.Point(191, 75);
+            this.LabelOpponent.Location = new System.Drawing.Point(187, 75);
             this.LabelOpponent.Name = "LabelOpponent";
             this.LabelOpponent.Size = new System.Drawing.Size(85, 19);
             this.LabelOpponent.TabIndex = 32;
@@ -156,12 +156,40 @@
             // 
             // InputOpponent
             // 
-            this.InputOpponent.Enabled = false;
             this.InputOpponent.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputOpponent.Location = new System.Drawing.Point(282, 72);
+            this.InputOpponent.Location = new System.Drawing.Point(278, 72);
             this.InputOpponent.Name = "InputOpponent";
+            this.InputOpponent.ReadOnly = true;
             this.InputOpponent.Size = new System.Drawing.Size(118, 27);
             this.InputOpponent.TabIndex = 31;
+            // 
+            // ColID
+            // 
+            this.ColID.HeaderText = " ";
+            this.ColID.Name = "ColID";
+            this.ColID.ReadOnly = true;
+            this.ColID.Visible = false;
+            this.ColID.Width = 40;
+            // 
+            // ColPlayerName
+            // 
+            this.ColPlayerName.HeaderText = "Player";
+            this.ColPlayerName.Name = "ColPlayerName";
+            this.ColPlayerName.ReadOnly = true;
+            this.ColPlayerName.Width = 140;
+            // 
+            // ColGoals
+            // 
+            this.ColGoals.HeaderText = "Goals";
+            this.ColGoals.Name = "ColGoals";
+            this.ColGoals.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColGoals.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ColMajors
+            // 
+            this.ColMajors.HeaderText = "Major Fouls";
+            this.ColMajors.Name = "ColMajors";
+            this.ColMajors.Width = 120;
             // 
             // ColOther
             // 
@@ -173,34 +201,7 @@
             "Yellow Card",
             "Red Card"});
             this.ColOther.Name = "ColOther";
-            this.ColOther.Width = 120;
-            // 
-            // ColMajors
-            // 
-            this.ColMajors.HeaderText = "Major Fouls";
-            this.ColMajors.Name = "ColMajors";
-            this.ColMajors.Width = 120;
-            // 
-            // ColGoals
-            // 
-            this.ColGoals.HeaderText = "Goals";
-            this.ColGoals.Name = "ColGoals";
-            this.ColGoals.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColGoals.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ColPlayerName
-            // 
-            this.ColPlayerName.HeaderText = "Player";
-            this.ColPlayerName.Name = "ColPlayerName";
-            this.ColPlayerName.ReadOnly = true;
-            this.ColPlayerName.Width = 120;
-            // 
-            // ColID
-            // 
-            this.ColID.HeaderText = " ";
-            this.ColID.Name = "ColID";
-            this.ColID.ReadOnly = true;
-            this.ColID.Width = 40;
+            this.ColOther.Width = 135;
             // 
             // AddResult
             // 

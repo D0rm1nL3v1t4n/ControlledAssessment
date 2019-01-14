@@ -28,6 +28,13 @@ namespace WelshWanderers
         {
             LoadTrainingData();
             EditOff();
+            HideCoachButtons();
+        }
+
+        private void HideCoachButtons()
+        {
+            if (Database.UserData.accessLevel == "Player")
+                EventEdit.Hide();
         }
 
         private void NavBack_Click(object sender, EventArgs e)
@@ -39,6 +46,7 @@ namespace WelshWanderers
                     NavToUpcomingTraining();
                 }
             }
+            NavToUpcomingTraining();
         }
 
         private void EventEdit_Click(object sender, EventArgs e)
@@ -49,7 +57,20 @@ namespace WelshWanderers
         private void EventSave_Click(object sender, EventArgs e)
         {
             if (ValidInputs() == true)
+            {
                 ChangeTrainingData();
+                EditOff();
+            }
+        }
+
+        private void ResetChanges()
+        {
+            team = false;
+            timeH = false;
+            timeM = false;
+            duration = false;
+            date = false;
+            changesMade = 0;
         }
 
         private void EventCancelEdit_Click(object sender, EventArgs e)
@@ -61,20 +82,22 @@ namespace WelshWanderers
                     EditOff();
                 }
             }
+            EditOff();
         }
 
         private void EditOn()
         {
             ShowEditButtons();
-            EditingEnableChange(true);
+            EditingEnableChange(true, false);
         }
 
         private void EditOff()
         {
             LoadTrainingData();
             HideEditButtons();
-            EditingEnableChange(false);
+            EditingEnableChange(false, true);
             LabelChangesMade.Text = "No Changes";
+            ResetChanges();
         }
 
         private void ShowEditButtons()
@@ -85,12 +108,12 @@ namespace WelshWanderers
             LabelChangesMade.Show();
         }
 
-        private void EditingEnableChange(bool state)
+        private void EditingEnableChange(bool state, bool oppositeSate)
         {
             InputTeam.Enabled = state;
-            InputTimeH.Enabled = state;
-            InputTimeM.Enabled = state;
-            InputDuration.Enabled = state;
+            InputTimeH.ReadOnly = oppositeSate;
+            InputTimeM.ReadOnly = oppositeSate;
+            InputDuration.ReadOnly = oppositeSate;
             InputDate.Enabled = state;
         }
 

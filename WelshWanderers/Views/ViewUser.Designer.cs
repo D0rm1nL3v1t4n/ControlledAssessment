@@ -308,7 +308,7 @@
             // LabelChangesMade
             // 
             this.LabelChangesMade.AutoSize = true;
-            this.LabelChangesMade.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelChangesMade.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelChangesMade.Location = new System.Drawing.Point(297, 325);
             this.LabelChangesMade.Name = "LabelChangesMade";
             this.LabelChangesMade.Size = new System.Drawing.Size(94, 19);

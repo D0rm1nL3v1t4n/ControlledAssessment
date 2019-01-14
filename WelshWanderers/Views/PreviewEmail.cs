@@ -30,7 +30,7 @@ namespace WelshWanderers.Views
             }
             InputTo.Text = emails;
         }
-
+        
         private void EventSendEmail_Click(object sender, EventArgs e)
         {
             Database.EmailData.body = InputBody.Text;

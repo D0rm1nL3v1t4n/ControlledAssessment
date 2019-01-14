@@ -39,8 +39,7 @@ namespace WelshWanderers
         {
             Database.LeagueData.id = Convert.ToInt16(TableViewLeagues.SelectedRows[0].Cells[0].Value);
             Database.LeagueData.name = TableViewLeagues.SelectedRows[0].Cells[1].Value.ToString();
-            Database.LeagueData.fileName = TableViewLeagues.SelectedRows[0].Cells[2].Value.ToString();
-            Database.LeagueData.team = TableViewLeagues.SelectedRows[0].Cells[3].Value.ToString();
+            Database.LeagueData.team = TableViewLeagues.SelectedRows[0].Cells[2].Value.ToString();
         }
 
         private void EventDelete_Click(object sender, EventArgs e)
@@ -53,11 +52,11 @@ namespace WelshWanderers
 
         private void DeleteLeague()
         {
-            string fileName = TableViewLeagues.SelectedRows[0].Cells[2].Value.ToString();
-            Functions.FileDelete.RemoveLine(@"Leagues\" + fileName, 4, Functions.FileSearch.LineNumber(@"Leagues\" + fileName, TableViewLeagues.SelectedRows[0].Cells[0].Value.ToString(), 0));
+            string fileName = TableViewLeagues.SelectedRows[0].Cells[1].Value.ToString();
+            Functions.FileDelete.RemoveLine("leagues", 3, Functions.FileSearch.LineNumber("leagues", TableViewLeagues.SelectedRows[0].Cells[0].Value.ToString(), 0));
+            File.Delete(@"Leagues\" + fileName + ".txt");
             MessageBox.Show("League has been deleted.");
-            TableViewLeagues.Rows.Clear();
-            LoadAllLeagues();
+            TableViewLeagues.Rows.RemoveAt(TableViewLeagues.SelectedRows[0].Index);
         }
 
         private void LoadAllLeagues()
@@ -67,7 +66,7 @@ namespace WelshWanderers
             while (null != (line = file.ReadLine()))
             {
                 string[] section = line.Split('|');
-                TableViewLeagues.Rows.Add(section[0], section[1], section[2], section[3]);
+                TableViewLeagues.Rows.Add(section[0], section[1], section[2]);
             }
             file.Close();
         }

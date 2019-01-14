@@ -34,7 +34,7 @@ namespace WelshWanderers.Views
 
         private void EventNavCreate_Click(object sender, EventArgs e)
         {
-            string fileName = GenerateLeagueName();
+            string fileName = InputName.Text;
             if (ValidInputs() == true && CreateLeagueFile(fileName) == false)
             {
                 SaveLeague(fileName);
@@ -45,19 +45,8 @@ namespace WelshWanderers.Views
 
         private void SaveLeague(string fileName)
         {
-            string line = Functions.FileSearch.GetNextId("leagues").ToString() + "|" + InputName.Text + "|" + fileName + "|" + InputTeam.Text + "|";
+            string line = Functions.FileSearch.GetNextId("leagues").ToString() + "|" + fileName + "|" + InputTeam.Text + "|";
             Functions.FileWrite.WriteData("leagues", line);
-        }
-
-        private string GenerateLeagueName()
-        {
-            string[] name = InputName.Text.Split(' ');
-            string fileName = "League";
-            foreach (string segement in name)
-            {
-                fileName += "_" + segement.ToLower();
-            }
-            return fileName;
         }
 
         private bool CreateLeagueFile(string fileName)
@@ -65,7 +54,8 @@ namespace WelshWanderers.Views
             string path = @"Leagues\" + fileName + ".txt";
             if (!File.Exists(path))
             {
-                File.Create(path);
+                var file = File.Create(path);
+                file.Close();
                 return false;
             }
             else
@@ -80,12 +70,15 @@ namespace WelshWanderers.Views
         {
             if (InputTeam.Text != null)
             {
-                if (InputName.Text.Length <= 20 && InputName.Text.Length >= 5)
+                if (InputName.Text.Length <= 30 && InputName.Text.Length >= 5)
                     return true;
                 else
-                    MessageBox.Show("League name must be between 5 and 20 characters.");
+                    MessageBox.Show("League name must be between 5 and 30 characters.");
             }
-            MessageBox.Show("Select a team.");
+            else
+            {
+                MessageBox.Show("Select a team.");
+            }
             return false;
         }
 

@@ -114,7 +114,6 @@ namespace WelshWanderers
             password = data[10];
             accessLevel = data[11];
             team = data[12];
-            MessageBox.Show(accessLevel);
         }
 
         private void ReloadData()

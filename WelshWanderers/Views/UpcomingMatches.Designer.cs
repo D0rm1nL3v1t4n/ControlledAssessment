@@ -32,10 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LabelHeader = new System.Windows.Forms.Label();
             this.TableViewMatches = new System.Windows.Forms.DataGridView();
-            this.NavEditMatch = new System.Windows.Forms.Button();
-            this.NavHome = new System.Windows.Forms.Button();
-            this.NavMatchAddResult = new System.Windows.Forms.Button();
-            this.NavViewResult = new System.Windows.Forms.Button();
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColLeague = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColOpponent = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +40,11 @@
             this.ColAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColAddress2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPostcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NavEditMatch = new System.Windows.Forms.Button();
+            this.NavHome = new System.Windows.Forms.Button();
+            this.NavViewResult = new System.Windows.Forms.Button();
+            this.InputFilter = new System.Windows.Forms.ComboBox();
+            this.NavAddResult = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TableViewMatches)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,7 +88,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.TableViewMatches.DefaultCellStyle = dataGridViewCellStyle2;
-            this.TableViewMatches.Location = new System.Drawing.Point(16, 72);
+            this.TableViewMatches.Location = new System.Drawing.Point(16, 104);
             this.TableViewMatches.Name = "TableViewMatches";
             this.TableViewMatches.ReadOnly = true;
             this.TableViewMatches.RowHeadersVisible = false;
@@ -96,50 +97,6 @@
             this.TableViewMatches.ShowCellToolTips = false;
             this.TableViewMatches.Size = new System.Drawing.Size(671, 312);
             this.TableViewMatches.TabIndex = 15;
-            // 
-            // NavEditMatch
-            // 
-            this.NavEditMatch.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavEditMatch.Location = new System.Drawing.Point(503, 390);
-            this.NavEditMatch.Name = "NavEditMatch";
-            this.NavEditMatch.Size = new System.Drawing.Size(89, 48);
-            this.NavEditMatch.TabIndex = 32;
-            this.NavEditMatch.Text = "Edit";
-            this.NavEditMatch.UseVisualStyleBackColor = true;
-            this.NavEditMatch.Click += new System.EventHandler(this.NavEdit_Click);
-            // 
-            // NavHome
-            // 
-            this.NavHome.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavHome.Location = new System.Drawing.Point(16, 390);
-            this.NavHome.Name = "NavHome";
-            this.NavHome.Size = new System.Drawing.Size(89, 48);
-            this.NavHome.TabIndex = 31;
-            this.NavHome.Text = "Home";
-            this.NavHome.UseVisualStyleBackColor = true;
-            this.NavHome.Click += new System.EventHandler(this.NavHome_Click);
-            // 
-            // NavMatchAddResult
-            // 
-            this.NavMatchAddResult.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavMatchAddResult.Location = new System.Drawing.Point(408, 390);
-            this.NavMatchAddResult.Name = "NavMatchAddResult";
-            this.NavMatchAddResult.Size = new System.Drawing.Size(89, 48);
-            this.NavMatchAddResult.TabIndex = 33;
-            this.NavMatchAddResult.Text = "Add Result";
-            this.NavMatchAddResult.UseVisualStyleBackColor = true;
-            this.NavMatchAddResult.Click += new System.EventHandler(this.NavAddResult_Click);
-            // 
-            // NavViewResult
-            // 
-            this.NavViewResult.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavViewResult.Location = new System.Drawing.Point(598, 390);
-            this.NavViewResult.Name = "NavViewResult";
-            this.NavViewResult.Size = new System.Drawing.Size(89, 48);
-            this.NavViewResult.TabIndex = 34;
-            this.NavViewResult.Text = "View Result";
-            this.NavViewResult.UseVisualStyleBackColor = true;
-            this.NavViewResult.Click += new System.EventHandler(this.NavViewResult_Click);
             // 
             // ColID
             // 
@@ -197,13 +154,72 @@
             this.ColPostcode.ReadOnly = true;
             this.ColPostcode.Width = 78;
             // 
+            // NavEditMatch
+            // 
+            this.NavEditMatch.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NavEditMatch.Location = new System.Drawing.Point(598, 422);
+            this.NavEditMatch.Name = "NavEditMatch";
+            this.NavEditMatch.Size = new System.Drawing.Size(89, 48);
+            this.NavEditMatch.TabIndex = 32;
+            this.NavEditMatch.Text = "Edit";
+            this.NavEditMatch.UseVisualStyleBackColor = true;
+            this.NavEditMatch.Click += new System.EventHandler(this.NavEdit_Click);
+            // 
+            // NavHome
+            // 
+            this.NavHome.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NavHome.Location = new System.Drawing.Point(16, 422);
+            this.NavHome.Name = "NavHome";
+            this.NavHome.Size = new System.Drawing.Size(89, 48);
+            this.NavHome.TabIndex = 31;
+            this.NavHome.Text = "Home";
+            this.NavHome.UseVisualStyleBackColor = true;
+            this.NavHome.Click += new System.EventHandler(this.NavHome_Click);
+            // 
+            // NavViewResult
+            // 
+            this.NavViewResult.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NavViewResult.Location = new System.Drawing.Point(354, 422);
+            this.NavViewResult.Name = "NavViewResult";
+            this.NavViewResult.Size = new System.Drawing.Size(89, 48);
+            this.NavViewResult.TabIndex = 34;
+            this.NavViewResult.Text = "View Result";
+            this.NavViewResult.UseVisualStyleBackColor = true;
+            this.NavViewResult.Click += new System.EventHandler(this.NavViewResult_Click);
+            // 
+            // InputFilter
+            // 
+            this.InputFilter.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputFilter.FormattingEnabled = true;
+            this.InputFilter.Items.AddRange(new object[] {
+            "All",
+            "Upcoming",
+            "Past"});
+            this.InputFilter.Location = new System.Drawing.Point(16, 71);
+            this.InputFilter.Name = "InputFilter";
+            this.InputFilter.Size = new System.Drawing.Size(170, 27);
+            this.InputFilter.TabIndex = 43;
+            this.InputFilter.SelectedIndexChanged += new System.EventHandler(this.InputFilter_SelectedIndexChanged);
+            // 
+            // NavAddResult
+            // 
+            this.NavAddResult.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NavAddResult.Location = new System.Drawing.Point(259, 422);
+            this.NavAddResult.Name = "NavAddResult";
+            this.NavAddResult.Size = new System.Drawing.Size(89, 48);
+            this.NavAddResult.TabIndex = 44;
+            this.NavAddResult.Text = "Add Result";
+            this.NavAddResult.UseVisualStyleBackColor = true;
+            this.NavAddResult.Click += new System.EventHandler(this.NavAddResult_Click);
+            // 
             // UpcomingMatches
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(702, 453);
+            this.ClientSize = new System.Drawing.Size(702, 474);
+            this.Controls.Add(this.NavAddResult);
+            this.Controls.Add(this.InputFilter);
             this.Controls.Add(this.NavViewResult);
-            this.Controls.Add(this.NavMatchAddResult);
             this.Controls.Add(this.NavEditMatch);
             this.Controls.Add(this.NavHome);
             this.Controls.Add(this.TableViewMatches);
@@ -223,7 +239,6 @@
         private System.Windows.Forms.DataGridView TableViewMatches;
         private System.Windows.Forms.Button NavEditMatch;
         private System.Windows.Forms.Button NavHome;
-        private System.Windows.Forms.Button NavMatchAddResult;
         private System.Windows.Forms.Button NavViewResult;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColLeague;
@@ -233,5 +248,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColAddress2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColPostcode;
+        private System.Windows.Forms.ComboBox InputFilter;
+        private System.Windows.Forms.Button NavAddResult;
     }
 }

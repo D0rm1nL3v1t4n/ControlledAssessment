@@ -97,20 +97,21 @@ namespace WelshWanderers
                     EditOff();
                 }
             }
+            EditOff();
         }
 
         private void EditOn()
         {
             LoadLeagues();
             ShowEditButtons();
-            EnableEditing();
+            ChangeEnableStatus(true, false);
         }
         
         private void EditOff()
         {
             LoadMatchData();
             HideEditButtons();
-            EnableEditing();
+            ChangeEnableStatus(false, true);
             LabelChangesMade.Text = "No Changes";
         }
 
@@ -122,16 +123,16 @@ namespace WelshWanderers
             LabelChangesMade.Show();
         }
 
-        private void EnableEditing()
+        private void ChangeEnableStatus(bool state, bool oppositeState)
         {
-            InputLeague.Enabled = true;
-            InputOpponent.Enabled = true;
-            InputDate.Enabled = true;
-            InputTimeH.Enabled = true;
-            InputTimeM.Enabled = true;
-            InputAddressA.Enabled = true;
-            InputAddressB.Enabled = true;
-            InputPostcode.Enabled = true;
+            InputLeague.Enabled = state;
+            InputOpponent.ReadOnly = oppositeState;
+            InputDate.Enabled = state;
+            InputTimeH.ReadOnly = oppositeState;
+            InputTimeM.ReadOnly = oppositeState;
+            InputAddressA.ReadOnly = oppositeState;
+            InputAddressB.ReadOnly = oppositeState;
+            InputPostcode.ReadOnly = oppositeState;
         }
 
         private void HideEditButtons()
@@ -142,17 +143,6 @@ namespace WelshWanderers
             LabelChangesMade.Hide();
         }
 
-        private void UnenableEditing()
-        {
-            InputLeague.Enabled = false;
-            InputOpponent.Enabled = false;
-            InputDate.Enabled = false;
-            InputTimeH.Enabled = false;
-            InputTimeM.Enabled = false;
-            InputAddressA.Enabled = false;
-            InputAddressB.Enabled = false;
-            InputPostcode.Enabled = false;
-        }
 
         private void LoadLeagues()
         {

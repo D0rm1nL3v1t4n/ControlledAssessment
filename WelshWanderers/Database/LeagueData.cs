@@ -10,14 +10,12 @@ namespace WelshWanderers.Database
     {
         public static int id = -1;
         public static string name = "";
-        public static string fileName = "";
         public static string team = "";
 
         public void ClearLeagueData()
         {
             id = -1;
             name = "";
-            fileName = "";
             team = "";
         }
     }

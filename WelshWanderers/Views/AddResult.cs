@@ -47,7 +47,7 @@ namespace WelshWanderers
             string[] userIDs = Functions.FileSearch.ReturnSegment("matchAvailability", Database.MatchData.id.ToString(), 0, 1, true).Split('|');
             for (int i = 0; i < userIDs.Length; ++i)
             {
-                if (Functions.FileSearch.ReturnSegment("matchAvailability", userIDs[i], 1, 2) != null)
+                if (Functions.FileSearch.ReturnSegment("matchAvailability", userIDs[i], 1, 2) == "Yes")
                 {
                     string[] line = Functions.FileSearch.ReturnLine("userPersonalDetails", userIDs[i], 0).Split('|');
                     TableAddMatchResult.Rows.Add(userIDs[i], line[2] + " " + line[3]);
@@ -73,9 +73,16 @@ namespace WelshWanderers
         private string GetUserStats(int i)
         {
             string id = TableAddMatchResult.Rows[i].Cells[0].Value.ToString();
-            string goals = TableAddMatchResult.Rows[i].Cells[2].Value.ToString();
-            string majorFouls = TableAddMatchResult.Rows[i].Cells[3].Value.ToString();
-            string other = TableAddMatchResult.Rows[i].Cells[4].Value.ToString();
+            string goals;
+            string majorFouls; 
+            string other;
+            if ((goals = TableAddMatchResult.Rows[i].Cells[2].Value.ToString()) == null)
+                goals = "0";
+            if ((majorFouls = TableAddMatchResult.Rows[i].Cells[3].Value.ToString()) == null)
+                majorFouls = "0";
+            if ((other = TableAddMatchResult.Rows[i].Cells[4].Value.ToString()) == null)
+                other = "";
+
             return id + "|" + goals + "|" + majorFouls + "|" + other + "|";
         }
 

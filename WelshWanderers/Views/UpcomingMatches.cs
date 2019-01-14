@@ -22,7 +22,7 @@ namespace WelshWanderers
         {
             if (Database.UserData.accessLevel == "Player")
                 HideButtons();
-            FillTableData();
+            InputFilter.SelectedItem = "All";
         }
 
         private void FillTableData()
@@ -32,6 +32,7 @@ namespace WelshWanderers
             while (null != (line = file.ReadLine()))
             {
                 string[] section = line.Split('|');
+                if ((Convert.ToDateTime(section[3]) >= DateTime.Today && InputFilter.Text == "Upcoming") || (Convert.ToDateTime(section[3]) < DateTime.Today && InputFilter.Text == "Past") || (InputFilter.Text == "All"))
                 TableViewMatches.Rows.Add(section[0], section[1], section[2], section[3], section[4] + ":" + section[5], section[6], section[7], section[8]);
             }
             file.Close();
@@ -39,7 +40,6 @@ namespace WelshWanderers
 
         private void HideButtons()
         {
-            NavMatchAddResult.Hide();
             NavEditMatch.Hide();
         }
 
@@ -51,13 +51,6 @@ namespace WelshWanderers
         private void NavToHome()
         {
             new Home().Show();
-            Hide();
-        }
-
-        private void NavAddResult_Click(object sender, EventArgs e)
-        {
-            LoadMatchData();
-            new AddResult().Show();
             Hide();
         }
 
@@ -114,6 +107,30 @@ namespace WelshWanderers
             {
                 MessageBox.Show("No match result yet.");
             }
+        }
+
+        private void InputFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TableViewMatches.Rows.Clear();
+            FillTableData();
+            if (InputFilter.Text == "Upcoming")
+            {
+                NavViewResult.Hide();
+                NavAddResult.Hide();
+            }
+            else
+            {;
+                NavViewResult.Show();
+                if (Database.UserData.accessLevel != "Player")
+                    NavAddResult.Show();
+            }
+        }
+
+        private void NavAddResult_Click(object sender, EventArgs e)
+        {
+            LoadMatchData();
+            new AddResult().Show();
+            Hide();
         }
     }
 }

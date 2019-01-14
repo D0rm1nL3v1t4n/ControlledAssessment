@@ -18,6 +18,5 @@ namespace WelshWanderers.Functions
             string[,] localFile = Functions.FileRead.StoreLocal(fileName, fileLength, recordLength, lineNumber, "Remove", data, indexData , searchData);
             Functions.FileWrite.RewriteData(fileName, recordLength, localFile);
         }
- 
     }
 }

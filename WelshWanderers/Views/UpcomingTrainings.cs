@@ -20,8 +20,7 @@ namespace WelshWanderers
 
         private void ViewTraining_Load(object sender, EventArgs e)
         {
-            HideEditButton();
-            FillTableData();
+            InputFilter.SelectedItem = "All";
             TableViewTrainings.MultiSelect = true;
         }
 
@@ -32,7 +31,9 @@ namespace WelshWanderers
             while (null != (line = file.ReadLine()))
             {
                 string[] section = line.Split('|');
-                TableViewTrainings.Rows.Add(section[0], section[1], section[2] + ":" + section[3], section[4], section[5]);
+
+                if ((Convert.ToDateTime(section[5]) >= DateTime.Today && InputFilter.Text == "Upcoming") || (Convert.ToDateTime(section[5]) < DateTime.Today && InputFilter.Text == "Past") || (InputFilter.Text == "All"))
+                    TableViewTrainings.Rows.Add(section[0], section[1], section[2] + ":" + section[3], section[4], section[5]);
             }
             file.Close();
         }
@@ -60,11 +61,6 @@ namespace WelshWanderers
             Hide();
         }
 
-        private void HideEditButton()
-        {
-            if (Database.UserData.accessLevel == "Player")
-                NavEdit.Hide();
-        }
         private void NavHome_Click(object sender, EventArgs e)
         {
             NavToHome();
@@ -74,6 +70,12 @@ namespace WelshWanderers
         {
             new Home().Show();
             Hide();
+        }
+
+        private void InputFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TableViewTrainings.Rows.Clear();
+            FillTableData();
         }
     }
 }

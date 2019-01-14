@@ -29,8 +29,6 @@ namespace WelshWanderers
             if (ValidInputs() == true)
             {
                 SaveData();
-                SendEmail();
-                MessageBox.Show("Training saveed & email sent.");
                 NavToHome();
             }
         }
@@ -38,17 +36,9 @@ namespace WelshWanderers
         private void SaveData()
         {
             int trainingID = Functions.FileSearch.GetNextId("trainingDetails");
-            string line = trainingID.ToString() + "|" + InputTeam.Text + "|" + InputTimeH.Text + "|" + InputTimeM.Text + "|" + InputDuration.Text + "|" + "|" + InputDate.Text + "|";
+            string line = trainingID.ToString() + "|" + InputTeam.Text + "|" + InputTimeH.Text + "|" + InputTimeM.Text + "|" + InputDuration.Text + "|" + InputDate.Text + "|";
             Functions.FileWrite.WriteData("trainingDetails", line);
             MessageBox.Show("Training saved.");
-            NavToHome();
-        }
-
-        private void SendEmail()
-        {
-            string[] emails = GetPlayerEmails();
-            string body = "New" + InputTeam.Text + "'s training:\n\nDate: " + InputDate.Text + "\nStart time: " + InputTimeH.Text + ":" + InputTimeM.Text + "\nLength: " + InputDuration.Text + "\n\nThanks,\nWelsh Wanderers";
-            Functions.SendEmail.Email("Training information", body, emails);
         }
 
         private string[] GetPlayerEmails()
@@ -118,6 +108,15 @@ namespace WelshWanderers
                 MessageBox.Show("Selected a training type in the drop down box.");
                 return false;
             }
+        }
+
+        private void InputPreviewEmail_Click(object sender, EventArgs e)
+        {
+            Database.EmailData.recipients = GetPlayerEmails();
+            Database.EmailData.body = "Upcoming " + InputTeam.Text.ToLower() + " training session:\n\nDate: " + InputDate.Text + "\nStart time: " + InputTimeH.Text + ":" + InputTimeM.Text + "\nDuration: " + InputDuration.Text + " minutes.\n\nThanks,\nWelsh Wanderers"; ;
+            Database.EmailData.subject = "Training information";
+            new Views.PreviewEmail().Show();
+            EventPreviewEmail.Hide();
         }
     }
 }

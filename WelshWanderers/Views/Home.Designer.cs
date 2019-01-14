@@ -104,7 +104,7 @@
             this.NavUpcomingTrainings.Name = "NavUpcomingTrainings";
             this.NavUpcomingTrainings.Size = new System.Drawing.Size(95, 48);
             this.NavUpcomingTrainings.TabIndex = 11;
-            this.NavUpcomingTrainings.Text = "Upcoming Trainings";
+            this.NavUpcomingTrainings.Text = "View Trainings";
             this.NavUpcomingTrainings.UseVisualStyleBackColor = true;
             this.NavUpcomingTrainings.Click += new System.EventHandler(this.NavUpcomingTrainings_Click);
             // 
@@ -126,7 +126,7 @@
             this.NavUpcomingMatches.Name = "NavUpcomingMatches";
             this.NavUpcomingMatches.Size = new System.Drawing.Size(95, 48);
             this.NavUpcomingMatches.TabIndex = 13;
-            this.NavUpcomingMatches.Text = "Upcoming Matches";
+            this.NavUpcomingMatches.Text = "View Matches";
             this.NavUpcomingMatches.UseVisualStyleBackColor = true;
             this.NavUpcomingMatches.Click += new System.EventHandler(this.NavUpcomingMatches_Click);
             // 

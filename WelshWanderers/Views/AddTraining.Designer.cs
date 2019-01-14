@@ -40,6 +40,7 @@
             this.LabelDate = new System.Windows.Forms.Label();
             this.LabelDuration = new System.Windows.Forms.Label();
             this.LabelTime = new System.Windows.Forms.Label();
+            this.EventPreviewEmail = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // InputTeam
@@ -80,9 +81,9 @@
             // EventNavSave
             // 
             this.EventNavSave.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventNavSave.Location = new System.Drawing.Point(226, 207);
+            this.EventNavSave.Location = new System.Drawing.Point(238, 207);
             this.EventNavSave.Name = "EventNavSave";
-            this.EventNavSave.Size = new System.Drawing.Size(89, 48);
+            this.EventNavSave.Size = new System.Drawing.Size(77, 48);
             this.EventNavSave.TabIndex = 28;
             this.EventNavSave.Text = "Save";
             this.EventNavSave.UseVisualStyleBackColor = true;
@@ -93,7 +94,7 @@
             this.NavCancel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NavCancel.Location = new System.Drawing.Point(38, 207);
             this.NavCancel.Name = "NavCancel";
-            this.NavCancel.Size = new System.Drawing.Size(89, 48);
+            this.NavCancel.Size = new System.Drawing.Size(77, 48);
             this.NavCancel.TabIndex = 29;
             this.NavCancel.Text = "Cancel";
             this.NavCancel.UseVisualStyleBackColor = true;
@@ -163,11 +164,23 @@
             this.LabelTime.TabIndex = 36;
             this.LabelTime.Text = "Time";
             // 
+            // EventPreviewEmail
+            // 
+            this.EventPreviewEmail.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EventPreviewEmail.Location = new System.Drawing.Point(155, 207);
+            this.EventPreviewEmail.Name = "EventPreviewEmail";
+            this.EventPreviewEmail.Size = new System.Drawing.Size(77, 48);
+            this.EventPreviewEmail.TabIndex = 37;
+            this.EventPreviewEmail.Text = "Preview Email";
+            this.EventPreviewEmail.UseVisualStyleBackColor = true;
+            this.EventPreviewEmail.Click += new System.EventHandler(this.InputPreviewEmail_Click);
+            // 
             // AddTraining
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(349, 277);
+            this.Controls.Add(this.EventPreviewEmail);
             this.Controls.Add(this.LabelTime);
             this.Controls.Add(this.LabelDuration);
             this.Controls.Add(this.LabelDate);
@@ -201,5 +214,6 @@
         private System.Windows.Forms.Label LabelDate;
         private System.Windows.Forms.Label LabelDuration;
         private System.Windows.Forms.Label LabelTime;
+        private System.Windows.Forms.Button EventPreviewEmail;
     }
 }
