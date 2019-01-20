@@ -16,7 +16,7 @@ namespace VisualCSharp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new signInForm());
+            Application.Run(new testForm3());
         }
     }
 }

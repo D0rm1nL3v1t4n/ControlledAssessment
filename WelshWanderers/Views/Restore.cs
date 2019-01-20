@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WelshWanderers.Views
 {
-    public partial class BackupRestore : Form
+    public partial class Restore : Form
     {
-        public BackupRestore()
+        public Restore()
         {
             InitializeComponent();
         }

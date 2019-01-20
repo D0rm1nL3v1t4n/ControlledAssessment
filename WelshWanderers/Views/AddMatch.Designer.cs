@@ -311,7 +311,7 @@
             // EventPreviewEmail
             // 
             this.EventPreviewEmail.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventPreviewEmail.Location = new System.Drawing.Point(443, 492);
+            this.EventPreviewEmail.Location = new System.Drawing.Point(443, 490);
             this.EventPreviewEmail.Name = "EventPreviewEmail";
             this.EventPreviewEmail.Size = new System.Drawing.Size(89, 48);
             this.EventPreviewEmail.TabIndex = 53;

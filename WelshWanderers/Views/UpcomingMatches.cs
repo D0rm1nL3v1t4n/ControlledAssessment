@@ -84,8 +84,13 @@ namespace WelshWanderers
                 {
                     MessageBox.Show("Match not taken place yet.\n\nHey Doc, pretty sure we ain't time travelling yet - Marty.");
                 }
+                else if (Functions.FileSearch.ReturnSegment("matchStats", TableViewMatches.SelectedRows[0].Cells[0].Value.ToString(), 0, 1) == null)
+                {
+                    MessageBox.Show("No result has been added to this match yet.");
+                }
                 else
                 {
+                    
                     NavToMatchResult();
                 }
             }
@@ -117,6 +122,11 @@ namespace WelshWanderers
             {
                 NavViewResult.Hide();
                 NavAddResult.Hide();
+                NavMatchAvailability.Show();
+            }
+            else if (InputFilter.Text == "Past")
+            {
+                NavMatchAvailability.Hide();
             }
             else
             {;
@@ -131,6 +141,18 @@ namespace WelshWanderers
             LoadMatchData();
             new AddResult().Show();
             Hide();
+        }
+
+        private void NavMatchAvailability_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToDateTime(TableViewMatches.SelectedRows[0].Cells[3].Value.ToString()) < DateTime.Today)
+                MessageBox.Show("That match has already occured.");
+            else
+            {
+                Database.MatchData.id = Convert.ToInt16(TableViewMatches.SelectedRows[0].Cells[0].Value.ToString());
+                new Views.ViewMatchAvailability().Show();
+                Hide();
+            }
         }
     }
 }

@@ -55,7 +55,7 @@
             // 
             this.LabelDeleteMessage.AutoSize = true;
             this.LabelDeleteMessage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelDeleteMessage.Location = new System.Drawing.Point(31, 9);
+            this.LabelDeleteMessage.Location = new System.Drawing.Point(31, 13);
             this.LabelDeleteMessage.Name = "LabelDeleteMessage";
             this.LabelDeleteMessage.Size = new System.Drawing.Size(235, 38);
             this.LabelDeleteMessage.TabIndex = 46;
@@ -63,102 +63,102 @@
             // 
             // InputFirstName
             // 
-            this.InputFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.InputFirstName.Enabled = false;
+            this.InputFirstName.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.InputFirstName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputFirstName.Location = new System.Drawing.Point(33, 92);
             this.InputFirstName.Name = "InputFirstName";
+            this.InputFirstName.ReadOnly = true;
             this.InputFirstName.Size = new System.Drawing.Size(151, 23);
             this.InputFirstName.TabIndex = 49;
             // 
             // InputLastName
             // 
-            this.InputLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.InputLastName.Enabled = false;
+            this.InputLastName.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.InputLastName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputLastName.Location = new System.Drawing.Point(190, 92);
             this.InputLastName.Name = "InputLastName";
+            this.InputLastName.ReadOnly = true;
             this.InputLastName.Size = new System.Drawing.Size(151, 23);
             this.InputLastName.TabIndex = 50;
             // 
             // InputDateOfBirth
             // 
-            this.InputDateOfBirth.Enabled = false;
             this.InputDateOfBirth.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputDateOfBirth.Location = new System.Drawing.Point(33, 121);
             this.InputDateOfBirth.Name = "InputDateOfBirth";
+            this.InputDateOfBirth.ReadOnly = true;
             this.InputDateOfBirth.Size = new System.Drawing.Size(151, 23);
             this.InputDateOfBirth.TabIndex = 51;
             // 
             // InputTitle
             // 
-            this.InputTitle.Enabled = false;
             this.InputTitle.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputTitle.Location = new System.Drawing.Point(190, 63);
             this.InputTitle.Name = "InputTitle";
+            this.InputTitle.ReadOnly = true;
             this.InputTitle.Size = new System.Drawing.Size(151, 23);
             this.InputTitle.TabIndex = 48;
             // 
             // InputId
             // 
-            this.InputId.Enabled = false;
             this.InputId.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputId.Location = new System.Drawing.Point(33, 63);
             this.InputId.Name = "InputId";
+            this.InputId.ReadOnly = true;
             this.InputId.Size = new System.Drawing.Size(151, 23);
             this.InputId.TabIndex = 47;
             // 
             // InputEmailAddress
             // 
-            this.InputEmailAddress.Enabled = false;
             this.InputEmailAddress.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputEmailAddress.Location = new System.Drawing.Point(190, 121);
             this.InputEmailAddress.Name = "InputEmailAddress";
+            this.InputEmailAddress.ReadOnly = true;
             this.InputEmailAddress.Size = new System.Drawing.Size(151, 23);
             this.InputEmailAddress.TabIndex = 52;
             // 
             // InputTelephoneNumber
             // 
-            this.InputTelephoneNumber.Enabled = false;
             this.InputTelephoneNumber.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputTelephoneNumber.Location = new System.Drawing.Point(33, 150);
             this.InputTelephoneNumber.Name = "InputTelephoneNumber";
+            this.InputTelephoneNumber.ReadOnly = true;
             this.InputTelephoneNumber.Size = new System.Drawing.Size(151, 23);
             this.InputTelephoneNumber.TabIndex = 53;
             // 
             // InputUsername
             // 
-            this.InputUsername.Enabled = false;
             this.InputUsername.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputUsername.Location = new System.Drawing.Point(33, 179);
             this.InputUsername.Name = "InputUsername";
+            this.InputUsername.ReadOnly = true;
             this.InputUsername.Size = new System.Drawing.Size(151, 23);
             this.InputUsername.TabIndex = 55;
             // 
             // InputPostcode
             // 
-            this.InputPostcode.Enabled = false;
             this.InputPostcode.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputPostcode.Location = new System.Drawing.Point(190, 150);
             this.InputPostcode.Name = "InputPostcode";
+            this.InputPostcode.ReadOnly = true;
             this.InputPostcode.Size = new System.Drawing.Size(151, 23);
             this.InputPostcode.TabIndex = 54;
             // 
             // InputAccessLevel
             // 
-            this.InputAccessLevel.Enabled = false;
             this.InputAccessLevel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputAccessLevel.Location = new System.Drawing.Point(190, 179);
             this.InputAccessLevel.Name = "InputAccessLevel";
+            this.InputAccessLevel.ReadOnly = true;
             this.InputAccessLevel.Size = new System.Drawing.Size(151, 23);
             this.InputAccessLevel.TabIndex = 56;
             // 
             // InputTeam
             // 
-            this.InputTeam.Enabled = false;
             this.InputTeam.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputTeam.Location = new System.Drawing.Point(33, 208);
             this.InputTeam.Name = "InputTeam";
+            this.InputTeam.ReadOnly = true;
             this.InputTeam.Size = new System.Drawing.Size(151, 23);
             this.InputTeam.TabIndex = 57;
             // 
@@ -168,10 +168,10 @@
             this.LabelConfirmMessage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelConfirmMessage.Location = new System.Drawing.Point(31, 298);
             this.LabelConfirmMessage.Name = "LabelConfirmMessage";
-            this.LabelConfirmMessage.Size = new System.Drawing.Size(341, 38);
+            this.LabelConfirmMessage.Size = new System.Drawing.Size(343, 38);
             this.LabelConfirmMessage.TabIndex = 58;
-            this.LabelConfirmMessage.Text = "To delete the user, enter their name\r\n(in the highlighted boxes), and your passwo" +
-    "rd.";
+            this.LabelConfirmMessage.Text = "To delete the user, enter their full name\r\n(highlighted boxes above), and your pa" +
+    "ssword.";
             // 
             // InputName
             // 

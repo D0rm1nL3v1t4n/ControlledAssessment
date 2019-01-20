@@ -74,12 +74,6 @@
     <Compile Include="Functions\HashAlgorithm.cs" />
     <Compile Include="Functions\SendEmail.cs" />
     <Compile Include="Functions\ValidPassword.cs" />
-    <Compile Include="Views\BackupRestore.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\BackupRestore.Designer.cs">
-      <DependentUpon>BackupRestore.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\DeleteUserConfirm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +91,18 @@
     </Compile>
     <Compile Include="Views\PreviewEmail.Designer.cs">
       <DependentUpon>PreviewEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Restore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Restore.Designer.cs">
+      <DependentUpon>Restore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewMatchAvailability.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ViewMatchAvailability.Designer.cs">
+      <DependentUpon>ViewMatchAvailability.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ViewMatchResult.cs">
       <SubType>Form</SubType>
@@ -271,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ViewMatch.resx">
       <DependentUpon>ViewMatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewMatchAvailability.resx">
+      <DependentUpon>ViewMatchAvailability.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ViewTraining.resx">
       <DependentUpon>ViewTraining.cs</DependentUpon>

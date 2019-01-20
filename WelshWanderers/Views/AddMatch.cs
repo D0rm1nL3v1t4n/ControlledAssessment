@@ -161,22 +161,17 @@ namespace WelshWanderers
             {
                 team += "\n- " + ListSelectedPlayers.Items[i].ToString();
             }
-            string homeAway;
-            string location;
-            if (InputHomeMatch.Checked == true)
-            {
-                homeAway = "home";
-                location = "";
-            }
-            else
+            string homeAway = "home";
+            string location = "";
+            if (InputHomeMatch.Checked == false)
             {
                 homeAway = "away";
-                location = "Location:" + InputAddressA.Text + ",\n         " + InputAddressB.Text + ",\n         " + InputPostcode.Text + ".";
+                location = "Address:" + InputAddressA.Text + ", " + InputAddressB.Text + ", " + InputPostcode.Text + ".";
             }
             string body = "Hello all,\n\nUpcoming " + homeAway + " match in the " + InputLeague.Text
                 + " leauge against " + InputOpponent.Text + "." + "\n\nTeam is as follows:" + team
-                + "\n\nDate & Time: " + InputDate.Text + ", " + InputTimeH.Text + ":" + InputTimeM.Text + ".\n" + location + "Please respond regarding availability."
-                + "\n\nThanks,\n" + Database.UserData.firstName + " " + Database.UserData.lastName + "\nWelsh Wanderers";
+                + "\n\nDate & Time: " + InputDate.Text + ", " + InputTimeH.Text + ":" + InputTimeM.Text + ".\n" + location + "\n\nPlease respond regarding availability."
+                + "\n\n\nThanks,\n" + Database.UserData.firstName + " " + Database.UserData.lastName + "\nWelsh Wanderers";
 
             return body;
         }

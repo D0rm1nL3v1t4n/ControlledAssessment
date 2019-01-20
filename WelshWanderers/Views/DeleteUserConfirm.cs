@@ -16,7 +16,7 @@ namespace WelshWanderers.Views
         public DeleteUserConfirm(string id)
         {
             InitializeComponent();
-            string userID = id;
+            userID = id;
         }
 
         private void DeleteUserConfirm_Load(object sender, EventArgs e)
@@ -66,7 +66,10 @@ namespace WelshWanderers.Views
         private void AlertUser()
         {
             string[] email = { InputEmailAddress.Text };
-            string body = "The following account has been removed from the Welsh Wanderers Waterpolo club system:\n" + InputUsername.Text + "\n" + InputAccessLevel.Text + "\n\nFor the following reason:\n" + InputReason.Text + "\n\nWelsh Wanderers.";
+            string team = "";
+            if (InputTeam.Text != null)
+                team = ", " + InputTeam.Text;
+            string body = "The following account has been removed from the Welsh Wanderers Waterpolo club system:\n- " + InputFirstName.Text + " " + InputLastName.Text + "\n- " + InputUsername.Text + "\n- " + InputAccessLevel.Text + team + "\n\nFor the following reason:\n" + InputReason.Text + "\n\nWelsh Wanderers.";
             Functions.SendEmail.Email("Account removed from system.", body, email);
         }
 
@@ -81,41 +84,30 @@ namespace WelshWanderers.Views
         {
             if (ValidReason() == true && ValidName() == true && ValidPassword() == true)
                 return true;
-            else
-                return false;
+            return false;
         }
 
         private bool ValidReason()
         {
-            if (InputReason.Text != null)
+            if (InputReason.Text != "")
                 return true;
-            else
-            {
-                MessageBox.Show("Enter a reason for user being deleted from the system.");
-                return false;
-            }
+            MessageBox.Show("Enter a reason for user being deleted from the system.");
+            return false;
         }
 
         private bool ValidName()
         {
             if (InputName.Text == (InputFirstName.Text.ToLower() + " " + InputLastName.Text.ToLower()))
                 return true;
-            else
-            {
-                MessageBox.Show("Name entered does not match the name of the user.");
-                return false;
-            }
+            MessageBox.Show("Name entered does not match the name of the user.");
+            return false;
         }
         
         private bool ValidPassword()
         {
             if (Functions.HashAlgorithm.CompareHashes(Functions.FileSearch.ReturnSegment("userAccountDetails", InputUsername.Text.ToLower(), 1, 2, false), Functions.HashAlgorithm.HashPassword(InputPassword.Text)) == true)
                 return true;
-            else
-            {
-                MessageBox.Show("Password entered is incorrect.");
-                return false;
-            }
+            return false;
         }
 
         private void NavCancel_Click(object sender, EventArgs e)

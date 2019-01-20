@@ -171,6 +171,24 @@
     <Compile Include="MatchData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="testForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testForm2.Designer.cs">
+      <DependentUpon>testForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testForm1.Designer.cs">
+      <DependentUpon>testForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testForm3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testForm3.Designer.cs">
+      <DependentUpon>testForm3.cs</DependentUpon>
+    </Compile>
     <Compile Include="TrainingData.cs" />
     <Compile Include="UserData.cs" />
     <EmbeddedResource Include="Forms\Home Screens\adminHomeForm.resx">
@@ -228,6 +246,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="testForm2.resx">
+      <DependentUpon>testForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testForm1.resx">
+      <DependentUpon>testForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testForm3.resx">
+      <DependentUpon>testForm3.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -1,6 +1,6 @@
-﻿namespace WelshWanderers.Views
+﻿namespace VisualCSharp
 {
-    partial class BackupRestore
+    partial class testForm3
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // testForm3
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "BackupRestore";
+            this.ClientSize = new System.Drawing.Size(439, 450);
+            this.Name = "testForm3";
+            this.Text = "testForm3";
+            this.Load += new System.EventHandler(this.testForm3_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

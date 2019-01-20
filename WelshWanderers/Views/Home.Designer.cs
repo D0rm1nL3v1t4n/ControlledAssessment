@@ -41,6 +41,7 @@
             this.EventNavSignOut = new System.Windows.Forms.Button();
             this.NavMyAccount = new System.Windows.Forms.Button();
             this.NavMatchResults = new System.Windows.Forms.Button();
+            this.NavRestore = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LabelHeader
@@ -56,7 +57,7 @@
             // NavManageUsers
             // 
             this.NavManageUsers.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavManageUsers.Location = new System.Drawing.Point(121, 62);
+            this.NavManageUsers.Location = new System.Drawing.Point(71, 67);
             this.NavManageUsers.Name = "NavManageUsers";
             this.NavManageUsers.Size = new System.Drawing.Size(95, 48);
             this.NavManageUsers.TabIndex = 6;
@@ -67,7 +68,7 @@
             // NavViewLeagues
             // 
             this.NavViewLeagues.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavViewLeagues.Location = new System.Drawing.Point(123, 178);
+            this.NavViewLeagues.Location = new System.Drawing.Point(71, 134);
             this.NavViewLeagues.Name = "NavViewLeagues";
             this.NavViewLeagues.Size = new System.Drawing.Size(95, 48);
             this.NavViewLeagues.TabIndex = 8;
@@ -78,7 +79,7 @@
             // NavUserJoinRequests
             // 
             this.NavUserJoinRequests.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavUserJoinRequests.Location = new System.Drawing.Point(123, 120);
+            this.NavUserJoinRequests.Location = new System.Drawing.Point(172, 67);
             this.NavUserJoinRequests.Name = "NavUserJoinRequests";
             this.NavUserJoinRequests.Size = new System.Drawing.Size(95, 48);
             this.NavUserJoinRequests.TabIndex = 9;
@@ -177,7 +178,7 @@
             // NavMatchResults
             // 
             this.NavMatchResults.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavMatchResults.Location = new System.Drawing.Point(123, 197);
+            this.NavMatchResults.Location = new System.Drawing.Point(122, 197);
             this.NavMatchResults.Name = "NavMatchResults";
             this.NavMatchResults.Size = new System.Drawing.Size(95, 48);
             this.NavMatchResults.TabIndex = 19;
@@ -185,11 +186,23 @@
             this.NavMatchResults.UseVisualStyleBackColor = true;
             this.NavMatchResults.Click += new System.EventHandler(this.NavViewMatchResults_Click);
             // 
+            // NavRestore
+            // 
+            this.NavRestore.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NavRestore.Location = new System.Drawing.Point(172, 134);
+            this.NavRestore.Name = "NavRestore";
+            this.NavRestore.Size = new System.Drawing.Size(95, 48);
+            this.NavRestore.TabIndex = 21;
+            this.NavRestore.Text = "Restore";
+            this.NavRestore.UseVisualStyleBackColor = true;
+            this.NavRestore.Click += new System.EventHandler(this.NavRestore_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(338, 294);
+            this.Controls.Add(this.NavRestore);
             this.Controls.Add(this.NavMatchResults);
             this.Controls.Add(this.NavMyAccount);
             this.Controls.Add(this.EventNavSignOut);
@@ -226,5 +239,6 @@
         private System.Windows.Forms.Button EventNavSignOut;
         private System.Windows.Forms.Button NavMyAccount;
         private System.Windows.Forms.Button NavMatchResults;
+        private System.Windows.Forms.Button NavRestore;
     }
 }

@@ -31,13 +31,7 @@ namespace WelshWanderers
 
         private void LeagueStats_Load(object sender, EventArgs e)
         {
-            LoadData();
-        }
-
-        private void LoadData()
-        {
             GetAllLeagues();
-            LoadAllPlayers();
         }
 
         private void GetAllLeagues()
@@ -48,14 +42,13 @@ namespace WelshWanderers
             {
                 string[] section = line.Split('|');
                 InputLeague.Items.Add(section[1]);
-                InputLeagueFile.Items.Add(section[2]);
             }
         }
 
         private void LoadAllPlayers()
         {
-            string leagueFileName = InputLeagueFile.SelectedItem.ToString();
-            StreamReader file = new StreamReader(@"Leagues\" + leagueFileName);   //Work out which file to read
+            string leagueFileName = InputLeague.SelectedItem.ToString();
+            StreamReader file = new StreamReader(@"Leagues\" + leagueFileName + ".txt");   //Work out which file to read
             string line;
             while (null != (line = file.ReadLine()))
             {
