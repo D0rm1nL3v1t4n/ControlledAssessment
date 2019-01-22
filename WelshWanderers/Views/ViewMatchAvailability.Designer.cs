@@ -32,7 +32,7 @@
             this.LabelHeader = new System.Windows.Forms.Label();
             this.TableMatchAvailability = new System.Windows.Forms.DataGridView();
             this.NavBack = new System.Windows.Forms.Button();
-            this.ColID = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColResponded = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -97,7 +97,6 @@
             this.ColID.Name = "ColID";
             this.ColID.ReadOnly = true;
             this.ColID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.ColID.Visible = false;
             this.ColID.Width = 35;
             // 
@@ -148,7 +147,7 @@
         private System.Windows.Forms.Label LabelHeader;
         private System.Windows.Forms.DataGridView TableMatchAvailability;
         private System.Windows.Forms.Button NavBack;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn ColID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColFirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColLastName;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColResponded;

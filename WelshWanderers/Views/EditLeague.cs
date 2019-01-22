@@ -42,15 +42,15 @@ namespace WelshWanderers.Views
 
         private void RenameLeague()
         {
-            //File.Move(Database.LeagueData.fileName)
+            File.Move(@"Leagues\" + Database.LeagueData.name + ".txt", @"Leagues\" + InputName.Text + ".txt");
         }
 
         private void EditLeagueData()
         {
-            string[] data = { InputName.Text, GenerateLeagueName(), InputTeam.Text };
+            string[] data = { InputName.Text, InputTeam.Text };
             int[] searchIndex = { 0 };
             string[] searchData = { Database.LeagueData.id.ToString() };
-            Functions.FileEdit.EditLine("leagues", 4, data, searchIndex, searchData);
+            Functions.FileEdit.EditLine("leagues", 3, data, searchIndex, searchData);
         }
 
         private string GenerateLeagueName()

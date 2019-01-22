@@ -66,6 +66,7 @@
     <Compile Include="Database\MatchData.cs" />
     <Compile Include="Database\TrainingData.cs" />
     <Compile Include="Database\UserData.cs" />
+    <Compile Include="Functions\Backup.cs" />
     <Compile Include="Functions\FileDelete.cs" />
     <Compile Include="Functions\FileEdit.cs" />
     <Compile Include="Functions\FileRead.cs" />
@@ -274,6 +275,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\PreviewEmail.resx">
       <DependentUpon>PreviewEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Restore.resx">
+      <DependentUpon>Restore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ViewMatch.resx">
       <DependentUpon>ViewMatch.cs</DependentUpon>
