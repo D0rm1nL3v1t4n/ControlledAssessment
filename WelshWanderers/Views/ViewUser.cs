@@ -16,9 +16,13 @@ namespace WelshWanderers
         private static string password = "";
         private static string accessLevel = "";
         private static string team = "";
-        private static int changesMade = 0;
-        private static bool accessLevelChanged = false;
-        private static bool teamChanged = false;
+
+        private class Changes
+        {
+            public static int count = 0;
+            public static bool accessLevel = false;
+            public static bool team = false;
+        }
 
         public ViewUser(string id)
         {
@@ -34,7 +38,7 @@ namespace WelshWanderers
 
         private void NavBack_Click(object sender, EventArgs e)
         {
-            if (changesMade > 0)
+            if (Changes.count > 0)
             {
                 if (MessageBox.Show("Are you sure? Changes will not be saved.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     NavToManageUsers();
@@ -45,7 +49,7 @@ namespace WelshWanderers
 
         private void EventSave_Click(object sender, EventArgs e)
         {
-            if (changesMade > 0)
+            if (Changes.count > 0)
             {
                 ChangeData();
                 MessageBox.Show("User details have been updated.");
@@ -146,35 +150,33 @@ namespace WelshWanderers
 
         private void ShowChangesMade()
         {
-            LabelChangesMade.Text = changesMade + " change(s)\nmade.";
+            LabelChangesMade.Text = Changes.count + " change(s)\nmade.";
         }
 
         private bool DetailsChanged(string inputData, string databaseValue, bool changedVal)
         {
             if (inputData != databaseValue && changedVal == false)
             {
-                ++changesMade;
-                ShowChangesMade();
+                ++Changes.count;
                 return true;
             }
             else if (inputData == databaseValue && changedVal == true)
             {
-                --changesMade;
-                ShowChangesMade();
+                --Changes.count;
                 return false;
             }
-
+            ShowChangesMade();
             return changedVal;
         }
 
         private void InputAccessLevel_TextChanged(object sender, EventArgs e)
         {
-            accessLevelChanged = DetailsChanged(InputAccessLevel.Text, accessLevel, accessLevelChanged);
+            Changes.accessLevel = DetailsChanged(InputAccessLevel.Text, accessLevel, Changes.accessLevel);
         }
 
         private void InputTeam_TextChanged(object sender, EventArgs e)
         {
-            teamChanged = DetailsChanged(InputTeam.Text, team, teamChanged);
+            Changes.team = DetailsChanged(InputTeam.Text, team, Changes.team);
         }
     }
 }

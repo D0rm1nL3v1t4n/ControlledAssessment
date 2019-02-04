@@ -17,14 +17,17 @@ namespace WelshWanderers
             InitializeComponent();
         }
 
-        public static int changesMade = 0;
-        public static bool title = false;
-        public static bool firstName = false;
-        public static bool lastName = false;
-        public static bool dateOfBirth = false;
-        public static bool emailAddress = false;
-        public static bool telephoneNumber = false;
-        public static bool postcode = false;
+        private class Changes
+        {
+            public static int count = 0;
+            public static bool title = false;
+            public static bool firstName = false;
+            public static bool lastName = false;
+            public static bool dateOfBirth = false;
+            public static bool emailAddress = false;
+            public static bool telephoneNumber = false;
+            public static bool postcode = false;
+        }
 
         private void MyAccount_Load(object sender, EventArgs e)
         {
@@ -44,20 +47,14 @@ namespace WelshWanderers
 
         private void EventNavSave_Click(object sender, EventArgs e)
         {
-            if (changesMade == 0)
-            {
-                if (MessageBox.Show("You have not made any changes, do you want to return to the home screen?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    NavToHome();
-                }
-            }
-            else if (changesMade > 0)
-            {
-                if (MessageBox.Show("You have made " + changesMade.ToString() + ", confirm?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+             if (Changes.count > 0)
+             {
+                 if (MessageBox.Show("You have made " + Changes.count.ToString() + ", confirm?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     ChangeDetails();
                 }
-            }
+             }
+             NavToHome();
         }
 
         private void ChangeDetails()
@@ -84,7 +81,7 @@ namespace WelshWanderers
 
         private void ShowChangesMade()
         {
-            LabelChangesMade.Text = changesMade + " change(s)\nmade.";
+            LabelChangesMade.Text = Changes.count + " change(s) made.";
         }
 
         private void NavHome_Click(object sender, EventArgs e)
@@ -102,56 +99,56 @@ namespace WelshWanderers
         {
             if (inputData != databaseValue && changedVal == false)
             {
-                ++changesMade;
-                ShowChangesMade();
+                ++Changes.count;
                 return true;
             }
             else if (inputData == databaseValue && changedVal == true)
             {
-                --changesMade;
-                ShowChangesMade();
+                --Changes.count;
                 return false;
             }
-
-            if (changedVal == true)
-                return true;
-            else
-                return false;
+            ShowChangesMade();
+            return changedVal;
         }
 
         private void InputTitle_SelectedIndexChanged(object sender, EventArgs e) 
-        { 
-            title = DetailsChanged(InputTitle.Text, Database.UserData.title, title);
+        {
+            Changes.title = DetailsChanged(InputTitle.Text, Database.UserData.title, Changes.title);
         }
 
         private void InputFirstName_TextChanged(object sender, EventArgs e) 
         { 
-            firstName = DetailsChanged(InputFirstName.Text, Database.UserData.firstName, firstName);
+            Changes.firstName = DetailsChanged(InputFirstName.Text, Database.UserData.firstName, Changes.firstName);
         }
 
         private void InputLastName_TextChanged(object sender, EventArgs e) 
         { 
-            lastName = DetailsChanged(InputLastName.Text, Database.UserData.lastName, lastName);
+            Changes.lastName = DetailsChanged(InputLastName.Text, Database.UserData.lastName, Changes.lastName);
         }
 
         private void InputDateOfBirth_ValueChanged(object sender, EventArgs e) 
         {
-            dateOfBirth = DetailsChanged(InputDateOfBirth.Text, Database.UserData.dateOfBirth, dateOfBirth);
+            Changes.dateOfBirth = DetailsChanged(InputDateOfBirth.Text, Database.UserData.dateOfBirth, Changes.dateOfBirth);
         }
 
         private void InputEmailAddress_TextChanged(object sender, EventArgs e) 
         { 
-            emailAddress = DetailsChanged(InputEmailAddress.Text, Database.UserData.emailAddress, emailAddress);
+            Changes.emailAddress = DetailsChanged(InputEmailAddress.Text, Database.UserData.emailAddress, Changes.emailAddress);
         }
 
         private void InputTelephoneNumber_TextChanged(object sender, EventArgs e)
         {
-            telephoneNumber = DetailsChanged(InputTelephoneNumber.Text, Database.UserData.telephoneNumber, telephoneNumber);
+            Changes.telephoneNumber = DetailsChanged(InputTelephoneNumber.Text, Database.UserData.telephoneNumber, Changes.telephoneNumber);
         }
 
         private void InputPostcode_TextChanged(object sender, EventArgs e)
         { 
-            postcode = DetailsChanged(InputPostcode.Text, Database.UserData.postcode, postcode);
+            Changes.postcode = DetailsChanged(InputPostcode.Text, Database.UserData.postcode, Changes.postcode);
+        }
+
+        private void EventNavChangePassword_Click(object sender, EventArgs e)
+        {
+            new Views.ChangePassword().Show();
         }
     }
 }

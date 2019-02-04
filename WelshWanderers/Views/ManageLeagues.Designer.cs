@@ -31,13 +31,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LabelHeader = new System.Windows.Forms.Label();
             this.TableViewLeagues = new System.Windows.Forms.DataGridView();
+            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColTeam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NavHome = new System.Windows.Forms.Button();
             this.EventNavCreate = new System.Windows.Forms.Button();
             this.EventNavEdit = new System.Windows.Forms.Button();
             this.EventDelete = new System.Windows.Forms.Button();
-            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColTeam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TableViewLeagues)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +45,7 @@
             // 
             this.LabelHeader.AutoSize = true;
             this.LabelHeader.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeader.Location = new System.Drawing.Point(113, 22);
+            this.LabelHeader.Location = new System.Drawing.Point(85, 15);
             this.LabelHeader.Name = "LabelHeader";
             this.LabelHeader.Size = new System.Drawing.Size(213, 33);
             this.LabelHeader.TabIndex = 18;
@@ -68,7 +68,7 @@
             this.ColID,
             this.ColName,
             this.ColTeam});
-            this.TableViewLeagues.Location = new System.Drawing.Point(36, 75);
+            this.TableViewLeagues.Location = new System.Drawing.Point(12, 64);
             this.TableViewLeagues.Name = "TableViewLeagues";
             this.TableViewLeagues.ReadOnly = true;
             this.TableViewLeagues.RowHeadersVisible = false;
@@ -76,51 +76,7 @@
             this.TableViewLeagues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TableViewLeagues.ShowCellToolTips = false;
             this.TableViewLeagues.Size = new System.Drawing.Size(263, 244);
-            this.TableViewLeagues.TabIndex = 19;
-            // 
-            // NavHome
-            // 
-            this.NavHome.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavHome.Location = new System.Drawing.Point(36, 325);
-            this.NavHome.Name = "NavHome";
-            this.NavHome.Size = new System.Drawing.Size(89, 48);
-            this.NavHome.TabIndex = 32;
-            this.NavHome.Text = "Home";
-            this.NavHome.UseVisualStyleBackColor = true;
-            this.NavHome.Click += new System.EventHandler(this.NavHome_Click);
-            // 
-            // EventNavCreate
-            // 
-            this.EventNavCreate.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventNavCreate.Location = new System.Drawing.Point(305, 75);
-            this.EventNavCreate.Name = "EventNavCreate";
-            this.EventNavCreate.Size = new System.Drawing.Size(89, 48);
-            this.EventNavCreate.TabIndex = 33;
-            this.EventNavCreate.Text = "Create";
-            this.EventNavCreate.UseVisualStyleBackColor = true;
-            this.EventNavCreate.Click += new System.EventHandler(this.EventNavCreate_Click);
-            // 
-            // EventNavEdit
-            // 
-            this.EventNavEdit.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventNavEdit.Location = new System.Drawing.Point(305, 129);
-            this.EventNavEdit.Name = "EventNavEdit";
-            this.EventNavEdit.Size = new System.Drawing.Size(89, 48);
-            this.EventNavEdit.TabIndex = 34;
-            this.EventNavEdit.Text = "Edit";
-            this.EventNavEdit.UseVisualStyleBackColor = true;
-            this.EventNavEdit.Click += new System.EventHandler(this.EventNavEdit_Click);
-            // 
-            // EventDelete
-            // 
-            this.EventDelete.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventDelete.Location = new System.Drawing.Point(305, 271);
-            this.EventDelete.Name = "EventDelete";
-            this.EventDelete.Size = new System.Drawing.Size(89, 48);
-            this.EventDelete.TabIndex = 35;
-            this.EventDelete.Text = "Delete";
-            this.EventDelete.UseVisualStyleBackColor = true;
-            this.EventDelete.Click += new System.EventHandler(this.EventDelete_Click);
+            this.TableViewLeagues.TabIndex = 0;
             // 
             // ColID
             // 
@@ -143,11 +99,55 @@
             this.ColTeam.ReadOnly = true;
             this.ColTeam.Width = 80;
             // 
+            // NavHome
+            // 
+            this.NavHome.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NavHome.Location = new System.Drawing.Point(12, 12);
+            this.NavHome.Name = "NavHome";
+            this.NavHome.Size = new System.Drawing.Size(64, 30);
+            this.NavHome.TabIndex = 4;
+            this.NavHome.Text = "Back";
+            this.NavHome.UseVisualStyleBackColor = true;
+            this.NavHome.Click += new System.EventHandler(this.NavHome_Click);
+            // 
+            // EventNavCreate
+            // 
+            this.EventNavCreate.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EventNavCreate.Location = new System.Drawing.Point(281, 64);
+            this.EventNavCreate.Name = "EventNavCreate";
+            this.EventNavCreate.Size = new System.Drawing.Size(89, 32);
+            this.EventNavCreate.TabIndex = 1;
+            this.EventNavCreate.Text = "Create";
+            this.EventNavCreate.UseVisualStyleBackColor = true;
+            this.EventNavCreate.Click += new System.EventHandler(this.EventNavCreate_Click);
+            // 
+            // EventNavEdit
+            // 
+            this.EventNavEdit.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EventNavEdit.Location = new System.Drawing.Point(281, 102);
+            this.EventNavEdit.Name = "EventNavEdit";
+            this.EventNavEdit.Size = new System.Drawing.Size(89, 32);
+            this.EventNavEdit.TabIndex = 2;
+            this.EventNavEdit.Text = "Edit";
+            this.EventNavEdit.UseVisualStyleBackColor = true;
+            this.EventNavEdit.Click += new System.EventHandler(this.EventNavEdit_Click);
+            // 
+            // EventDelete
+            // 
+            this.EventDelete.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EventDelete.Location = new System.Drawing.Point(281, 276);
+            this.EventDelete.Name = "EventDelete";
+            this.EventDelete.Size = new System.Drawing.Size(89, 32);
+            this.EventDelete.TabIndex = 3;
+            this.EventDelete.Text = "Delete";
+            this.EventDelete.UseVisualStyleBackColor = true;
+            this.EventDelete.Click += new System.EventHandler(this.EventDelete_Click);
+            // 
             // ManageLeagues
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(438, 386);
+            this.ClientSize = new System.Drawing.Size(382, 320);
             this.Controls.Add(this.EventDelete);
             this.Controls.Add(this.EventNavEdit);
             this.Controls.Add(this.EventNavCreate);

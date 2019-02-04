@@ -105,7 +105,7 @@ namespace WelshWanderers.Views
         
         private bool ValidPassword()
         {
-            if (Functions.HashAlgorithm.CompareHashes(Functions.FileSearch.ReturnSegment("userAccountDetails", InputUsername.Text.ToLower(), 1, 2, false), Functions.HashAlgorithm.HashPassword(InputPassword.Text)) == true)
+            if (Functions.HashAlgorithm.CheckHashes(Functions.FileSearch.ReturnSegment("userAccountDetails", InputUsername.Text.ToLower(), 1, 2, false), InputPassword.Text) == true)
                 return true;
             return false;
         }

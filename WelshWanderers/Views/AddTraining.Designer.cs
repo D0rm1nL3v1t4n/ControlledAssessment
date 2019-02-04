@@ -51,40 +51,40 @@
             "Junior",
             "Men",
             "Women"});
-            this.InputTeam.Location = new System.Drawing.Point(154, 75);
+            this.InputTeam.Location = new System.Drawing.Point(132, 69);
             this.InputTeam.Name = "InputTeam";
-            this.InputTeam.Size = new System.Drawing.Size(161, 27);
-            this.InputTeam.TabIndex = 7;
+            this.InputTeam.Size = new System.Drawing.Size(165, 27);
+            this.InputTeam.TabIndex = 0;
             // 
             // LabelHeader
             // 
             this.LabelHeader.AccessibleRole = System.Windows.Forms.AccessibleRole.Client;
             this.LabelHeader.AutoSize = true;
             this.LabelHeader.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeader.Location = new System.Drawing.Point(91, 22);
+            this.LabelHeader.Location = new System.Drawing.Point(71, 15);
             this.LabelHeader.Name = "LabelHeader";
             this.LabelHeader.Size = new System.Drawing.Size(166, 33);
-            this.LabelHeader.TabIndex = 8;
+            this.LabelHeader.TabIndex = 12;
             this.LabelHeader.Text = "Add Training";
             // 
             // InputDate
             // 
             this.InputDate.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputDate.Location = new System.Drawing.Point(154, 174);
+            this.InputDate.Location = new System.Drawing.Point(132, 166);
             this.InputDate.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
             this.InputDate.MinDate = new System.DateTime(1940, 1, 1, 0, 0, 0, 0);
             this.InputDate.Name = "InputDate";
-            this.InputDate.Size = new System.Drawing.Size(161, 27);
-            this.InputDate.TabIndex = 21;
+            this.InputDate.Size = new System.Drawing.Size(165, 27);
+            this.InputDate.TabIndex = 3;
             this.InputDate.Value = new System.DateTime(2018, 10, 26, 0, 0, 0, 0);
             // 
             // EventNavSave
             // 
             this.EventNavSave.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventNavSave.Location = new System.Drawing.Point(238, 207);
+            this.EventNavSave.Location = new System.Drawing.Point(244, 12);
             this.EventNavSave.Name = "EventNavSave";
-            this.EventNavSave.Size = new System.Drawing.Size(77, 48);
-            this.EventNavSave.TabIndex = 28;
+            this.EventNavSave.Size = new System.Drawing.Size(53, 30);
+            this.EventNavSave.TabIndex = 6;
             this.EventNavSave.Text = "Save";
             this.EventNavSave.UseVisualStyleBackColor = true;
             this.EventNavSave.Click += new System.EventHandler(this.EventNavSave_Click);
@@ -92,85 +92,85 @@
             // NavCancel
             // 
             this.NavCancel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavCancel.Location = new System.Drawing.Point(38, 207);
+            this.NavCancel.Location = new System.Drawing.Point(12, 12);
             this.NavCancel.Name = "NavCancel";
-            this.NavCancel.Size = new System.Drawing.Size(77, 48);
-            this.NavCancel.TabIndex = 29;
-            this.NavCancel.Text = "Cancel";
+            this.NavCancel.Size = new System.Drawing.Size(53, 30);
+            this.NavCancel.TabIndex = 7;
+            this.NavCancel.Text = "Back";
             this.NavCancel.UseVisualStyleBackColor = true;
             this.NavCancel.Click += new System.EventHandler(this.NavCancel_Click);
             // 
             // InputDuration
             // 
             this.InputDuration.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputDuration.Location = new System.Drawing.Point(154, 141);
+            this.InputDuration.Location = new System.Drawing.Point(132, 135);
             this.InputDuration.Name = "InputDuration";
-            this.InputDuration.Size = new System.Drawing.Size(120, 27);
-            this.InputDuration.TabIndex = 30;
+            this.InputDuration.Size = new System.Drawing.Size(165, 27);
+            this.InputDuration.TabIndex = 3;
             // 
             // InputTimeM
             // 
             this.InputTimeM.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputTimeM.Location = new System.Drawing.Point(217, 108);
+            this.InputTimeM.Location = new System.Drawing.Point(218, 102);
             this.InputTimeM.Name = "InputTimeM";
-            this.InputTimeM.Size = new System.Drawing.Size(57, 27);
-            this.InputTimeM.TabIndex = 31;
+            this.InputTimeM.Size = new System.Drawing.Size(79, 27);
+            this.InputTimeM.TabIndex = 2;
             // 
             // InputTimeH
             // 
             this.InputTimeH.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputTimeH.Location = new System.Drawing.Point(154, 108);
+            this.InputTimeH.Location = new System.Drawing.Point(132, 102);
             this.InputTimeH.Name = "InputTimeH";
-            this.InputTimeH.Size = new System.Drawing.Size(57, 27);
-            this.InputTimeH.TabIndex = 32;
+            this.InputTimeH.Size = new System.Drawing.Size(79, 27);
+            this.InputTimeH.TabIndex = 1;
             // 
             // LabelTeam
             // 
             this.LabelTeam.AutoSize = true;
-            this.LabelTeam.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelTeam.Location = new System.Drawing.Point(99, 78);
+            this.LabelTeam.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelTeam.Location = new System.Drawing.Point(12, 73);
             this.LabelTeam.Name = "LabelTeam";
-            this.LabelTeam.Size = new System.Drawing.Size(49, 19);
-            this.LabelTeam.TabIndex = 33;
+            this.LabelTeam.Size = new System.Drawing.Size(47, 18);
+            this.LabelTeam.TabIndex = 11;
             this.LabelTeam.Text = "Team";
             // 
             // LabelDate
             // 
             this.LabelDate.AutoSize = true;
-            this.LabelDate.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelDate.Location = new System.Drawing.Point(107, 180);
+            this.LabelDate.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelDate.Location = new System.Drawing.Point(12, 173);
             this.LabelDate.Name = "LabelDate";
-            this.LabelDate.Size = new System.Drawing.Size(41, 19);
-            this.LabelDate.TabIndex = 34;
+            this.LabelDate.Size = new System.Drawing.Size(39, 18);
+            this.LabelDate.TabIndex = 10;
             this.LabelDate.Text = "Date";
             // 
             // LabelDuration
             // 
             this.LabelDuration.AutoSize = true;
-            this.LabelDuration.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelDuration.Location = new System.Drawing.Point(34, 144);
+            this.LabelDuration.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelDuration.Location = new System.Drawing.Point(9, 139);
             this.LabelDuration.Name = "LabelDuration";
-            this.LabelDuration.Size = new System.Drawing.Size(114, 19);
-            this.LabelDuration.TabIndex = 35;
+            this.LabelDuration.Size = new System.Drawing.Size(102, 18);
+            this.LabelDuration.TabIndex = 9;
             this.LabelDuration.Text = "Duration (min)";
             // 
             // LabelTime
             // 
             this.LabelTime.AutoSize = true;
-            this.LabelTime.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelTime.Location = new System.Drawing.Point(103, 111);
+            this.LabelTime.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelTime.Location = new System.Drawing.Point(12, 106);
             this.LabelTime.Name = "LabelTime";
-            this.LabelTime.Size = new System.Drawing.Size(45, 19);
-            this.LabelTime.TabIndex = 36;
+            this.LabelTime.Size = new System.Drawing.Size(41, 18);
+            this.LabelTime.TabIndex = 8;
             this.LabelTime.Text = "Time";
             // 
             // EventPreviewEmail
             // 
             this.EventPreviewEmail.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventPreviewEmail.Location = new System.Drawing.Point(155, 207);
+            this.EventPreviewEmail.Location = new System.Drawing.Point(183, 199);
             this.EventPreviewEmail.Name = "EventPreviewEmail";
-            this.EventPreviewEmail.Size = new System.Drawing.Size(77, 48);
-            this.EventPreviewEmail.TabIndex = 37;
+            this.EventPreviewEmail.Size = new System.Drawing.Size(114, 30);
+            this.EventPreviewEmail.TabIndex = 5;
             this.EventPreviewEmail.Text = "Preview Email";
             this.EventPreviewEmail.UseVisualStyleBackColor = true;
             this.EventPreviewEmail.Click += new System.EventHandler(this.InputPreviewEmail_Click);
@@ -179,7 +179,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 277);
+            this.ClientSize = new System.Drawing.Size(309, 235);
             this.Controls.Add(this.EventPreviewEmail);
             this.Controls.Add(this.LabelTime);
             this.Controls.Add(this.LabelDuration);

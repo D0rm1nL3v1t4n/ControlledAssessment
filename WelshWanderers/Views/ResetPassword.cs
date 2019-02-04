@@ -12,8 +12,8 @@ namespace WelshWanderers
 {
     public partial class ResetPassword : Form
     {
-        public static string generatedCode = "";
-        public static string userID = ""; 
+        private static string generatedCode = "";
+        private static string userID = ""; 
 
         public ResetPassword()
         {
@@ -22,19 +22,16 @@ namespace WelshWanderers
 
         private void EventEnter_Click(object sender, EventArgs e)
         {
-            userID = Functions.FileSearch.ReturnSegment("userAccountDetails", InputUsername.Text, 1, 0, false);
-            if (null != userID)
+            if (null != (userID = Functions.FileSearch.ReturnSegment("userAccountDetails", InputUsername.Text, 1, 0, false)))
             {
-                string[] emailAddress = new string[1] { Functions.FileSearch.ReturnSegment("userPersonalDetails", userID, 0, 5, false) };
+                string[] emailAddress = { Functions.FileSearch.ReturnSegment("userPersonalDetails", userID, 0, 5) };
                 ShowEmailAddress(emailAddress[0]);
 
-                GenerateRandomCode();
-                Functions.SendEmail.Email("Resetting Password", "Your 6 digit code to change your password:\n\n\n" + generatedCode + "\n\nWelsh Wanderers water polo club.", emailAddress);
+                generatedCode = Functions.RandomCode.GenerateCode(8);
+                Functions.SendEmail.Email("Resetting Password", "Your 8 digit code to change your password:\n\n\n" + generatedCode + "\n\nWelsh Wanderers water polo club.", emailAddress);
             }
             else
-            {
                 MessageBox.Show("Username not found.");
-            }
         }
 
         private void ShowEmailAddress(string emailAddress)
@@ -42,20 +39,24 @@ namespace WelshWanderers
             LabelUserEmail.Text = emailAddress;
         }
 
-        private void GenerateRandomCode()
+        private void NavToSignIn()
         {
-            string characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-            var stringCharacters = new char[6];
-            var random = new Random();
-            for (int i = 0; i < 6; i++)
-            {
-                stringCharacters[i] = characters[random.Next(characters.Length)];
-            }
-            generatedCode = new String(stringCharacters);
+            new SignIn().Show();
+            Hide();
+        }
+
+        private void NavBack_Click(object sender, EventArgs e)
+        {
+            NavToSignIn();
         }
 
         private void EventNavChangePassword_Click(object sender, EventArgs e)
         {
+            if (InputCode.Text != generatedCode)
+            {
+                MessageBox.Show("The code entered is incorrect.");
+                return;
+            }
             if (Functions.ValidPassword.IsPasswordValid(InputNewPassword.Text, InputConfirmNewPassword.Text) == true)
             {
                 string userAccessLevel = Functions.FileSearch.ReturnSegment("userAccountDetails", userID, 0, 3, false);
@@ -68,15 +69,7 @@ namespace WelshWanderers
             }
         }
 
-        private void NavCancel_Click(object sender, EventArgs e)
-        {
-            NavToSignIn();
-        }
 
-        private void NavToSignIn()
-        {
-            new SignIn().Show();
-            Hide();
-        }
+
     }
 }

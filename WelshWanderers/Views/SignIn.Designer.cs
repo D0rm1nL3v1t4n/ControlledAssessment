@@ -34,96 +34,97 @@
             this.InputPassword = new System.Windows.Forms.TextBox();
             this.LabelHeader = new System.Windows.Forms.Label();
             this.NavResetPassword = new System.Windows.Forms.Button();
-            this.NavRegisterRequest = new System.Windows.Forms.Button();
             this.EventNavSignIn = new System.Windows.Forms.Button();
+            this.NavRegister = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LabelUsername
             // 
             this.LabelUsername.AutoSize = true;
-            this.LabelUsername.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelUsername.Location = new System.Drawing.Point(39, 72);
+            this.LabelUsername.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelUsername.Location = new System.Drawing.Point(12, 62);
             this.LabelUsername.Name = "LabelUsername";
-            this.LabelUsername.Size = new System.Drawing.Size(80, 19);
-            this.LabelUsername.TabIndex = 0;
+            this.LabelUsername.Size = new System.Drawing.Size(75, 18);
+            this.LabelUsername.TabIndex = 5;
             this.LabelUsername.Text = "Username";
             // 
             // LabelPassword
             // 
             this.LabelPassword.AutoSize = true;
-            this.LabelPassword.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelPassword.Location = new System.Drawing.Point(43, 104);
+            this.LabelPassword.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelPassword.Location = new System.Drawing.Point(12, 94);
             this.LabelPassword.Name = "LabelPassword";
-            this.LabelPassword.Size = new System.Drawing.Size(76, 19);
-            this.LabelPassword.TabIndex = 1;
+            this.LabelPassword.Size = new System.Drawing.Size(69, 18);
+            this.LabelPassword.TabIndex = 6;
             this.LabelPassword.Text = "Password";
             // 
             // InputUsername
             // 
             this.InputUsername.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputUsername.Location = new System.Drawing.Point(125, 69);
+            this.InputUsername.Location = new System.Drawing.Point(93, 58);
             this.InputUsername.Name = "InputUsername";
-            this.InputUsername.Size = new System.Drawing.Size(171, 27);
-            this.InputUsername.TabIndex = 2;
+            this.InputUsername.Size = new System.Drawing.Size(187, 27);
+            this.InputUsername.TabIndex = 0;
             // 
             // InputPassword
             // 
             this.InputPassword.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputPassword.Location = new System.Drawing.Point(125, 101);
+            this.InputPassword.Location = new System.Drawing.Point(93, 90);
             this.InputPassword.Name = "InputPassword";
-            this.InputPassword.Size = new System.Drawing.Size(171, 27);
-            this.InputPassword.TabIndex = 3;
+            this.InputPassword.PasswordChar = '*';
+            this.InputPassword.Size = new System.Drawing.Size(187, 27);
+            this.InputPassword.TabIndex = 1;
             // 
             // LabelHeader
             // 
             this.LabelHeader.AutoSize = true;
             this.LabelHeader.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeader.Location = new System.Drawing.Point(118, 22);
+            this.LabelHeader.Location = new System.Drawing.Point(97, 15);
             this.LabelHeader.Name = "LabelHeader";
             this.LabelHeader.Size = new System.Drawing.Size(99, 33);
-            this.LabelHeader.TabIndex = 4;
+            this.LabelHeader.TabIndex = 7;
             this.LabelHeader.Text = "Sign In";
-            // 
-            // NavResetPassword
-            // 
-            this.NavResetPassword.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavResetPassword.Location = new System.Drawing.Point(28, 155);
-            this.NavResetPassword.Name = "NavResetPassword";
-            this.NavResetPassword.Size = new System.Drawing.Size(95, 48);
-            this.NavResetPassword.TabIndex = 5;
-            this.NavResetPassword.Text = "Reset Password";
-            this.NavResetPassword.UseVisualStyleBackColor = true;
-            this.NavResetPassword.Click += new System.EventHandler(this.NavResetPassword_Click);
-            // 
-            // NavRegisterRequest
-            // 
-            this.NavRegisterRequest.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavRegisterRequest.Location = new System.Drawing.Point(129, 155);
-            this.NavRegisterRequest.Name = "NavRegisterRequest";
-            this.NavRegisterRequest.Size = new System.Drawing.Size(89, 48);
-            this.NavRegisterRequest.TabIndex = 6;
-            this.NavRegisterRequest.Text = "Register";
-            this.NavRegisterRequest.UseVisualStyleBackColor = true;
-            this.NavRegisterRequest.Click += new System.EventHandler(this.NavRegisterRequest_Click);
             // 
             // EventNavSignIn
             // 
             this.EventNavSignIn.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventNavSignIn.Location = new System.Drawing.Point(224, 155);
+            this.EventNavSignIn.Location = new System.Drawing.Point(16, 123);
             this.EventNavSignIn.Name = "EventNavSignIn";
-            this.EventNavSignIn.Size = new System.Drawing.Size(83, 48);
-            this.EventNavSignIn.TabIndex = 7;
+            this.EventNavSignIn.Size = new System.Drawing.Size(264, 29);
+            this.EventNavSignIn.TabIndex = 2;
             this.EventNavSignIn.Text = "Sign In";
             this.EventNavSignIn.UseVisualStyleBackColor = true;
             this.EventNavSignIn.Click += new System.EventHandler(this.EventNavSignIn_Click);
+            // 
+            // NavResetPassword
+            // 
+            this.NavResetPassword.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NavResetPassword.Location = new System.Drawing.Point(16, 158);
+            this.NavResetPassword.Name = "NavResetPassword";
+            this.NavResetPassword.Size = new System.Drawing.Size(127, 30);
+            this.NavResetPassword.TabIndex = 3;
+            this.NavResetPassword.Text = "Reset Password";
+            this.NavResetPassword.UseVisualStyleBackColor = true;
+            this.NavResetPassword.Click += new System.EventHandler(this.NavResetPassword_Click);
+            // 
+            // NavRegister
+            // 
+            this.NavRegister.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NavRegister.Location = new System.Drawing.Point(149, 158);
+            this.NavRegister.Name = "NavRegister";
+            this.NavRegister.Size = new System.Drawing.Size(131, 30);
+            this.NavRegister.TabIndex = 4;
+            this.NavRegister.Text = "Register";
+            this.NavRegister.UseVisualStyleBackColor = true;
+            this.NavRegister.Click += new System.EventHandler(this.NavRegister_Click);
             // 
             // SignIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 239);
+            this.ClientSize = new System.Drawing.Size(292, 200);
             this.Controls.Add(this.EventNavSignIn);
-            this.Controls.Add(this.NavRegisterRequest);
+            this.Controls.Add(this.NavRegister);
             this.Controls.Add(this.NavResetPassword);
             this.Controls.Add(this.LabelHeader);
             this.Controls.Add(this.InputPassword);
@@ -145,8 +146,8 @@
         private System.Windows.Forms.TextBox InputPassword;
         private System.Windows.Forms.Label LabelHeader;
         private System.Windows.Forms.Button NavResetPassword;
-        private System.Windows.Forms.Button NavRegisterRequest;
         private System.Windows.Forms.Button EventNavSignIn;
+        private System.Windows.Forms.Button NavRegister;
     }
 }
 

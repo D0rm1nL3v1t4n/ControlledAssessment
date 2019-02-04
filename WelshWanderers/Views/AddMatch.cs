@@ -101,7 +101,7 @@ namespace WelshWanderers
 
         private void ShowPlayersAdded() 
         {
-            LabelPlayersAdded.Text = ListSelectedPlayers.Items.Count + " player(s) added.";
+            LabelPlayersAdded.Text = ListSelectedPlayers.Items.Count + " player(s)";
         }
 
         private void EventClear_Click(object sender, EventArgs e)

@@ -73,8 +73,15 @@
     <Compile Include="Functions\FileSearch.cs" />
     <Compile Include="Functions\FileWrite.cs" />
     <Compile Include="Functions\HashAlgorithm.cs" />
+    <Compile Include="Functions\RandomCode.cs" />
     <Compile Include="Functions\SendEmail.cs" />
     <Compile Include="Functions\ValidPassword.cs" />
+    <Compile Include="Views\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\DeleteUserConfirm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AddTraining.resx">
       <DependentUpon>AddTraining.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CreateLeague.resx">
       <DependentUpon>CreateLeague.cs</DependentUpon>

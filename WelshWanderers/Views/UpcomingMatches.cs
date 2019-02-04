@@ -41,6 +41,7 @@ namespace WelshWanderers
         private void HideButtons()
         {
             NavEditMatch.Hide();
+            NavAddResult.Hide();
         }
 
         private void NavHome_Click(object sender, EventArgs e)

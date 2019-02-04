@@ -31,15 +31,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LabelHeader = new System.Windows.Forms.Label();
             this.TableMatchAvailability = new System.Windows.Forms.DataGridView();
-            this.NavHome = new System.Windows.Forms.Button();
-            this.EventSave = new System.Windows.Forms.Button();
-            this.EventMatchDetails = new System.Windows.Forms.Button();
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColLeague = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColOpponent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColAvailability = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.NavHome = new System.Windows.Forms.Button();
+            this.EventSave = new System.Windows.Forms.Button();
+            this.EventMatchDetails = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TableMatchAvailability)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +47,7 @@
             // 
             this.LabelHeader.AutoSize = true;
             this.LabelHeader.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeader.Location = new System.Drawing.Point(186, 22);
+            this.LabelHeader.Location = new System.Drawing.Point(154, 15);
             this.LabelHeader.Name = "LabelHeader";
             this.LabelHeader.Size = new System.Drawing.Size(218, 33);
             this.LabelHeader.TabIndex = 7;
@@ -73,7 +73,7 @@
             this.ColDate,
             this.ColTime,
             this.ColAvailability});
-            this.TableMatchAvailability.Location = new System.Drawing.Point(44, 81);
+            this.TableMatchAvailability.Location = new System.Drawing.Point(12, 62);
             this.TableMatchAvailability.MultiSelect = false;
             this.TableMatchAvailability.Name = "TableMatchAvailability";
             this.TableMatchAvailability.RowHeadersVisible = false;
@@ -81,40 +81,7 @@
             this.TableMatchAvailability.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TableMatchAvailability.ShowCellToolTips = false;
             this.TableMatchAvailability.Size = new System.Drawing.Size(503, 197);
-            this.TableMatchAvailability.TabIndex = 17;
-            // 
-            // NavHome
-            // 
-            this.NavHome.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavHome.Location = new System.Drawing.Point(44, 284);
-            this.NavHome.Name = "NavHome";
-            this.NavHome.Size = new System.Drawing.Size(89, 48);
-            this.NavHome.TabIndex = 31;
-            this.NavHome.Text = "Home";
-            this.NavHome.UseVisualStyleBackColor = true;
-            this.NavHome.Click += new System.EventHandler(this.NavHome_Click);
-            // 
-            // EventSave
-            // 
-            this.EventSave.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventSave.Location = new System.Drawing.Point(458, 284);
-            this.EventSave.Name = "EventSave";
-            this.EventSave.Size = new System.Drawing.Size(89, 48);
-            this.EventSave.TabIndex = 32;
-            this.EventSave.Text = "Save";
-            this.EventSave.UseVisualStyleBackColor = true;
-            this.EventSave.Click += new System.EventHandler(this.EventSave_Click);
-            // 
-            // EventMatchDetails
-            // 
-            this.EventMatchDetails.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventMatchDetails.Location = new System.Drawing.Point(363, 284);
-            this.EventMatchDetails.Name = "EventMatchDetails";
-            this.EventMatchDetails.Size = new System.Drawing.Size(89, 48);
-            this.EventMatchDetails.TabIndex = 33;
-            this.EventMatchDetails.Text = "Match Details";
-            this.EventMatchDetails.UseVisualStyleBackColor = true;
-            this.EventMatchDetails.Click += new System.EventHandler(this.EventMatchDetails_Click);
+            this.TableMatchAvailability.TabIndex = 0;
             // 
             // ColID
             // 
@@ -161,11 +128,44 @@
             this.ColAvailability.Name = "ColAvailability";
             this.ColAvailability.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
+            // NavHome
+            // 
+            this.NavHome.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NavHome.Location = new System.Drawing.Point(12, 12);
+            this.NavHome.Name = "NavHome";
+            this.NavHome.Size = new System.Drawing.Size(78, 30);
+            this.NavHome.TabIndex = 3;
+            this.NavHome.Text = "Back";
+            this.NavHome.UseVisualStyleBackColor = true;
+            this.NavHome.Click += new System.EventHandler(this.NavHome_Click);
+            // 
+            // EventSave
+            // 
+            this.EventSave.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EventSave.Location = new System.Drawing.Point(437, 12);
+            this.EventSave.Name = "EventSave";
+            this.EventSave.Size = new System.Drawing.Size(78, 30);
+            this.EventSave.TabIndex = 2;
+            this.EventSave.Text = "Save";
+            this.EventSave.UseVisualStyleBackColor = true;
+            this.EventSave.Click += new System.EventHandler(this.EventSave_Click);
+            // 
+            // EventMatchDetails
+            // 
+            this.EventMatchDetails.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EventMatchDetails.Location = new System.Drawing.Point(399, 265);
+            this.EventMatchDetails.Name = "EventMatchDetails";
+            this.EventMatchDetails.Size = new System.Drawing.Size(116, 30);
+            this.EventMatchDetails.TabIndex = 1;
+            this.EventMatchDetails.Text = "Match Details";
+            this.EventMatchDetails.UseVisualStyleBackColor = true;
+            this.EventMatchDetails.Click += new System.EventHandler(this.EventMatchDetails_Click);
+            // 
             // MatchAvailability
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(590, 355);
+            this.ClientSize = new System.Drawing.Size(527, 302);
             this.Controls.Add(this.EventMatchDetails);
             this.Controls.Add(this.EventSave);
             this.Controls.Add(this.NavHome);

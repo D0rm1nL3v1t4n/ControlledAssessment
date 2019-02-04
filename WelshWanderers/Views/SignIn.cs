@@ -34,15 +34,9 @@ namespace WelshWanderers
                 MessageBox.Show("That username does not exist.");
         }
 
-        private void NavRegisterRequest_Click(object sender, EventArgs e)
+        private bool ComparePasswords(string filePassword) 
         {
-            new RegisterRequest().Show();
-            Hide();
-        }
-
-        private bool ComparePasswords(string password) 
-        {
-            return Functions.HashAlgorithm.CompareHashes(password, Functions.HashAlgorithm.HashPassword(InputPassword.Text));
+            return Functions.HashAlgorithm.CheckHashes(filePassword, InputPassword.Text);
         }
 
         private void LoadPersonalDetails()
@@ -68,6 +62,12 @@ namespace WelshWanderers
         private void LoadHome()
         {
             new Home().Show();
+            Hide();
+        }
+
+        private void NavRegister_Click(object sender, EventArgs e)
+        {
+            new RegisterRequest().Show();
             Hide();
         }
 

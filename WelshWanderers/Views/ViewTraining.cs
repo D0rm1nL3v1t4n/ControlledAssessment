@@ -17,12 +17,15 @@ namespace WelshWanderers
             InitializeComponent();
         }
 
-        public static int changesMade = 0;
-        public static bool team = false;
-        public static bool timeH = false;
-        public static bool timeM = false;
-        public static bool duration = false;
-        public static bool date = false;
+        private class Changes
+        {
+            public static int count = 0;
+            public static bool team = false;
+            public static bool timeH = false;
+            public static bool timeM = false;
+            public static bool duration = false;
+            public static bool date = false;
+        }
 
         private void EditTraining_Load(object sender, EventArgs e)
         {
@@ -39,7 +42,7 @@ namespace WelshWanderers
 
         private void NavBack_Click(object sender, EventArgs e)
         {
-            if (changesMade > 0)
+            if (Changes.count > 0)
             {
                 if (MessageBox.Show("Are you sure? Changes will not be saved.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -65,17 +68,17 @@ namespace WelshWanderers
 
         private void ResetChanges()
         {
-            team = false;
-            timeH = false;
-            timeM = false;
-            duration = false;
-            date = false;
-            changesMade = 0;
+            Changes.team = false;
+            Changes.timeH = false;
+            Changes.timeM = false;
+            Changes.duration = false;
+            Changes.date = false;
+            Changes.count = 0;
         }
 
         private void EventCancelEdit_Click(object sender, EventArgs e)
         {
-            if (changesMade > 0)
+            if (Changes.count > 0)
             {
                 if (MessageBox.Show("Are you sure? Changes will not be saved.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -158,53 +161,48 @@ namespace WelshWanderers
 
         private void ShowChangesMade()
         {
-            LabelChangesMade.Text = changesMade + " change(s)\nmade.";
+            LabelChangesMade.Text = Changes.count + " change(s)\nmade.";
         }
 
         private bool DetailsChanged(string inputData, string databaseValue, bool changedVal)
         {
             if (inputData != databaseValue && changedVal == false)
             {
-                ++changesMade;
-                ShowChangesMade();
+                ++Changes.count;
                 return true;
             }
             else if (inputData == databaseValue && changedVal == true)
             {
-                --changesMade;
-                ShowChangesMade();
+                --Changes.count;
                 return false;
             }
-
-            if (changedVal == true)
-                return true;
-            else
-                return false;
+            ShowChangesMade();
+            return changedVal;
         }
 
         private void InputTeam_SelectedIndexChanged(object sender, EventArgs e)
         {
-            team = DetailsChanged(InputTeam.Text, Database.TrainingData.team, team);
+            Changes.team = DetailsChanged(InputTeam.Text, Database.TrainingData.team, Changes.team);
         }
 
         private void InputTimeH_TextChanged(object sender, EventArgs e)
         {
-            timeH = DetailsChanged(InputTimeH.Text, Database.TrainingData.timeH.ToString(), timeH);
+            Changes.timeH = DetailsChanged(InputTimeH.Text, Database.TrainingData.timeH.ToString(), Changes.timeH);
         }
 
         private void InputTimeM_TextChanged(object sender, EventArgs e)
         {
-            timeM = DetailsChanged(InputTimeM.Text, Database.TrainingData.timeM.ToString(), timeM);
+            Changes.timeM = DetailsChanged(InputTimeM.Text, Database.TrainingData.timeM.ToString(), Changes.timeM);
         }
 
         private void InputDuration_TextChanged(object sender, EventArgs e)
         {
-            duration = DetailsChanged(InputDuration.Text, Database.TrainingData.duration.ToString(), duration);
+            Changes.duration = DetailsChanged(InputDuration.Text, Database.TrainingData.duration.ToString(), Changes.duration);
         }
 
         private void InputDate_ValueChanged(object sender, EventArgs e)
         {
-            date = DetailsChanged(InputDate.Text, Database.TrainingData.date, date);
+            Changes.date = DetailsChanged(InputDate.Text, Database.TrainingData.date, Changes.date);
         }
 
         private bool ValidInputs()

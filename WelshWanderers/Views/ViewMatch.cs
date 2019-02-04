@@ -15,21 +15,24 @@ namespace WelshWanderers
 
         private static string previous;
 
-        public static int changesMade = 0;
-        public static bool league = false;
-        public static bool opponent = false;
-        public static bool date = false;
-        public static bool timeH = false;
-        public static bool timeM = false;
-        public static bool addressLineA = false;
-        public static bool addressLineB = false;
-        public static bool postcode = false;
-
         private void ViewMatch_Load(object sender, EventArgs e)
         {
             LoadMatchData();
             EditOff();
             AccessLevelButtons();
+        }
+
+        private class Changes
+        {
+            public static int count = 0;
+            public static bool league = false;
+            public static bool opponent = false;
+            public static bool date = false;
+            public static bool timeH = false;
+            public static bool timeM = false;
+            public static bool addressLineA = false;
+            public static bool addressLineB = false;
+            public static bool postcode = false;
         }
 
         private void AccessLevelButtons()
@@ -42,7 +45,7 @@ namespace WelshWanderers
 
         private void NavBack_Click(object sender, EventArgs e)
         {
-            if (changesMade > 0)
+            if (Changes.count > 0)
             {
                 if (MessageBox.Show("Are you sure? Changes will not be saved.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -90,7 +93,7 @@ namespace WelshWanderers
 
         private void EventCancelEdit_Click(object sender, EventArgs e)
         {
-            if (changesMade > 0)
+            if (Changes.count > 0)
             {
                 if (MessageBox.Show("Are you sure? Changes will not be saved.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -191,68 +194,63 @@ namespace WelshWanderers
 
         private void ShowChangesMade()
         {
-            LabelChangesMade.Text = changesMade + " change(s)\nmade.";
+            LabelChangesMade.Text = Changes.count + " change(s)\nmade.";
         }
 
         private bool DetailsChanged(string inputData, string databaseValue, bool changedVal)
         {
             if (inputData != databaseValue && changedVal == false)
             {
-                ++changesMade;
-                ShowChangesMade();
+                ++Changes.count;
                 return true;
             }
             else if (inputData == databaseValue && changedVal == true)
             {
-                --changesMade;
-                ShowChangesMade();
+                --Changes.count;
                 return false;
             }
-
-            if (changedVal == true)
-                return true;
-            else
-                return false;
+            ShowChangesMade();
+            return changedVal;
         }
 
         private void InputLeague_SelectedIndexChanged(object sender, EventArgs e)
         {
-            league = DetailsChanged(InputLeague.Text, Database.MatchData.league, league);
+            Changes.league = DetailsChanged(InputLeague.Text, Database.MatchData.league, Changes.league);
         }
 
         private void InputOpponent_TextChanged(object sender, EventArgs e)
         {
-            opponent = DetailsChanged(InputOpponent.Text, Database.MatchData.opponent, opponent);
+            Changes.opponent = DetailsChanged(InputOpponent.Text, Database.MatchData.opponent, Changes.opponent);
         }
 
         private void InputDate_ValueChanged(object sender, EventArgs e)
         {
-            date = DetailsChanged(InputDate.Text, Database.MatchData.date, date);
+            Changes.date = DetailsChanged(InputDate.Text, Database.MatchData.date, Changes.date);
         }
 
         private void InputTimeH_TextChanged(object sender, EventArgs e)
         {
-            timeH = DetailsChanged(InputTimeH.Text, Database.MatchData.timeH.ToString(), timeH);
+            Changes.timeH = DetailsChanged(InputTimeH.Text, Database.MatchData.timeH.ToString(), Changes.timeH);
         }
 
         private void InputTimeM_TextChanged(object sender, EventArgs e)
         {
-            timeM = DetailsChanged(InputTimeM.Text, Database.MatchData.timeM.ToString(), timeM);
+            Changes.timeM = DetailsChanged(InputTimeM.Text, Database.MatchData.timeM.ToString(), Changes.timeM);
         }
 
         private void InputAddressA_TextChanged(object sender, EventArgs e)
         {
-            addressLineA = DetailsChanged(InputAddressA.Text, Database.MatchData.addressLineA, addressLineA);
+            Changes.addressLineA = DetailsChanged(InputAddressA.Text, Database.MatchData.addressLineA, Changes.addressLineA);
         }
 
         private void InputAddressB_TextChanged(object sender, EventArgs e)
         {
-            addressLineB = DetailsChanged(InputAddressB.Text, Database.MatchData.addressLineB, addressLineB);
+            Changes.addressLineB = DetailsChanged(InputAddressB.Text, Database.MatchData.addressLineB, Changes.addressLineB);
         }
 
         private void InputPostcode_TextChanged(object sender, EventArgs e)
         {
-            postcode = DetailsChanged(InputPostcode.Text, Database.MatchData.postcode, postcode);
+            Changes.postcode = DetailsChanged(InputPostcode.Text, Database.MatchData.postcode, Changes.postcode);
         }
 
         private void InputHomeMatch_CheckedChanged(object sender, EventArgs e)

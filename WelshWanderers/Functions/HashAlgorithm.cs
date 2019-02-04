@@ -9,39 +9,33 @@ namespace WelshWanderers.Functions
     {
         public static string HashPassword(string password)
         {
-            SHA512 sha512Hash = SHA512.Create();
-            byte[] hashedPassword = sha512Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
-
-            var cryptoProvider = new RNGCryptoServiceProvider();
-            byte[] saltA = new byte[12];
-            byte[] saltB = new byte[12];
-            cryptoProvider.GetBytes(saltA);
-            cryptoProvider.GetBytes(saltB);
-
-            string newPassword = Convert.ToBase64String(hashedPassword);
+            byte[] salt;
+            new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
             
-            newPassword = TrimEnd(newPassword);
+            var pbkdf2 = new Rfc2898DeriveBytes(password, salt, 10000);
 
-            return Convert.ToBase64String(saltA) + newPassword + Convert.ToBase64String(saltB);
+            byte[] hash = pbkdf2.GetBytes(20);
+            byte[] hashBytes = new byte[36];
+
+            Array.Copy(salt, 0, hashBytes, 0, 16);
+            Array.Copy(hash, 0, hashBytes, 16, 20);
+
+            return Convert.ToBase64String(hashBytes);
         }
 
-        private static string TrimEnd(string strPassword)
+        public static bool CheckHashes(string savedHash, string enteredPassword)
         {
-            string strTrimmed = "";
-            char[] characters = strPassword.ToCharArray();
-            for (int i = 0; i < 86; ++i)
-                strTrimmed +=  characters[i];
-            return strTrimmed;
-        }
+            byte[] hashBytes = Convert.FromBase64String(savedHash);
+            byte[] salt = new byte[16];
 
-        public static bool CompareHashes(string passwordA, string passwordB)
-        {
-            string[] arrayPasswordA = passwordA.Split();
-            string[] arrayPasswordB = passwordB.Split();
+            Array.Copy(hashBytes, 0, salt, 0, 16);
+            var pbkdf2 = new Rfc2898DeriveBytes(enteredPassword, salt, 10000);
 
-            for (int i = 0; i < 86; ++i)
+            byte[] hash = pbkdf2.GetBytes(20);
+
+            for (int i = 0; i < 20; ++i)
             {
-                if (passwordA[i + 16] != passwordB[i + 16])
+                if (hashBytes[i + 16] != hash[i])
                 {
                     MessageBox.Show("Password is incorrect.");
                     return false;
@@ -49,5 +43,8 @@ namespace WelshWanderers.Functions
             }
             return true;
         }
+
+        
+
     }
 }

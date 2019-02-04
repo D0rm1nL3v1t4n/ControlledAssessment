@@ -52,16 +52,5 @@ namespace WelshWanderers.Views
             string[] searchData = { Database.LeagueData.id.ToString() };
             Functions.FileEdit.EditLine("leagues", 3, data, searchIndex, searchData);
         }
-
-        private string GenerateLeagueName()
-        {
-            string[] name = InputName.Text.Split(' ');
-            string fileName = "League";
-            foreach (string segement in name)
-            {
-                fileName += "_" + segement.ToLower();
-            }
-            return fileName;
-        }
     }
 }

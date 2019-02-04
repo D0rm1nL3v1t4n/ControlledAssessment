@@ -12,24 +12,23 @@ namespace WelshWanderers.Functions
     {
         public static string ReturnSegment(string fileName, string searchData, int searchIndex, int returnIndex, bool multiReturn = false)
         {
-            StreamReader file = new StreamReader(fileName + ".txt");
-            string line = file.ReadLine();
+            StreamReader file = new StreamReader(fileName + ".txt");    //Reads the file with read access
+            string line;
             string multiReturnValue = "";
-            while (null != line)
+            while (null != (line = file.ReadLine()))    //Continues reading the file line (record by record) by line as long as the record is not empty
             {
                 string[] section = line.Split('|');
-                if (section[searchIndex] == searchData)
+                if (section[searchIndex] == searchData)     //Checks if the data in field index n is the same data as that being searched for
                 {
-                    if (multiReturn == false)
+                    if (multiReturn == false)            
                     {
                         file.Close();
                         return section[returnIndex];
                     }
                     else
-                        multiReturnValue += section[returnIndex] + "|";
-                }
-                line = file.ReadLine();
-            }
+                        multiReturnValue += section[returnIndex] + "|"; //If the search requires all data that accepts the search conditions to be returned, then this is added to a long string
+                }                                                       // seperated by the delimiter '|'
+            }   
             file.Close();
             if (multiReturn == true)
                 return multiReturnValue;

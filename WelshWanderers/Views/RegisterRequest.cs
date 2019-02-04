@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
@@ -17,6 +11,9 @@ namespace WelshWanderers
         {
             InitializeComponent();
         }
+
+        private static string generatedCode = "";
+        private static bool emailDifferent = false;
 
         private void NavCancel_Click(object sender, EventArgs e)
         {
@@ -31,14 +28,20 @@ namespace WelshWanderers
 
         private void EventNavRegisterRequest_Click(object sender, EventArgs e)
         {
-            int allValid = ValidTitle() + ValidFirstName() + ValidLastName() + ValidDateOfBirth() + ValidEmailAddress() + ValidTelephoneNumber() + ValidPostcode() + ValidUsername();
-            if (allValid == 0 && Functions.ValidPassword.IsPasswordValid(InputPassword.Text, InputConfirmPassword.Text) == true)
+            if (emailDifferent != true)
             {
-                WriteRequestData();
-                EmailRegistrationRequest();
-                MessageBox.Show("Your registration request has been made!");
-                NavToSignIn();
+                if (generatedCode == InputCode.Text)
+                {
+                    WriteRequestData();
+                    EmailRegistrationRequest();
+                    MessageBox.Show("Your registration request has been made.");
+                    NavToSignIn();
+                }
+                else
+                    MessageBox.Show("The code entered is incorrect.");
             }
+            else
+                MessageBox.Show("You have changed the email that you have confirmed with the code. Please resend the code to this new email before continuing to confirm this, new email.");
         }
 
         private void WriteRequestData()
@@ -119,10 +122,9 @@ namespace WelshWanderers
 
         private void EventShowHelp_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Registration Request: After making a request, wait until your registration is accepted. You will be notified by email.\n\n" +
-               "Personal Details: This information is required to be stored by the club for all players & coaches.\n\n" +
-               "Account Details: This information is to be used to sign into the system, or reset your password if requried.\n\n\n" +
-               "You cannot use the symbol '|' in any of the inputs.");
+            MessageBox.Show("Registration Request: After making a request, a club admin must accept your request to grant you access to the system.\n"
+                + "Before you can make your registration, you must confirm your email address. You will recieve an 8 digit code to the email you have given.\n"
+                + "You will be notified by email about your request, and any further updates regarding your request.");
         }
 
         private void EmailRegistrationRequest()
@@ -131,5 +133,44 @@ namespace WelshWanderers
             string[] recipient = { InputEmailAddress.Text };
             Functions.SendEmail.Email("Registration Request", body, recipient);
         }
+
+        private void EventSendCode_Click(object sender, EventArgs e)
+        {
+            int allValid = ValidTitle() + ValidFirstName() + ValidLastName() + ValidDateOfBirth() + ValidEmailAddress() + ValidTelephoneNumber() + ValidPostcode() + ValidUsername();
+            if (allValid == 0 && Functions.ValidPassword.IsPasswordValid(InputPassword.Text, InputConfirmPassword.Text) == true)
+            {
+                SendCodeEmail();
+                ChangeControls();
+            }   
+        }
+
+        private void ChangeControls()
+        {
+            EventNavRegisterRequest.Enabled = true;
+            EventSendCode.Hide();
+            LabelCode.Show();
+            InputCode.Show();
+            EventResend.Show();
+        }
+
+        private void SendCodeEmail()
+        {
+            generatedCode = Functions.RandomCode.GenerateCode(8);
+            string[] email = { InputEmailAddress.Text };
+            string body = "You have been sent the following code:\n\n" + generatedCode + "\n\nEnter this code into the system to confirm your email address.\n\n\nWelshWanderers";
+            Functions.SendEmail.Email("Email Confirmation", body, email);
+        }
+
+        private void EventResend_Click(object sender, EventArgs e)
+        {
+            SendCodeEmail();
+            emailDifferent = false;
+        }
+
+        private void InputEmailAddress_TextChanged(object sender, EventArgs e)
+        {
+            emailDifferent = true;
+        }
+
     }
 }

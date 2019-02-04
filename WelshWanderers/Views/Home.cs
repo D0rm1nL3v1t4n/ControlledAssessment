@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Globalization;
 
 namespace WelshWanderers
 {
@@ -33,54 +32,45 @@ namespace WelshWanderers
 
         private void HideAllButtons()
         {
-            NavAddMatch.Hide();
-            NavUpcomingMatches.Hide();
-            NavMatchResults.Hide();
-            NavAddTraining.Hide();
-            NavUpcomingTrainings.Hide();
-            NavViewLeagues.Hide();
-            NavLeagueStatistics.Hide();
-            NavMatchAvailability.Hide();
-            NavUserJoinRequests.Hide();
-            NavManageUsers.Hide();
-            NavRestore.Hide();
+            Control[] hideButtons = { NavAddMatch, NavAddTraining, NavUpcomingTrainings, NavUpcomingMatches, NavMatchResults, NavLeagueStatistics, NavMatchAvailability, NavManageUsers, NavUserJoinRequests, NavRestore, NavViewLeagues };
+            foreach (var button in hideButtons)
+            {
+                button.Hide();
+            }
         }
 
         private void ShowAdminHome()
         {
-            NavManageUsers.Show();
-            NavUserJoinRequests.Show();
-            NavViewLeagues.Show();
-            NavRestore.Show();
+            Control[] showButtons = { NavManageUsers, NavUserJoinRequests, NavViewLeagues, NavRestore };
+            foreach (var button in showButtons)
+            {
+                button.Show();
+            }
         }
 
         private void ShowCoachHome()
         {
-            NavAddMatch.Show();
-            NavAddTraining.Show();
-            NavUpcomingMatches.Show();
-            NavUpcomingTrainings.Show();
-            NavMatchResults.Show();
+            Control[] showButtons = { NavAddMatch, NavAddTraining, NavUpcomingMatches, NavUpcomingTrainings, NavMatchResults };
+            foreach (var button in showButtons)
+            {
+                button.Show();
+            }
         }
 
         private void ShowPlayerHome()
         {
-            NavUpcomingMatches.Show();
-            NavUpcomingTrainings.Show();
-            NavLeagueStatistics.Show();
-            NavMatchAvailability.Show();
-            NavMatchResults.Show();
+            Control[] showButtons = { NavUpcomingMatches, NavUpcomingTrainings, NavLeagueStatistics, NavMatchAvailability, NavMatchResults };
+            foreach (var button in showButtons)
+            {
+                button.Show();
+            }
         }
 
-        private void HideHome()
-        {
-            Hide();
-        }
 
         private void NavManageUsers_Click(object sender, EventArgs e)
         {
             new ManageUsers().Show();
-            HideHome();
+            Hide();
         }
 
         private void NavUserJoinRequests_Click(object sender, EventArgs e)
@@ -92,69 +82,69 @@ namespace WelshWanderers
             else
             {
                 new UserJoinRequests().Show();
-                HideHome();
+                Hide();
             }
         }
 
         private void NavViewLeagues_Click(object sender, EventArgs e)
         {
             new ManageLeagues().Show();
-            HideHome();
+            Hide();
         }
 
         private void NavAddMatch_Click(object sender, EventArgs e)
         {
             new AddMatch().Show();
-            HideHome();
+            Hide();
         }
 
         private void NavAddTraining_Click(object sender, EventArgs e)
         {
             new AddTraining().Show();
-            HideHome();
+            Hide();
         }
 
 
         private void NavLeagueStatistics_Click(object sender, EventArgs e)
         {
             new LeagueStats().Show();
-            HideHome();
+            Hide();
         }
 
         private void NavMatchNotifications_Click(object sender, EventArgs e)
         {
             new MatchAvailability().Show();
-            HideHome();
+            Hide();
         }
 
         private void NavUpcomingMatches_Click(object sender, EventArgs e)
         {
             new UpcomingMatches().Show();
-            HideHome();
+            Hide();
         }
 
         private void NavUpcomingTrainings_Click(object sender, EventArgs e)
         {
             new UpcomingTrainings().Show();
-            HideHome();
+            Hide();
         }
 
         private void NavMyAccount_Click(object sender, EventArgs e)
         {
             new MyAccount().Show();
-            HideHome();
+            Hide();
         }
 
         private void NavViewMatchResults_Click(object sender, EventArgs e)
         {
             new MatchResults().Show();
-            HideHome();
+            Hide();
         }
 
         private void NavRestore_Click(object sender, EventArgs e)
         {
             new Views.Restore().Show();
-            HideHome();
+            Hide();
         }
 
         private void EventNavSignOut_Click(object sender, EventArgs e)

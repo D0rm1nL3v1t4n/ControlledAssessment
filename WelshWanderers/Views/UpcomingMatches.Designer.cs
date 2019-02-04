@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LabelHeader = new System.Windows.Forms.Label();
             this.TableViewMatches = new System.Windows.Forms.DataGridView();
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,7 +53,7 @@
             // 
             this.LabelHeader.AutoSize = true;
             this.LabelHeader.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeader.Location = new System.Drawing.Point(313, 22);
+            this.LabelHeader.Location = new System.Drawing.Point(313, 15);
             this.LabelHeader.Name = "LabelHeader";
             this.LabelHeader.Size = new System.Drawing.Size(176, 33);
             this.LabelHeader.TabIndex = 7;
@@ -63,14 +63,14 @@
             // 
             this.TableViewMatches.AllowUserToAddRows = false;
             this.TableViewMatches.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TableViewMatches.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TableViewMatches.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.TableViewMatches.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TableViewMatches.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColID,
@@ -81,15 +81,15 @@
             this.ColAddress,
             this.ColAddress2,
             this.ColPostcode});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.TableViewMatches.DefaultCellStyle = dataGridViewCellStyle4;
-            this.TableViewMatches.Location = new System.Drawing.Point(16, 104);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.TableViewMatches.DefaultCellStyle = dataGridViewCellStyle2;
+            this.TableViewMatches.Location = new System.Drawing.Point(12, 88);
             this.TableViewMatches.Name = "TableViewMatches";
             this.TableViewMatches.ReadOnly = true;
             this.TableViewMatches.RowHeadersVisible = false;
@@ -97,7 +97,7 @@
             this.TableViewMatches.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TableViewMatches.ShowCellToolTips = false;
             this.TableViewMatches.Size = new System.Drawing.Size(671, 312);
-            this.TableViewMatches.TabIndex = 15;
+            this.TableViewMatches.TabIndex = 1;
             // 
             // ColID
             // 
@@ -158,10 +158,10 @@
             // NavEditMatch
             // 
             this.NavEditMatch.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavEditMatch.Location = new System.Drawing.Point(598, 422);
+            this.NavEditMatch.Location = new System.Drawing.Point(689, 334);
             this.NavEditMatch.Name = "NavEditMatch";
-            this.NavEditMatch.Size = new System.Drawing.Size(89, 48);
-            this.NavEditMatch.TabIndex = 32;
+            this.NavEditMatch.Size = new System.Drawing.Size(126, 30);
+            this.NavEditMatch.TabIndex = 4;
             this.NavEditMatch.Text = "Edit";
             this.NavEditMatch.UseVisualStyleBackColor = true;
             this.NavEditMatch.Click += new System.EventHandler(this.NavEdit_Click);
@@ -169,21 +169,21 @@
             // NavHome
             // 
             this.NavHome.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavHome.Location = new System.Drawing.Point(16, 422);
+            this.NavHome.Location = new System.Drawing.Point(12, 12);
             this.NavHome.Name = "NavHome";
-            this.NavHome.Size = new System.Drawing.Size(89, 48);
-            this.NavHome.TabIndex = 31;
-            this.NavHome.Text = "Home";
+            this.NavHome.Size = new System.Drawing.Size(68, 30);
+            this.NavHome.TabIndex = 6;
+            this.NavHome.Text = "Back";
             this.NavHome.UseVisualStyleBackColor = true;
             this.NavHome.Click += new System.EventHandler(this.NavHome_Click);
             // 
             // NavViewResult
             // 
             this.NavViewResult.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavViewResult.Location = new System.Drawing.Point(693, 104);
+            this.NavViewResult.Location = new System.Drawing.Point(689, 88);
             this.NavViewResult.Name = "NavViewResult";
-            this.NavViewResult.Size = new System.Drawing.Size(89, 48);
-            this.NavViewResult.TabIndex = 34;
+            this.NavViewResult.Size = new System.Drawing.Size(126, 30);
+            this.NavViewResult.TabIndex = 2;
             this.NavViewResult.Text = "View Result";
             this.NavViewResult.UseVisualStyleBackColor = true;
             this.NavViewResult.Click += new System.EventHandler(this.NavViewResult_Click);
@@ -196,19 +196,19 @@
             "All",
             "Upcoming",
             "Past"});
-            this.InputFilter.Location = new System.Drawing.Point(16, 71);
+            this.InputFilter.Location = new System.Drawing.Point(12, 55);
             this.InputFilter.Name = "InputFilter";
             this.InputFilter.Size = new System.Drawing.Size(170, 27);
-            this.InputFilter.TabIndex = 43;
+            this.InputFilter.TabIndex = 0;
             this.InputFilter.SelectedIndexChanged += new System.EventHandler(this.InputFilter_SelectedIndexChanged);
             // 
             // NavAddResult
             // 
             this.NavAddResult.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavAddResult.Location = new System.Drawing.Point(693, 158);
+            this.NavAddResult.Location = new System.Drawing.Point(689, 124);
             this.NavAddResult.Name = "NavAddResult";
-            this.NavAddResult.Size = new System.Drawing.Size(89, 48);
-            this.NavAddResult.TabIndex = 44;
+            this.NavAddResult.Size = new System.Drawing.Size(126, 30);
+            this.NavAddResult.TabIndex = 3;
             this.NavAddResult.Text = "Add Result";
             this.NavAddResult.UseVisualStyleBackColor = true;
             this.NavAddResult.Click += new System.EventHandler(this.NavAddResult_Click);
@@ -216,10 +216,10 @@
             // NavMatchAvailability
             // 
             this.NavMatchAvailability.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavMatchAvailability.Location = new System.Drawing.Point(693, 368);
+            this.NavMatchAvailability.Location = new System.Drawing.Point(689, 370);
             this.NavMatchAvailability.Name = "NavMatchAvailability";
-            this.NavMatchAvailability.Size = new System.Drawing.Size(89, 48);
-            this.NavMatchAvailability.TabIndex = 45;
+            this.NavMatchAvailability.Size = new System.Drawing.Size(126, 30);
+            this.NavMatchAvailability.TabIndex = 5;
             this.NavMatchAvailability.Text = "Match Availability";
             this.NavMatchAvailability.UseVisualStyleBackColor = true;
             this.NavMatchAvailability.Click += new System.EventHandler(this.NavMatchAvailability_Click);
@@ -228,7 +228,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(803, 474);
+            this.ClientSize = new System.Drawing.Size(827, 408);
             this.Controls.Add(this.NavMatchAvailability);
             this.Controls.Add(this.NavAddResult);
             this.Controls.Add(this.InputFilter);

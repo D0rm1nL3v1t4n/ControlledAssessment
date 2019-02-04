@@ -33,7 +33,7 @@
             // 
             // EventTest
             // 
-            this.EventTest.Location = new System.Drawing.Point(66, 63);
+            this.EventTest.Location = new System.Drawing.Point(56, 58);
             this.EventTest.Name = "EventTest";
             this.EventTest.Size = new System.Drawing.Size(75, 23);
             this.EventTest.TabIndex = 0;

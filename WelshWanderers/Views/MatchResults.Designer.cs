@@ -31,15 +31,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LabelHeader = new System.Windows.Forms.Label();
             this.TableMatchResults = new System.Windows.Forms.DataGridView();
-            this.NavBack = new System.Windows.Forms.Button();
-            this.NavViewMatch = new System.Windows.Forms.Button();
-            this.NavMatchDetails = new System.Windows.Forms.Button();
-            this.InputFilter = new System.Windows.Forms.ComboBox();
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColWelshWanderers = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColWanderersGoals = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColOpponentGoals = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColAwayTeam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NavBack = new System.Windows.Forms.Button();
+            this.NavViewMatch = new System.Windows.Forms.Button();
+            this.NavMatchDetails = new System.Windows.Forms.Button();
+            this.InputFilter = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.TableMatchResults)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +47,7 @@
             // 
             this.LabelHeader.AutoSize = true;
             this.LabelHeader.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeader.Location = new System.Drawing.Point(155, 22);
+            this.LabelHeader.Location = new System.Drawing.Point(104, 15);
             this.LabelHeader.Name = "LabelHeader";
             this.LabelHeader.Size = new System.Drawing.Size(179, 33);
             this.LabelHeader.TabIndex = 8;
@@ -74,63 +74,15 @@
             this.ColOpponentGoals,
             this.ColAwayTeam});
             this.TableMatchResults.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
-            this.TableMatchResults.Location = new System.Drawing.Point(63, 108);
+            this.TableMatchResults.Location = new System.Drawing.Point(12, 96);
             this.TableMatchResults.Name = "TableMatchResults";
             this.TableMatchResults.ReadOnly = true;
             this.TableMatchResults.RowHeadersVisible = false;
             this.TableMatchResults.RowHeadersWidth = 10;
             this.TableMatchResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TableMatchResults.ShowCellToolTips = false;
-            this.TableMatchResults.Size = new System.Drawing.Size(363, 251);
-            this.TableMatchResults.TabIndex = 26;
-            // 
-            // NavBack
-            // 
-            this.NavBack.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavBack.Location = new System.Drawing.Point(42, 365);
-            this.NavBack.Name = "NavBack";
-            this.NavBack.Size = new System.Drawing.Size(89, 48);
-            this.NavBack.TabIndex = 31;
-            this.NavBack.Text = "Back";
-            this.NavBack.UseVisualStyleBackColor = true;
-            this.NavBack.Click += new System.EventHandler(this.NavBack_Click);
-            // 
-            // NavViewMatch
-            // 
-            this.NavViewMatch.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavViewMatch.Location = new System.Drawing.Point(357, 365);
-            this.NavViewMatch.Name = "NavViewMatch";
-            this.NavViewMatch.Size = new System.Drawing.Size(89, 48);
-            this.NavViewMatch.TabIndex = 32;
-            this.NavViewMatch.Text = "View Match";
-            this.NavViewMatch.UseVisualStyleBackColor = true;
-            this.NavViewMatch.Click += new System.EventHandler(this.NavViewMatch_Click);
-            // 
-            // NavMatchDetails
-            // 
-            this.NavMatchDetails.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavMatchDetails.Location = new System.Drawing.Point(262, 365);
-            this.NavMatchDetails.Name = "NavMatchDetails";
-            this.NavMatchDetails.Size = new System.Drawing.Size(89, 48);
-            this.NavMatchDetails.TabIndex = 33;
-            this.NavMatchDetails.Text = "Match Details";
-            this.NavMatchDetails.UseVisualStyleBackColor = true;
-            this.NavMatchDetails.Click += new System.EventHandler(this.NavMatchDetails_Click);
-            // 
-            // InputFilter
-            // 
-            this.InputFilter.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputFilter.FormattingEnabled = true;
-            this.InputFilter.Items.AddRange(new object[] {
-            "All",
-            "Junior",
-            "Men",
-            "Women"});
-            this.InputFilter.Location = new System.Drawing.Point(63, 75);
-            this.InputFilter.Name = "InputFilter";
-            this.InputFilter.Size = new System.Drawing.Size(170, 27);
-            this.InputFilter.TabIndex = 44;
-            this.InputFilter.SelectedIndexChanged += new System.EventHandler(this.InputFilter_SelectedIndexChanged);
+            this.TableMatchResults.Size = new System.Drawing.Size(363, 250);
+            this.TableMatchResults.TabIndex = 1;
             // 
             // ColID
             // 
@@ -172,11 +124,59 @@
             this.ColAwayTeam.ReadOnly = true;
             this.ColAwayTeam.Width = 130;
             // 
+            // NavBack
+            // 
+            this.NavBack.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NavBack.Location = new System.Drawing.Point(12, 12);
+            this.NavBack.Name = "NavBack";
+            this.NavBack.Size = new System.Drawing.Size(80, 30);
+            this.NavBack.TabIndex = 4;
+            this.NavBack.Text = "Back";
+            this.NavBack.UseVisualStyleBackColor = true;
+            this.NavBack.Click += new System.EventHandler(this.NavBack_Click);
+            // 
+            // NavViewMatch
+            // 
+            this.NavViewMatch.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NavViewMatch.Location = new System.Drawing.Point(12, 352);
+            this.NavViewMatch.Name = "NavViewMatch";
+            this.NavViewMatch.Size = new System.Drawing.Size(119, 30);
+            this.NavViewMatch.TabIndex = 2;
+            this.NavViewMatch.Text = "View Match";
+            this.NavViewMatch.UseVisualStyleBackColor = true;
+            this.NavViewMatch.Click += new System.EventHandler(this.NavViewMatch_Click);
+            // 
+            // NavMatchDetails
+            // 
+            this.NavMatchDetails.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NavMatchDetails.Location = new System.Drawing.Point(256, 352);
+            this.NavMatchDetails.Name = "NavMatchDetails";
+            this.NavMatchDetails.Size = new System.Drawing.Size(119, 30);
+            this.NavMatchDetails.TabIndex = 3;
+            this.NavMatchDetails.Text = "Match Details";
+            this.NavMatchDetails.UseVisualStyleBackColor = true;
+            this.NavMatchDetails.Click += new System.EventHandler(this.NavMatchDetails_Click);
+            // 
+            // InputFilter
+            // 
+            this.InputFilter.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputFilter.FormattingEnabled = true;
+            this.InputFilter.Items.AddRange(new object[] {
+            "All",
+            "Junior",
+            "Men",
+            "Women"});
+            this.InputFilter.Location = new System.Drawing.Point(12, 63);
+            this.InputFilter.Name = "InputFilter";
+            this.InputFilter.Size = new System.Drawing.Size(170, 27);
+            this.InputFilter.TabIndex = 0;
+            this.InputFilter.SelectedIndexChanged += new System.EventHandler(this.InputFilter_SelectedIndexChanged);
+            // 
             // MatchResults
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 439);
+            this.ClientSize = new System.Drawing.Size(387, 394);
             this.Controls.Add(this.InputFilter);
             this.Controls.Add(this.NavMatchDetails);
             this.Controls.Add(this.NavViewMatch);
