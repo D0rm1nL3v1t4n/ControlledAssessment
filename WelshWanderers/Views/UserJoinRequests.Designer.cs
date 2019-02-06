@@ -59,7 +59,7 @@
             // 
             this.LabelHeader.AutoSize = true;
             this.LabelHeader.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeader.Location = new System.Drawing.Point(198, 22);
+            this.LabelHeader.Location = new System.Drawing.Point(198, 15);
             this.LabelHeader.Name = "LabelHeader";
             this.LabelHeader.Size = new System.Drawing.Size(240, 33);
             this.LabelHeader.TabIndex = 6;
@@ -68,152 +68,152 @@
             // LabelUsername
             // 
             this.LabelUsername.AutoSize = true;
-            this.LabelUsername.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelUsername.Location = new System.Drawing.Point(366, 238);
+            this.LabelUsername.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelUsername.Location = new System.Drawing.Point(330, 73);
             this.LabelUsername.Name = "LabelUsername";
-            this.LabelUsername.Size = new System.Drawing.Size(80, 19);
+            this.LabelUsername.Size = new System.Drawing.Size(75, 18);
             this.LabelUsername.TabIndex = 42;
             this.LabelUsername.Text = "Username";
             // 
             // InputUsername
             // 
             this.InputUsername.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputUsername.Location = new System.Drawing.Point(452, 235);
+            this.InputUsername.Location = new System.Drawing.Point(427, 69);
             this.InputUsername.Name = "InputUsername";
             this.InputUsername.Size = new System.Drawing.Size(161, 27);
-            this.InputUsername.TabIndex = 41;
+            this.InputUsername.TabIndex = 12;
             // 
             // InputDateOfBirth
             // 
             this.InputDateOfBirth.Enabled = false;
             this.InputDateOfBirth.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputDateOfBirth.Location = new System.Drawing.Point(128, 187);
+            this.InputDateOfBirth.Location = new System.Drawing.Point(151, 168);
             this.InputDateOfBirth.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
             this.InputDateOfBirth.MinDate = new System.DateTime(1940, 1, 1, 0, 0, 0, 0);
             this.InputDateOfBirth.Name = "InputDateOfBirth";
             this.InputDateOfBirth.Size = new System.Drawing.Size(161, 27);
-            this.InputDateOfBirth.TabIndex = 40;
+            this.InputDateOfBirth.TabIndex = 8;
             this.InputDateOfBirth.Value = new System.DateTime(2018, 10, 26, 0, 0, 0, 0);
             // 
             // InputPostcode
             // 
             this.InputPostcode.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputPostcode.Location = new System.Drawing.Point(452, 185);
+            this.InputPostcode.Location = new System.Drawing.Point(151, 267);
             this.InputPostcode.Name = "InputPostcode";
             this.InputPostcode.Size = new System.Drawing.Size(161, 27);
-            this.InputPostcode.TabIndex = 39;
+            this.InputPostcode.TabIndex = 11;
             // 
             // InputTelephoneNumber
             // 
             this.InputTelephoneNumber.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputTelephoneNumber.Location = new System.Drawing.Point(452, 153);
+            this.InputTelephoneNumber.Location = new System.Drawing.Point(151, 234);
             this.InputTelephoneNumber.Name = "InputTelephoneNumber";
             this.InputTelephoneNumber.Size = new System.Drawing.Size(161, 27);
-            this.InputTelephoneNumber.TabIndex = 38;
+            this.InputTelephoneNumber.TabIndex = 10;
             // 
             // InputEmailAddress
             // 
             this.InputEmailAddress.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputEmailAddress.Location = new System.Drawing.Point(452, 120);
+            this.InputEmailAddress.Location = new System.Drawing.Point(151, 201);
             this.InputEmailAddress.Name = "InputEmailAddress";
             this.InputEmailAddress.Size = new System.Drawing.Size(161, 27);
-            this.InputEmailAddress.TabIndex = 37;
+            this.InputEmailAddress.TabIndex = 9;
             // 
             // InputLastName
             // 
             this.InputLastName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputLastName.Location = new System.Drawing.Point(128, 154);
+            this.InputLastName.Location = new System.Drawing.Point(151, 135);
             this.InputLastName.Name = "InputLastName";
             this.InputLastName.Size = new System.Drawing.Size(161, 27);
-            this.InputLastName.TabIndex = 36;
+            this.InputLastName.TabIndex = 7;
             // 
             // LabelPostcode
             // 
             this.LabelPostcode.AutoSize = true;
-            this.LabelPostcode.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelPostcode.Location = new System.Drawing.Point(374, 188);
+            this.LabelPostcode.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelPostcode.Location = new System.Drawing.Point(12, 271);
             this.LabelPostcode.Name = "LabelPostcode";
-            this.LabelPostcode.Size = new System.Drawing.Size(72, 19);
+            this.LabelPostcode.Size = new System.Drawing.Size(67, 18);
             this.LabelPostcode.TabIndex = 35;
             this.LabelPostcode.Text = "Postcode";
             // 
             // LabelDateOfBirth
             // 
             this.LabelDateOfBirth.AutoSize = true;
-            this.LabelDateOfBirth.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelDateOfBirth.Location = new System.Drawing.Point(24, 193);
+            this.LabelDateOfBirth.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelDateOfBirth.Location = new System.Drawing.Point(12, 172);
             this.LabelDateOfBirth.Name = "LabelDateOfBirth";
-            this.LabelDateOfBirth.Size = new System.Drawing.Size(98, 19);
+            this.LabelDateOfBirth.Size = new System.Drawing.Size(91, 18);
             this.LabelDateOfBirth.TabIndex = 34;
             this.LabelDateOfBirth.Text = "Date of Birth";
             // 
             // LabelLastName
             // 
             this.LabelLastName.AutoSize = true;
-            this.LabelLastName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelLastName.Location = new System.Drawing.Point(39, 157);
+            this.LabelLastName.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelLastName.Location = new System.Drawing.Point(12, 139);
             this.LabelLastName.Name = "LabelLastName";
-            this.LabelLastName.Size = new System.Drawing.Size(83, 19);
+            this.LabelLastName.Size = new System.Drawing.Size(79, 18);
             this.LabelLastName.TabIndex = 33;
             this.LabelLastName.Text = "Last Name";
             // 
             // LabelEmailAddress
             // 
             this.LabelEmailAddress.AutoSize = true;
-            this.LabelEmailAddress.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelEmailAddress.Location = new System.Drawing.Point(336, 123);
+            this.LabelEmailAddress.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelEmailAddress.Location = new System.Drawing.Point(12, 205);
             this.LabelEmailAddress.Name = "LabelEmailAddress";
-            this.LabelEmailAddress.Size = new System.Drawing.Size(110, 19);
+            this.LabelEmailAddress.Size = new System.Drawing.Size(98, 18);
             this.LabelEmailAddress.TabIndex = 32;
             this.LabelEmailAddress.Text = "Email Address";
             // 
             // LabelTelephoneNumber
             // 
             this.LabelTelephoneNumber.AutoSize = true;
-            this.LabelTelephoneNumber.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelTelephoneNumber.Location = new System.Drawing.Point(301, 156);
+            this.LabelTelephoneNumber.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelTelephoneNumber.Location = new System.Drawing.Point(12, 238);
             this.LabelTelephoneNumber.Name = "LabelTelephoneNumber";
-            this.LabelTelephoneNumber.Size = new System.Drawing.Size(145, 19);
+            this.LabelTelephoneNumber.Size = new System.Drawing.Size(133, 18);
             this.LabelTelephoneNumber.TabIndex = 31;
             this.LabelTelephoneNumber.Text = "Telephone Number";
             // 
             // LabelFirstName
             // 
             this.LabelFirstName.AutoSize = true;
-            this.LabelFirstName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelFirstName.Location = new System.Drawing.Point(37, 123);
+            this.LabelFirstName.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelFirstName.Location = new System.Drawing.Point(12, 106);
             this.LabelFirstName.Name = "LabelFirstName";
-            this.LabelFirstName.Size = new System.Drawing.Size(85, 19);
+            this.LabelFirstName.Size = new System.Drawing.Size(79, 18);
             this.LabelFirstName.TabIndex = 30;
             this.LabelFirstName.Text = "First Name";
             // 
             // LabelTitle
             // 
             this.LabelTitle.AutoSize = true;
-            this.LabelTitle.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelTitle.Location = new System.Drawing.Point(82, 93);
+            this.LabelTitle.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelTitle.Location = new System.Drawing.Point(12, 73);
             this.LabelTitle.Name = "LabelTitle";
-            this.LabelTitle.Size = new System.Drawing.Size(40, 19);
+            this.LabelTitle.Size = new System.Drawing.Size(35, 18);
             this.LabelTitle.TabIndex = 29;
             this.LabelTitle.Text = "Title";
             // 
             // InputFirstName
             // 
             this.InputFirstName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputFirstName.Location = new System.Drawing.Point(128, 120);
+            this.InputFirstName.Location = new System.Drawing.Point(151, 102);
             this.InputFirstName.Name = "InputFirstName";
             this.InputFirstName.Size = new System.Drawing.Size(161, 27);
-            this.InputFirstName.TabIndex = 28;
+            this.InputFirstName.TabIndex = 6;
             // 
             // InputTitle
             // 
             this.InputTitle.Enabled = false;
             this.InputTitle.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputTitle.FormattingEnabled = true;
-            this.InputTitle.Location = new System.Drawing.Point(128, 87);
+            this.InputTitle.Location = new System.Drawing.Point(151, 69);
             this.InputTitle.Name = "InputTitle";
             this.InputTitle.Size = new System.Drawing.Size(161, 27);
-            this.InputTitle.TabIndex = 27;
+            this.InputTitle.TabIndex = 5;
             // 
             // InputAccessLevel
             // 
@@ -223,29 +223,29 @@
             "Player",
             "Coach",
             "Admin"});
-            this.InputAccessLevel.Location = new System.Drawing.Point(384, 293);
+            this.InputAccessLevel.Location = new System.Drawing.Point(427, 135);
             this.InputAccessLevel.Name = "InputAccessLevel";
-            this.InputAccessLevel.Size = new System.Drawing.Size(134, 27);
-            this.InputAccessLevel.TabIndex = 43;
+            this.InputAccessLevel.Size = new System.Drawing.Size(161, 27);
+            this.InputAccessLevel.TabIndex = 0;
             this.InputAccessLevel.SelectedIndexChanged += new System.EventHandler(this.InputAccessLevel_SelectedIndexChanged);
             // 
             // LabelAccessLevel
             // 
             this.LabelAccessLevel.AutoSize = true;
-            this.LabelAccessLevel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelAccessLevel.Location = new System.Drawing.Point(281, 296);
+            this.LabelAccessLevel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelAccessLevel.Location = new System.Drawing.Point(330, 139);
             this.LabelAccessLevel.Name = "LabelAccessLevel";
-            this.LabelAccessLevel.Size = new System.Drawing.Size(97, 19);
+            this.LabelAccessLevel.Size = new System.Drawing.Size(91, 18);
             this.LabelAccessLevel.TabIndex = 44;
             this.LabelAccessLevel.Text = "Access Level";
             // 
             // EventAcceptUser
             // 
             this.EventAcceptUser.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventAcceptUser.Location = new System.Drawing.Point(524, 283);
+            this.EventAcceptUser.Location = new System.Drawing.Point(427, 259);
             this.EventAcceptUser.Name = "EventAcceptUser";
-            this.EventAcceptUser.Size = new System.Drawing.Size(89, 48);
-            this.EventAcceptUser.TabIndex = 45;
+            this.EventAcceptUser.Size = new System.Drawing.Size(161, 30);
+            this.EventAcceptUser.TabIndex = 2;
             this.EventAcceptUser.Text = "Accept User";
             this.EventAcceptUser.UseVisualStyleBackColor = true;
             this.EventAcceptUser.Click += new System.EventHandler(this.EventAcceptUser_Click);
@@ -253,10 +253,10 @@
             // EventRejectUser
             // 
             this.EventRejectUser.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventRejectUser.Location = new System.Drawing.Point(128, 283);
+            this.EventRejectUser.Location = new System.Drawing.Point(427, 223);
             this.EventRejectUser.Name = "EventRejectUser";
-            this.EventRejectUser.Size = new System.Drawing.Size(89, 48);
-            this.EventRejectUser.TabIndex = 46;
+            this.EventRejectUser.Size = new System.Drawing.Size(161, 30);
+            this.EventRejectUser.TabIndex = 1;
             this.EventRejectUser.Text = "Reject User";
             this.EventRejectUser.UseVisualStyleBackColor = true;
             this.EventRejectUser.Click += new System.EventHandler(this.EventRejectUser_Click);
@@ -264,21 +264,21 @@
             // NavHome
             // 
             this.NavHome.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavHome.Location = new System.Drawing.Point(28, 283);
+            this.NavHome.Location = new System.Drawing.Point(12, 12);
             this.NavHome.Name = "NavHome";
-            this.NavHome.Size = new System.Drawing.Size(89, 48);
-            this.NavHome.TabIndex = 47;
-            this.NavHome.Text = "Home";
+            this.NavHome.Size = new System.Drawing.Size(62, 30);
+            this.NavHome.TabIndex = 4;
+            this.NavHome.Text = "Back";
             this.NavHome.UseVisualStyleBackColor = true;
             this.NavHome.Click += new System.EventHandler(this.NavHome_Click);
             // 
             // LabelTeam
             // 
             this.LabelTeam.AutoSize = true;
-            this.LabelTeam.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelTeam.Location = new System.Drawing.Point(73, 238);
+            this.LabelTeam.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelTeam.Location = new System.Drawing.Point(330, 106);
             this.LabelTeam.Name = "LabelTeam";
-            this.LabelTeam.Size = new System.Drawing.Size(49, 19);
+            this.LabelTeam.Size = new System.Drawing.Size(47, 18);
             this.LabelTeam.TabIndex = 49;
             this.LabelTeam.Text = "Team";
             // 
@@ -291,19 +291,19 @@
             "Junior",
             "Men",
             "Women"});
-            this.InputTeam.Location = new System.Drawing.Point(128, 235);
+            this.InputTeam.Location = new System.Drawing.Point(427, 102);
             this.InputTeam.Name = "InputTeam";
-            this.InputTeam.Size = new System.Drawing.Size(125, 27);
-            this.InputTeam.TabIndex = 50;
+            this.InputTeam.Size = new System.Drawing.Size(161, 27);
+            this.InputTeam.TabIndex = 13;
             // 
             // EventHelp
             // 
             this.EventHelp.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventHelp.Location = new System.Drawing.Point(259, 235);
+            this.EventHelp.Location = new System.Drawing.Point(80, 12);
             this.EventHelp.Name = "EventHelp";
-            this.EventHelp.Size = new System.Drawing.Size(30, 27);
-            this.EventHelp.TabIndex = 51;
-            this.EventHelp.Text = "?";
+            this.EventHelp.Size = new System.Drawing.Size(69, 30);
+            this.EventHelp.TabIndex = 3;
+            this.EventHelp.Text = "Help";
             this.EventHelp.UseVisualStyleBackColor = true;
             this.EventHelp.Click += new System.EventHandler(this.EventHelp_Click);
             // 
@@ -311,7 +311,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 351);
+            this.ClientSize = new System.Drawing.Size(600, 306);
             this.Controls.Add(this.EventHelp);
             this.Controls.Add(this.InputTeam);
             this.Controls.Add(this.LabelTeam);

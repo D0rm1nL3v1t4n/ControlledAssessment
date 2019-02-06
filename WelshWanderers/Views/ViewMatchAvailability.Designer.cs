@@ -31,12 +31,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LabelHeader = new System.Windows.Forms.Label();
             this.TableMatchAvailability = new System.Windows.Forms.DataGridView();
-            this.NavBack = new System.Windows.Forms.Button();
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColResponded = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ColAvailability = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.NavBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TableMatchAvailability)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +44,7 @@
             // 
             this.LabelHeader.AutoSize = true;
             this.LabelHeader.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeader.Location = new System.Drawing.Point(95, 22);
+            this.LabelHeader.Location = new System.Drawing.Point(73, 15);
             this.LabelHeader.Name = "LabelHeader";
             this.LabelHeader.Size = new System.Drawing.Size(282, 33);
             this.LabelHeader.TabIndex = 8;
@@ -69,7 +69,7 @@
             this.ColLastName,
             this.ColResponded,
             this.ColAvailability});
-            this.TableMatchAvailability.Location = new System.Drawing.Point(34, 83);
+            this.TableMatchAvailability.Location = new System.Drawing.Point(12, 58);
             this.TableMatchAvailability.MultiSelect = false;
             this.TableMatchAvailability.Name = "TableMatchAvailability";
             this.TableMatchAvailability.ReadOnly = true;
@@ -77,19 +77,8 @@
             this.TableMatchAvailability.RowHeadersWidth = 10;
             this.TableMatchAvailability.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TableMatchAvailability.ShowCellToolTips = false;
-            this.TableMatchAvailability.Size = new System.Drawing.Size(404, 248);
-            this.TableMatchAvailability.TabIndex = 18;
-            // 
-            // NavBack
-            // 
-            this.NavBack.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavBack.Location = new System.Drawing.Point(34, 337);
-            this.NavBack.Name = "NavBack";
-            this.NavBack.Size = new System.Drawing.Size(89, 48);
-            this.NavBack.TabIndex = 32;
-            this.NavBack.Text = "Back";
-            this.NavBack.UseVisualStyleBackColor = true;
-            this.NavBack.Click += new System.EventHandler(this.NavBack_Click);
+            this.TableMatchAvailability.Size = new System.Drawing.Size(404, 288);
+            this.TableMatchAvailability.TabIndex = 0;
             // 
             // ColID
             // 
@@ -125,11 +114,22 @@
             this.ColAvailability.ReadOnly = true;
             this.ColAvailability.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
+            // NavBack
+            // 
+            this.NavBack.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NavBack.Location = new System.Drawing.Point(12, 12);
+            this.NavBack.Name = "NavBack";
+            this.NavBack.Size = new System.Drawing.Size(55, 30);
+            this.NavBack.TabIndex = 1;
+            this.NavBack.Text = "Back";
+            this.NavBack.UseVisualStyleBackColor = true;
+            this.NavBack.Click += new System.EventHandler(this.NavBack_Click);
+            // 
             // ViewMatchAvailability
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 410);
+            this.ClientSize = new System.Drawing.Size(428, 358);
             this.Controls.Add(this.NavBack);
             this.Controls.Add(this.TableMatchAvailability);
             this.Controls.Add(this.LabelHeader);

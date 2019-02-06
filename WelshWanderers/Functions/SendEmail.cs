@@ -30,7 +30,7 @@ namespace WelshWanderers.Functions
             email.From = new MailAddress("WelshWanderersTest@gmail.com");
             foreach (string emailAddress in recipients)
             {
-                if (emailAddress != null)
+                if (null != emailAddress)
                 {
                     email.To.Add(emailAddress);
                 }

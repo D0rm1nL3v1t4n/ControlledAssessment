@@ -61,15 +61,15 @@
             this.ColTime,
             this.ColDuration,
             this.ColDate});
-            this.TableViewTrainings.Location = new System.Drawing.Point(22, 121);
+            this.TableViewTrainings.Location = new System.Drawing.Point(12, 97);
             this.TableViewTrainings.Name = "TableViewTrainings";
             this.TableViewTrainings.ReadOnly = true;
             this.TableViewTrainings.RowHeadersVisible = false;
             this.TableViewTrainings.RowHeadersWidth = 10;
             this.TableViewTrainings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TableViewTrainings.ShowCellToolTips = false;
-            this.TableViewTrainings.Size = new System.Drawing.Size(413, 283);
-            this.TableViewTrainings.TabIndex = 16;
+            this.TableViewTrainings.Size = new System.Drawing.Size(413, 286);
+            this.TableViewTrainings.TabIndex = 1;
             // 
             // ColID
             // 
@@ -111,7 +111,7 @@
             // 
             this.LabelHeader.AutoSize = true;
             this.LabelHeader.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeader.Location = new System.Drawing.Point(134, 22);
+            this.LabelHeader.Location = new System.Drawing.Point(124, 15);
             this.LabelHeader.Name = "LabelHeader";
             this.LabelHeader.Size = new System.Drawing.Size(188, 33);
             this.LabelHeader.TabIndex = 17;
@@ -120,21 +120,21 @@
             // NavHome
             // 
             this.NavHome.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavHome.Location = new System.Drawing.Point(22, 410);
+            this.NavHome.Location = new System.Drawing.Point(12, 12);
             this.NavHome.Name = "NavHome";
-            this.NavHome.Size = new System.Drawing.Size(89, 48);
-            this.NavHome.TabIndex = 30;
-            this.NavHome.Text = "Home";
+            this.NavHome.Size = new System.Drawing.Size(66, 30);
+            this.NavHome.TabIndex = 3;
+            this.NavHome.Text = "Back";
             this.NavHome.UseVisualStyleBackColor = true;
             this.NavHome.Click += new System.EventHandler(this.NavHome_Click);
             // 
             // NavEdit
             // 
             this.NavEdit.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavEdit.Location = new System.Drawing.Point(346, 410);
+            this.NavEdit.Location = new System.Drawing.Point(328, 389);
             this.NavEdit.Name = "NavEdit";
-            this.NavEdit.Size = new System.Drawing.Size(89, 48);
-            this.NavEdit.TabIndex = 31;
+            this.NavEdit.Size = new System.Drawing.Size(97, 30);
+            this.NavEdit.TabIndex = 2;
             this.NavEdit.Text = "View";
             this.NavEdit.UseVisualStyleBackColor = true;
             this.NavEdit.Click += new System.EventHandler(this.NavEdit_Click);
@@ -147,17 +147,17 @@
             "All",
             "Upcoming",
             "Past"});
-            this.InputFilter.Location = new System.Drawing.Point(22, 88);
+            this.InputFilter.Location = new System.Drawing.Point(12, 64);
             this.InputFilter.Name = "InputFilter";
             this.InputFilter.Size = new System.Drawing.Size(170, 27);
-            this.InputFilter.TabIndex = 42;
+            this.InputFilter.TabIndex = 0;
             this.InputFilter.SelectedIndexChanged += new System.EventHandler(this.InputFilter_SelectedIndexChanged);
             // 
             // UpcomingTrainings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 465);
+            this.ClientSize = new System.Drawing.Size(437, 431);
             this.Controls.Add(this.InputFilter);
             this.Controls.Add(this.NavEdit);
             this.Controls.Add(this.NavHome);

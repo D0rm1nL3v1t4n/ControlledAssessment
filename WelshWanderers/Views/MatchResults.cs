@@ -83,9 +83,18 @@ namespace WelshWanderers
 
         private void NavViewMatch_Click(object sender, EventArgs e)
         {
-            Database.MatchData.opponent = TableMatchResults.SelectedRows[0].Cells[1].Value.ToString();
-            new ViewMatchResult().Show();
-            Hide();
+            try
+            {
+                Database.MatchData.id = Convert.ToInt16(TableMatchResults.SelectedRows[0].Cells[0].Value);
+                Database.MatchData.opponent = TableMatchResults.SelectedRows[0].Cells[4].Value.ToString();
+                new ViewMatchResult().Show();
+                Hide();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Please select a match to view its result.");
+            }
+
         }
 
         private void InputFilter_SelectedIndexChanged(object sender, EventArgs e)

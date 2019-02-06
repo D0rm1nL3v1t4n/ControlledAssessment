@@ -24,38 +24,52 @@ namespace WelshWanderers
 
         private void ViewMatchResult_Load(object sender, EventArgs e)
         {
+            this.Height = 507;
             HideButton();
             LoadData();
             GetPlayersData();
+            ResetChanges();
         }
 
         private void HideButton()
         {
             if (Database.UserData.accessLevel == "Player")
                 EventEditMatchResult.Hide();
+            else
+                this.Height += 36;
             EventSave.Hide();
             EventCancelEdit.Hide();
+            LabelChangesMade.Hide();
         }
 
         private class Changes
         {
             public static int count = 0;
-            public static bool oppName = false;
             public static bool wanGoals = false;
             public static bool oppGoals = false;
             public static bool wanMajors = false;
             public static bool oppMajors = false;
         }
 
+        private void ResetChanges()
+        {
+            Changes.count = 0;
+            Changes.wanGoals = false;
+            Changes.oppGoals = false;
+            Changes.wanMajors = false;
+            Changes.oppMajors = false;
+            ShowChangesMade();
+        }
+
         private void GetPlayersData()
         {
             string[] playerIDs = Functions.FileSearch.ReturnSegment("playerMatchStats", Database.MatchData.id.ToString(), 0, 1, true).Split('|');
 
-            for (int i = 0; i < playerIDs.Length; ++i)
+            for (int i = 0; i < playerIDs.Length - 1; ++i)
             {
                 string[] name = Functions.FileSearch.ReturnLine("userPersonalDetails", playerIDs[i], 0).Split('|');
                 string[] stats = Functions.FileSearch.ManyToMany("playerMatchStats", Database.MatchData.id.ToString(), 0, playerIDs[i], 1).Split('|');
-                TableMatchResult.Rows.Add(playerIDs[i], name[2] + " " + name[2], stats[3], stats[4], stats[5]);
+                TableMatchResult.Rows.Add(playerIDs[i], name[2] + " " + name[2], stats[2], stats[3], stats[4]);
             }
         }
 
@@ -65,7 +79,7 @@ namespace WelshWanderers
             string[] section = line.Split('|');
             InputOpponent.Text = Database.MatchData.opponent;
             InputWanderersGoals.Text = section[1];
-            InputOpponent.Text = section[2];
+            InputOpponentGoals.Text = section[2];
             InputWanderersMajors.Text = section[3];
             InputOpponentMajorFouls.Text = section[4];
             StoreDataLocal();
@@ -90,7 +104,8 @@ namespace WelshWanderers
             EditingEnableChange(false);
             HideEditButtons();
             LoadData();
-            LabelChangesMade.Text = "No Changes";
+            LabelChangesMade.Text = "0 changes\nmade.";
+            LabelChangesMade.Hide();
         }
 
         private void EditingEnableChange(bool state)
@@ -99,7 +114,6 @@ namespace WelshWanderers
             InputOpponentGoals.Enabled = state;
             InputWanderersMajors.Enabled = state;
             InputOpponentMajorFouls.Enabled = state;
-            TableMatchResult.Enabled = state;
             bool oppositeState = true;
             if (state == true)
                 oppositeState = false;
@@ -111,6 +125,7 @@ namespace WelshWanderers
             EventEditMatchResult.Hide();
             EventSave.Show();
             EventCancelEdit.Show();
+            LabelChangesMade.Show();
         }
 
         private void HideEditButtons()
@@ -118,6 +133,7 @@ namespace WelshWanderers
             EventEditMatchResult.Show();
             EventSave.Hide();
             EventCancelEdit.Hide();
+            LabelChangesMade.Show();
         }
 
         private void EventEditMatchResult_Click(object sender, EventArgs e)
@@ -128,6 +144,7 @@ namespace WelshWanderers
         private void EventCancelEdit_Click(object sender, EventArgs e)
         {
             EditOff();
+            ResetChanges();
         }
 
         private void NavBack_Click(object sender, EventArgs e)
@@ -137,8 +154,10 @@ namespace WelshWanderers
                 if (MessageBox.Show("Are you sure? Changes will not be saved.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     NavToMatchResults();
+                    return;
                 }
             }
+            NavToMatchResults();
         }
 
         private void EventSave_Click(object sender, EventArgs e)
@@ -146,6 +165,7 @@ namespace WelshWanderers
             if (ValidInputs() == true)
             {
                 ChangeMatchResultData();
+                EditOff();
             }
         }
 
@@ -176,7 +196,7 @@ namespace WelshWanderers
 
         private bool ValidInputs()
         {
-            if (ValidOpponentGoals() == true && ValidWanderersGoals() && ValidOpponentMajors() == true && ValidWanderersMajors() == true)
+            if (ValidOpponentGoals() && ValidWanderersGoals() && ValidOpponentMajors() && ValidWanderersMajors())
             {
                 return true;
             }
@@ -195,9 +215,15 @@ namespace WelshWanderers
         private bool ValidWanderersGoals()
         {
             int wanderersGoalsVal = Convert.ToInt16(InputWanderersGoals.Text);
-            if (wanderersGoalsVal >= 0 && wanderersGoalsVal < 100)
+            int sumGoals = 0;
+            for (int i = 0; i < TableMatchResult.Rows.Count; ++i)
+                sumGoals += Convert.ToInt16(TableMatchResult.Rows[i].Cells[2].Value);
+            if (wanderersGoalsVal < 0 || wanderersGoalsVal > 99)
+                MessageBox.Show("Welsh Wanderers goals entered must be between 0 and 99.");
+            else if (sumGoals != wanderersGoalsVal)
+                MessageBox.Show("The number of goals scored by the Welsh Wanderers must equal the sum of the players' goals.");
+            else
                 return true;
-            MessageBox.Show("Welsh Wanderers goals entered must be between 0 and 99.");
             return false;
         }
 
@@ -213,9 +239,15 @@ namespace WelshWanderers
         private bool ValidWanderersMajors()
         {
             int wanderersMajorsVal = Convert.ToInt16(InputWanderersMajors.Text);
-            if (wanderersMajorsVal >= 0 && wanderersMajorsVal < 21)
+            int sumMajors = 0;
+            for (int i = 0; i < TableMatchResult.Rows.Count; ++i)
+                sumMajors += Convert.ToInt16(TableMatchResult.Rows[i].Cells[3].Value);
+            if (wanderersMajorsVal < 0 || wanderersMajorsVal > 30)
+                MessageBox.Show("Welsh Wanderers majors entered must be between 0 and 30.");
+            else if (sumMajors != wanderersMajorsVal)
+                MessageBox.Show("The number of majors conceded by the Welsh Wanderers must equal the sum of the players' major fouls.");
+            else
                 return true;
-            MessageBox.Show("Welsh Wanderers major fouls must be between 0 and 20.");
             return false;
         }
 
@@ -224,20 +256,21 @@ namespace WelshWanderers
             if (inputData != databaseValue && changedVal == false)
             {
                 ++Changes.count;
+                ShowChangesMade();
                 return true;
             }
             else if (inputData == databaseValue && changedVal == true)
             {
                 --Changes.count;
+                ShowChangesMade();
                 return false;
             }
-            ShowChangesMade();
             return changedVal;
         }
 
         private void ShowChangesMade()
         {
-            LabelChangesMade.Text = Changes.count + " change(s).";
+            LabelChangesMade.Text = Changes.count + " change(s)\nmade.";
         }
 
         private void NavToMatchResults()
@@ -256,11 +289,6 @@ namespace WelshWanderers
             Changes.wanMajors = DetailsChanged(InputWanderersMajors.Text, wanderersMajorsData, Changes.wanMajors);
         }
 
-        private void InputOpponent_TextChanged(object sender, EventArgs e)
-        {
-            Changes.oppName = DetailsChanged(InputOpponent.Text, Database.MatchData.opponent, Changes.oppName);
-        }
-
         private void InputOpponentGoals_TextChanged(object sender, EventArgs e)
         {
             Changes.oppGoals = DetailsChanged(InputOpponentGoals.Text, opponentGoalsData, Changes.oppGoals);
@@ -270,6 +298,7 @@ namespace WelshWanderers
         {
             Changes.oppMajors = DetailsChanged(InputOpponentMajorFouls.Text, opponentMajorsData, Changes.oppMajors);
         }
+
 
     }
 }

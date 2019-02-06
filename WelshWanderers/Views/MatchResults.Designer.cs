@@ -142,7 +142,7 @@
             this.NavViewMatch.Name = "NavViewMatch";
             this.NavViewMatch.Size = new System.Drawing.Size(119, 30);
             this.NavViewMatch.TabIndex = 2;
-            this.NavViewMatch.Text = "View Match";
+            this.NavViewMatch.Text = "View Result";
             this.NavViewMatch.UseVisualStyleBackColor = true;
             this.NavViewMatch.Click += new System.EventHandler(this.NavViewMatch_Click);
             // 

@@ -162,7 +162,7 @@
             this.NavEditMatch.Name = "NavEditMatch";
             this.NavEditMatch.Size = new System.Drawing.Size(126, 30);
             this.NavEditMatch.TabIndex = 4;
-            this.NavEditMatch.Text = "Edit";
+            this.NavEditMatch.Text = "View";
             this.NavEditMatch.UseVisualStyleBackColor = true;
             this.NavEditMatch.Click += new System.EventHandler(this.NavEdit_Click);
             // 

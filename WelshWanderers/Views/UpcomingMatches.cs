@@ -40,7 +40,6 @@ namespace WelshWanderers
 
         private void HideButtons()
         {
-            NavEditMatch.Hide();
             NavAddResult.Hide();
         }
 

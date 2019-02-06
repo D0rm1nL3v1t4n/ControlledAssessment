@@ -69,7 +69,28 @@
             this.LabelHeader.Size = new System.Drawing.Size(261, 33);
             this.LabelHeader.TabIndex = 29;
             this.LabelHeader.Text = "Registration Request";
-            
+            // 
+            // InputTitle
+            // 
+            this.InputTitle.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputTitle.FormattingEnabled = true;
+            this.InputTitle.Items.AddRange(new object[] {
+            "Mr",
+            "Ms",
+            "Miss",
+            "Mrs"});
+            this.InputTitle.Location = new System.Drawing.Point(114, 66);
+            this.InputTitle.Name = "InputTitle";
+            this.InputTitle.Size = new System.Drawing.Size(161, 26);
+            this.InputTitle.TabIndex = 0;
+            // 
+            // InputFirstName
+            // 
+            this.InputFirstName.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputFirstName.Location = new System.Drawing.Point(114, 98);
+            this.InputFirstName.Name = "InputFirstName";
+            this.InputFirstName.Size = new System.Drawing.Size(161, 26);
+            this.InputFirstName.TabIndex = 1;
             // 
             // LabelTitle
             // 
@@ -137,7 +158,7 @@
             // 
             this.LabelDateOfBirth.AutoSize = true;
             this.LabelDateOfBirth.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelDateOfBirth.Location = new System.Drawing.Point(12, 168);
+            this.LabelDateOfBirth.Location = new System.Drawing.Point(12, 166);
             this.LabelDateOfBirth.Name = "LabelDateOfBirth";
             this.LabelDateOfBirth.Size = new System.Drawing.Size(91, 18);
             this.LabelDateOfBirth.TabIndex = 22;
@@ -151,7 +172,60 @@
             this.LabelPostcode.Name = "LabelPostcode";
             this.LabelPostcode.Size = new System.Drawing.Size(67, 18);
             this.LabelPostcode.TabIndex = 21;
-            this.LabelPostcode.Text = "Postcode";          
+            this.LabelPostcode.Text = "Postcode";
+            // 
+            // InputLastName
+            // 
+            this.InputLastName.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputLastName.Location = new System.Drawing.Point(114, 130);
+            this.InputLastName.Name = "InputLastName";
+            this.InputLastName.Size = new System.Drawing.Size(161, 26);
+            this.InputLastName.TabIndex = 2;
+            // 
+            // InputEmailAddress
+            // 
+            this.InputEmailAddress.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputEmailAddress.Location = new System.Drawing.Point(114, 194);
+            this.InputEmailAddress.Name = "InputEmailAddress";
+            this.InputEmailAddress.Size = new System.Drawing.Size(161, 26);
+            this.InputEmailAddress.TabIndex = 4;
+            this.InputEmailAddress.TextChanged += new System.EventHandler(this.InputEmailAddress_TextChanged);
+            // 
+            // InputTelephoneNumber
+            // 
+            this.InputTelephoneNumber.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputTelephoneNumber.Location = new System.Drawing.Point(114, 226);
+            this.InputTelephoneNumber.Name = "InputTelephoneNumber";
+            this.InputTelephoneNumber.Size = new System.Drawing.Size(161, 26);
+            this.InputTelephoneNumber.TabIndex = 5;
+            // 
+            // InputPostcode
+            // 
+            this.InputPostcode.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputPostcode.Location = new System.Drawing.Point(114, 258);
+            this.InputPostcode.Name = "InputPostcode";
+            this.InputPostcode.Size = new System.Drawing.Size(161, 26);
+            this.InputPostcode.TabIndex = 6;
+            // 
+            // InputDateOfBirth
+            // 
+            this.InputDateOfBirth.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputDateOfBirth.Location = new System.Drawing.Point(114, 162);
+            this.InputDateOfBirth.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
+            this.InputDateOfBirth.MinDate = new System.DateTime(1940, 1, 1, 0, 0, 0, 0);
+            this.InputDateOfBirth.Name = "InputDateOfBirth";
+            this.InputDateOfBirth.Size = new System.Drawing.Size(161, 26);
+            this.InputDateOfBirth.TabIndex = 3;
+            this.InputDateOfBirth.Value = new System.DateTime(2018, 10, 26, 0, 0, 0, 0);
+            // 
+            // InputPassword
+            // 
+            this.InputPassword.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputPassword.Location = new System.Drawing.Point(376, 130);
+            this.InputPassword.Name = "InputPassword";
+            this.InputPassword.PasswordChar = '*';
+            this.InputPassword.Size = new System.Drawing.Size(161, 26);
+            this.InputPassword.TabIndex = 9;
             // 
             // LabelPassword
             // 
@@ -162,6 +236,23 @@
             this.LabelPassword.Size = new System.Drawing.Size(69, 18);
             this.LabelPassword.TabIndex = 20;
             this.LabelPassword.Text = "Password";
+            // 
+            // InputUsername
+            // 
+            this.InputUsername.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputUsername.Location = new System.Drawing.Point(376, 98);
+            this.InputUsername.Name = "InputUsername";
+            this.InputUsername.Size = new System.Drawing.Size(161, 26);
+            this.InputUsername.TabIndex = 8;
+            // 
+            // InputConfirmPassword
+            // 
+            this.InputConfirmPassword.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputConfirmPassword.Location = new System.Drawing.Point(376, 162);
+            this.InputConfirmPassword.Name = "InputConfirmPassword";
+            this.InputConfirmPassword.PasswordChar = '*';
+            this.InputConfirmPassword.Size = new System.Drawing.Size(161, 26);
+            this.InputConfirmPassword.TabIndex = 10;
             // 
             // LabelConfirmPassword
             // 
@@ -177,7 +268,7 @@
             // 
             this.LabelUsername.AutoSize = true;
             this.LabelUsername.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelUsername.Location = new System.Drawing.Point(290, 96);
+            this.LabelUsername.Location = new System.Drawing.Point(290, 101);
             this.LabelUsername.Name = "LabelUsername";
             this.LabelUsername.Size = new System.Drawing.Size(75, 18);
             this.LabelUsername.TabIndex = 18;
@@ -214,7 +305,19 @@
             this.LabelTeam.Size = new System.Drawing.Size(47, 18);
             this.LabelTeam.TabIndex = 15;
             this.LabelTeam.Text = "Team";
-
+            // 
+            // InputTeam
+            // 
+            this.InputTeam.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputTeam.FormattingEnabled = true;
+            this.InputTeam.Items.AddRange(new object[] {
+            "Junior",
+            "Men",
+            "Women"});
+            this.InputTeam.Location = new System.Drawing.Point(376, 66);
+            this.InputTeam.Name = "InputTeam";
+            this.InputTeam.Size = new System.Drawing.Size(161, 26);
+            this.InputTeam.TabIndex = 7;
             // 
             // EventSendCode
             // 
@@ -226,6 +329,16 @@
             this.EventSendCode.Text = "Confirm Email Address";
             this.EventSendCode.UseVisualStyleBackColor = true;
             this.EventSendCode.Click += new System.EventHandler(this.EventSendCode_Click);
+            // 
+            // InputCode
+            // 
+            this.InputCode.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputCode.Location = new System.Drawing.Point(431, 206);
+            this.InputCode.Name = "InputCode";
+            this.InputCode.PasswordChar = '*';
+            this.InputCode.Size = new System.Drawing.Size(106, 27);
+            this.InputCode.TabIndex = 11;
+            this.InputCode.Visible = false;
             // 
             // LabelCode
             // 
@@ -249,125 +362,6 @@
             this.EventResend.UseVisualStyleBackColor = true;
             this.EventResend.Visible = false;
             this.EventResend.Click += new System.EventHandler(this.EventResend_Click);
-            
-            ////INPUTS////
-
-            // 
-            // InputTitle
-            // 
-            this.InputTitle.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputTitle.FormattingEnabled = true;
-            this.InputTitle.Items.AddRange(new object[] {
-            "Mr",
-            "Ms",
-            "Miss",
-            "Mrs"});
-            this.InputTitle.Location = new System.Drawing.Point(114, 66);
-            this.InputTitle.Name = "InputTitle";
-            this.InputTitle.Size = new System.Drawing.Size(161, 26);
-            this.InputTitle.TabIndex = 0;
-            // 
-            // InputFirstName
-            // 
-            this.InputFirstName.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputFirstName.Location = new System.Drawing.Point(114, 98);
-            this.InputFirstName.Name = "InputFirstName";
-            this.InputFirstName.Size = new System.Drawing.Size(161, 26);
-            this.InputFirstName.TabIndex = 1;
-            // 
-            // InputLastName
-            // 
-            this.InputLastName.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputLastName.Location = new System.Drawing.Point(114, 130);
-            this.InputLastName.Name = "InputLastName";
-            this.InputLastName.Size = new System.Drawing.Size(161, 26);
-            this.InputLastName.TabIndex = 2;
-            // 
-            // InputDateOfBirth
-            // 
-            this.InputDateOfBirth.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputDateOfBirth.Location = new System.Drawing.Point(114, 162);
-            this.InputDateOfBirth.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
-            this.InputDateOfBirth.MinDate = new System.DateTime(1940, 1, 1, 0, 0, 0, 0);
-            this.InputDateOfBirth.Name = "InputDateOfBirth";
-            this.InputDateOfBirth.Size = new System.Drawing.Size(161, 26);
-            this.InputDateOfBirth.TabIndex = 3;
-            this.InputDateOfBirth.Value = new System.DateTime(2018, 10, 26, 0, 0, 0, 0);
-            // 
-            // InputEmailAddress
-            // 
-            this.InputEmailAddress.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputEmailAddress.Location = new System.Drawing.Point(114, 194);
-            this.InputEmailAddress.Name = "InputEmailAddress";
-            this.InputEmailAddress.Size = new System.Drawing.Size(161, 26);
-            this.InputEmailAddress.TabIndex = 4;
-            this.InputEmailAddress.TextChanged += new System.EventHandler(this.InputEmailAddress_TextChanged);
-            // 
-            // InputTelephoneNumber
-            // 
-            this.InputTelephoneNumber.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputTelephoneNumber.Location = new System.Drawing.Point(114, 226);
-            this.InputTelephoneNumber.Name = "InputTelephoneNumber";
-            this.InputTelephoneNumber.Size = new System.Drawing.Size(161, 26);
-            this.InputTelephoneNumber.TabIndex = 5;
-            // 
-            // InputPostcode
-            // 
-            this.InputPostcode.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputPostcode.Location = new System.Drawing.Point(114, 258);
-            this.InputPostcode.Name = "InputPostcode";
-            this.InputPostcode.Size = new System.Drawing.Size(161, 26);
-            this.InputPostcode.TabIndex = 6;
-            // 
-            // InputTeam
-            // 
-            this.InputTeam.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputTeam.FormattingEnabled = true;
-            this.InputTeam.Items.AddRange(new object[] {
-            "Junior",
-            "Men",
-            "Women"});
-            this.InputTeam.Location = new System.Drawing.Point(376, 66);
-            this.InputTeam.Name = "InputTeam";
-            this.InputTeam.Size = new System.Drawing.Size(161, 26);
-            this.InputTeam.TabIndex = 7;
-            // 
-            // InputUsername
-            // 
-            this.InputUsername.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputUsername.Location = new System.Drawing.Point(376, 98);
-            this.InputUsername.Name = "InputUsername";
-            this.InputUsername.Size = new System.Drawing.Size(161, 26);
-            this.InputUsername.TabIndex = 8;
-            // 
-            // InputPassword
-            // 
-            this.InputPassword.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputPassword.Location = new System.Drawing.Point(376, 130);
-            this.InputPassword.Name = "InputPassword";
-            this.InputPassword.PasswordChar = '*';
-            this.InputPassword.Size = new System.Drawing.Size(161, 26);
-            this.InputPassword.TabIndex = 9;
-            // 
-            // InputConfirmPassword
-            // 
-            this.InputConfirmPassword.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputConfirmPassword.Location = new System.Drawing.Point(376, 162);
-            this.InputConfirmPassword.Name = "InputConfirmPassword";
-            this.InputConfirmPassword.PasswordChar = '*';
-            this.InputConfirmPassword.Size = new System.Drawing.Size(161, 26);
-            this.InputConfirmPassword.TabIndex = 10;
-            // 
-            // InputCode
-            // 
-            this.InputCode.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputCode.Location = new System.Drawing.Point(431, 206);
-            this.InputCode.Name = "InputCode";
-            this.InputCode.PasswordChar = '*';
-            this.InputCode.Size = new System.Drawing.Size(106, 27);
-            this.InputCode.TabIndex = 11;
-            this.InputCode.Visible = false;
-            
             // 
             // RegisterRequest
             // 

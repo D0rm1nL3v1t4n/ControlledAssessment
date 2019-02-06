@@ -119,7 +119,7 @@ namespace WelshWanderers
 
         private void EventHelp_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This is the team the user plays for within the club. This is only applicable to players.");
+            MessageBox.Show("'Team' is the team within the club that the user plays for. This is only applicable to players.\n'Access Level' is required if a user is accepted. This defines what access they have to which functions and features. Not required if a user is rejected.");
         }
 
         private void InputAccessLevel_SelectedIndexChanged(object sender, EventArgs e)
