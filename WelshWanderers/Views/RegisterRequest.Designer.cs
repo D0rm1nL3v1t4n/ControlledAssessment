@@ -72,6 +72,7 @@
             // 
             // InputTitle
             // 
+            this.InputTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.InputTitle.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputTitle.FormattingEnabled = true;
             this.InputTitle.Items.AddRange(new object[] {
@@ -308,6 +309,7 @@
             // 
             // InputTeam
             // 
+            this.InputTeam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.InputTeam.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputTeam.FormattingEnabled = true;
             this.InputTeam.Items.AddRange(new object[] {
@@ -335,7 +337,6 @@
             this.InputCode.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputCode.Location = new System.Drawing.Point(431, 206);
             this.InputCode.Name = "InputCode";
-            this.InputCode.PasswordChar = '*';
             this.InputCode.Size = new System.Drawing.Size(106, 27);
             this.InputCode.TabIndex = 11;
             this.InputCode.Visible = false;

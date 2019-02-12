@@ -57,7 +57,7 @@ namespace WelshWanderers
                 MessageBox.Show("The code entered is incorrect.");
                 return;
             }
-            if (Functions.ValidPassword.IsPasswordValid(InputNewPassword.Text, InputConfirmNewPassword.Text) == true)
+            if (Functions.Validation.IsPasswordValid(InputNewPassword.Text, InputConfirmNewPassword.Text) == true)
             {
                 string userAccessLevel = Functions.FileSearch.ReturnSegment("userAccountDetails", userID, 0, 3, false);
                 string[] data = { InputUsername.Text, Functions.HashAlgorithm.HashPassword(InputNewPassword.Text), userAccessLevel };
@@ -68,8 +68,6 @@ namespace WelshWanderers
                 NavToSignIn();
             }
         }
-
-
 
     }
 }

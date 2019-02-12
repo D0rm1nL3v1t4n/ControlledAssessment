@@ -126,6 +126,7 @@
             this.EventNavCancel.TabIndex = 5;
             this.EventNavCancel.Text = "Back";
             this.EventNavCancel.UseVisualStyleBackColor = true;
+            this.EventNavCancel.Click += new System.EventHandler(this.EventNavCancel_Click);
             // 
             // ChangePassword
             // 

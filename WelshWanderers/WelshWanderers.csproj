@@ -75,7 +75,7 @@
     <Compile Include="Functions\HashAlgorithm.cs" />
     <Compile Include="Functions\RandomCode.cs" />
     <Compile Include="Functions\SendEmail.cs" />
-    <Compile Include="Functions\ValidPassword.cs" />
+    <Compile Include="Functions\Validation.cs" />
     <Compile Include="Views\ChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>

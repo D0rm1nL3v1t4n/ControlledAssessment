@@ -217,6 +217,7 @@
             // 
             // InputAccessLevel
             // 
+            this.InputAccessLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.InputAccessLevel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputAccessLevel.FormattingEnabled = true;
             this.InputAccessLevel.Items.AddRange(new object[] {

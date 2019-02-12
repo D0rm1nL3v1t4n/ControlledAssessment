@@ -50,11 +50,17 @@ namespace WelshWanderers
              if (Changes.count > 0)
              {
                  if (MessageBox.Show("You have made " + Changes.count.ToString() + ", confirm?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    ChangeDetails();
+                 {
+                    bool allValid = Functions.Validation.IsTitleValid(InputTitle.Text) && Functions.Validation.IsFirstNameValid(InputFirstName.Text) && Functions.Validation.IsLastNameValid(InputLastName.Text)
+                        && Functions.Validation.IsDOBValid(InputDateOfBirth.Value) && Functions.Validation.IsEmailAddressValid(InputEmailAddress.Text) && Functions.Validation.IsTelephoneNumberValid(InputTelephoneNumber.Text)
+                        && Functions.Validation.IsPostcodeValid(InputPostcode.Text);
+                    if (allValid)
+                    {
+                        ChangeDetails();
+                        NavToHome();
+                    }
                 }
              }
-             NavToHome();
         }
 
         private void ChangeDetails()
@@ -100,14 +106,15 @@ namespace WelshWanderers
             if (inputData != databaseValue && changedVal == false)
             {
                 ++Changes.count;
+                ShowChangesMade();
                 return true;
             }
             else if (inputData == databaseValue && changedVal == true)
             {
                 --Changes.count;
+                ShowChangesMade();
                 return false;
             }
-            ShowChangesMade();
             return changedVal;
         }
 

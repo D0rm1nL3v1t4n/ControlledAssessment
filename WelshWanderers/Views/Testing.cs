@@ -69,7 +69,7 @@ namespace WelshWanderers.Views
 
         private void TestPasswordValidation()
         {
-            Functions.ValidPassword.IsPasswordValid("ABCdef123!()", "ABCdef123!()");
+            Functions.Validation.IsPasswordValid("ABCdef123!()", "ABCdef123!()");
         }
     }
 }

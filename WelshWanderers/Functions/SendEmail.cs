@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net.Mail;
+using System.Windows.Forms;
 
 namespace WelshWanderers.Functions
 {
@@ -24,20 +25,27 @@ namespace WelshWanderers.Functions
         
         public static void Email(string subject, string body, string[] recipients)
         {
-            SetUpServer();
-
-            MailMessage email = new MailMessage();
-            email.From = new MailAddress("WelshWanderersTest@gmail.com");
-            foreach (string emailAddress in recipients)
+            try
             {
-                if (null != emailAddress)
+                SetUpServer();
+
+                MailMessage email = new MailMessage();
+                email.From = new MailAddress("WelshWanderersTest@gmail.com");
+                foreach (string emailAddress in recipients)
                 {
-                    email.To.Add(emailAddress);
+                    if (null != emailAddress)
+                    {
+                        email.To.Add(emailAddress);
+                    }
                 }
+                email.Subject = subject;
+                email.Body = body;
+                smtpServer.Send(email);
             }
-            email.Subject = subject;
-            email.Body = body;
-            smtpServer.Send(email);           
+            catch(SmtpException e)
+            {
+                MessageBox.Show(e + "\n\n\nERROR SENDING EMAIL. Please see system administrator.");
+            }
         }
     }
 }

@@ -47,78 +47,9 @@ namespace WelshWanderers
         private void WriteRequestData()
         {
             Functions.FileWrite.WriteData("userJoinRequests", "0" + "|" + InputTitle.Text + "|" + InputFirstName.Text + "|" + InputLastName.Text + "|" + InputDateOfBirth.Text
-                 + "|" + InputEmailAddress.Text + "|" + InputTelephoneNumber.Text + "|" + InputPostcode.Text + "|" + InputUsername.Text + "|" + InputPassword.Text + "|" + InputTeam.Text + "|");
+                 + "|" + InputEmailAddress.Text + "|" + InputTelephoneNumber.Text + "|" + InputPostcode.Text + "|" + InputUsername.Text + "|" + Functions.HashAlgorithm.HashPassword(InputPassword.Text) + "|" + InputTeam.Text + "|");
         }
 
-        private int ValidTitle()
-        {
-            if (null != InputTitle.Text)
-                return 0;
-            MessageBox.Show("You must select a title.");
-            return 1;
-        }
-
-        private int ValidFirstName()
-        {
-            if (InputFirstName.Text.Length > 0 && InputFirstName.Text.Length < 21 && !InputFirstName.Text.Contains('|'))
-                return 0;
-            MessageBox.Show("First name must be between 5 and 20 characters.");
-            return 1;
-        }
-
-        private int ValidLastName()
-        {
-            if (InputLastName.Text.Length > 0 && InputLastName.Text.Length < 21 && !InputLastName.Text.Contains('|'))
-                return 0;
-            MessageBox.Show("Last name must be between 5 and 20 characters.");
-            return 1;
-        }
-
-        private int ValidDateOfBirth()
-        {
-            if (InputDateOfBirth.Value <= DateTime.Now)
-                return 0;
-            MessageBox.Show("Hey Doc, pretty sure we ain't time travelling yet - Marty.");
-            return 1;
-        }
-
-        private int ValidEmailAddress()
-        {
-            Regex emailRegex = new Regex(@"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
-            Match compare = emailRegex.Match(InputEmailAddress.Text);
-            if (compare.Success && !InputEmailAddress.Text.Contains('|'))
-                return 0;
-            MessageBox.Show("Email address must of a valid format");
-            return 1;
-        }
-
-        private int ValidTelephoneNumber()
-        {
-            Regex telephoneRegex = new Regex(@"\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})");
-            Match compare = telephoneRegex.Match(InputTelephoneNumber.Text);
-            if (compare.Success)
-                return 0;
-            MessageBox.Show("Telephone number must be of a valid format");
-            return 1;
-        }
-
-        private int ValidPostcode()
-        {
-            Regex postcodeRegex = new Regex(@"([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9][A-Za-z]?))))\s?[0-9][A-Za-z]{2})");
-            Match compare = postcodeRegex.Match(InputPostcode.Text);
-            if (compare.Success)
-                return 0;
-            MessageBox.Show("Postcode must be of a valid format.");
-            return 1;
-        }
-
-        private int ValidUsername()
-        {
-            if (InputUsername.TextLength > 5 && InputUsername.Text.Length < 21 && !InputUsername.Text.Contains('|'))
-                return 0;
-            MessageBox.Show("Username must be between 6 and 20 characters.");
-            return 1;
-        }
 
         private void EventShowHelp_Click(object sender, EventArgs e)
         {
@@ -136,8 +67,10 @@ namespace WelshWanderers
 
         private void EventSendCode_Click(object sender, EventArgs e)
         {
-            int allValid = ValidTitle() + ValidFirstName() + ValidLastName() + ValidDateOfBirth() + ValidEmailAddress() + ValidTelephoneNumber() + ValidPostcode() + ValidUsername();
-            if (allValid == 0 && Functions.ValidPassword.IsPasswordValid(InputPassword.Text, InputConfirmPassword.Text) == true)
+            bool allValid = Functions.Validation.IsTitleValid(InputTitle.Text) && Functions.Validation.IsFirstNameValid(InputFirstName.Text) && Functions.Validation.IsLastNameValid(InputLastName.Text)
+                && Functions.Validation.IsDOBValid(InputDateOfBirth.Value) && Functions.Validation.IsEmailAddressValid(InputEmailAddress.Text) && Functions.Validation.IsTelephoneNumberValid(InputTelephoneNumber.Text)
+                && Functions.Validation.IsPostcodeValid(InputPostcode.Text) && Functions.Validation.IsUsernameValid(InputUsername.Text) && Functions.Validation.IsPasswordValid(InputPassword.Text, InputConfirmPassword.Text);
+            if (allValid)
             {
                 SendCodeEmail();
                 ChangeControls();
@@ -155,6 +88,7 @@ namespace WelshWanderers
 
         private void SendCodeEmail()
         {
+            emailDifferent = false;
             generatedCode = Functions.RandomCode.GenerateCode(8);
             string[] email = { InputEmailAddress.Text };
             string body = "You have been sent the following code:\n\n" + generatedCode + "\n\nEnter this code into the system to confirm your email address.\n\n\nWelshWanderers";
@@ -164,7 +98,6 @@ namespace WelshWanderers
         private void EventResend_Click(object sender, EventArgs e)
         {
             SendCodeEmail();
-            emailDifferent = false;
         }
 
         private void InputEmailAddress_TextChanged(object sender, EventArgs e)

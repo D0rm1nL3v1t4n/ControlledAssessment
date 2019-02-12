@@ -77,7 +77,7 @@ namespace WelshWanderers
         {
             if (File.ReadAllLines("userJoinRequests.txt").Length == 0)
             {
-                MessageBox.Show("No new reigstration join requests have been made.");
+                MessageBox.Show("No new reigstration requests have been made.");
             }
             else
             {
@@ -103,7 +103,6 @@ namespace WelshWanderers
             new AddTraining().Show();
             Hide();
         }
-
 
         private void NavLeagueStatistics_Click(object sender, EventArgs e)
         {

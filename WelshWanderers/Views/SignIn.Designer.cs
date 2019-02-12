@@ -85,19 +85,10 @@
             this.LabelHeader.TabIndex = 7;
             this.LabelHeader.Text = "Sign In";
             // 
-            // EventNavSignIn
-            // 
-            this.EventNavSignIn.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventNavSignIn.Location = new System.Drawing.Point(16, 123);
-            this.EventNavSignIn.Name = "EventNavSignIn";
-            this.EventNavSignIn.Size = new System.Drawing.Size(264, 29);
-            this.EventNavSignIn.TabIndex = 2;
-            this.EventNavSignIn.Text = "Sign In";
-            this.EventNavSignIn.UseVisualStyleBackColor = true;
-            this.EventNavSignIn.Click += new System.EventHandler(this.EventNavSignIn_Click);
-            // 
             // NavResetPassword
             // 
+            this.NavResetPassword.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.NavResetPassword.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.NavResetPassword.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NavResetPassword.Location = new System.Drawing.Point(16, 158);
             this.NavResetPassword.Name = "NavResetPassword";
@@ -107,8 +98,24 @@
             this.NavResetPassword.UseVisualStyleBackColor = true;
             this.NavResetPassword.Click += new System.EventHandler(this.NavResetPassword_Click);
             // 
+            // EventNavSignIn
+            // 
+            this.EventNavSignIn.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.EventNavSignIn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.EventNavSignIn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.EventNavSignIn.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EventNavSignIn.Location = new System.Drawing.Point(16, 123);
+            this.EventNavSignIn.Name = "EventNavSignIn";
+            this.EventNavSignIn.Size = new System.Drawing.Size(264, 29);
+            this.EventNavSignIn.TabIndex = 2;
+            this.EventNavSignIn.Text = "Sign In";
+            this.EventNavSignIn.UseVisualStyleBackColor = true;
+            this.EventNavSignIn.Click += new System.EventHandler(this.EventNavSignIn_Click);
+            // 
             // NavRegister
             // 
+            this.NavRegister.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.NavRegister.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.NavRegister.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NavRegister.Location = new System.Drawing.Point(149, 158);
             this.NavRegister.Name = "NavRegister";

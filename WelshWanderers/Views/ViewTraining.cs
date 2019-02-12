@@ -27,6 +27,16 @@ namespace WelshWanderers
             public static bool date = false;
         }
 
+        private void ResetChanges()
+        {
+            Changes.count = 0;
+            Changes.team = false;
+            Changes.timeH = false;
+            Changes.timeM = false;
+            Changes.duration = false;
+            Changes.date = false;
+        }
+
         private void EditTraining_Load(object sender, EventArgs e)
         {
             LoadTrainingData();
@@ -47,6 +57,7 @@ namespace WelshWanderers
                 if (MessageBox.Show("Are you sure? Changes will not be saved.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     NavToUpcomingTraining();
+                    return;
                 }
             }
             NavToUpcomingTraining();
@@ -64,16 +75,6 @@ namespace WelshWanderers
                 ChangeTrainingData();
                 EditOff();
             }
-        }
-
-        private void ResetChanges()
-        {
-            Changes.team = false;
-            Changes.timeH = false;
-            Changes.timeM = false;
-            Changes.duration = false;
-            Changes.date = false;
-            Changes.count = 0;
         }
 
         private void EventCancelEdit_Click(object sender, EventArgs e)
@@ -109,6 +110,7 @@ namespace WelshWanderers
             EventCancelEdit.Show();
             EventSave.Show();
             LabelChangesMade.Show();
+            LabelChangesMade.Text = "0 changes\nmade.";
         }
 
         private void EditingEnableChange(bool state, bool oppositeSate)
@@ -169,14 +171,15 @@ namespace WelshWanderers
             if (inputData != databaseValue && changedVal == false)
             {
                 ++Changes.count;
+                ShowChangesMade();
                 return true;
             }
             else if (inputData == databaseValue && changedVal == true)
             {
                 --Changes.count;
+                ShowChangesMade();
                 return false;
             }
-            ShowChangesMade();
             return changedVal;
         }
 

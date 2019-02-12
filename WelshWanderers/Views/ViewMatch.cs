@@ -51,10 +51,7 @@ namespace WelshWanderers
                 {
                     Navigation();   
                 }
-                else
-                {
-                    return;
-                }
+                return;
             }
             Navigation();
         }
@@ -133,6 +130,7 @@ namespace WelshWanderers
             InputDate.Enabled = state;
             InputTimeH.ReadOnly = oppositeState;
             InputTimeM.ReadOnly = oppositeState;
+            InputHomeMatch.Enabled = state;
             InputAddressA.ReadOnly = oppositeState;
             InputAddressB.ReadOnly = oppositeState;
             InputPostcode.ReadOnly = oppositeState;

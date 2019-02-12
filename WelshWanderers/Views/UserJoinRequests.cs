@@ -88,7 +88,7 @@ namespace WelshWanderers
         {
             string personalDetailsData = id + "|" + InputTitle.Text + "|" + InputFirstName.Text + "|" + InputLastName.Text + "|" + InputDateOfBirth.Text + "|" + 
                 InputEmailAddress.Text + "|" + InputTelephoneNumber.Text + "|" + InputPostcode.Text + "|";
-            string accountDetailsData = id + "|" + InputUsername.Text.ToLower() + "|" + Functions.HashAlgorithm.HashPassword(password) + "|" + InputAccessLevel.Text + "|" + InputTeam.Text + "|";
+            string accountDetailsData = id + "|" + InputUsername.Text.ToLower() + "|" + password + "|" + InputAccessLevel.Text + "|" + InputTeam.Text + "|";
             Functions.FileWrite.WriteData("userPersonalDetails", personalDetailsData);
             Functions.FileWrite.WriteData("userAccountDetails", accountDetailsData);
         }
@@ -145,7 +145,7 @@ namespace WelshWanderers
 
         private void EmailAcceptUser()
         {
-            string body = "This is an email to inform you that your registration request has been processed.\n\nWe are glad to inform you that your request has been accepted.\nYou may now access the system with your username: " + InputUsername.Text + ", and your password for your account.\n\n\nThanks,\nWelsh Wanderers";
+            string body = "This is an email to inform you that your registration request has been processed.\n\nWe are glad to inform you that your request has been accepted.\nYou may now access the system with your username: " + InputUsername.Text + ", and your password.\n\n\nThanks,\nWelsh Wanderers";
             string[] recipient = { InputEmailAddress.Text };
             Functions.SendEmail.Email("Registration Request Update", body, recipient);
         }

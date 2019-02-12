@@ -31,7 +31,8 @@ namespace WelshWanderers
                 {
                     if ((sectionB[2] + " " + sectionB[3]).ToLower().Contains(InputName.Text.ToLower()) || InputName.Text == "")
                     {
-                        TableManageUsers.Rows.Add(sectionA[0], sectionA[1], sectionB[2], sectionB[3], sectionA[3], sectionA[4]);
+                        if (sectionA[1] != "masteradmin")
+                            TableManageUsers.Rows.Add(sectionA[0], sectionA[1], sectionB[2], sectionB[3], sectionA[3], sectionA[4]);
                     }
                 }
             }

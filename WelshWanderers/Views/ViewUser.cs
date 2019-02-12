@@ -53,11 +53,30 @@ namespace WelshWanderers
             {
                 ChangeData();
                 MessageBox.Show("User details have been updated.");
+                EditOff();
             }
             else
             {
                 MessageBox.Show("You have not made any changes.");
             }
+        }
+
+        private void SendEmail()
+        {
+            string changedDetails = "";
+            if (InputAccessLevel.Text != accessLevel)
+                changedDetails += "Previous access level: " + accessLevel + ".\nNew access level: " + InputAccessLevel.Text + ".\n";
+            if (InputTeam.Text != team)
+            {
+                if (InputTeam.Text == "")
+                    changedDetails += "Previous team: " + team + ".\nNew team: None.";
+                else if (team == "")
+                    changedDetails += "Previous team: None.\nNew team: " + InputTeam.Text + ".";
+                else
+                    changedDetails += "Previous team: " + team + ".\nNew team: " + InputAccessLevel.Text + ".";
+            }
+            string[] email = { InputEmailAddress.Text };
+            Functions.SendEmail.Email("Details have been changed.", "Your account details have been changed by an admin.\nYour following details have been updated:\n\n" + changedDetails + "\n\n\nWelsh Wanderers.", email);
         }
 
         private void ChangeData()
@@ -134,7 +153,7 @@ namespace WelshWanderers
             EventCancelEdit.Show();
             EventSave.Show();
             LabelChangesMade.Show();
-            LabelChangesMade.Text = "No Changes";
+            LabelChangesMade.Text = "0 changes\nmade.";
         }
 
         private void EditOff()
@@ -158,14 +177,15 @@ namespace WelshWanderers
             if (inputData != databaseValue && changedVal == false)
             {
                 ++Changes.count;
+                ShowChangesMade();
                 return true;
             }
             else if (inputData == databaseValue && changedVal == true)
             {
                 --Changes.count;
+                ShowChangesMade();
                 return false;
             }
-            ShowChangesMade();
             return changedVal;
         }
 
