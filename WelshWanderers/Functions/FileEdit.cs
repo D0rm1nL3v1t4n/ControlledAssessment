@@ -7,7 +7,7 @@ using System.IO;
 
 namespace WelshWanderers.Functions
 {
-    class FileEdit
+    public class FileEdit
     {
         public static void EditLine(string fileName, int recordLength, string[] data, int[] searchIndex, string[] searchData)
         {

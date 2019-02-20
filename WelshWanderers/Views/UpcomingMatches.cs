@@ -56,9 +56,17 @@ namespace WelshWanderers
 
         private void NavEdit_Click(object sender, EventArgs e)
         {
-            LoadMatchData();
-            new ViewMatch("Upcoming Matches").Show();
-            Hide();
+            try 
+            {
+                LoadMatchData();
+                new ViewMatch("Upcoming Matches").Show();
+                Hide();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Select a match it view details about that match.");
+            }
+            
         }
 
         private void LoadMatchData()
@@ -104,14 +112,19 @@ namespace WelshWanderers
         {
             if (null != Functions.FileSearch.ReturnLine("matchStats", TableViewMatches.SelectedRows[0].Cells[0].Value.ToString(), 0))
             {
-                LoadMatchData();
-                new ViewMatchResult().Show();
-                Hide();
+                LoadMatchResult();
             }
             else
             {
                 MessageBox.Show("No match result yet.");
             }
+        }
+
+        private void LoadMatchResult()
+        {
+            LoadMatchData();
+            new ViewMatchResult().Show();
+            Hide();
         }
 
         private void InputFilter_SelectedIndexChanged(object sender, EventArgs e)
@@ -129,7 +142,7 @@ namespace WelshWanderers
                 NavMatchAvailability.Hide();
             }
             else
-            {;
+            {
                 NavViewResult.Show();
                 if (Database.UserData.accessLevel != "Player")
                     NavAddResult.Show();
@@ -138,20 +151,41 @@ namespace WelshWanderers
 
         private void NavAddResult_Click(object sender, EventArgs e)
         {
-            LoadMatchData();
-            new AddResult().Show();
-            Hide();
+            try
+            {
+                if (null == Functions.FileSearch.ReturnLine("matchStats", TableViewMatches.SelectedRows[0].Cells[0].Value.ToString(), 0))
+                {
+                    LoadMatchData();
+                    new AddResult().Show();
+                    Hide();
+                }
+                else if (MessageBox.Show("This match already has a result. Would you like to view it?", "No Result", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    LoadMatchResult();
+                }
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Select a match to add its result.");
+            }
         }
 
         private void NavMatchAvailability_Click(object sender, EventArgs e)
         {
-            if (Convert.ToDateTime(TableViewMatches.SelectedRows[0].Cells[3].Value.ToString()) < DateTime.Today)
-                MessageBox.Show("That match has already occured.");
-            else
+            try
             {
-                Database.MatchData.id = Convert.ToInt16(TableViewMatches.SelectedRows[0].Cells[0].Value.ToString());
-                new Views.ViewMatchAvailability().Show();
-                Hide();
+                if (Convert.ToDateTime(TableViewMatches.SelectedRows[0].Cells[3].Value.ToString()) < DateTime.Today)
+                    MessageBox.Show("That match has already occured.");
+                else
+                {
+                    Database.MatchData.id = Convert.ToInt16(TableViewMatches.SelectedRows[0].Cells[0].Value.ToString());
+                    new Views.ViewMatchAvailability().Show();
+                    Hide();
+                }
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Select a match it view the availability of the players for that match.");
             }
         }
     }

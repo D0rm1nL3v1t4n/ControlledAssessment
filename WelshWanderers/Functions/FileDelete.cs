@@ -7,7 +7,7 @@ using System.IO;
 
 namespace WelshWanderers.Functions
 {
-    class FileDelete
+    public class FileDelete
     {
         public static void RemoveLine(string fileName, int recordLength, int lineNumber)
         {

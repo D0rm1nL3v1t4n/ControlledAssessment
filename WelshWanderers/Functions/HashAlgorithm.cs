@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace WelshWanderers.Functions
 {
-    class HashAlgorithm
+    public class HashAlgorithm
     {
         public static string HashPassword(string password)
         {
@@ -37,7 +37,7 @@ namespace WelshWanderers.Functions
             {
                 if (hashBytes[i + 16] != hash[i])
                 {
-                    MessageBox.Show("Password is incorrect.");
+                    //MessageBox.ShowBox.Show("Password is incorrect.");
                     return false;
                 }
             }

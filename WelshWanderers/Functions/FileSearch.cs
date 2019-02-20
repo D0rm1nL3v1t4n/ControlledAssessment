@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace WelshWanderers.Functions
 {
-    class FileSearch
+    public class FileSearch
     {
         public static string ReturnSegment(string fileName, string searchData, int searchIndex, int returnIndex, bool multiReturn = false)
         {

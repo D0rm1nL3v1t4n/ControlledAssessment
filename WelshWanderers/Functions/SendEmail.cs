@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace WelshWanderers.Functions
 {
-    static class SendEmail
+    public static class SendEmail
     {
         private static SmtpClient smtpServer = null;
 

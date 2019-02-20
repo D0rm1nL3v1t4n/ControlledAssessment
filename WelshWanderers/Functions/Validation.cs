@@ -8,29 +8,29 @@ using System.Windows.Forms;
 
 namespace WelshWanderers.Functions
 {
-    class Validation
+    public class Validation
     {
         public static bool IsTitleValid(string title)
         {
             if (null != title)
                 return true;
-            MessageBox.Show("You must select a title.");
+            //MessageBox.Show("You must select a title.");
             return false;
         }
 
         public static bool IsFirstNameValid(string firstName)
         {
-            if (firstName.Length > 1 && firstName.Length < 21 && !firstName.Contains('|'))
+            if (firstName.Length > 1 && firstName.Length < 21 && !firstName.Contains('|') && firstName.All(Char.IsLetter))
                 return true;
-            MessageBox.Show("First name must be between 2 and 20 characters");
+            //MessageBox.Show("First name must be between 2 and 20 letters");
             return false;
         }
 
         public static bool IsLastNameValid(string lastName)
         {
-            if (lastName.Length > 2 && lastName.Length < 21 && !lastName.Contains('|'))
+            if (lastName.Length > 2 && lastName.Length < 21 && !lastName.Contains('|') && lastName.All(Char.IsLetter))
                 return true;
-            MessageBox.Show("First name must be between 2 and 20 characters");
+            //MessageBox.Show("First name must be between 2 and 20 letters");
             return false;
         }
 
@@ -38,7 +38,7 @@ namespace WelshWanderers.Functions
         {
             if (dateOfBirth <= DateTime.Now.AddYears(-5))
                 return true;
-            MessageBox.Show("Date of birth must be before the following date (5 years back): " + DateTime.Now.AddYears(-5).Date + ".");
+            //MessageBox.Show("Date of birth must be before the following date (5 years back): " + DateTime.Now.AddYears(-5).Date + ".");
             return false;
         }
 
@@ -47,7 +47,7 @@ namespace WelshWanderers.Functions
             Match compare = new Regex(@"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$").Match(emailAddress);
             if (compare.Success && !emailAddress.Contains('|'))
                 return true;
-            MessageBox.Show("Email address must of a valid format");
+            //MessageBox.Show("Email address must of a valid format");
             return false;
         }
 
@@ -56,7 +56,7 @@ namespace WelshWanderers.Functions
             Match compare = new Regex(@"\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})").Match(telephoneNumber);
             if (compare.Success)
                 return true;
-            MessageBox.Show("Telephone number must be of a valid format");
+            //MessageBox.Show("Telephone number must be of a valid format");
             return false;
         }
 
@@ -65,15 +65,15 @@ namespace WelshWanderers.Functions
             Match compare = new Regex(@"([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9][A-Za-z]?))))\s?[0-9][A-Za-z]{2})").Match(postcode);
             if (compare.Success)
                 return true;
-            MessageBox.Show("Postcode must be of a valid format.");
+            //MessageBox.Show("Postcode must be of a valid format.");
             return false;
         }
 
         public static bool IsUsernameValid(string username)
         {
-            if (username.Length > 5 && username.Length < 21 && !username.Contains('|'))
+            if (username.Length > 5 && username.Length < 21 && !username.Contains('|') && username.All(Char.IsLetterOrDigit))
                 return true;
-            MessageBox.Show("Username must be between 6 and 20 characters.");
+            //MessageBox.Show("Username must be between 6 and 20 letters or digits.");
             return false;
         }
 
@@ -85,11 +85,12 @@ namespace WelshWanderers.Functions
                 if (compare.Success && !password.Contains("|"))
                     return true;
                 else
-                    MessageBox.Show("Password must be between 8 and 20 characters in length and " +
-                        "contain at least one of each of the following:\nAn uppercase, lowercase, numerical & special character.");
+                { }
+                //MessageBox.Show("Password must be between 8 and 20 characters in length and " +
+                //"contain at least one of each of the following:\nAn uppercase, lowercase, numerical & special character.");
             }
-            else
-                MessageBox.Show("Your passwords do not match.");
+            else { }
+                //MessageBox.Show("Your passwords do not match.");
             return false;
         }
     }

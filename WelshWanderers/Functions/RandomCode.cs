@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WelshWanderers.Functions
 {
-    class RandomCode
+    public class RandomCode
     {
         public static string GenerateCode(int length)
         {

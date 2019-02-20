@@ -7,7 +7,7 @@ using System.IO;
 
 namespace WelshWanderers.Functions
 {
-    class FileWrite
+    public class FileWrite
     {
         public static void WriteData(string fileName, string data)
         {

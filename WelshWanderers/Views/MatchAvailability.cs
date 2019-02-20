@@ -59,17 +59,36 @@ namespace WelshWanderers
 
         private void EventMatchDetails_Click(object sender, EventArgs e)
         {
-            Database.MatchData.id = Convert.ToInt16(TableMatchAvailability.SelectedRows[0].Cells[0].Value);
-            string[] section = Functions.FileSearch.ReturnLine("matchDetails", Database.MatchData.id.ToString(), 0).Split('|');
-            Database.MatchData.league = section[1];
-            Database.MatchData.opponent = section[2];
-            Database.MatchData.date = section[3];
-            Database.MatchData.timeH = Convert.ToInt16(section[4]);
-            Database.MatchData.timeM = Convert.ToInt16(section[5]);
-            Database.MatchData.addressLineA = section[6];
-            Database.MatchData.addressLineA = section[7];
-            Database.MatchData.postcode = section[8];
-            new ViewMatch("Match Availability").Show();
+            try
+            {
+                StoreMatchDetails();
+                if (Application.OpenForms["ViewMatch"] == null)
+                {
+                   new ViewMatch("Match Availability").Show();
+                }
+                else
+                {
+                    MessageBox.Show("That form is already open.");
+                }
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Please select a match to view.");
+            }            
+        }
+
+        private void StoreMatchDetails()
+        {
+                Database.MatchData.id = Convert.ToInt16(TableMatchAvailability.SelectedRows[0].Cells[0].Value);
+                string[] section = Functions.FileSearch.ReturnLine("matchDetails", Database.MatchData.id.ToString(), 0).Split('|');
+                Database.MatchData.league = section[1];
+                Database.MatchData.opponent = section[2];
+                Database.MatchData.date = section[3];
+                Database.MatchData.timeH = Convert.ToInt16(section[4]);
+                Database.MatchData.timeM = Convert.ToInt16(section[5]);
+                Database.MatchData.addressLineA = section[6];
+                Database.MatchData.addressLineA = section[7];
+                Database.MatchData.postcode = section[8];
         }
 
         private void EventSave_Click(object sender, EventArgs e)
