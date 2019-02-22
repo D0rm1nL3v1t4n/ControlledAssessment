@@ -10,6 +10,8 @@ namespace WelshWanderers
             InitializeComponent();
         }
 
+        private static bool emailSent = false;
+
         private void NavCancel_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure? Training will not be saved.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -26,10 +28,20 @@ namespace WelshWanderers
 
         private void EventNavSave_Click(object sender, EventArgs e)
         {
-            if (ValidInputs() == true)
+            if (ValidTeam() && ValidTime() && ValidDuration() && ValidDate())
             {
                 SaveData();
-                NavToHome();
+                if (emailSent)
+                {
+                    NavToHome();
+                }
+                else
+                {
+                    if (MessageBox.Show("Would you like to send an email before exiting?", "Email not sent.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        NavToPreviewEmail();
+                    else
+                        NavToHome();
+                }
             }
         }
 
@@ -50,23 +62,12 @@ namespace WelshWanderers
             return emails;
         }
 
-        private bool ValidInputs()
-        {
-            if (ValidTeam() == true && ValidTime() == true && ValidDuration() == true && ValidDate() == true)
-                return true;
-            else
-                return false;
-        }
-
         private bool ValidDate()
         {
-            if (InputDate.Value <= DateTime.Now)
-            {
-                MessageBox.Show("Enter a date after today.");
-                return false;
-            }
-            else
+            if (InputDate.Value > DateTime.Now)
                 return true;
+            MessageBox.Show("Enter a date after today.");
+            return false;
         }
 
         private bool ValidDuration()
@@ -74,49 +75,55 @@ namespace WelshWanderers
             int duration = System.Convert.ToInt16(InputDuration.Text);
             if (duration > 0 && duration < 240)
                 return true;
-            else
-            {
-                MessageBox.Show("Duration entered must be a valid duration.");
-                return false;
-            }
+            MessageBox.Show("Duration entered must be a valid duration.");
+            return false;
+            
         }
 
         private bool ValidTime()
         {
             int hour = System.Convert.ToInt16(InputTimeH.Text);
             int min = System.Convert.ToInt16(InputTimeM.Text);
-            if (hour >= 0 && hour <= 23)
-            {
-                if (min >= 0 && min <= 59)
-                    return true;
-                else
-                    return false;
-            }
-            else
-            {
-                MessageBox.Show("Time entered must be a valid time.");
-                return false;
-            }  
+            if (hour >= 0 && hour <= 23 && min >= 0 && min <= 59)
+                return true;
+            MessageBox.Show("Time entered must be a valid time.");
+            return false;
         }
         
         private bool ValidTeam()
         {
             if (InputTeam.Text != null)
                 return true;
-            else
-            {
-                MessageBox.Show("Selected a training type in the drop down box.");
-                return false;
-            }
+            MessageBox.Show("Selected a training type in the drop down box.");
+            return false;
         }
 
         private void InputPreviewEmail_Click(object sender, EventArgs e)
         {
-            Database.EmailData.recipients = GetPlayerEmails();
-            Database.EmailData.body = "Upcoming " + InputTeam.Text.ToLower() + " training session:\n\nDate: " + InputDate.Text + "\nStart time: " + InputTimeH.Text + ":" + InputTimeM.Text + "\nDuration: " + InputDuration.Text + " minutes.\n\nThanks,\nWelsh Wanderers"; ;
-            Database.EmailData.subject = "Training information";
+            NavToPreviewEmail();
+        }
+
+        private void NavToPreviewEmail()
+        {
+            //if (ValidTeam() && ValidTime() && ValidDuration() && ValidDate())
+            //{
+            //Database.EmailData.recipients = GetPlayerEmails();
+            //Database.EmailData.body = "Upcoming " + InputTeam.Text.ToLower() + " training session:\n\nDate: " + InputDate.Text + "\nStart time: " + InputTimeH.Text + ":" + InputTimeM.Text + "\nDuration: " + InputDuration.Text + " minutes.\n\nThanks,\nWelsh Wanderers"; ;
+            //Database.EmailData.subject = "Training information";
+            //StaticDetails();
+            //emailSent = true;
             new Views.PreviewEmail().Show();
-            EventPreviewEmail.Hide();
+            //EventPreviewEmail.Hide();
+            //}
+        }
+
+        private void StaticDetials()
+        {
+            InputTeam.Enabled = false;
+            InputTimeH.ReadOnly = true;
+            InputTimeM.ReadOnly = true;
+            InputDuration.ReadOnly = true;
+            InputDate.Enabled = true;
         }
     }
 }

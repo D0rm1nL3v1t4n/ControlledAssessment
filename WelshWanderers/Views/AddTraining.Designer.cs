@@ -148,7 +148,7 @@
             // 
             this.LabelDuration.AutoSize = true;
             this.LabelDuration.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelDuration.Location = new System.Drawing.Point(9, 139);
+            this.LabelDuration.Location = new System.Drawing.Point(12, 139);
             this.LabelDuration.Name = "LabelDuration";
             this.LabelDuration.Size = new System.Drawing.Size(102, 18);
             this.LabelDuration.TabIndex = 9;

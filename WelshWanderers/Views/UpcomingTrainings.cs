@@ -40,8 +40,15 @@ namespace WelshWanderers
 
         private void NavEdit_Click(object sender, EventArgs e)
         {
-            LoadTrainingData();  
-            NavToEditTraining();
+            try
+            {
+                LoadTrainingData();
+                NavToEditTraining();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Select a training session to view it.");
+            }
         }
 
         private void LoadTrainingData()
