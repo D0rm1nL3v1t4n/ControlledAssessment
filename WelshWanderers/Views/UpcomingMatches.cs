@@ -51,7 +51,7 @@ namespace WelshWanderers
         private void NavToHome()
         {
             new Home().Show();
-            Hide();
+            Close();
         }
 
         private void NavEdit_Click(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace WelshWanderers
             {
                 LoadMatchData();
                 new ViewMatch("Upcoming Matches").Show();
-                Hide();
+                Close();
             }
             catch (ArgumentOutOfRangeException)
             {
@@ -124,7 +124,7 @@ namespace WelshWanderers
         {
             LoadMatchData();
             new ViewMatchResult().Show();
-            Hide();
+            Close();
         }
 
         private void InputFilter_SelectedIndexChanged(object sender, EventArgs e)
@@ -157,7 +157,7 @@ namespace WelshWanderers
                 {
                     LoadMatchData();
                     new AddResult().Show();
-                    Hide();
+                    Close();
                 }
                 else if (MessageBox.Show("This match already has a result. Would you like to view it?", "No Result", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -180,7 +180,7 @@ namespace WelshWanderers
                 {
                     Database.MatchData.id = Convert.ToInt16(TableViewMatches.SelectedRows[0].Cells[0].Value.ToString());
                     new Views.ViewMatchAvailability().Show();
-                    Hide();
+                    Close();
                 }
             }
             catch (ArgumentOutOfRangeException)

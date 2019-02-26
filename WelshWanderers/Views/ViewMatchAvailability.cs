@@ -42,7 +42,7 @@ namespace WelshWanderers.Views
         private void NavBack_Click(object sender, EventArgs e)
         {
             new UpcomingMatches().Show();
-            Hide();
+            Close();
         }
     }
 }

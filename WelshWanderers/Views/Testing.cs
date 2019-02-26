@@ -20,7 +20,7 @@ namespace WelshWanderers.Views
 
         private void EventTest_Click(object sender, EventArgs e)
         {
-        //    Hide();
+        //    Close();
         //    Console.Clear();
         //    Console.WriteLine("\n\nTESTING:");
         //    DoTest();

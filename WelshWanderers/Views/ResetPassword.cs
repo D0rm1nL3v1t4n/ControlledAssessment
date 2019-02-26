@@ -42,7 +42,7 @@ namespace WelshWanderers
         private void NavToSignIn()
         {
             new SignIn().Show();
-            Hide();
+            Close();
         }
 
         private void NavBack_Click(object sender, EventArgs e)

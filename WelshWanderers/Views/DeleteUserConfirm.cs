@@ -56,7 +56,7 @@ namespace WelshWanderers.Views
 
         private void EventNavDeleteUser_Click(object sender, EventArgs e)
         {
-            if (ValidInputs() == true)
+            if (ValidInputs())
             {
                 AlertUser();
                 DeleteUserData();
@@ -112,7 +112,7 @@ namespace WelshWanderers.Views
 
         private void NavCancel_Click(object sender, EventArgs e)
         {
-            Hide();
+            Close();
         }
     }
 }

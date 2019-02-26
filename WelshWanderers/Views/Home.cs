@@ -70,7 +70,7 @@ namespace WelshWanderers
         private void NavManageUsers_Click(object sender, EventArgs e)
         {
             new ManageUsers().Show();
-            Hide();
+            Close();
         }
 
         private void NavUserJoinRequests_Click(object sender, EventArgs e)
@@ -82,68 +82,68 @@ namespace WelshWanderers
             else
             {
                 new UserJoinRequests().Show();
-                Hide();
+                Close();
             }
         }
 
         private void NavViewLeagues_Click(object sender, EventArgs e)
         {
             new ManageLeagues().Show();
-            Hide();
+            Close();
         }
 
         private void NavAddMatch_Click(object sender, EventArgs e)
         {
             new AddMatch().Show();
-            Hide();
+            Close();
         }
 
         private void NavAddTraining_Click(object sender, EventArgs e)
         {
             new AddTraining().Show();
-            Hide();
+            Close();
         }
 
         private void NavLeagueStatistics_Click(object sender, EventArgs e)
         {
             new LeagueStats().Show();
-            Hide();
+            Close();
         }
 
         private void NavMatchNotifications_Click(object sender, EventArgs e)
         {
             new MatchAvailability().Show();
-            Hide();
+            Close();
         }
 
         private void NavUpcomingMatches_Click(object sender, EventArgs e)
         {
             new UpcomingMatches().Show();
-            Hide();
+            Close();
         }
 
         private void NavUpcomingTrainings_Click(object sender, EventArgs e)
         {
             new UpcomingTrainings().Show();
-            Hide();
+            Close();
         }
 
         private void NavMyAccount_Click(object sender, EventArgs e)
         {
             new MyAccount().Show();
-            Hide();
+            Close();
         }
 
         private void NavViewMatchResults_Click(object sender, EventArgs e)
         {
             new MatchResults().Show();
-            Hide();
+            Close();
         }
 
         private void NavRestore_Click(object sender, EventArgs e)
         {
             new Views.Restore().Show();
-            Hide();
+            Close();
         }
 
         private void EventNavSignOut_Click(object sender, EventArgs e)
@@ -157,7 +157,7 @@ namespace WelshWanderers
                 userData.ClearUserData();
                 matchData.ClearMatchData();
                 trainingData.ClearTrainingData();
-                Hide();
+                Close();
             }
         }
 

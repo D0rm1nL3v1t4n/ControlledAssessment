@@ -25,14 +25,21 @@ namespace WelshWanderers
         private void EventNavCreate_Click(object sender, EventArgs e)
         {
             new Views.CreateLeague().Show();
-            Hide();
+            Close();
         }
 
         private void EventNavEdit_Click(object sender, EventArgs e)
         {
-            SaveLeagueDatabase();
-            new Views.EditLeague().Show();
-            Hide();
+            try
+            {
+                SaveLeagueDatabase();
+                new Views.EditLeague().Show();
+                Close();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Select a league to edit.");
+            }
         }
 
         private void SaveLeagueDatabase()
@@ -44,9 +51,16 @@ namespace WelshWanderers
 
         private void EventDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure? This league and all its data will be permanently deleted.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            try
             {
-                DeleteLeague();
+                if (MessageBox.Show("Are you sure? This league and all its data will be permanently deleted.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    DeleteLeague();
+                }
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Select a league to delete.");
             }
         }
 
@@ -74,7 +88,7 @@ namespace WelshWanderers
         private void NavToHome()
         {
             new Home().Show();
-            Hide();
+            Close();
         }
 
         

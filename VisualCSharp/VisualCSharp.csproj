@@ -47,11 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Home Screens\adminHomeForm.cs">
+    <Compile Include="Forms\Home Screens\AdminHomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Home Screens\adminHomeForm.Designer.cs">
-      <DependentUpon>adminHomeForm.cs</DependentUpon>
+    <Compile Include="Forms\Home Screens\AdminHomeForm.Designer.cs">
+      <DependentUpon>AdminHomeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Home Screens\coachHomeForm.cs">
       <SubType>Form</SubType>
@@ -89,30 +89,6 @@
     <Compile Include="Forms\Pre-home Screens\signInForm.Designer.cs">
       <DependentUpon>signInForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Sub-home Screens\Admin-sub Screens\AddMeeting.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Sub-home Screens\Admin-sub Screens\AddMeeting.Designer.cs">
-      <DependentUpon>AddMeeting.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Sub-home Screens\Admin-sub Screens\ManageUsers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Sub-home Screens\Admin-sub Screens\ManageUsers.Designer.cs">
-      <DependentUpon>ManageUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Sub-home Screens\Admin-sub Screens\UserJoinRequests.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Sub-home Screens\Admin-sub Screens\UserJoinRequests.Designer.cs">
-      <DependentUpon>UserJoinRequests.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Sub-home Screens\Admin-sub Screens\ViewMeetings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Sub-home Screens\Admin-sub Screens\ViewMeetings.Designer.cs">
-      <DependentUpon>ViewMeetings.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Sub-home Screens\Coach-sub Screens\AddMatch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,18 +118,6 @@
     </Compile>
     <Compile Include="Forms\Sub-home Screens\Coach-sub Screens\EditTraining.Designer.cs">
       <DependentUpon>EditTraining.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Sub-home Screens\Player-sub Screens\MatchAvailability.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Sub-home Screens\Player-sub Screens\MatchAvailability.Designer.cs">
-      <DependentUpon>MatchAvailability.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Sub-home Screens\Player-sub Screens\PlayerStatistics.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Sub-home Screens\Player-sub Screens\PlayerStatistics.Designer.cs">
-      <DependentUpon>PlayerStatistics.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Sub-home Screens\Shared-sub Screens\ViewMatches.cs">
       <SubType>Form</SubType>
@@ -191,8 +155,8 @@
     </Compile>
     <Compile Include="TrainingData.cs" />
     <Compile Include="UserData.cs" />
-    <EmbeddedResource Include="Forms\Home Screens\adminHomeForm.resx">
-      <DependentUpon>adminHomeForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Home Screens\AdminHomeForm.resx">
+      <DependentUpon>AdminHomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Home Screens\coachHomeForm.resx">
       <DependentUpon>coachHomeForm.cs</DependentUpon>
@@ -226,9 +190,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Sub-home Screens\Coach-sub Screens\EditTraining.resx">
       <DependentUpon>EditTraining.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Sub-home Screens\Player-sub Screens\MatchAvailability.resx">
-      <DependentUpon>MatchAvailability.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Sub-home Screens\Shared-sub Screens\ViewMatches.resx">
       <DependentUpon>ViewMatches.cs</DependentUpon>
@@ -268,6 +229,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Forms\Sub-home Screens\Admin-sub Screens\" />
+    <Folder Include="Forms\Sub-home Screens\Player-sub Screens\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

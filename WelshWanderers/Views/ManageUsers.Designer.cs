@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TableManageUsers = new System.Windows.Forms.DataGridView();
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColUsername = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,14 +52,14 @@
             // 
             this.TableManageUsers.AllowUserToAddRows = false;
             this.TableManageUsers.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TableManageUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TableManageUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.TableManageUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TableManageUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColID,
@@ -129,9 +129,11 @@
             // 
             // InputAccessLevel
             // 
+            this.InputAccessLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.InputAccessLevel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputAccessLevel.FormattingEnabled = true;
             this.InputAccessLevel.Items.AddRange(new object[] {
+            "All",
             "Player",
             "Coach",
             "Admin"});
@@ -143,16 +145,16 @@
             // InputName
             // 
             this.InputName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputName.Location = new System.Drawing.Point(409, 66);
+            this.InputName.Location = new System.Drawing.Point(307, 66);
             this.InputName.Name = "InputName";
-            this.InputName.Size = new System.Drawing.Size(176, 27);
+            this.InputName.Size = new System.Drawing.Size(165, 27);
             this.InputName.TabIndex = 1;
             // 
             // LabelName
             // 
             this.LabelName.AutoSize = true;
             this.LabelName.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelName.Location = new System.Drawing.Point(356, 70);
+            this.LabelName.Location = new System.Drawing.Point(254, 70);
             this.LabelName.Name = "LabelName";
             this.LabelName.Size = new System.Drawing.Size(47, 18);
             this.LabelName.TabIndex = 44;
@@ -204,9 +206,9 @@
             // EventFilter
             // 
             this.EventFilter.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventFilter.Location = new System.Drawing.Point(504, 30);
+            this.EventFilter.Location = new System.Drawing.Point(478, 66);
             this.EventFilter.Name = "EventFilter";
-            this.EventFilter.Size = new System.Drawing.Size(81, 30);
+            this.EventFilter.Size = new System.Drawing.Size(107, 27);
             this.EventFilter.TabIndex = 2;
             this.EventFilter.Text = "Filter";
             this.EventFilter.UseVisualStyleBackColor = true;

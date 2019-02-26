@@ -93,7 +93,7 @@ namespace WelshWanderers
         private void NavToManageUsers()
         {
             new ManageUsers().Show();
-            Hide();
+            Close();
         }
 
         private void EventCancelEdit_Click(object sender, EventArgs e)

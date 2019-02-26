@@ -124,7 +124,7 @@
             this.EventNavCancel.Name = "EventNavCancel";
             this.EventNavCancel.Size = new System.Drawing.Size(58, 30);
             this.EventNavCancel.TabIndex = 5;
-            this.EventNavCancel.Text = "Back";
+            this.EventNavCancel.Text = "Close";
             this.EventNavCancel.UseVisualStyleBackColor = true;
             this.EventNavCancel.Click += new System.EventHandler(this.EventNavCancel_Click);
             // 

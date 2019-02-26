@@ -17,6 +17,7 @@ namespace WelshWanderers
 
         private void ViewMatch_Load(object sender, EventArgs e)
         {
+            ChangeBackButton();
             LoadMatchData();
             EditOff();
             AccessLevelButtons();
@@ -43,6 +44,12 @@ namespace WelshWanderers
             }
         }
 
+        private void ChangeBackButton()
+        {
+            if (previous == "Match Availability")
+                NavBack.Text = "Close";
+        }
+
         private void NavBack_Click(object sender, EventArgs e)
         {
             if (Changes.count > 0)
@@ -59,7 +66,7 @@ namespace WelshWanderers
         private void Navigation()
         {
             if (previous == "Match Availability")
-                NavToMatchAvailability();
+                Close();
             else if (previous == "Upcoming Matches")
                 NavToUpcomingMatches();
             else if (previous == "Match Results")
@@ -69,12 +76,7 @@ namespace WelshWanderers
         private void NavToMatchResults()
         {
             new MatchResults().Show();
-            Hide();
-        }
-
-        private void NavToMatchAvailability()
-        {
-            Hide();
+            Close();
         }
 
         private void EventEdit_Click(object sender, EventArgs e)
@@ -158,7 +160,7 @@ namespace WelshWanderers
         private void NavToUpcomingMatches()
         {
             new UpcomingMatches().Show();
-            Hide();
+            Close();
         }
 
         private void LoadMatchData()

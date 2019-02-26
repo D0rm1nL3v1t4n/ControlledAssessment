@@ -37,7 +37,7 @@ namespace WelshWanderers.Functions
             {
                 if (hashBytes[i + 16] != hash[i])
                 {
-                    //MessageBox.ShowBox.Show("Password is incorrect.");
+                    MessageBox.Show("Password is incorrect.");
                     return false;
                 }
             }

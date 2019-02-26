@@ -46,7 +46,7 @@ namespace WelshWanderers.Views
         private void NavHome_Click(object sender, EventArgs e)
         {
             new Home().Show();
-            Hide();
+            Close();
         }
 
         private void EventRestore_Click(object sender, EventArgs e)

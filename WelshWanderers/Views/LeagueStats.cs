@@ -26,7 +26,7 @@ namespace WelshWanderers
         private void NavToHome()
         {
             new Home().Show();
-            Hide();
+            Close();
         }
 
         private void LeagueStats_Load(object sender, EventArgs e)

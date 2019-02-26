@@ -28,7 +28,7 @@ namespace WelshWanderers
         private void NavToViewMatches()
         {
             new UpcomingMatches().Show();
-            Hide();
+            Close();
         }
 
         private void AddResult_Load(object sender, EventArgs e)

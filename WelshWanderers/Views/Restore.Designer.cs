@@ -160,6 +160,7 @@
             // 
             // InputSortBy
             // 
+            this.InputSortBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.InputSortBy.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputSortBy.FormattingEnabled = true;
             this.InputSortBy.Items.AddRange(new object[] {

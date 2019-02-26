@@ -65,7 +65,7 @@ namespace WelshWanderers
         private void NavToEditTraining()
         {
             new ViewTrainings().Show();
-            Hide();
+            Close();
         }
 
         private void NavHome_Click(object sender, EventArgs e)
@@ -76,7 +76,7 @@ namespace WelshWanderers
         private void NavToHome()
         {
             new Home().Show();
-            Hide();
+            Close();
         }
 
         private void InputFilter_SelectedIndexChanged(object sender, EventArgs e)

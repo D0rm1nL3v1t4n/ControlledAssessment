@@ -15,7 +15,7 @@ namespace WelshWanderers.Views
         public PreviewEmail()
         {
             InitializeComponent();
-            //LoadEmailPreview();
+            LoadEmailPreview();
         }
 
         private void LoadEmailPreview()
@@ -42,7 +42,7 @@ namespace WelshWanderers.Views
         {
             Functions.SendEmail.Email(Database.EmailData.subject, Database.EmailData.body, Database.EmailData.recipients);
             MessageBox.Show("Email sent!");
-            Hide();
+            Close();
         }
 
     }

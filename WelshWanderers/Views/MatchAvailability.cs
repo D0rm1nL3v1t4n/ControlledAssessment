@@ -48,13 +48,16 @@ namespace WelshWanderers
 
         private void NavHome_Click(object sender, EventArgs e)
         {
-            NavToHome();
+            if (Application.OpenForms["ViewMach"] == null)
+                NavToHome();
+            else
+                MessageBox.Show("View match form is open.\nClose it before ");
         }
 
         private void NavToHome()
         {
             new Home().Show();
-            Hide();
+            Close();
         }
 
         private void EventMatchDetails_Click(object sender, EventArgs e)

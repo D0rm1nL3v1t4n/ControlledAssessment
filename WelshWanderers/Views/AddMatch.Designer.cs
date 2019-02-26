@@ -31,7 +31,7 @@
             this.LabelHeader = new System.Windows.Forms.Label();
             this.InputLeague = new System.Windows.Forms.ComboBox();
             this.LabelLeague = new System.Windows.Forms.Label();
-            this.NavSignIn = new System.Windows.Forms.Button();
+            this.NavHome = new System.Windows.Forms.Button();
             this.EventNavSave = new System.Windows.Forms.Button();
             this.EventAddPlayers = new System.Windows.Forms.Button();
             this.EventClear = new System.Windows.Forms.Button();
@@ -87,16 +87,16 @@
             this.LabelLeague.TabIndex = 24;
             this.LabelLeague.Text = "League";
             // 
-            // NavSignIn
+            // NavHome
             // 
-            this.NavSignIn.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavSignIn.Location = new System.Drawing.Point(12, 12);
-            this.NavSignIn.Name = "NavSignIn";
-            this.NavSignIn.Size = new System.Drawing.Size(89, 30);
-            this.NavSignIn.TabIndex = 23;
-            this.NavSignIn.Text = "Back";
-            this.NavSignIn.UseVisualStyleBackColor = true;
-            this.NavSignIn.Click += new System.EventHandler(this.NavSignIn_Click);
+            this.NavHome.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NavHome.Location = new System.Drawing.Point(12, 12);
+            this.NavHome.Name = "NavHome";
+            this.NavHome.Size = new System.Drawing.Size(89, 30);
+            this.NavHome.TabIndex = 23;
+            this.NavHome.Text = "Back";
+            this.NavHome.UseVisualStyleBackColor = true;
+            this.NavHome.Click += new System.EventHandler(this.NavHome_Click);
             // 
             // EventNavSave
             // 
@@ -247,7 +247,7 @@
             this.InputDate.Name = "InputDate";
             this.InputDate.Size = new System.Drawing.Size(161, 27);
             this.InputDate.TabIndex = 2;
-            this.InputDate.Value = new System.DateTime(2018, 11, 4, 0, 0, 0, 0);
+            this.InputDate.Value = new System.DateTime(2019, 2, 22, 0, 0, 0, 0);
             // 
             // InputHomeMatch
             // 
@@ -347,7 +347,7 @@
             this.Controls.Add(this.EventClear);
             this.Controls.Add(this.EventAddPlayers);
             this.Controls.Add(this.EventNavSave);
-            this.Controls.Add(this.NavSignIn);
+            this.Controls.Add(this.NavHome);
             this.Controls.Add(this.LabelLeague);
             this.Controls.Add(this.InputLeague);
             this.Controls.Add(this.LabelHeader);
@@ -365,7 +365,7 @@
         private System.Windows.Forms.Label LabelHeader;
         private System.Windows.Forms.ComboBox InputLeague;
         private System.Windows.Forms.Label LabelLeague;
-        private System.Windows.Forms.Button NavSignIn;
+        private System.Windows.Forms.Button NavHome;
         private System.Windows.Forms.Button EventNavSave;
         private System.Windows.Forms.Button EventAddPlayers;
         private System.Windows.Forms.Button EventClear;

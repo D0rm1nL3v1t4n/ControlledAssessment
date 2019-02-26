@@ -16,9 +16,11 @@ namespace WelshWanderers
         public AddMatch()
         {
             InitializeComponent();
+            emailSent = false;
         }
 
         private static int matchID = -1;
+        private static bool emailSent;
 
         private void InputFilter_TextChanged(object sender, EventArgs e)
         {
@@ -114,9 +116,23 @@ namespace WelshWanderers
         {
             if (ListSelectedPlayers.Items.Count > 0)
             {
-                SaveMatchData();
-                SaveAvailabilityData();
-                NavToHome();
+                if (emailSent)
+                {
+                    SaveMatchData();
+                    SaveAvailabilityData();
+                    NavToHome();
+                }
+                else
+                {
+                    if (MessageBox.Show("Would you like to send an email before exiting?", "Email not sent", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        ShowPreviewEmail();
+                    }
+                    else
+                    {
+                        NavToHome();
+                    }
+                }
             }
             else
             {
@@ -176,7 +192,7 @@ namespace WelshWanderers
             return body;
         }
 
-        private void NavSignIn_Click(object sender, EventArgs e)
+        private void NavHome_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure? Match will not be saved.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -187,7 +203,7 @@ namespace WelshWanderers
         private void NavToHome()
         {
             new Home().Show();
-            Hide();
+            Close();
         }
 
         private void InputLeague_SelectedIndexChanged(object sender, EventArgs e)
@@ -217,6 +233,7 @@ namespace WelshWanderers
             if (ListSelectedPlayers.Items.Count > 0)
             {
                 ShowPreviewEmail();
+                emailSent = true;
                 EventPreviewEmail.Hide();
             }
             else
@@ -234,7 +251,7 @@ namespace WelshWanderers
             int i = 0;
             foreach (string player in ListSelectedPlayers.Items)
             {
-                emails[i] = GetPlayerInfo(player,5);
+                emails[i] = GetPlayerInfo(player, 5);
                 ++i;
             }
             Database.EmailData.recipients = emails;

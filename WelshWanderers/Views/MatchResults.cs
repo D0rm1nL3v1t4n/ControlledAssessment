@@ -26,7 +26,7 @@ namespace WelshWanderers
         private void NavToHome()
         {
             new Home().Show();
-            Hide();
+            Close();
         }
 
         private void ViewMatchResults_Load(object sender, EventArgs e)
@@ -78,7 +78,7 @@ namespace WelshWanderers
         private void NavToViewMatchDetails()
         {
             new ViewMatch("Match Results").Show();
-            Hide();
+            Close();
         }
 
         private void NavViewMatch_Click(object sender, EventArgs e)
@@ -88,7 +88,7 @@ namespace WelshWanderers
                 Database.MatchData.id = Convert.ToInt16(TableMatchResults.SelectedRows[0].Cells[0].Value);
                 Database.MatchData.opponent = TableMatchResults.SelectedRows[0].Cells[4].Value.ToString();
                 new ViewMatchResult().Show();
-                Hide();
+                Close();
             }
             catch (ArgumentOutOfRangeException)
             {

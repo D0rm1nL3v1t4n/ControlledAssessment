@@ -8,9 +8,10 @@ namespace WelshWanderers
         public AddTraining()
         {
             InitializeComponent();
+            emailSent = false;
         }
 
-        private static bool emailSent = false;
+        private static bool emailSent;
 
         private void NavCancel_Click(object sender, EventArgs e)
         {
@@ -23,7 +24,7 @@ namespace WelshWanderers
         private void NavToHome()
         {
             new Home().Show();
-            Hide();
+            Close();
         }
 
         private void EventNavSave_Click(object sender, EventArgs e)
@@ -105,19 +106,19 @@ namespace WelshWanderers
 
         private void NavToPreviewEmail()
         {
-            //if (ValidTeam() && ValidTime() && ValidDuration() && ValidDate())
-            //{
-            //Database.EmailData.recipients = GetPlayerEmails();
-            //Database.EmailData.body = "Upcoming " + InputTeam.Text.ToLower() + " training session:\n\nDate: " + InputDate.Text + "\nStart time: " + InputTimeH.Text + ":" + InputTimeM.Text + "\nDuration: " + InputDuration.Text + " minutes.\n\nThanks,\nWelsh Wanderers"; ;
-            //Database.EmailData.subject = "Training information";
-            //StaticDetails();
-            //emailSent = true;
-            new Views.PreviewEmail().Show();
-            //EventPreviewEmail.Hide();
-            //}
+            if (ValidTeam() && ValidTime() && ValidDuration() && ValidDate())
+            {
+                Database.EmailData.recipients = GetPlayerEmails();
+                Database.EmailData.body = "Upcoming " + InputTeam.Text.ToLower() + " training session:\n\nDate: " + InputDate.Text + "\nStart time: " + InputTimeH.Text + ":" + InputTimeM.Text + "\nDuration: " + InputDuration.Text + " minutes.\n\nThanks,\nWelsh Wanderers"; ;
+                Database.EmailData.subject = "Training information";
+                StaticDetails();
+                emailSent = true;
+                new Views.PreviewEmail().Show();
+                EventPreviewEmail.Hide();
+            }
         }
 
-        private void StaticDetials()
+        private void StaticDetails()
         {
             InputTeam.Enabled = false;
             InputTimeH.ReadOnly = true;

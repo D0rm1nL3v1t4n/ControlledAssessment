@@ -114,7 +114,7 @@ namespace WelshWanderers
         private void NavToHome()
         {
             new Home().Show();
-            Hide();
+            Close();
         }
 
         private void EventHelp_Click(object sender, EventArgs e)

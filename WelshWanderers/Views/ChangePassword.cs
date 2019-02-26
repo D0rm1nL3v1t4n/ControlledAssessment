@@ -24,7 +24,8 @@ namespace WelshWanderers.Views
                 if(Functions.Validation.IsPasswordValid(InputNewPassword.Text, InputConfirmPassword.Text))
                 {
                     ChangeUserPassword();
-                    NavToMyAccount();
+                    MessageBox.Show("Password changed.");
+                    Close();
                 }
             }
         }
@@ -39,13 +40,7 @@ namespace WelshWanderers.Views
 
         private void EventNavCancel_Click(object sender, EventArgs e)
         {
-            NavToMyAccount();
-        }
-
-        private void NavToMyAccount()
-        {
-            new MyAccount().Show();
-            Hide();
+            Close();
         }
     }
 }

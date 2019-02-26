@@ -276,7 +276,7 @@ namespace WelshWanderers
         private void NavToMatchResults()
         {
             new MatchResults().Show();
-            Hide();
+            Close();
         }
 
         private void InputWanderersGoals_TextChanged(object sender, EventArgs e)

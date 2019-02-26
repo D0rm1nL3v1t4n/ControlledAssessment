@@ -23,7 +23,7 @@ namespace WelshWanderers
         private void NavToSignIn()
         {
             new SignIn().Show();
-            Hide();
+            Close();
         }
 
         private void EventNavRegisterRequest_Click(object sender, EventArgs e)

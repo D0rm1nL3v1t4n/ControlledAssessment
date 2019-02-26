@@ -134,7 +134,7 @@ namespace WelshWanderers
         private void NavToUpcomingTraining()
         {
             new UpcomingTrainings().Show();
-            Hide();
+            Close();
         }
 
         private void LoadTrainingData()

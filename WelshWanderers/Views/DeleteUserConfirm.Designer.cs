@@ -55,7 +55,7 @@
             // 
             this.LabelDeleteMessage.AutoSize = true;
             this.LabelDeleteMessage.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelDeleteMessage.Location = new System.Drawing.Point(12, 9);
+            this.LabelDeleteMessage.Location = new System.Drawing.Point(87, 9);
             this.LabelDeleteMessage.Name = "LabelDeleteMessage";
             this.LabelDeleteMessage.Size = new System.Drawing.Size(214, 36);
             this.LabelDeleteMessage.TabIndex = 5;
@@ -242,11 +242,11 @@
             // NavCancel
             // 
             this.NavCancel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavCancel.Location = new System.Drawing.Point(251, 9);
+            this.NavCancel.Location = new System.Drawing.Point(12, 12);
             this.NavCancel.Name = "NavCancel";
             this.NavCancel.Size = new System.Drawing.Size(69, 30);
             this.NavCancel.TabIndex = 4;
-            this.NavCancel.Text = "Back";
+            this.NavCancel.Text = "Close";
             this.NavCancel.UseVisualStyleBackColor = true;
             this.NavCancel.Click += new System.EventHandler(this.NavCancel_Click);
             // 

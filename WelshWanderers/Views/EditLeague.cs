@@ -19,7 +19,7 @@ namespace WelshWanderers.Views
         private void NavToManageLeagues()
         {
             new ManageLeagues().Show();
-            Hide();
+            Close();
         }
 
         private void EditLeague_Load(object sender, EventArgs e)
@@ -37,7 +37,6 @@ namespace WelshWanderers.Views
         {
             EditLeagueData();
             RenameLeague();
-            NavToManageLeagues();
         }
 
         private void RenameLeague()

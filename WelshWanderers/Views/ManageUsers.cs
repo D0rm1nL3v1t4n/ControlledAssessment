@@ -14,6 +14,7 @@ namespace WelshWanderers
         private void ManageUsers_Load(object sender, EventArgs e)
         {
             TableManageUsers.MultiSelect = false;
+            InputAccessLevel.SelectedItem = "All";
             LoadTableData();
         }
         
@@ -27,7 +28,7 @@ namespace WelshWanderers
             {
                 string[] sectionA = lineA.Split('|');
                 string[] sectionB = lineB.Split('|');
-                if (sectionA[3] == InputAccessLevel.Text || InputAccessLevel.Text == "")
+                if (sectionA[3] == InputAccessLevel.Text || InputAccessLevel.Text == "All")
                 {
                     if ((sectionB[2] + " " + sectionB[3]).ToLower().Contains(InputName.Text.ToLower()) || InputName.Text == "")
                     {
@@ -53,19 +54,54 @@ namespace WelshWanderers
 
         private void NavToHome()
         {
-            new Home().Show();
-            Hide();
+            if (Application.OpenForms["DeleteUserConfirm"] == null)
+            {
+                new Home().Show();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("A Delete User Confirm form is current open.\nTo exit the this form, close the open Delete User Confirm form first.");
+            }
         }
 
         private void NavView_Click(object sender, EventArgs e)
         {
-            new ViewUser(TableManageUsers.SelectedRows[0].Cells[0].Value.ToString()).Show();
-            Hide();
+            if (Application.OpenForms["DeleteUserConfirm"] == null)
+            {
+                try
+                {
+                    new ViewUser(TableManageUsers.SelectedRows[0].Cells[0].Value.ToString()).Show();
+                    Close();
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    MessageBox.Show("Select a user to view.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("A Delete User Confirm form is current open.\nTo view a user, close the open Delete User Confirm form first.");
+            }
         }
 
         private void EventDelete_Click(object sender, EventArgs e)
         {
-            new Views.DeleteUserConfirm(TableManageUsers.SelectedRows[0].Cells[0].Value.ToString()).Show();
+            if (Application.OpenForms["DeleteUserConfirm"] == null)
+            {
+                try
+                {
+                    new Views.DeleteUserConfirm(TableManageUsers.SelectedRows[0].Cells[0].Value.ToString()).Show();
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    MessageBox.Show("Select a user to delete.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("This form is already open.\nClose it down to open another.");
+            }
         }
     }
 }

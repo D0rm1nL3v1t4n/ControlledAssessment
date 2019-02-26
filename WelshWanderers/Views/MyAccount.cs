@@ -47,20 +47,25 @@ namespace WelshWanderers
 
         private void EventNavSave_Click(object sender, EventArgs e)
         {
-             if (Changes.count > 0)
-             {
-                 if (MessageBox.Show("You have made " + Changes.count.ToString() + ", confirm?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                 {
-                    bool allValid = Functions.Validation.IsTitleValid(InputTitle.Text) && Functions.Validation.IsFirstNameValid(InputFirstName.Text) && Functions.Validation.IsLastNameValid(InputLastName.Text)
-                        && Functions.Validation.IsDOBValid(InputDateOfBirth.Value) && Functions.Validation.IsEmailAddressValid(InputEmailAddress.Text) && Functions.Validation.IsTelephoneNumberValid(InputTelephoneNumber.Text)
-                        && Functions.Validation.IsPostcodeValid(InputPostcode.Text);
-                    if (allValid)
-                    {
-                        ChangeDetails();
-                        NavToHome();
-                    }
-                }
-             }
+            //if (Changes.count > 0)
+            //{
+            //    if (MessageBox.Show("You have made " + Changes.count.ToString() + ", confirm?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            //    {
+            //        bool allValid = Functions.Validation.IsTitleValid(InputTitle.Text) && Functions.Validation.IsFirstNameValid(InputFirstName.Text) && Functions.Validation.IsLastNameValid(InputLastName.Text)
+            //            && Functions.Validation.IsDOBValid(InputDateOfBirth.Value) && Functions.Validation.IsEmailAddressValid(InputEmailAddress.Text) && Functions.Validation.IsTelephoneNumberValid(InputTelephoneNumber.Text)
+            //            && Functions.Validation.IsPostcodeValid(InputPostcode.Text);
+            //        if (allValid)
+            //        {
+            //            ChangeDetails();
+            if (Application.OpenForms["ChangePassword"] == null)
+                NavToHome();
+            else
+                MessageBox.Show("Cannot save as Change password form is open.\nTo save, close down the open Change password form.");
+            //        }
+            //    }
+            //}
+            //else
+            //    MessageBox.Show("You have not made any changes to save.");
         }
 
         private void ChangeDetails()
@@ -92,13 +97,27 @@ namespace WelshWanderers
 
         private void NavHome_Click(object sender, EventArgs e)
         {
-            NavToHome();
+            if (Application.OpenForms["ChangePassword"] == null)
+            {
+                if (Changes.count > 0)
+                {
+                    if (MessageBox.Show("There are " + Changes.count.ToString() + " unsaved changes, are you sure you want to exit?", "Unsaved changes", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        NavToHome();
+                    }
+                    return;
+                }
+                NavToHome();
+            }
+            else
+                MessageBox.Show("Change Password form is open.\nClose it down before exiting.");
+
         }
 
         private void NavToHome()
         {
             new Home().Show();
-            Hide();
+            Close();
         }
 
         private bool DetailsChanged(string inputData, string databaseValue, bool changedVal)
@@ -155,7 +174,10 @@ namespace WelshWanderers
 
         private void EventNavChangePassword_Click(object sender, EventArgs e)
         {
-            new Views.ChangePassword().Show();
+            if (Application.OpenForms["ChangePassword"] == null)
+                new Views.ChangePassword().Show();
+            else
+                MessageBox.Show("Change password form is already open.");
         }
     }
 }
