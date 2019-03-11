@@ -111,11 +111,11 @@
             // 
             this.LabelHeader.AutoSize = true;
             this.LabelHeader.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeader.Location = new System.Drawing.Point(124, 15);
+            this.LabelHeader.Location = new System.Drawing.Point(156, 15);
             this.LabelHeader.Name = "LabelHeader";
-            this.LabelHeader.Size = new System.Drawing.Size(188, 33);
+            this.LabelHeader.Size = new System.Drawing.Size(124, 33);
             this.LabelHeader.TabIndex = 17;
-            this.LabelHeader.Text = "View Trainings";
+            this.LabelHeader.Text = "Trainings";
             // 
             // NavHome
             // 

@@ -57,13 +57,12 @@ namespace VisualCSharp.Forms
 
         private void BtnPlayerStatistics_Click(object sender, EventArgs e)
         {
-            new Sub_home_Screens.Player_sub_Screens.PlayerStatistics().Show();
-            this.Hide();
+
         }
 
         private void BtnMatchNotifications_Click(object sender, EventArgs e)
         {
-            new Forms.Sub_home_Screens.Player_sub_Screens.MatchNotificationsForm().Show();
+
         }
     }
 }

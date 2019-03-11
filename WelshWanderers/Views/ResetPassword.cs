@@ -59,14 +59,19 @@ namespace WelshWanderers
             }
             if (Functions.Validation.IsPasswordValid(InputNewPassword.Text, InputConfirmNewPassword.Text) == true)
             {
-                string userAccessLevel = Functions.FileSearch.ReturnSegment("userAccountDetails", userID, 0, 3, false);
-                string[] data = { InputUsername.Text, Functions.HashAlgorithm.HashPassword(InputNewPassword.Text), userAccessLevel };
-                int[] searchIndex = { 0 };
-                string[] searchData = { userID };
-                Functions.FileEdit.EditLine("userAccountDetails", 4, data, searchIndex, searchData);
-                MessageBox.Show("Your password has been changed.");
+                ChangePassword();
                 NavToSignIn();
             }
+        }
+
+        private void ChangePassword()
+        {
+            string userAccessLevel = Functions.FileSearch.ReturnSegment("userAccountDetails", userID, 0, 3, false);
+            string[] data = { InputUsername.Text, Functions.HashAlgorithm.HashPassword(InputNewPassword.Text), userAccessLevel };
+            int[] searchIndex = { 0 };
+            string[] searchData = { userID };
+            Functions.FileEdit.EditLine("userAccountDetails", 4, data, searchIndex, searchData);
+            MessageBox.Show("Your password has been changed.");
         }
 
     }

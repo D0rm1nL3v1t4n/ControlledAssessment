@@ -69,7 +69,7 @@
             this.EventEnter.Name = "EventEnter";
             this.EventEnter.Size = new System.Drawing.Size(89, 27);
             this.EventEnter.TabIndex = 1;
-            this.EventEnter.Text = "Search";
+            this.EventEnter.Text = "Send";
             this.EventEnter.UseVisualStyleBackColor = true;
             this.EventEnter.Click += new System.EventHandler(this.EventEnter_Click);
             // 

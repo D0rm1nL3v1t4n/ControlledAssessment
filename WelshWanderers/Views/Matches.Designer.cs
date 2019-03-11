@@ -53,11 +53,11 @@
             // 
             this.LabelHeader.AutoSize = true;
             this.LabelHeader.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeader.Location = new System.Drawing.Point(313, 15);
+            this.LabelHeader.Location = new System.Drawing.Point(357, 15);
             this.LabelHeader.Name = "LabelHeader";
-            this.LabelHeader.Size = new System.Drawing.Size(176, 33);
+            this.LabelHeader.Size = new System.Drawing.Size(112, 33);
             this.LabelHeader.TabIndex = 7;
-            this.LabelHeader.Text = "View Matches";
+            this.LabelHeader.Text = "Matches";
             // 
             // TableViewMatches
             // 

@@ -76,7 +76,7 @@
             this.InputDate.Name = "InputDate";
             this.InputDate.Size = new System.Drawing.Size(165, 27);
             this.InputDate.TabIndex = 3;
-            this.InputDate.Value = new System.DateTime(2019, 2, 22, 0, 0, 0, 0);
+            this.InputDate.Value = System.DateTime.Today.Date;
             // 
             // EventNavSave
             // 

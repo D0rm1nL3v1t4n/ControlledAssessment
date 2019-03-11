@@ -50,22 +50,25 @@ namespace VisualCSharp.Forms.Sub_home_Screens.Coach_sub_Screens
 
         private void ShowFilteredPlayers()
         {
-            StreamReader playerStats = new StreamReader("playerStats.txt");
-            string line = playerStats.ReadLine();
+            StreamReader userPersonalDetails = new StreamReader("userPersonalDetails.txt");
+            StreamReader userAccountDetails = new StreamReader("userAccountDetails.txt");
+            string line = userPersonalDetails.ReadLine();
+            string line2 = userAccountDetails.ReadLine();
             while (null != line)
             {
                 string[] section = line.Split('|');
-                if (section[4] == CmbTeamType.Text)
+                string[] section2 = line2.Split('|');
+                string playerName = section[2] + " " + section[3];
+                if (playerName.ToLower().Contains(TxtSearchFilter.Text.ToLower()) && section2[3] == "Player")
                 {
-                    string playerName = section[2] + " " + section[3];
-                    if (playerName.ToLower().Contains(TxtSearchFilter.Text.ToLower()))
-                    {
-                        listSearchPlayers.Items.Add(playerName);
-                    }
+                    listSearchPlayers.Items.Add(playerName);
                 }
-                line = playerStats.ReadLine();
+
+                line = userPersonalDetails.ReadLine();
+                line2 = userAccountDetails.ReadLine();
             }
-            playerStats.Close(); 
+            userPersonalDetails.Close();
+            userAccountDetails.Close();
         }
 
         private void BtnAddPlayers_Click(object sender, EventArgs e)

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.IO;
 
 
 namespace VisualCSharp.Forms
@@ -67,7 +68,7 @@ namespace VisualCSharp.Forms
             if (isRegisterValid == true)
             {
                 StoreData();
-                MessageBox.Show("Your registration request has been made!");
+                MessageBox.Show("Registration successful.");
                 this.Hide();
                 new signInForm().Show();
             }
@@ -76,13 +77,21 @@ namespace VisualCSharp.Forms
 
         private void StoreData()
         {
+            int id = File.ReadAllLines("userAccountDetails.txt").Count() + 1;
+
             using (System.IO.StreamWriter file =
-                    new System.IO.StreamWriter("userJoinRequests.txt", true))
+                    new System.IO.StreamWriter("userPersonalDetails.txt", true))
             {
-                file.WriteLine(cmbTitle.Text + "|" + txtFirstName.Text + "|"
+                file.WriteLine(id + "|" + cmbTitle.Text + "|" + txtFirstName.Text + "|"
                     + txtLastName.Text + "|" + dateOfBirth.Text + "|" + txtEmailAddress.Text + "|"
-                    + txtTelephoneNo.Text + "|" + txtPostcode.Text + "|" + TxtUsername.Text + "|"
-                    + TxtPassword.Text + "|");
+                    + txtTelephoneNo.Text + "|" + txtPostcode.Text + "|");
+            }
+
+            using (System.IO.StreamWriter file =
+                new System.IO.StreamWriter("userAccountDetails.txt", true))
+            {
+                file.WriteLine(id + "|" + TxtUsername.Text + "|"
+                    + TxtPassword.Text + "|" + cmbAccessLevel.Text);
             }
         }
 

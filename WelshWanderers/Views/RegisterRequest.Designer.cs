@@ -84,6 +84,7 @@
             this.InputTitle.Name = "InputTitle";
             this.InputTitle.Size = new System.Drawing.Size(161, 26);
             this.InputTitle.TabIndex = 0;
+            this.InputTitle.SelectedIndexChanged += new System.EventHandler(this.InputTitle_SelectedIndexChanged);
             // 
             // InputFirstName
             // 
@@ -92,6 +93,7 @@
             this.InputFirstName.Name = "InputFirstName";
             this.InputFirstName.Size = new System.Drawing.Size(161, 26);
             this.InputFirstName.TabIndex = 1;
+            this.InputFirstName.TextChanged += new System.EventHandler(this.InputFirstName_TextChanged);
             // 
             // LabelTitle
             // 
@@ -182,6 +184,7 @@
             this.InputLastName.Name = "InputLastName";
             this.InputLastName.Size = new System.Drawing.Size(161, 26);
             this.InputLastName.TabIndex = 2;
+            this.InputLastName.TextChanged += new System.EventHandler(this.InputLastName_TextChanged);
             // 
             // InputEmailAddress
             // 
@@ -199,6 +202,7 @@
             this.InputTelephoneNumber.Name = "InputTelephoneNumber";
             this.InputTelephoneNumber.Size = new System.Drawing.Size(161, 26);
             this.InputTelephoneNumber.TabIndex = 5;
+            this.InputTelephoneNumber.TextChanged += new System.EventHandler(this.InputTelephoneNumber_TextChanged);
             // 
             // InputPostcode
             // 
@@ -207,6 +211,7 @@
             this.InputPostcode.Name = "InputPostcode";
             this.InputPostcode.Size = new System.Drawing.Size(161, 26);
             this.InputPostcode.TabIndex = 6;
+            this.InputPostcode.TextChanged += new System.EventHandler(this.InputPostcode_TextChanged);
             // 
             // InputDateOfBirth
             // 
@@ -217,7 +222,8 @@
             this.InputDateOfBirth.Name = "InputDateOfBirth";
             this.InputDateOfBirth.Size = new System.Drawing.Size(161, 26);
             this.InputDateOfBirth.TabIndex = 3;
-            this.InputDateOfBirth.Value = new System.DateTime(2018, 10, 26, 0, 0, 0, 0);
+            this.InputDateOfBirth.Value = System.DateTime.Today.Date;
+            this.InputDateOfBirth.ValueChanged += new System.EventHandler(this.InputDateOfBirth_ValueChanged);
             // 
             // InputPassword
             // 
@@ -227,6 +233,7 @@
             this.InputPassword.PasswordChar = '*';
             this.InputPassword.Size = new System.Drawing.Size(161, 26);
             this.InputPassword.TabIndex = 9;
+            this.InputPassword.TextChanged += new System.EventHandler(this.InputPassword_TextChanged);
             // 
             // LabelPassword
             // 
@@ -245,6 +252,7 @@
             this.InputUsername.Name = "InputUsername";
             this.InputUsername.Size = new System.Drawing.Size(161, 26);
             this.InputUsername.TabIndex = 8;
+            this.InputUsername.TextChanged += new System.EventHandler(this.InputUsername_TextChanged);
             // 
             // InputConfirmPassword
             // 
@@ -254,6 +262,7 @@
             this.InputConfirmPassword.PasswordChar = '*';
             this.InputConfirmPassword.Size = new System.Drawing.Size(161, 26);
             this.InputConfirmPassword.TabIndex = 10;
+            this.InputConfirmPassword.TextChanged += new System.EventHandler(this.InputConfirmPassword_TextChanged);
             // 
             // LabelConfirmPassword
             // 
@@ -340,6 +349,7 @@
             this.InputCode.Size = new System.Drawing.Size(106, 27);
             this.InputCode.TabIndex = 11;
             this.InputCode.Visible = false;
+            this.InputCode.TextChanged += new System.EventHandler(this.InputCode_TextChanged);
             // 
             // LabelCode
             // 

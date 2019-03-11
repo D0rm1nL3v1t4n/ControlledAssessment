@@ -93,7 +93,7 @@
             this.InputDateOfBirth.Name = "InputDateOfBirth";
             this.InputDateOfBirth.Size = new System.Drawing.Size(161, 27);
             this.InputDateOfBirth.TabIndex = 8;
-            this.InputDateOfBirth.Value = new System.DateTime(2018, 10, 26, 0, 0, 0, 0);
+            this.InputDateOfBirth.Value = new System.DateTime(2019, 3, 10, 12, 32, 38, 0);
             // 
             // InputPostcode
             // 

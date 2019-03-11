@@ -50,11 +50,11 @@
             // 
             this.LabelHeader.AutoSize = true;
             this.LabelHeader.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeader.Location = new System.Drawing.Point(158, 15);
+            this.LabelHeader.Location = new System.Drawing.Point(135, 15);
             this.LabelHeader.Name = "LabelHeader";
-            this.LabelHeader.Size = new System.Drawing.Size(167, 33);
+            this.LabelHeader.Size = new System.Drawing.Size(212, 33);
             this.LabelHeader.TabIndex = 8;
-            this.LabelHeader.Text = "League Stats";
+            this.LabelHeader.Text = "League Statistics";
             // 
             // TableLeagueStats
             // 

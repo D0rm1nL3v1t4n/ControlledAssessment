@@ -178,6 +178,7 @@
             // 
             // InputTitle
             // 
+            this.InputTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.InputTitle.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputTitle.FormattingEnabled = true;
             this.InputTitle.Items.AddRange(new object[] {

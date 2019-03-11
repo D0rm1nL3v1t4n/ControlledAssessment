@@ -33,10 +33,10 @@
             this.lblHomeCoachTitle = new System.Windows.Forms.Label();
             this.BtnViewMatches = new System.Windows.Forms.Button();
             this.BtnViewTrainings = new System.Windows.Forms.Button();
-            this.BtnPlayerStatistics = new System.Windows.Forms.Button();
             this.BtnMyAccountPlayer = new System.Windows.Forms.Button();
             this.BtnSignOutPlayer = new System.Windows.Forms.Button();
             this.BtnMatchNotifications = new System.Windows.Forms.Button();
+            this.BtnPlayerStatistics = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,17 +82,6 @@
             this.BtnViewTrainings.UseVisualStyleBackColor = true;
             this.BtnViewTrainings.Click += new System.EventHandler(this.BtnViewTrainings_Click);
             // 
-            // BtnPlayerStatistics
-            // 
-            this.BtnPlayerStatistics.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPlayerStatistics.Location = new System.Drawing.Point(280, 390);
-            this.BtnPlayerStatistics.Name = "BtnPlayerStatistics";
-            this.BtnPlayerStatistics.Size = new System.Drawing.Size(151, 68);
-            this.BtnPlayerStatistics.TabIndex = 16;
-            this.BtnPlayerStatistics.Text = "Player Statistics";
-            this.BtnPlayerStatistics.UseVisualStyleBackColor = true;
-            this.BtnPlayerStatistics.Click += new System.EventHandler(this.BtnPlayerStatistics_Click);
-            // 
             // BtnMyAccountPlayer
             // 
             this.BtnMyAccountPlayer.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -126,11 +115,22 @@
             this.BtnMatchNotifications.UseVisualStyleBackColor = true;
             this.BtnMatchNotifications.Click += new System.EventHandler(this.BtnMatchNotifications_Click);
             // 
+            // BtnPlayerStatistics
+            // 
+            this.BtnPlayerStatistics.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPlayerStatistics.Location = new System.Drawing.Point(280, 390);
+            this.BtnPlayerStatistics.Name = "BtnPlayerStatistics";
+            this.BtnPlayerStatistics.Size = new System.Drawing.Size(151, 68);
+            this.BtnPlayerStatistics.TabIndex = 16;
+            this.BtnPlayerStatistics.Text = "Player Statistics";
+            this.BtnPlayerStatistics.UseVisualStyleBackColor = true;
+            this.BtnPlayerStatistics.Click += new System.EventHandler(this.BtnPlayerStatistics_Click);
+            // 
             // playerHomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(484, 640);
             this.Controls.Add(this.BtnMatchNotifications);
             this.Controls.Add(this.BtnMyAccountPlayer);
@@ -154,9 +154,9 @@
         private System.Windows.Forms.Label lblHomeCoachTitle;
         private System.Windows.Forms.Button BtnViewMatches;
         private System.Windows.Forms.Button BtnViewTrainings;
-        private System.Windows.Forms.Button BtnPlayerStatistics;
         private System.Windows.Forms.Button BtnMyAccountPlayer;
         private System.Windows.Forms.Button BtnSignOutPlayer;
         private System.Windows.Forms.Button BtnMatchNotifications;
+        private System.Windows.Forms.Button BtnPlayerStatistics;
     }
 }

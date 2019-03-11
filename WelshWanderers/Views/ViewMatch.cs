@@ -327,12 +327,7 @@ namespace WelshWanderers
 
         private bool ValidPostcode()
         {
-            Regex postcodeRegex = new Regex(@"([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9][A-Za-z]?))))\s?[0-9][A-Za-z]{2})");
-            Match compare = postcodeRegex.Match(InputPostcode.Text);
-            if (compare.Success)
-                return true;
-            MessageBox.Show("Postcode must be of a valid format.");
-            return false;
+            return Functions.Validation.IsPostcodeValid(InputPostcode.Text);
         }
     }
 }

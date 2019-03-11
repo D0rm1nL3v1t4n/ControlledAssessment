@@ -38,13 +38,13 @@ namespace VisualCSharp.Forms.Sub_home_Screens.Coach_sub_Screens
                 string[] section = line.Split('|');
                 if (section[0] == MatchData.matchID)
                 {
-                    string[] playerIDList = section[8].Split(new[] {','}, StringSplitOptions.RemoveEmptyEntries);
-                    foreach (string id in playerIDList)
+                    string[] playersList = section[8].Split(new[] {','}, StringSplitOptions.RemoveEmptyEntries);
+                    foreach (string player in playersList)
                     {
-                        if (null != id)
+                        if (null != player)
                         {
-                            string playerName = GetPlayerName(id);
-                            TableAddResult.Rows.Add(id, playerName);
+                            string id = GetPlayerId(player);
+                            TableAddResult.Rows.Add(id, player);
                         }
                     }
                 }
@@ -53,23 +53,23 @@ namespace VisualCSharp.Forms.Sub_home_Screens.Coach_sub_Screens
             matchDetailsFile.Close();
         }
 
-        private string GetPlayerName(string id)
+        private string GetPlayerId(string name)
         {
-            StreamReader playerStatsFile = new StreamReader("playerStats.txt");
-            string line = playerStatsFile.ReadLine();
+            StreamReader userPersonalDetails = new StreamReader("userPersonalDetails.txt");
+            string line = userPersonalDetails.ReadLine();
             while (null != line)
             {
                 string[] section = line.Split('|');
 
-                if (id == section[1])
+                if (name == (section[2] + " " + section[3]))
                 {
-                    playerStatsFile.Close();
-                    return section[2] + " " + section[3];
+                    userPersonalDetails.Close();
+                    return section[0];
                 }
 
-                line = playerStatsFile.ReadLine();
+                line = userPersonalDetails.ReadLine();
             }
-            playerStatsFile.Close();
+            userPersonalDetails.Close();
             return null;
         }
 

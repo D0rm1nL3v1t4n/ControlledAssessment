@@ -20,6 +20,7 @@ namespace WelshWanderers
 
         private void Home_Load(object sender, EventArgs e)
         {
+            HomeInfo();
             HideAllButtons();
             if (Database.UserData.accessLevel == "Admin")
                 ShowAdminHome();
@@ -28,6 +29,12 @@ namespace WelshWanderers
             else if (Database.UserData.accessLevel == "Player")
                 ShowPlayerHome();
             Functions.Backup.BackupCheck();
+        }
+
+        private void HomeInfo()
+        {
+            LabelUserInfo.Text = Database.UserData.firstName + " " + Database.UserData.lastName;
+            LabelDateTime.Text = DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() + "  " + DateTime.Now.Date.ToString("dd/MM/yy");
         }
 
         private void HideAllButtons()

@@ -66,12 +66,12 @@ namespace VisualCSharp.Forms.Sub_home_Screens.Coach_sub_Screens
             mail.From = new MailAddress("WelshWanderersTest@gmail.com");
             mail.Subject = "Training Info";
 
-            StreamReader playerStatsFile = new StreamReader("playerStats.txt");
+            StreamReader playerStatsFile = new StreamReader("userAccountDetails.txt");
             string line = playerStatsFile.ReadLine();
             while (null != line)
             {
                 string[] section = line.Split('|');
-                if (section[4] == CmbTrainingType.Text)
+                if (section[3] == "Player")
                 {
                     mail.To.Add(GetPlayerEmail(section[0]));
                 }

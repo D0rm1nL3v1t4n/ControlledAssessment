@@ -22,6 +22,7 @@ namespace WelshWanderers
 
         private void UserJoinRequests_Load(object sender, EventArgs e)
         {
+            InputDateOfBirth.Value = DateTime.Today.Date;
             LoadNextUser();
             MakeReadOnly();
         }
@@ -88,7 +89,7 @@ namespace WelshWanderers
         {
             string personalDetailsData = id + "|" + InputTitle.Text + "|" + InputFirstName.Text + "|" + InputLastName.Text + "|" + InputDateOfBirth.Text + "|" + 
                 InputEmailAddress.Text + "|" + InputTelephoneNumber.Text + "|" + InputPostcode.Text + "|";
-            string accountDetailsData = id + "|" + InputUsername.Text.ToLower() + "|" + password + "|" + InputAccessLevel.Text + "|" + InputTeam.Text + "|";
+            string accountDetailsData = id + "|" + InputUsername.Text + "|" + password + "|" + InputAccessLevel.Text + "|" + InputTeam.Text + "|";
             Functions.FileWrite.WriteData("userPersonalDetails", personalDetailsData);
             Functions.FileWrite.WriteData("userAccountDetails", accountDetailsData);
         }

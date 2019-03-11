@@ -56,6 +56,8 @@
             this.lblRegistration = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BtnRegisterHelp = new System.Windows.Forms.Button();
+            this.cmbAccessLevel = new System.Windows.Forms.ComboBox();
+            this.lblAccessLevel = new System.Windows.Forms.Label();
             this.grpbxAccountDetails.SuspendLayout();
             this.grpbxPersonalDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -224,7 +226,7 @@
             // BtnCancel
             // 
             this.BtnCancel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancel.Location = new System.Drawing.Point(39, 634);
+            this.BtnCancel.Location = new System.Drawing.Point(39, 667);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(75, 31);
             this.BtnCancel.TabIndex = 20;
@@ -245,6 +247,8 @@
             // grpbxAccountDetails
             // 
             this.grpbxAccountDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.grpbxAccountDetails.Controls.Add(this.lblAccessLevel);
+            this.grpbxAccountDetails.Controls.Add(this.cmbAccessLevel);
             this.grpbxAccountDetails.Controls.Add(this.lblPasswordConfirmReg);
             this.grpbxAccountDetails.Controls.Add(this.lblPasswordReg);
             this.grpbxAccountDetails.Controls.Add(this.TxtPasswordConfirm);
@@ -254,7 +258,7 @@
             this.grpbxAccountDetails.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpbxAccountDetails.Location = new System.Drawing.Point(39, 498);
             this.grpbxAccountDetails.Name = "grpbxAccountDetails";
-            this.grpbxAccountDetails.Size = new System.Drawing.Size(407, 130);
+            this.grpbxAccountDetails.Size = new System.Drawing.Size(407, 163);
             this.grpbxAccountDetails.TabIndex = 19;
             this.grpbxAccountDetails.TabStop = false;
             this.grpbxAccountDetails.Text = "Account Details";
@@ -272,11 +276,11 @@
             // btnRegisterRequest
             // 
             this.btnRegisterRequest.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegisterRequest.Location = new System.Drawing.Point(302, 634);
+            this.btnRegisterRequest.Location = new System.Drawing.Point(302, 667);
             this.btnRegisterRequest.Name = "btnRegisterRequest";
             this.btnRegisterRequest.Size = new System.Drawing.Size(144, 31);
             this.btnRegisterRequest.TabIndex = 15;
-            this.btnRegisterRequest.Text = "Request Registration";
+            this.btnRegisterRequest.Text = "Register";
             this.btnRegisterRequest.UseVisualStyleBackColor = true;
             this.btnRegisterRequest.Click += new System.EventHandler(this.btnRegisterRequest_Click);
             // 
@@ -346,7 +350,7 @@
             // BtnRegisterHelp
             // 
             this.BtnRegisterHelp.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRegisterHelp.Location = new System.Drawing.Point(268, 634);
+            this.BtnRegisterHelp.Location = new System.Drawing.Point(268, 667);
             this.BtnRegisterHelp.Name = "BtnRegisterHelp";
             this.BtnRegisterHelp.Size = new System.Drawing.Size(33, 31);
             this.BtnRegisterHelp.TabIndex = 21;
@@ -354,12 +358,35 @@
             this.BtnRegisterHelp.UseVisualStyleBackColor = true;
             this.BtnRegisterHelp.Click += new System.EventHandler(this.BtnRegisterHelp_Click);
             // 
+            // cmbAccessLevel
+            // 
+            this.cmbAccessLevel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAccessLevel.FormattingEnabled = true;
+            this.cmbAccessLevel.Items.AddRange(new object[] {
+            "Player",
+            "Coach",
+            "Admin"});
+            this.cmbAccessLevel.Location = new System.Drawing.Point(186, 126);
+            this.cmbAccessLevel.Name = "cmbAccessLevel";
+            this.cmbAccessLevel.Size = new System.Drawing.Size(114, 25);
+            this.cmbAccessLevel.TabIndex = 16;
+            // 
+            // lblAccessLevel
+            // 
+            this.lblAccessLevel.AutoSize = true;
+            this.lblAccessLevel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAccessLevel.Location = new System.Drawing.Point(32, 132);
+            this.lblAccessLevel.Name = "lblAccessLevel";
+            this.lblAccessLevel.Size = new System.Drawing.Size(90, 19);
+            this.lblAccessLevel.TabIndex = 17;
+            this.lblAccessLevel.Text = "Access Level";
+            // 
             // registrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.ClientSize = new System.Drawing.Size(484, 676);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(484, 710);
             this.Controls.Add(this.BtnRegisterHelp);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.grpbxAccountDetails);
@@ -408,5 +435,7 @@
         private System.Windows.Forms.Label lblRegistration;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button BtnRegisterHelp;
+        private System.Windows.Forms.Label lblAccessLevel;
+        private System.Windows.Forms.ComboBox cmbAccessLevel;
     }
 }

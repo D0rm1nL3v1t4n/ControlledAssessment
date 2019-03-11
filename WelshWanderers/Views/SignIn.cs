@@ -27,6 +27,7 @@ namespace WelshWanderers
                 {
                     LoadAccountDetails();
                     LoadPersonalDetails();
+                    MessageBox.Show("Welcome " + Database.UserData.username + ".");
                     LoadHome();
                 }
             }

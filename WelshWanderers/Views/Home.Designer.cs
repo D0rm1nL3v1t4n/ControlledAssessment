@@ -42,6 +42,8 @@
             this.NavMyAccount = new System.Windows.Forms.Button();
             this.NavMatchResults = new System.Windows.Forms.Button();
             this.NavRestore = new System.Windows.Forms.Button();
+            this.LabelUserInfo = new System.Windows.Forms.Label();
+            this.LabelDateTime = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LabelHeader
@@ -61,7 +63,7 @@
             this.NavManageUsers.Name = "NavManageUsers";
             this.NavManageUsers.Size = new System.Drawing.Size(95, 48);
             this.NavManageUsers.TabIndex = 7;
-            this.NavManageUsers.Text = "Manage Users";
+            this.NavManageUsers.Text = "Users";
             this.NavManageUsers.UseVisualStyleBackColor = true;
             this.NavManageUsers.Click += new System.EventHandler(this.NavManageUsers_Click);
             // 
@@ -105,7 +107,7 @@
             this.NavUpcomingTrainings.Name = "NavUpcomingTrainings";
             this.NavUpcomingTrainings.Size = new System.Drawing.Size(95, 48);
             this.NavUpcomingTrainings.TabIndex = 0;
-            this.NavUpcomingTrainings.Text = "View Trainings";
+            this.NavUpcomingTrainings.Text = "Trainings";
             this.NavUpcomingTrainings.UseVisualStyleBackColor = true;
             this.NavUpcomingTrainings.Click += new System.EventHandler(this.NavUpcomingTrainings_Click);
             // 
@@ -127,7 +129,7 @@
             this.NavUpcomingMatches.Name = "NavUpcomingMatches";
             this.NavUpcomingMatches.Size = new System.Drawing.Size(95, 48);
             this.NavUpcomingMatches.TabIndex = 1;
-            this.NavUpcomingMatches.Text = "View Matches";
+            this.NavUpcomingMatches.Text = "Matches";
             this.NavUpcomingMatches.UseVisualStyleBackColor = true;
             this.NavUpcomingMatches.Click += new System.EventHandler(this.NavUpcomingMatches_Click);
             // 
@@ -167,7 +169,7 @@
             // NavMyAccount
             // 
             this.NavMyAccount.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavMyAccount.Location = new System.Drawing.Point(214, 14);
+            this.NavMyAccount.Location = new System.Drawing.Point(214, 12);
             this.NavMyAccount.Name = "NavMyAccount";
             this.NavMyAccount.Size = new System.Drawing.Size(95, 31);
             this.NavMyAccount.TabIndex = 11;
@@ -197,11 +199,33 @@
             this.NavRestore.UseVisualStyleBackColor = true;
             this.NavRestore.Click += new System.EventHandler(this.NavRestore_Click);
             // 
+            // LabelUserInfo
+            // 
+            this.LabelUserInfo.AutoSize = true;
+            this.LabelUserInfo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelUserInfo.Location = new System.Drawing.Point(9, 46);
+            this.LabelUserInfo.Name = "LabelUserInfo";
+            this.LabelUserInfo.Size = new System.Drawing.Size(39, 14);
+            this.LabelUserInfo.TabIndex = 71;
+            this.LabelUserInfo.Text = "NAME";
+            // 
+            // LabelDateTime
+            // 
+            this.LabelDateTime.AutoSize = true;
+            this.LabelDateTime.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelDateTime.Location = new System.Drawing.Point(211, 46);
+            this.LabelDateTime.Name = "LabelDateTime";
+            this.LabelDateTime.Size = new System.Drawing.Size(70, 14);
+            this.LabelDateTime.TabIndex = 72;
+            this.LabelDateTime.Text = "DATE TIME";
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(321, 183);
+            this.ClientSize = new System.Drawing.Size(321, 176);
+            this.Controls.Add(this.LabelDateTime);
+            this.Controls.Add(this.LabelUserInfo);
             this.Controls.Add(this.NavRestore);
             this.Controls.Add(this.NavMatchResults);
             this.Controls.Add(this.NavMyAccount);
@@ -240,5 +264,7 @@
         private System.Windows.Forms.Button NavMyAccount;
         private System.Windows.Forms.Button NavMatchResults;
         private System.Windows.Forms.Button NavRestore;
+        private System.Windows.Forms.Label LabelUserInfo;
+        private System.Windows.Forms.Label LabelDateTime;
     }
 }
