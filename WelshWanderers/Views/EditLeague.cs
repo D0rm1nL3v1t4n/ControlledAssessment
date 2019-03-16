@@ -35,8 +35,12 @@ namespace WelshWanderers.Views
 
         private void EventNavSave_Click(object sender, EventArgs e)
         {
-            EditLeagueData();
-            RenameLeague();
+            if (ValidInputs() == true && CreateLeagueFile(InputName.Text) == false)
+            {
+                EditLeagueData();
+                RenameLeague();
+                NavToManageLeagues();
+            }
         }
 
         private void RenameLeague()
@@ -50,6 +54,45 @@ namespace WelshWanderers.Views
             int[] searchIndex = { 0 };
             string[] searchData = { Database.LeagueData.id.ToString() };
             Functions.FileEdit.EditLine("leagues", 3, data, searchIndex, searchData);
+            MessageBox.Show("Changes have been saved.");
+        }
+
+        private bool CreateLeagueFile(string fileName)
+        {
+            string path = @"Leagues\" + fileName + ".txt";
+            if (!File.Exists(path))
+            {
+                var file = File.Create(path);
+                file.Close();
+                return false;
+            }
+            else
+            {
+                MessageBox.Show("A league by that name already exists.\nName the league differently or delete that exisiting league before continuing.");
+                return true;
+            }
+        }
+                private bool ValidInputs()
+        {
+            bool name = ValidName();
+            bool team = ValidTeam();
+            return name && team;
+        }
+
+        private bool ValidName()
+        {
+            if (InputName.Text.Length <= 30 && InputName.Text.Length >= 5)
+                return true;
+                MessageBox.Show("League name must be between 5 and 30 characters.");
+            return false;
+        }
+
+        private bool ValidTeam()
+        {
+            if (InputTeam.Text.Length > 0)
+                return true;
+            MessageBox.Show("Select a team.");
+            return false;
         }
     }
 }

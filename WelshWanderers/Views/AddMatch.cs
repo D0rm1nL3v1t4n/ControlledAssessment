@@ -51,21 +51,21 @@ namespace WelshWanderers
 
         private void ShowFilteredPlayers()
         {
-            int index = InputLeague.SelectedIndex - 1;
+            string leagueTeam = Functions.FileSearch.ReturnSegment("leagues", InputLeague.Text, 1, 2);  //Gets the team for that league
             StreamReader file = new StreamReader("userPersonalDetails.txt");
             string line;
-            while (null != (line = file.ReadLine()))
+            while (null != (line = file.ReadLine()))    //Loops through userPersonalDetails file
             {
                 string[] section = line.Split('|');
-                string[] playerInfo = Functions.FileSearch.ReturnLine("userPersonalDetails", section[0], 0).Split('|');
-                string playerName = playerInfo[2] + " " + playerInfo[3];
+                string[] playerInfo = Functions.FileSearch.ReturnLine("userPersonalDetails", section[0], 0).Split('|'); //Gets each player's record
+                string playerName = playerInfo[2] + " " + playerInfo[3];    //Gets each player's full name from their record
 
-                string team = Functions.FileSearch.ReturnSegment("userAccountDetails", section[0], 0, 4, false);
-                if (Functions.FileSearch.ReturnSegment("leagues", InputLeague.Text, 1, 2) == team)
+                string team = Functions.FileSearch.ReturnSegment("userAccountDetails", section[0], 0, 4, false);    //Gets each player's team
+                if (leagueTeam == team)  //If player is in same team has the team for that league
                 {
-                    if (playerName.ToLower().Contains(InputFilter.Text.ToLower()))
+                    if (playerName.ToLower().Contains(InputFilter.Text.ToLower()))  //Checks if search filter's data is contained within the player's full name
                     {
-                        ListFindPlayers.Items.Add(playerName);
+                        ListFindPlayers.Items.Add(playerName);  //Adds player to list box
                     }
                 }
             }

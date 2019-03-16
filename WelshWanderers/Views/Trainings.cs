@@ -20,7 +20,7 @@ namespace WelshWanderers
 
         private void ViewTraining_Load(object sender, EventArgs e)
         {
-            InputFilter.SelectedItem = "All";
+            InputFilter.SelectedItem = "Upcoming";
             TableViewTrainings.MultiSelect = true;
         }
 
@@ -83,6 +83,10 @@ namespace WelshWanderers
         {
             TableViewTrainings.Rows.Clear();
             FillTableData();
+            ListSortDirection direction = ListSortDirection.Descending;
+            if (InputFilter.SelectedItem == "Upcoming")
+                direction = ListSortDirection.Ascending;
+            TableViewTrainings.Sort(TableViewTrainings.Columns[3], direction);
         }
     }
 }

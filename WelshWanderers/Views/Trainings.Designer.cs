@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TableViewTrainings = new System.Windows.Forms.DataGridView();
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTeam = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,14 +46,14 @@
             // 
             this.TableViewTrainings.AllowUserToAddRows = false;
             this.TableViewTrainings.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TableViewTrainings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TableViewTrainings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.TableViewTrainings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TableViewTrainings.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColID,
@@ -68,7 +68,7 @@
             this.TableViewTrainings.RowHeadersWidth = 10;
             this.TableViewTrainings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TableViewTrainings.ShowCellToolTips = false;
-            this.TableViewTrainings.Size = new System.Drawing.Size(413, 286);
+            this.TableViewTrainings.Size = new System.Drawing.Size(413, 228);
             this.TableViewTrainings.TabIndex = 1;
             // 
             // ColID
@@ -131,7 +131,7 @@
             // NavEdit
             // 
             this.NavEdit.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavEdit.Location = new System.Drawing.Point(328, 389);
+            this.NavEdit.Location = new System.Drawing.Point(328, 331);
             this.NavEdit.Name = "NavEdit";
             this.NavEdit.Size = new System.Drawing.Size(97, 30);
             this.NavEdit.TabIndex = 2;
@@ -141,6 +141,7 @@
             // 
             // InputFilter
             // 
+            this.InputFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.InputFilter.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputFilter.FormattingEnabled = true;
             this.InputFilter.Items.AddRange(new object[] {
@@ -157,7 +158,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(437, 431);
+            this.ClientSize = new System.Drawing.Size(437, 372);
             this.Controls.Add(this.InputFilter);
             this.Controls.Add(this.NavEdit);
             this.Controls.Add(this.NavHome);

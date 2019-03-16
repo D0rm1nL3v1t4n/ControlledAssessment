@@ -68,17 +68,24 @@ namespace WelshWanderers.Views
 
         private bool ValidInputs()
         {
-            if (InputTeam.Text != null)
-            {
-                if (InputName.Text.Length <= 30 && InputName.Text.Length >= 5)
-                    return true;
-                else
-                    MessageBox.Show("League name must be between 5 and 30 characters.");
-            }
-            else
-            {
-                MessageBox.Show("Select a team.");
-            }
+            bool name = ValidName();
+            bool team = ValidTeam();
+            return name && team;
+        }
+
+        private bool ValidName()
+        {
+            if (InputName.Text.Length <= 30 && InputName.Text.Length >= 5)
+                return true;
+                MessageBox.Show("League name must be between 5 and 30 characters.");
+            return false;
+        }
+
+        private bool ValidTeam()
+        {
+            if (InputTeam.Text.Length > 0)
+                return true;      
+            MessageBox.Show("Select a team.");
             return false;
         }
 

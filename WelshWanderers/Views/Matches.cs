@@ -85,7 +85,6 @@ namespace WelshWanderers
 
         private void NavViewResult_Click(object sender, EventArgs e)
         {
-            //Change to prevent navigation if match result for that match does not exist.
             if (TableViewMatches.SelectedRows.Count > 0)
             { 
                 if (Convert.ToDateTime(TableViewMatches.SelectedRows[0].Cells[3].Value) > DateTime.Now)
@@ -131,11 +130,13 @@ namespace WelshWanderers
         {
             TableViewMatches.Rows.Clear();
             FillTableData();
+            ListSortDirection direction = ListSortDirection.Descending;
             if (InputFilter.Text == "Upcoming")
             {
                 NavViewResult.Hide();
                 NavAddResult.Hide();
                 NavMatchAvailability.Show();
+                direction = ListSortDirection.Ascending;
             }
             else if (InputFilter.Text == "Past")
             {
@@ -147,6 +148,7 @@ namespace WelshWanderers
                 if (Database.UserData.accessLevel != "Player")
                     NavAddResult.Show();
             }
+            TableViewMatches.Sort(TableViewMatches.Columns[3], direction);
         }
 
         private void NavAddResult_Click(object sender, EventArgs e)

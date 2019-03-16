@@ -65,7 +65,7 @@ namespace WelshWanderers
 
         private void EventAcceptUser_Click(object sender, EventArgs e)
         {
-            if (InputAccessLevel.Text == "Player" && null == InputTeam.Text)
+            if (InputAccessLevel.Text == "Player" && "" == InputTeam.Text)
             {
                 MessageBox.Show("Please select a team for this player.\nAll players must be assigned to a team.");
                 return;

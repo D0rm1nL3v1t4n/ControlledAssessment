@@ -285,6 +285,7 @@
             // 
             // InputTeam
             // 
+            this.InputTeam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.InputTeam.Enabled = false;
             this.InputTeam.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputTeam.FormattingEnabled = true;

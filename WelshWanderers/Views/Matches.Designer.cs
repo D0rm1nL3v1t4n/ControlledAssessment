@@ -96,7 +96,7 @@
             this.TableViewMatches.RowHeadersWidth = 10;
             this.TableViewMatches.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TableViewMatches.ShowCellToolTips = false;
-            this.TableViewMatches.Size = new System.Drawing.Size(671, 312);
+            this.TableViewMatches.Size = new System.Drawing.Size(671, 264);
             this.TableViewMatches.TabIndex = 1;
             // 
             // ColID
@@ -158,7 +158,7 @@
             // NavEditMatch
             // 
             this.NavEditMatch.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavEditMatch.Location = new System.Drawing.Point(689, 334);
+            this.NavEditMatch.Location = new System.Drawing.Point(689, 286);
             this.NavEditMatch.Name = "NavEditMatch";
             this.NavEditMatch.Size = new System.Drawing.Size(126, 30);
             this.NavEditMatch.TabIndex = 4;
@@ -190,6 +190,7 @@
             // 
             // InputFilter
             // 
+            this.InputFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.InputFilter.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputFilter.FormattingEnabled = true;
             this.InputFilter.Items.AddRange(new object[] {
@@ -216,7 +217,7 @@
             // NavMatchAvailability
             // 
             this.NavMatchAvailability.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavMatchAvailability.Location = new System.Drawing.Point(689, 370);
+            this.NavMatchAvailability.Location = new System.Drawing.Point(689, 322);
             this.NavMatchAvailability.Name = "NavMatchAvailability";
             this.NavMatchAvailability.Size = new System.Drawing.Size(126, 30);
             this.NavMatchAvailability.TabIndex = 5;
@@ -228,7 +229,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 408);
+            this.ClientSize = new System.Drawing.Size(827, 365);
             this.Controls.Add(this.NavMatchAvailability);
             this.Controls.Add(this.NavAddResult);
             this.Controls.Add(this.InputFilter);

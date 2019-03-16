@@ -69,6 +69,7 @@
             // 
             // InputLeague
             // 
+            this.InputLeague.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.InputLeague.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputLeague.FormattingEnabled = true;
             this.InputLeague.Location = new System.Drawing.Point(97, 67);
@@ -247,7 +248,7 @@
             this.InputDate.Name = "InputDate";
             this.InputDate.Size = new System.Drawing.Size(161, 27);
             this.InputDate.TabIndex = 2;
-            this.InputDate.Value = System.DateTime.Today.Date;
+            this.InputDate.Value = new System.DateTime(2019, 3, 15, 0, 0, 0, 0);
             // 
             // InputHomeMatch
             // 

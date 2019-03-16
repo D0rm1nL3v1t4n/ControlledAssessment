@@ -110,7 +110,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(559, 492);
+            this.ClientSize = new System.Drawing.Size(559, 500);
             this.Controls.Add(this.EventSendEmail);
             this.Controls.Add(this.LabelTo);
             this.Controls.Add(this.InputTo);

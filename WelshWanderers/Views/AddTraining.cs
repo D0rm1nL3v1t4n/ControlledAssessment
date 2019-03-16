@@ -29,7 +29,7 @@ namespace WelshWanderers
 
         private void EventNavSave_Click(object sender, EventArgs e)
         {
-            if (ValidTeam() && ValidTime() && ValidDuration() && ValidDate())
+            if (ValidTeam() == true && ValidTime() == true && ValidDuration() == true && ValidDate() == true)
             {
                 SaveData();
                 if (emailSent)
@@ -59,7 +59,7 @@ namespace WelshWanderers
             string[] playerIDs = Functions.FileSearch.ReturnSegment("userAccountDetails", InputTeam.Text, 4, 0, true).Split('|');
             string[] emails = new string[playerIDs.Length];
             for (int i = 0; i < playerIDs.Length; ++i)
-                emails[i] = Functions.FileSearch.ReturnSegment("userPersonalDetails", playerIDs[i], 0, 5, false);   //Quicker method?
+                emails[i] = Functions.FileSearch.ReturnSegment("userPersonalDetails", playerIDs[i], 0, 5, false);
             return emails;
         }
 
@@ -93,7 +93,7 @@ namespace WelshWanderers
         
         private bool ValidTeam()
         {
-            if (InputTeam.Text != null)
+            if (InputTeam.Text.Length > 0)
                 return true;
             MessageBox.Show("Selected a training type in the drop down box.");
             return false;
