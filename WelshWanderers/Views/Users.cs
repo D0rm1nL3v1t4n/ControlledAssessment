@@ -13,26 +13,28 @@ namespace WelshWanderers
 
         private void ManageUsers_Load(object sender, EventArgs e)
         {
-            TableManageUsers.MultiSelect = false;
-            InputAccessLevel.SelectedItem = "All";
-            LoadTableData();
+            TableManageUsers.MultiSelect = false;   //prevents the user from selecting more than one row in the table at a time
+            InputAccessLevel.SelectedItem = "All";  //sets the selected value in the drop down box to 'All'
+            LoadTableData();    //calls on function to load data into the table
         }
         
         private void LoadTableData()
         {
-            StreamReader fileA = new StreamReader("userAccountDetails.txt");
-            StreamReader fileB = new StreamReader("userPersonalDetails.txt");
+            StreamReader fileA = new StreamReader("userAccountDetails.txt");    //opens file with read access
+            StreamReader fileB = new StreamReader("userPersonalDetails.txt");   //opens file with read access
             string lineA;
             string lineB;
-            while (null != (lineA = fileA.ReadLine()) && null != (lineB = fileB.ReadLine()))
+            while (null != (lineA = fileA.ReadLine()) && null != (lineB = fileB.ReadLine()))    //reads both files one line at a time and checks lines are not empty
             {
-                string[] sectionA = lineA.Split('|');
-                string[] sectionB = lineB.Split('|');
-                if (sectionA[3] == InputAccessLevel.Text || InputAccessLevel.Text == "All")
-                {
+                string[] sectionA = lineA.Split('|');   //splits line into individual components based on delimiter
+                string[] sectionB = lineB.Split('|');   //splits line into individual components based on delimiter
+                //checks that the user's access level is the same as the selected item in the drop down box
+                if (sectionA[3] == InputAccessLevel.Text || InputAccessLevel.Text == "All") 
+                {   //checks the user's name is the same as the name entered in the filter for the name
                     if ((sectionB[2] + " " + sectionB[3]).ToLower().Contains(InputName.Text.ToLower()) || InputName.Text == "")
-                    {
+                    {   //checks the user is not the masteradmin
                         if (sectionA[1] != "masteradmin")
+                            //adds a row to the table with the user's data
                             TableManageUsers.Rows.Add(sectionA[0], sectionA[1], sectionB[2], sectionB[3], sectionA[3], sectionA[4]);
                     }
                 }
@@ -43,38 +45,33 @@ namespace WelshWanderers
 
         private void EventFilter_Click(object sender, EventArgs e)
         {
-            TableManageUsers.Rows.Clear();
-            LoadTableData();
+            TableManageUsers.Rows.Clear();  //clears all the data in the table
+            LoadTableData();    //calls on function to load data into the table
         }
 
         private void NavHome_Click(object sender, EventArgs e)
         {
-            NavToHome();
+            NavToHome();    //navigation to Home form
         }
 
         private void NavToHome()
         {
-            if (Application.OpenForms["DeleteUserConfirm"] == null)
-            {
-                new Home().Show();
-                Close();
-            }
-            else
-            {
-                MessageBox.Show("A Delete User Confirm form is current open.\nTo exit the this form, close the open Delete User Confirm form first.");
-            }
+            if (Application.OpenForms["DeleteUserConfirm"] != null) //checks if Delete User Confirm form is open
+                Application.OpenForms["DeleteUserConfirm"].Close(); //if it is open, closes the Delete User Confirm form
+            new Home().Show();  //shows Home form
+            Close();    //closes this form
         }
 
         private void NavView_Click(object sender, EventArgs e)
         {
-            if (Application.OpenForms["DeleteUserConfirm"] == null)
+            if (Application.OpenForms["DeleteUserConfirm"] == null) //checks if Delete User Confirm form is open
             {
                 try
                 {
-                    new ViewUser(TableManageUsers.SelectedRows[0].Cells[0].Value.ToString()).Show();
-                    Close();
+                    new ViewUser(TableManageUsers.SelectedRows[0].Cells[0].Value.ToString()).Show();    //shows the View User form
+                    Close();    //hides this form
                 }
-                catch (ArgumentOutOfRangeException)
+                catch (ArgumentOutOfRangeException) //catches and prevents a potential error
                 {
                     MessageBox.Show("Select a user to view.");
                 }
@@ -87,13 +84,13 @@ namespace WelshWanderers
 
         private void EventDelete_Click(object sender, EventArgs e)
         {
-            if (Application.OpenForms["DeleteUserConfirm"] == null)
+            if (Application.OpenForms["DeleteUserConfirm"] == null) //checks if Delete User Confirm form is open
             {
                 try
                 {
-                    new Views.DeleteUserConfirm(TableManageUsers.SelectedRows[0].Cells[0].Value.ToString()).Show();
+                    new Views.DeleteUserConfirm(TableManageUsers.SelectedRows[0].Cells[0].Value.ToString()).Show(); //opens Delete User Confirm form
                 }
-                catch (ArgumentOutOfRangeException)
+                catch (ArgumentOutOfRangeException) //catches and prevents potential error
                 {
                     MessageBox.Show("Select a user to delete.");
                 }

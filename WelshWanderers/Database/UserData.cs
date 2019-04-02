@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WelshWanderers.Database
+﻿namespace WelshWanderers.Database
 {
     class UserData
-    {
+    {   //Local data stored for the User's data - this will be the data for the user that is currently signed in to the system
         public static int id = -1;
         public static string title = "";
         public static string firstName = "";
@@ -21,7 +15,7 @@ namespace WelshWanderers.Database
         public static string team = "";
 
         public void ClearUserData()
-        {
+        {   //resets the variables to the original data
             id = -1;
             title = "";
             firstName = "";

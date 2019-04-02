@@ -316,7 +316,7 @@
             // 
             this.LabelChangesMade.AutoSize = true;
             this.LabelChangesMade.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelChangesMade.Location = new System.Drawing.Point(396, 242);
+            this.LabelChangesMade.Location = new System.Drawing.Point(386, 242);
             this.LabelChangesMade.Name = "LabelChangesMade";
             this.LabelChangesMade.Size = new System.Drawing.Size(80, 38);
             this.LabelChangesMade.TabIndex = 85;
@@ -324,6 +324,7 @@
             // 
             // InputAccessLevel
             // 
+            this.InputAccessLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.InputAccessLevel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputAccessLevel.FormattingEnabled = true;
             this.InputAccessLevel.Items.AddRange(new object[] {
@@ -334,9 +335,11 @@
             this.InputAccessLevel.Name = "InputAccessLevel";
             this.InputAccessLevel.Size = new System.Drawing.Size(151, 27);
             this.InputAccessLevel.TabIndex = 8;
+            this.InputAccessLevel.SelectedIndexChanged += new System.EventHandler(this.InputAccessLevel_SelectedIndexChanged);
             // 
             // InputTeam
             // 
+            this.InputTeam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.InputTeam.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputTeam.FormattingEnabled = true;
             this.InputTeam.Items.AddRange(new object[] {
@@ -347,6 +350,7 @@
             this.InputTeam.Name = "InputTeam";
             this.InputTeam.Size = new System.Drawing.Size(151, 27);
             this.InputTeam.TabIndex = 9;
+            this.InputTeam.SelectedIndexChanged += new System.EventHandler(this.InputTeam_SelectedIndexChanged);
             // 
             // ViewUser
             // 

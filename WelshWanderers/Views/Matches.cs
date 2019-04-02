@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
@@ -20,49 +14,96 @@ namespace WelshWanderers
 
         private void ViewMatch_Load(object sender, EventArgs e)
         {
-            if (Database.UserData.accessLevel == "Player")
-                HideButtons();
-            InputFilter.SelectedItem = "All";
+            InputFilter.SelectedItem = "Upcoming";  //sets the item in the drop down box to be 'Upcoming'
         }
 
         private void FillTableData()
         {
-            StreamReader file = new StreamReader("matchDetails.txt");
+            StreamReader file = new StreamReader("matchDetails.txt");   //opens file with read access
             string line;
-            while (null != (line = file.ReadLine()))
+            while (null != (line = file.ReadLine()))    //loops through file reading one line at a time until line is empty
             {
-                string[] section = line.Split('|');
+                string[] section = line.Split('|'); //splits the record into individual components
+                //checks if match date adheres to the conditions set by the option selected in the filter drop down box
                 if ((Convert.ToDateTime(section[3]) >= DateTime.Today && InputFilter.Text == "Upcoming") || (Convert.ToDateTime(section[3]) < DateTime.Today && InputFilter.Text == "Past") || (InputFilter.Text == "All"))
-                TableViewMatches.Rows.Add(section[0], section[1], section[2], section[3], section[4] + ":" + section[5], section[6], section[7], section[8]);
+                    //adds row to table with match data
+                    TableViewMatches.Rows.Add(section[0], section[1], section[2], section[3], section[4] + ":" + section[5], section[6], section[7], section[8]);
             }
             file.Close();
         }
 
-        private void HideButtons()
+        private void ButtonCheck()
         {
+            if (InputFilter.Text == "All")  //checks if filter drop down is set at 'All'
+            {
+                AllButtons();   //calls on function to show all buttons
+            }
+            else if (InputFilter.Text == "Upcoming")    //checks if filter drop down is set at 'Upcoming'
+            {
+                UpcomingButtons();  //calls on function to show buttons for upcoming matches
+            }
+            else if (InputFilter.Text == "Past")    //checks if filter drop down is set at 'Past'
+            {
+                PastButtons();  //calls on function to show buttons for past matches
+            }
+        }
+
+        private void AllButtons()
+        {
+            //shows these buttons
+            NavAddResult.Show();
+            NavMatchAvailability.Show();
+            NavViewResult.Show();
+            if (Database.UserData.accessLevel == "Player")  //checks if user is a player
+            {
+                //hides these buttons if user is a player
+                NavAddResult.Hide();
+                NavMatchAvailability.Hide();
+            }
+        }
+
+        private void UpcomingButtons()
+        {
+            //shows these buttons
+            NavMatchAvailability.Show();
+            NavViewResult.Hide();
             NavAddResult.Hide();
+            if (Database.UserData.accessLevel == "Player")  //checks if user is a player
+                //hides this button if user is a player
+                NavMatchAvailability.Hide();
+        }
+
+        private void PastButtons()
+        {
+            //shows these buttons
+            NavViewResult.Show();
+            NavAddResult.Show();
+            NavMatchAvailability.Hide();
+            if (Database.UserData.accessLevel == "Player")  //checks if user is a player
+                //hides this button if user is a player
+                NavAddResult.Hide();
         }
 
         private void NavHome_Click(object sender, EventArgs e)
         {
-            NavToHome();
+            NavToHome();    //navigation to Home form
         }
 
         private void NavToHome()
         {
-            new Home().Show();
-            Close();
+            new Home().Show();  //shows Home form
+            Close();    //hides this form
         }
 
         private void NavEdit_Click(object sender, EventArgs e)
         {
             try 
             {
-                LoadMatchData();
-                new ViewMatch("Upcoming Matches").Show();
-                Close();
+                LoadMatchData();    //calls on function to load data into database variables
+                new ViewMatch("Upcoming Matches").Show();  //shows Matches form
+                Close();    //closes this form
             }
-            catch (ArgumentOutOfRangeException)
+            catch (ArgumentOutOfRangeException)     //catches potential error
             {
                 MessageBox.Show("Select a match it view details about that match.");
             }
@@ -71,6 +112,7 @@ namespace WelshWanderers
 
         private void LoadMatchData()
         {
+            //sets database matchdata variables as data in the selected row
             string[] time = TableViewMatches.SelectedRows[0].Cells[4].Value.ToString().Split(':');
             Database.MatchData.id = Convert.ToInt16(TableViewMatches.SelectedRows[0].Cells[0].Value);
             Database.MatchData.league = TableViewMatches.SelectedRows[0].Cells[1].Value.ToString();
@@ -85,20 +127,20 @@ namespace WelshWanderers
 
         private void NavViewResult_Click(object sender, EventArgs e)
         {
-            if (TableViewMatches.SelectedRows.Count > 0)
+            if (TableViewMatches.SelectedRows.Count > 0)    //checks if the user has selected a row
             { 
-                if (Convert.ToDateTime(TableViewMatches.SelectedRows[0].Cells[3].Value) > DateTime.Now)
+                if (Convert.ToDateTime(TableViewMatches.SelectedRows[0].Cells[3].Value) > DateTime.Now) //checks if the match is in the future
                 {
-                    MessageBox.Show("Match not taken place yet.\n\nHey Doc, pretty sure we ain't time travelling yet - Marty.");
+                    MessageBox.Show("Match not taken place yet.");
                 }
+                //checks if match result exists
                 else if (Functions.FileSearch.ReturnSegment("matchStats", TableViewMatches.SelectedRows[0].Cells[0].Value.ToString(), 0, 1) == null)
                 {
                     MessageBox.Show("No result has been added to this match yet.");
                 }
                 else
                 {
-                    
-                    NavToMatchResult();
+                    NavToMatchResult(); //navigation to Match Result form
                 }
             }
             else
@@ -109,9 +151,10 @@ namespace WelshWanderers
 
         private void NavToMatchResult()
         {
+            //checks if match result exists
             if (null != Functions.FileSearch.ReturnLine("matchStats", TableViewMatches.SelectedRows[0].Cells[0].Value.ToString(), 0))
             {
-                LoadMatchResult();
+                LoadMatchResult();  //if result exists - navigation to Match Result form
             }
             else
             {
@@ -121,52 +164,44 @@ namespace WelshWanderers
 
         private void LoadMatchResult()
         {
-            LoadMatchData();
-            new ViewMatchResult().Show();
-            Close();
+            LoadMatchData();    //calls on function to load data into database variables
+            new ViewMatchResult().Show();   //shows the View Result form
+            Close();    //closes this form
         }
 
         private void InputFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TableViewMatches.Rows.Clear();
-            FillTableData();
-            ListSortDirection direction = ListSortDirection.Descending;
-            if (InputFilter.Text == "Upcoming")
-            {
-                NavViewResult.Hide();
-                NavAddResult.Hide();
-                NavMatchAvailability.Show();
-                direction = ListSortDirection.Ascending;
-            }
-            else if (InputFilter.Text == "Past")
-            {
-                NavMatchAvailability.Hide();
-            }
-            else
-            {
-                NavViewResult.Show();
-                if (Database.UserData.accessLevel != "Player")
-                    NavAddResult.Show();
-            }
-            TableViewMatches.Sort(TableViewMatches.Columns[3], direction);
+            TableViewMatches.Rows.Clear();  //clears all the data in the table
+            FillTableData();    //calls on function to enter data into the table
+            ButtonCheck();      //calls on function to check which buttons need to be shown and hidden
+            TableViewMatches.Sort(TableViewMatches.Columns[3], ListSortDirection.Descending);   //sets the order of the rows to be descending based on date
         }
 
         private void NavAddResult_Click(object sender, EventArgs e)
         {
             try
-            {
+            {   //checks if a result exists for this match already
                 if (null == Functions.FileSearch.ReturnLine("matchStats", TableViewMatches.SelectedRows[0].Cells[0].Value.ToString(), 0))
                 {
-                    LoadMatchData();
-                    new AddResult().Show();
-                    Close();
+                    //checks if the match has already happened - in the past
+                    if (Convert.ToDateTime(TableViewMatches.SelectedRows[0].Cells[3].Value.ToString()) < DateTime.Today)
+                    {
+                        LoadMatchData();    //calls function to load data into database variables
+                        new AddResult().Show(); //shows Add Result form
+                        Close();    //hides this form
+                    }
+                    else
+                    {
+                        MessageBox.Show("Match result cannot be added until match has happened.");
+                    }
                 }
+                //Message box with Yes No buttons to check if the user wants to view the result as one already exists
                 else if (MessageBox.Show("This match already has a result. Would you like to view it?", "No Result", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    LoadMatchResult();
+                    LoadMatchResult();  //navigation to View Match form
                 }
             }
-            catch (ArgumentOutOfRangeException)
+            catch (ArgumentOutOfRangeException) //catches potential error
             {
                 MessageBox.Show("Select a match to add its result.");
             }
@@ -176,16 +211,17 @@ namespace WelshWanderers
         {
             try
             {
+                //checks if match has already happened - in the past
                 if (Convert.ToDateTime(TableViewMatches.SelectedRows[0].Cells[3].Value.ToString()) < DateTime.Today)
                     MessageBox.Show("That match has already occured.");
                 else
-                {
+                {   //sets the variable for the match id to be that of the match selected
                     Database.MatchData.id = Convert.ToInt16(TableViewMatches.SelectedRows[0].Cells[0].Value.ToString());
-                    new Views.ViewMatchAvailability().Show();
-                    Close();
+                    new Views.ViewMatchAvailability().Show();   //shows the View Match Availability form
+                    Close();    //closes this form
                 }
             }
-            catch (ArgumentOutOfRangeException)
+            catch (ArgumentOutOfRangeException) //catches potential error
             {
                 MessageBox.Show("Select a match it view the availability of the players for that match.");
             }

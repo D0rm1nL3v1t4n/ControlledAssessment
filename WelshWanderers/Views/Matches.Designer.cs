@@ -96,7 +96,7 @@
             this.TableViewMatches.RowHeadersWidth = 10;
             this.TableViewMatches.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TableViewMatches.ShowCellToolTips = false;
-            this.TableViewMatches.Size = new System.Drawing.Size(671, 264);
+            this.TableViewMatches.Size = new System.Drawing.Size(670, 264);
             this.TableViewMatches.TabIndex = 1;
             // 
             // ColID
@@ -158,11 +158,11 @@
             // NavEditMatch
             // 
             this.NavEditMatch.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavEditMatch.Location = new System.Drawing.Point(689, 286);
+            this.NavEditMatch.Location = new System.Drawing.Point(689, 322);
             this.NavEditMatch.Name = "NavEditMatch";
             this.NavEditMatch.Size = new System.Drawing.Size(126, 30);
             this.NavEditMatch.TabIndex = 4;
-            this.NavEditMatch.Text = "View";
+            this.NavEditMatch.Text = "View Match";
             this.NavEditMatch.UseVisualStyleBackColor = true;
             this.NavEditMatch.Click += new System.EventHandler(this.NavEdit_Click);
             // 
@@ -217,7 +217,7 @@
             // NavMatchAvailability
             // 
             this.NavMatchAvailability.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavMatchAvailability.Location = new System.Drawing.Point(689, 322);
+            this.NavMatchAvailability.Location = new System.Drawing.Point(689, 286);
             this.NavMatchAvailability.Name = "NavMatchAvailability";
             this.NavMatchAvailability.Size = new System.Drawing.Size(126, 30);
             this.NavMatchAvailability.TabIndex = 5;

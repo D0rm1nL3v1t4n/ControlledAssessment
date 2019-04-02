@@ -31,15 +31,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LabelHeader = new System.Windows.Forms.Label();
             this.TableMatchResults = new System.Windows.Forms.DataGridView();
+            this.NavBack = new System.Windows.Forms.Button();
+            this.NavViewMatch = new System.Windows.Forms.Button();
+            this.NavMatchDetails = new System.Windows.Forms.Button();
+            this.InputFilter = new System.Windows.Forms.ComboBox();
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColWelshWanderers = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColWanderersGoals = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColOpponentGoals = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColAwayTeam = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NavBack = new System.Windows.Forms.Button();
-            this.NavViewMatch = new System.Windows.Forms.Button();
-            this.NavMatchDetails = new System.Windows.Forms.Button();
-            this.InputFilter = new System.Windows.Forms.ComboBox();
+            this.ColDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TableMatchResults)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +73,8 @@
             this.ColWelshWanderers,
             this.ColWanderersGoals,
             this.ColOpponentGoals,
-            this.ColAwayTeam});
+            this.ColAwayTeam,
+            this.ColDate});
             this.TableMatchResults.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.TableMatchResults.Location = new System.Drawing.Point(12, 96);
             this.TableMatchResults.Name = "TableMatchResults";
@@ -81,48 +83,8 @@
             this.TableMatchResults.RowHeadersWidth = 10;
             this.TableMatchResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TableMatchResults.ShowCellToolTips = false;
-            this.TableMatchResults.Size = new System.Drawing.Size(363, 250);
+            this.TableMatchResults.Size = new System.Drawing.Size(403, 250);
             this.TableMatchResults.TabIndex = 1;
-            // 
-            // ColID
-            // 
-            this.ColID.HeaderText = " ";
-            this.ColID.Name = "ColID";
-            this.ColID.ReadOnly = true;
-            this.ColID.Visible = false;
-            this.ColID.Width = 40;
-            // 
-            // ColWelshWanderers
-            // 
-            this.ColWelshWanderers.HeaderText = "";
-            this.ColWelshWanderers.Name = "ColWelshWanderers";
-            this.ColWelshWanderers.ReadOnly = true;
-            this.ColWelshWanderers.Width = 150;
-            // 
-            // ColWanderersGoals
-            // 
-            this.ColWanderersGoals.HeaderText = "";
-            this.ColWanderersGoals.Name = "ColWanderersGoals";
-            this.ColWanderersGoals.ReadOnly = true;
-            this.ColWanderersGoals.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColWanderersGoals.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ColWanderersGoals.Width = 40;
-            // 
-            // ColOpponentGoals
-            // 
-            this.ColOpponentGoals.HeaderText = "";
-            this.ColOpponentGoals.Name = "ColOpponentGoals";
-            this.ColOpponentGoals.ReadOnly = true;
-            this.ColOpponentGoals.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColOpponentGoals.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ColOpponentGoals.Width = 40;
-            // 
-            // ColAwayTeam
-            // 
-            this.ColAwayTeam.HeaderText = "";
-            this.ColAwayTeam.Name = "ColAwayTeam";
-            this.ColAwayTeam.ReadOnly = true;
-            this.ColAwayTeam.Width = 130;
             // 
             // NavBack
             // 
@@ -149,7 +111,7 @@
             // NavMatchDetails
             // 
             this.NavMatchDetails.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavMatchDetails.Location = new System.Drawing.Point(256, 352);
+            this.NavMatchDetails.Location = new System.Drawing.Point(296, 352);
             this.NavMatchDetails.Name = "NavMatchDetails";
             this.NavMatchDetails.Size = new System.Drawing.Size(119, 30);
             this.NavMatchDetails.TabIndex = 3;
@@ -159,6 +121,7 @@
             // 
             // InputFilter
             // 
+            this.InputFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.InputFilter.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputFilter.FormattingEnabled = true;
             this.InputFilter.Items.AddRange(new object[] {
@@ -172,11 +135,57 @@
             this.InputFilter.TabIndex = 0;
             this.InputFilter.SelectedIndexChanged += new System.EventHandler(this.InputFilter_SelectedIndexChanged);
             // 
+            // ColID
+            // 
+            this.ColID.HeaderText = " ";
+            this.ColID.Name = "ColID";
+            this.ColID.ReadOnly = true;
+            this.ColID.Visible = false;
+            this.ColID.Width = 40;
+            // 
+            // ColWelshWanderers
+            // 
+            this.ColWelshWanderers.HeaderText = "";
+            this.ColWelshWanderers.Name = "ColWelshWanderers";
+            this.ColWelshWanderers.ReadOnly = true;
+            this.ColWelshWanderers.Width = 120;
+            // 
+            // ColWanderersGoals
+            // 
+            this.ColWanderersGoals.HeaderText = "";
+            this.ColWanderersGoals.Name = "ColWanderersGoals";
+            this.ColWanderersGoals.ReadOnly = true;
+            this.ColWanderersGoals.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColWanderersGoals.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ColWanderersGoals.Width = 30;
+            // 
+            // ColOpponentGoals
+            // 
+            this.ColOpponentGoals.HeaderText = "";
+            this.ColOpponentGoals.Name = "ColOpponentGoals";
+            this.ColOpponentGoals.ReadOnly = true;
+            this.ColOpponentGoals.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColOpponentGoals.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ColOpponentGoals.Width = 30;
+            // 
+            // ColAwayTeam
+            // 
+            this.ColAwayTeam.HeaderText = "";
+            this.ColAwayTeam.Name = "ColAwayTeam";
+            this.ColAwayTeam.ReadOnly = true;
+            this.ColAwayTeam.Width = 120;
+            // 
+            // ColDate
+            // 
+            this.ColDate.HeaderText = "";
+            this.ColDate.Name = "ColDate";
+            this.ColDate.ReadOnly = true;
+            // 
             // MatchResults
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(387, 394);
+            this.ClientSize = new System.Drawing.Size(427, 394);
             this.Controls.Add(this.InputFilter);
             this.Controls.Add(this.NavMatchDetails);
             this.Controls.Add(this.NavViewMatch);
@@ -205,5 +214,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColWanderersGoals;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColOpponentGoals;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColAwayTeam;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColDate;
     }
 }

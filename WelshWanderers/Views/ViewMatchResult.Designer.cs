@@ -31,11 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LabelHeader = new System.Windows.Forms.Label();
             this.TableMatchResult = new System.Windows.Forms.DataGridView();
-            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPlayerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColGoals = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColMajors = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColOther = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.NavBack = new System.Windows.Forms.Button();
             this.LabelOpponentGoals = new System.Windows.Forms.Label();
             this.LabelOpponentMajorFouls = new System.Windows.Forms.Label();
@@ -51,6 +46,11 @@
             this.EventSave = new System.Windows.Forms.Button();
             this.EventCancelEdit = new System.Windows.Forms.Button();
             this.LabelChangesMade = new System.Windows.Forms.Label();
+            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPlayerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColGoals = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColMajors = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColOther = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TableMatchResult)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,49 +93,6 @@
             this.TableMatchResult.ShowCellToolTips = false;
             this.TableMatchResult.Size = new System.Drawing.Size(533, 287);
             this.TableMatchResult.TabIndex = 5;
-            // 
-            // ColID
-            // 
-            this.ColID.HeaderText = " ";
-            this.ColID.Name = "ColID";
-            this.ColID.ReadOnly = true;
-            this.ColID.Width = 40;
-            // 
-            // ColPlayerName
-            // 
-            this.ColPlayerName.HeaderText = "Player";
-            this.ColPlayerName.Name = "ColPlayerName";
-            this.ColPlayerName.ReadOnly = true;
-            this.ColPlayerName.Width = 145;
-            // 
-            // ColGoals
-            // 
-            this.ColGoals.HeaderText = "Goals";
-            this.ColGoals.Name = "ColGoals";
-            this.ColGoals.ReadOnly = true;
-            this.ColGoals.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColGoals.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ColGoals.Width = 95;
-            // 
-            // ColMajors
-            // 
-            this.ColMajors.HeaderText = "Major Fouls";
-            this.ColMajors.Name = "ColMajors";
-            this.ColMajors.ReadOnly = true;
-            this.ColMajors.Width = 135;
-            // 
-            // ColOther
-            // 
-            this.ColOther.HeaderText = "Other";
-            this.ColOther.Items.AddRange(new object[] {
-            "None",
-            "Brutality",
-            "Wrapped",
-            "Yellow Card",
-            "Red Card"});
-            this.ColOther.Name = "ColOther";
-            this.ColOther.ReadOnly = true;
-            this.ColOther.Width = 115;
             // 
             // NavBack
             // 
@@ -289,6 +246,50 @@
             this.LabelChangesMade.Size = new System.Drawing.Size(80, 38);
             this.LabelChangesMade.TabIndex = 10;
             this.LabelChangesMade.Text = "0 changes\r\nmade";
+            // 
+            // ColID
+            // 
+            this.ColID.HeaderText = " ";
+            this.ColID.Name = "ColID";
+            this.ColID.ReadOnly = true;
+            this.ColID.Visible = false;
+            this.ColID.Width = 40;
+            // 
+            // ColPlayerName
+            // 
+            this.ColPlayerName.HeaderText = "Player";
+            this.ColPlayerName.Name = "ColPlayerName";
+            this.ColPlayerName.ReadOnly = true;
+            this.ColPlayerName.Width = 165;
+            // 
+            // ColGoals
+            // 
+            this.ColGoals.HeaderText = "Goals";
+            this.ColGoals.Name = "ColGoals";
+            this.ColGoals.ReadOnly = true;
+            this.ColGoals.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColGoals.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ColGoals.Width = 105;
+            // 
+            // ColMajors
+            // 
+            this.ColMajors.HeaderText = "Major Fouls";
+            this.ColMajors.Name = "ColMajors";
+            this.ColMajors.ReadOnly = true;
+            this.ColMajors.Width = 135;
+            // 
+            // ColOther
+            // 
+            this.ColOther.HeaderText = "Other";
+            this.ColOther.Items.AddRange(new object[] {
+            "None",
+            "Brutality",
+            "Wrapped",
+            "Yellow Card",
+            "Red Card"});
+            this.ColOther.Name = "ColOther";
+            this.ColOther.ReadOnly = true;
+            this.ColOther.Width = 125;
             // 
             // ViewMatchResult
             // 

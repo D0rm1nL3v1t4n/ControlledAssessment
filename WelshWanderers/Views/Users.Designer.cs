@@ -30,12 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TableManageUsers = new System.Windows.Forms.DataGridView();
-            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColUsername = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColAccessLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColTeam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LabelHeader = new System.Windows.Forms.Label();
             this.InputAccessLevel = new System.Windows.Forms.ComboBox();
             this.InputName = new System.Windows.Forms.TextBox();
@@ -45,6 +39,12 @@
             this.EventDelete = new System.Windows.Forms.Button();
             this.NavView = new System.Windows.Forms.Button();
             this.EventFilter = new System.Windows.Forms.Button();
+            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColUsername = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColAccessLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColTeam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TableManageUsers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,49 +73,11 @@
             this.TableManageUsers.ReadOnly = true;
             this.TableManageUsers.RowHeadersVisible = false;
             this.TableManageUsers.RowHeadersWidth = 10;
+            this.TableManageUsers.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.TableManageUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TableManageUsers.ShowCellToolTips = false;
             this.TableManageUsers.Size = new System.Drawing.Size(573, 299);
             this.TableManageUsers.TabIndex = 3;
-            // 
-            // ColID
-            // 
-            this.ColID.HeaderText = " ";
-            this.ColID.Name = "ColID";
-            this.ColID.ReadOnly = true;
-            this.ColID.Width = 40;
-            // 
-            // ColUsername
-            // 
-            this.ColUsername.HeaderText = "Username";
-            this.ColUsername.Name = "ColUsername";
-            this.ColUsername.ReadOnly = true;
-            this.ColUsername.Width = 120;
-            // 
-            // ColFirstName
-            // 
-            this.ColFirstName.HeaderText = "First Name";
-            this.ColFirstName.Name = "ColFirstName";
-            this.ColFirstName.ReadOnly = true;
-            // 
-            // ColLastName
-            // 
-            this.ColLastName.HeaderText = "Last Name";
-            this.ColLastName.Name = "ColLastName";
-            this.ColLastName.ReadOnly = true;
-            // 
-            // ColAccessLevel
-            // 
-            this.ColAccessLevel.HeaderText = "Access Level";
-            this.ColAccessLevel.Name = "ColAccessLevel";
-            this.ColAccessLevel.ReadOnly = true;
-            this.ColAccessLevel.Width = 110;
-            // 
-            // ColTeam
-            // 
-            this.ColTeam.HeaderText = "Team";
-            this.ColTeam.Name = "ColTeam";
-            this.ColTeam.ReadOnly = true;
             // 
             // LabelHeader
             // 
@@ -214,6 +176,46 @@
             this.EventFilter.UseVisualStyleBackColor = true;
             this.EventFilter.Click += new System.EventHandler(this.EventFilter_Click);
             // 
+            // ColID
+            // 
+            this.ColID.HeaderText = " ";
+            this.ColID.Name = "ColID";
+            this.ColID.ReadOnly = true;
+            this.ColID.Width = 35;
+            // 
+            // ColUsername
+            // 
+            this.ColUsername.HeaderText = "Username";
+            this.ColUsername.Name = "ColUsername";
+            this.ColUsername.ReadOnly = true;
+            this.ColUsername.Width = 115;
+            // 
+            // ColFirstName
+            // 
+            this.ColFirstName.HeaderText = "First Name";
+            this.ColFirstName.Name = "ColFirstName";
+            this.ColFirstName.ReadOnly = true;
+            // 
+            // ColLastName
+            // 
+            this.ColLastName.HeaderText = "Last Name";
+            this.ColLastName.Name = "ColLastName";
+            this.ColLastName.ReadOnly = true;
+            // 
+            // ColAccessLevel
+            // 
+            this.ColAccessLevel.HeaderText = "Access Level";
+            this.ColAccessLevel.Name = "ColAccessLevel";
+            this.ColAccessLevel.ReadOnly = true;
+            this.ColAccessLevel.Width = 110;
+            // 
+            // ColTeam
+            // 
+            this.ColTeam.HeaderText = "Team";
+            this.ColTeam.Name = "ColTeam";
+            this.ColTeam.ReadOnly = true;
+            this.ColTeam.Width = 110;
+            // 
             // ManageUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,17 +246,17 @@
         private System.Windows.Forms.Label LabelHeader;
         private System.Windows.Forms.ComboBox InputAccessLevel;
         private System.Windows.Forms.TextBox InputName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColUsername;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColFirstName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColLastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColAccessLevel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColTeam;
         private System.Windows.Forms.Label LabelName;
         private System.Windows.Forms.Label LabelAccessLevel;
         private System.Windows.Forms.Button NavHome;
         private System.Windows.Forms.Button EventDelete;
         private System.Windows.Forms.Button NavView;
         private System.Windows.Forms.Button EventFilter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColUsername;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColFirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColLastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColAccessLevel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColTeam;
     }
 }

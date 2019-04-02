@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
-using System.Windows.Forms;
+﻿using System.IO;
 
 namespace WelshWanderers.Functions
 {
@@ -28,11 +22,11 @@ namespace WelshWanderers.Functions
             {
                 string[] section = line.Split('|');     //Splits the line based on the delimiter that is a bar '|'
                 if (operation == "Remove")
-                    RemoveFunc(lineNumber, lineCount, recordLength, localFile, section);
+                    RemoveFunc(lineNumber, lineCount, recordLength, localFile, section);    //calls on function to remove a line
                 else if (operation == "Change")
-                    ChangeFunc(lineCount, recordLength, data, localFile, section, searchIndex, searchData);
+                    ChangeFunc(lineCount, recordLength, data, localFile, section, searchIndex, searchData); //calls on function to edit a line
 
-                ++lineCount;
+                ++lineCount;    //incraments line count by 1
             }
             file.Close();
             return localFile;
@@ -47,7 +41,7 @@ namespace WelshWanderers.Functions
             }
             else
             {
-                for (int j = 0; j < recordLength; ++j)
+                for (int j = 0; j < recordLength; ++j)  //loops for the length of the records in the file
                 {
                     if (skippedLine == true)
                         localFile[lineCount - 1, j] = section[j];//If a line has been skipped then moves all records up one line
@@ -64,12 +58,12 @@ namespace WelshWanderers.Functions
             for (int i = 0; i < searchIndex.Length; ++i)//Searches based on the conditions to change the current line
             {
                 if (section[searchIndex[i]] == searchData[i])//If successful then adds 1 to counter
-                    counter += 1;
+                    counter += 1;   //incraments counter by 1
             }
 
             if (counter == searchIndex.Length) //All conditions for the searches passed as true
             {
-                for (int j = 0; j < recordLength; ++j)
+                for (int j = 0; j < recordLength; ++j)  //loops for the length of the records in the file
                 {
                     if (j < searchIndex.Length)//If true then the data does not need to be changed
                         localFile[lineCount, j] = section[j];//Keeps the IDs the same as before

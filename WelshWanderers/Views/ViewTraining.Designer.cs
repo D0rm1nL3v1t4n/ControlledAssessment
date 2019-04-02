@@ -62,7 +62,7 @@
             this.InputDate.Name = "InputDate";
             this.InputDate.Size = new System.Drawing.Size(181, 27);
             this.InputDate.TabIndex = 4;
-            this.InputDate.Value = new System.DateTime(2018, 11, 4, 0, 0, 0, 0);
+            this.InputDate.Value = System.DateTime.Today.Date;
             this.InputDate.ValueChanged += new System.EventHandler(this.InputDate_ValueChanged);
             // 
             // InputTimeM

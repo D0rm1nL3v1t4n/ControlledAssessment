@@ -36,6 +36,7 @@
             this.NavResetPassword = new System.Windows.Forms.Button();
             this.EventNavSignIn = new System.Windows.Forms.Button();
             this.NavRegister = new System.Windows.Forms.Button();
+            this.EventHelp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LabelUsername
@@ -125,11 +126,26 @@
             this.NavRegister.UseVisualStyleBackColor = true;
             this.NavRegister.Click += new System.EventHandler(this.NavRegister_Click);
             // 
+            // EventHelp
+            // 
+            this.EventHelp.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.EventHelp.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.EventHelp.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.EventHelp.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EventHelp.Location = new System.Drawing.Point(12, 12);
+            this.EventHelp.Name = "EventHelp";
+            this.EventHelp.Size = new System.Drawing.Size(50, 29);
+            this.EventHelp.TabIndex = 8;
+            this.EventHelp.Text = "Help";
+            this.EventHelp.UseVisualStyleBackColor = true;
+            this.EventHelp.Click += new System.EventHandler(this.EventHelp_Click);
+            // 
             // SignIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 200);
+            this.Controls.Add(this.EventHelp);
             this.Controls.Add(this.EventNavSignIn);
             this.Controls.Add(this.NavRegister);
             this.Controls.Add(this.NavResetPassword);
@@ -140,6 +156,7 @@
             this.Controls.Add(this.LabelUsername);
             this.Name = "SignIn";
             this.Text = "Sign In";
+            this.Load += new System.EventHandler(this.SignIn_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,6 +172,7 @@
         private System.Windows.Forms.Button NavResetPassword;
         private System.Windows.Forms.Button EventNavSignIn;
         private System.Windows.Forms.Button NavRegister;
+        private System.Windows.Forms.Button EventHelp;
     }
 }
 

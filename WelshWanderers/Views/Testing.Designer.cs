@@ -67,6 +67,7 @@
             this.LabelHeader = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.TestOperation = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.SuspendLayout();
@@ -82,7 +83,7 @@
             this.groupBox4.Controls.Add(this.textBox6);
             this.groupBox4.Controls.Add(this.button9);
             this.groupBox4.Controls.Add(this.label9);
-            this.groupBox4.Location = new System.Drawing.Point(12, 12);
+            this.groupBox4.Location = new System.Drawing.Point(419, 21);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(324, 222);
             this.groupBox4.TabIndex = 19;
@@ -526,12 +527,24 @@
             this.dateTimePicker2.TabIndex = 53;
             this.dateTimePicker2.Value = new System.DateTime(2019, 3, 7, 0, 0, 0, 0);
             // 
+            // TestOperation
+            // 
+            this.TestOperation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TestOperation.Location = new System.Drawing.Point(95, 80);
+            this.TestOperation.Name = "TestOperation";
+            this.TestOperation.Size = new System.Drawing.Size(177, 54);
+            this.TestOperation.TabIndex = 54;
+            this.TestOperation.Text = "Test Operation";
+            this.TestOperation.UseVisualStyleBackColor = true;
+            this.TestOperation.Click += new System.EventHandler(this.TestOperation_Click);
+            // 
             // Testing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(765, 625);
+            this.Controls.Add(this.TestOperation);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox4);
             this.Name = "Testing";
@@ -582,5 +595,6 @@
         private System.Windows.Forms.Label LabelHeader;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Button TestOperation;
     }
 }

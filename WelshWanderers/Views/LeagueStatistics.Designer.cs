@@ -32,6 +32,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LabelHeader = new System.Windows.Forms.Label();
             this.TableLeagueStats = new System.Windows.Forms.DataGridView();
+            this.InputLeague = new System.Windows.Forms.ComboBox();
+            this.NavHome = new System.Windows.Forms.Button();
+            this.InputSortBy = new System.Windows.Forms.ComboBox();
+            this.InputDirection = new System.Windows.Forms.CheckBox();
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPlayed = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,10 +43,6 @@
             this.ColAvgGoals = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColMajors = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColAvgMajors = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InputLeague = new System.Windows.Forms.ComboBox();
-            this.NavHome = new System.Windows.Forms.Button();
-            this.InputSortBy = new System.Windows.Forms.ComboBox();
-            this.InputDirection = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.TableLeagueStats)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,6 +96,60 @@
             this.TableLeagueStats.Size = new System.Drawing.Size(459, 334);
             this.TableLeagueStats.TabIndex = 2;
             // 
+            // InputLeague
+            // 
+            this.InputLeague.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.InputLeague.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputLeague.FormattingEnabled = true;
+            this.InputLeague.Location = new System.Drawing.Point(12, 59);
+            this.InputLeague.Name = "InputLeague";
+            this.InputLeague.Size = new System.Drawing.Size(162, 27);
+            this.InputLeague.TabIndex = 0;
+            this.InputLeague.SelectedIndexChanged += new System.EventHandler(this.InputLeague_SelectedIndexChanged);
+            // 
+            // NavHome
+            // 
+            this.NavHome.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NavHome.Location = new System.Drawing.Point(12, 12);
+            this.NavHome.Name = "NavHome";
+            this.NavHome.Size = new System.Drawing.Size(70, 30);
+            this.NavHome.TabIndex = 3;
+            this.NavHome.Text = "Back";
+            this.NavHome.UseVisualStyleBackColor = true;
+            this.NavHome.Click += new System.EventHandler(this.NavHome_Click);
+            // 
+            // InputSortBy
+            // 
+            this.InputSortBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.InputSortBy.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputSortBy.FormattingEnabled = true;
+            this.InputSortBy.Items.AddRange(new object[] {
+            "Name",
+            "Games Played",
+            "Goals",
+            "Average Goals",
+            "Majors",
+            "Average Majors"});
+            this.InputSortBy.Location = new System.Drawing.Point(246, 59);
+            this.InputSortBy.MaxDropDownItems = 20;
+            this.InputSortBy.Name = "InputSortBy";
+            this.InputSortBy.Size = new System.Drawing.Size(162, 27);
+            this.InputSortBy.TabIndex = 1;
+            this.InputSortBy.SelectedIndexChanged += new System.EventHandler(this.InputSortBy_SelectedIndexChanged);
+            // 
+            // InputDirection
+            // 
+            this.InputDirection.Appearance = System.Windows.Forms.Appearance.Button;
+            this.InputDirection.AutoSize = true;
+            this.InputDirection.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputDirection.Location = new System.Drawing.Point(414, 58);
+            this.InputDirection.Name = "InputDirection";
+            this.InputDirection.Size = new System.Drawing.Size(55, 28);
+            this.InputDirection.TabIndex = 2;
+            this.InputDirection.Text = "Order";
+            this.InputDirection.UseVisualStyleBackColor = true;
+            this.InputDirection.CheckedChanged += new System.EventHandler(this.InputDirection_CheckedChanged);
+            // 
             // ColID
             // 
             this.ColID.HeaderText = " ";
@@ -145,57 +199,6 @@
             this.ColAvgMajors.ReadOnly = true;
             this.ColAvgMajors.Width = 60;
             // 
-            // InputLeague
-            // 
-            this.InputLeague.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputLeague.FormattingEnabled = true;
-            this.InputLeague.Location = new System.Drawing.Point(12, 59);
-            this.InputLeague.Name = "InputLeague";
-            this.InputLeague.Size = new System.Drawing.Size(162, 27);
-            this.InputLeague.TabIndex = 0;
-            this.InputLeague.SelectedIndexChanged += new System.EventHandler(this.InputLeague_SelectedIndexChanged);
-            // 
-            // NavHome
-            // 
-            this.NavHome.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavHome.Location = new System.Drawing.Point(12, 12);
-            this.NavHome.Name = "NavHome";
-            this.NavHome.Size = new System.Drawing.Size(70, 30);
-            this.NavHome.TabIndex = 3;
-            this.NavHome.Text = "Back";
-            this.NavHome.UseVisualStyleBackColor = true;
-            this.NavHome.Click += new System.EventHandler(this.NavHome_Click);
-            // 
-            // InputSortBy
-            // 
-            this.InputSortBy.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputSortBy.FormattingEnabled = true;
-            this.InputSortBy.Items.AddRange(new object[] {
-            "Name",
-            "Games Played",
-            "Goals",
-            "Average Goals",
-            "Majors",
-            "Average Majors"});
-            this.InputSortBy.Location = new System.Drawing.Point(246, 59);
-            this.InputSortBy.Name = "InputSortBy";
-            this.InputSortBy.Size = new System.Drawing.Size(162, 27);
-            this.InputSortBy.TabIndex = 1;
-            this.InputSortBy.SelectedIndexChanged += new System.EventHandler(this.InputSortBy_SelectedIndexChanged);
-            // 
-            // InputDirection
-            // 
-            this.InputDirection.Appearance = System.Windows.Forms.Appearance.Button;
-            this.InputDirection.AutoSize = true;
-            this.InputDirection.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputDirection.Location = new System.Drawing.Point(414, 58);
-            this.InputDirection.Name = "InputDirection";
-            this.InputDirection.Size = new System.Drawing.Size(55, 28);
-            this.InputDirection.TabIndex = 2;
-            this.InputDirection.Text = "Order";
-            this.InputDirection.UseVisualStyleBackColor = true;
-            this.InputDirection.CheckedChanged += new System.EventHandler(this.InputDirection_CheckedChanged);
-            // 
             // LeagueStats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,6 +225,8 @@
         private System.Windows.Forms.DataGridView TableLeagueStats;
         private System.Windows.Forms.ComboBox InputLeague;
         private System.Windows.Forms.Button NavHome;
+        private System.Windows.Forms.ComboBox InputSortBy;
+        private System.Windows.Forms.CheckBox InputDirection;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColPlayed;
@@ -229,7 +234,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColAvgGoals;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColMajors;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColAvgMajors;
-        private System.Windows.Forms.ComboBox InputSortBy;
-        private System.Windows.Forms.CheckBox InputDirection;
     }
 }

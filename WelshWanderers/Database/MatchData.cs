@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WelshWanderers.Database
+﻿namespace WelshWanderers.Database
 {
     class MatchData
-    {
+    {   //Local data stored for the Matches's data - this will be the data for a match that is being transferred between two forms
         public static int id = -1;
         public static string league = "";
         public static string opponent = "";
@@ -20,7 +14,7 @@ namespace WelshWanderers.Database
         public static string postcode = "";
 
         public void ClearMatchData()
-        {
+        {   //resets the variables to the original data
             id = -1;
             league = "";
             opponent = "";

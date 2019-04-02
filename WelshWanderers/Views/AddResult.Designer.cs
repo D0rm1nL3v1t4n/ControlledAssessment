@@ -51,11 +51,11 @@
             // 
             this.LabelHeader.AutoSize = true;
             this.LabelHeader.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHeader.Location = new System.Drawing.Point(151, 15);
+            this.LabelHeader.Location = new System.Drawing.Point(190, 15);
             this.LabelHeader.Name = "LabelHeader";
-            this.LabelHeader.Size = new System.Drawing.Size(221, 33);
+            this.LabelHeader.Size = new System.Drawing.Size(142, 33);
             this.LabelHeader.TabIndex = 9;
-            this.LabelHeader.Text = "Add Match Result";
+            this.LabelHeader.Text = "Add Result";
             // 
             // TableAddMatchResult
             // 
