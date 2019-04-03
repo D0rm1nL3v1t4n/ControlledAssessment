@@ -15,6 +15,13 @@ namespace WelshWanderers
             public static int count = 0;
             public static bool accessLevel = false;
             public static bool team = false;
+
+            public static void ResetChanges()
+            {   //resets variables to original values
+                count = 0;
+                accessLevel = false;
+                team = false;
+            }
         }
 
         public ViewUser(string id)
@@ -45,6 +52,8 @@ namespace WelshWanderers
             if (Changes.count > 0)  //checks if changes have been made
             {
                 ChangeData();   //calls on function to change the data for the user
+
+                SendEmail();    //calls on function to send email to user informing them of the changes made
                 MessageBox.Show("User details have been updated.");
                 EditOff();  //calls on function to turn the editability of the form off
             }
@@ -67,7 +76,7 @@ namespace WelshWanderers
                 else if (team == "")    //checks if user no longer has a team when they did before
                     changedDetails += "Previous team: None.\nNew team: " + InputTeam.Text + ".";
                 else
-                    changedDetails += "Previous team: " + team + ".\nNew team: " + InputAccessLevel.Text + ".";
+                    changedDetails += "Previous team: " + team + ".\nNew team: " + InputTeam.Text + ".";
             }
             string[] email = { InputEmailAddress.Text };    //sets the email address to be sent to
             //sends email informing user of the changes made to their account
@@ -169,6 +178,7 @@ namespace WelshWanderers
             EventSave.Hide();
             LabelChangesMade.Hide();
             ReloadData();   //calls on function to load the original data back into the form
+            Changes.ResetChanges(); //calls on function to reset variables
         }
 
         private void ShowChangesMade()
@@ -200,7 +210,7 @@ namespace WelshWanderers
         }
 
         private void InputTeam_SelectedIndexChanged(object sender, EventArgs e)
-        {   //checks if hte data for the team has been changed
+        {   //checks if the data for the team has been changed
             Changes.team = DetailsChanged(InputTeam.Text, team, Changes.team);
         }
     }

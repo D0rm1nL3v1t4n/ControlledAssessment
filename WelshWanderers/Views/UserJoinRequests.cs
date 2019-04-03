@@ -124,17 +124,15 @@ namespace WelshWanderers
                 if (team != "") //checks if team is not empty
                 {
                     InputTeam.Text = team;
+                    return;
                 }
-                else
-                {
-                    InputTeam.Enabled = true;   //allows the team text box to be edited
+                else if (InputTeam.Text.Length == 0)    //checks if a team has been selected
                     MessageBox.Show("Please select a team for this player.\nAll players must be assigned to a team.");
-                }
+                InputTeam.Enabled = true;   //allows the team text box to be edited
             }
             else
             {
                 InputTeam.Enabled = false;  //prevents the team text box from being edited
-                InputTeam.Text = "";
             }
         }
 

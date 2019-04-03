@@ -6,10 +6,13 @@ namespace WelshWanderers
 {
     public partial class ViewMatchResult : Form
     {
-        public ViewMatchResult()
+        public ViewMatchResult(string formName)
         {
             InitializeComponent();
+            previousForm = formName;
         }
+
+        private static string previousForm = "";
 
         private static string wanderersGoalsData;
         private static string opponentGoalsData;
@@ -309,6 +312,20 @@ namespace WelshWanderers
         private void ShowChangesMade()
         {   //label showing the changes made to the original data
             LabelChangesMade.Text = Changes.count + " change(s)\nmade.";
+        }
+
+        private void Navigation()
+        {
+            if (previousForm == "Matches")  //checks if the previous form was the Matches form
+                NavToMatches();         //navigation to Matches form
+            else
+                NavToMatchResults();    //navigation to Match Results form
+        }
+
+        private void NavToMatches()
+        {
+            new UpcomingMatches().Show();   //shows the Matches form
+            Close();    //closes this form
         }
 
         private void NavToMatchResults()

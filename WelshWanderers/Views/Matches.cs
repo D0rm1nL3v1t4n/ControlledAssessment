@@ -165,7 +165,7 @@ namespace WelshWanderers
         private void LoadMatchResult()
         {
             LoadMatchData();    //calls on function to load data into database variables
-            new ViewMatchResult().Show();   //shows the View Result form
+            new ViewMatchResult("Matches").Show();   //shows the View Result form
             Close();    //closes this form
         }
 

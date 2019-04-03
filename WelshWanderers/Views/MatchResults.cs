@@ -86,7 +86,7 @@ namespace WelshWanderers
             {   //changes database match data id and opponent to data in table
                 Database.MatchData.id = Convert.ToInt16(TableMatchResults.SelectedRows[0].Cells[0].Value);
                 Database.MatchData.opponent = TableMatchResults.SelectedRows[0].Cells[4].Value.ToString();
-                new ViewMatchResult().Show();   //shows the View Result form
+                new ViewMatchResult("Match Results").Show();   //shows the View Result form
                 Close();    //closes this form
             }
             catch (ArgumentOutOfRangeException) //catches potential error

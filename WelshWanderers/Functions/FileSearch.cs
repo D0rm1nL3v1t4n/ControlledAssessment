@@ -72,6 +72,8 @@ namespace WelshWanderers.Functions
         public static int GetNextId(string fileName)
         {
             string[] lines = File.ReadAllLines(fileName + ".txt");  //reads all the lines into an array in the file
+            if (lines.Length == 0)  //cgecks if there are any lines in the file
+                return 1;   //returns 1 if the file is empty
             string[] lastRecord = lines[lines.Length - 1].Split('|');   //takes the last line and splits it into individual components based on the delimiter
             return Convert.ToInt16(lastRecord[0]) + 1;  //returns the id for that record + 1
         }

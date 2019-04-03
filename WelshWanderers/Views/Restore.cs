@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.IO;
+using System.Collections.Generic;
 
 namespace WelshWanderers.Views
 {
@@ -20,21 +21,43 @@ namespace WelshWanderers.Views
 
         private void LoadData()
         {
-            StreamReader file = new StreamReader("backup.txt"); //opens file with read access
-            string line;
-            while ((line = file.ReadLine()) != null)    //loops through file reading it one line at a time until the line is empty
+            List<string> table = new List<string>();    //creates a string list
+
+            if (InputSortBy.Text == "Week" || InputSortBy.Text == "All")    //checks if Week needs to be added to table
+                table = AddToTable("Week", table, 4);   //adds Week backup data to table list
+            if (InputSortBy.Text == "Month" || InputSortBy.Text == "All")   //checks if Month needs to be added to table
+                table = AddToTable("Month", table, 12); //adds Month backup data to table list
+            if (InputSortBy.Text == "Year" || InputSortBy.Text == "All")    //checks if Year needs to be added to table
+                table = AddToTable("Year", table, 999); //adds Year backup data to table list
+
+            foreach (string row in table)   //loops for each row that needs to be added to the table
             {
-                string[] section = line.Split('|'); //splits the line into individual components by the delimiter '|'
-                if (section[2] == InputSortBy.Text || InputSortBy.Text == "All")    //checks if the backup matches the drop down filter
-                    TableBackupInfo.Rows.Add(section[0], section[1], section[2], section[3]);   //adds a row to the table with the backup's data
+                string[] section = row.Split('|');  //splits the data of the row into individual components
+                TableBackupInfo.Rows.Add(section[0], Convert.ToDateTime(section[1]), section[2], section[3]);   //adds a row to the table with the backup's data
             }
-            file.Close();
+        }
+
+        private List<string> AddToTable(string type, List<string> table, int maxBackups)
+        {   //gets an array of all the ids from that type of backup
+            string[] ids = Functions.FileSearch.ReturnSegment("backup", type, 2, 0, true).Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+            for (int i = 0; i < maxBackups; ++i)    //loops for the number of possible backups of that type
+            {
+                try
+                {   //adds the record to the table list
+                    table.Add(Functions.FileSearch.ReturnLine("backup", ids[ids.Length - i - 1], 0));
+                }
+                catch (IndexOutOfRangeException)    //catches and prevents potential error
+                {
+                    return table;   //returns the table with added rows
+                }
+            }
+            return table;   //returns the table with added rows
         }
 
         private void ShowLastBackup()
         {
             int rowCount = TableBackupInfo.Rows.Count;  //counts the number of rows in the table
-            LabelBackupRecent.Text = "Most recent backup:\n" + TableBackupInfo.Rows[rowCount-1].Cells[1].Value;     //shows the date from the last row in the table         
+            LabelBackupRecent.Text = "Most recent backup:\n" + TableBackupInfo.Rows[0].Cells[1].Value;     //shows the date from the first row in the table         
         }
 
         private void NavHome_Click(object sender, EventArgs e)
@@ -59,23 +82,23 @@ namespace WelshWanderers.Views
             FileInfo[] files;
             try
             {
-                files = new DirectoryInfo(drive + @":\Backup Test\" + backupFolder + @"\Leagues").GetFiles("*.txt");    //gets all the .txt files in this directory
+                files = new DirectoryInfo(drive + @":\Backup\" + backupFolder + @"\Leagues").GetFiles("*.txt");    //gets all the .txt files in this directory
             }   
             catch (DirectoryNotFoundException)  //catches and prevents potential error
             {
                 drive = "F";
-                files = new DirectoryInfo(drive + @":\Backup Test\" + backupFolder + @"\Leagues").GetFiles("*.txt");    //gets all the .txt files in this directory
+                files = new DirectoryInfo(drive + @":\Backup\" + backupFolder + @"\Leagues").GetFiles("*.txt");    //gets all the .txt files in this directory
             }
             //an array of all the files that needs to be resotred
             string[] filesList = { "userPersonalDetails", "userAccountDetails", "userJoinRequests", "trainingDetails", "matchDetails", "matchAvailability", "matchStats", "playerMatchStats", "leagues" };
             
             foreach (string sourceFile in filesList)    //loops for each file that needs to be restored
             {   //copies the file from the backup folder overwriting the current file
-                File.Copy(drive + @":\Backup Test\" + backupFolder + @"\" + sourceFile + ".txt", sourceFile + ".txt", true);  
+                File.Copy(drive + @":\Backup\" + backupFolder + @"\" + sourceFile + ".txt", sourceFile + ".txt", true);  
             }
             foreach (FileInfo file in files)    //loops for each league file in the \Leagues directory
             {   //copies the file from the \Leagues directory in the backup folder overwriting the current file
-                File.Copy(drive + @":\Backup Test\" + backupFolder + @"\Leagues\" + file.ToString(), @"Leagues\" + file.ToString(), true);
+                File.Copy(drive + @":\Backup\" + backupFolder + @"\Leagues\" + file.ToString(), @"Leagues\" + file.ToString(), true);
             }
         }
 

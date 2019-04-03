@@ -13,8 +13,7 @@ namespace WelshWanderers.Views
 
         private void TestOperation_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("\n\n");
-            Console.WriteLine(Functions.FileSearch.GetNextId("userPersonalDetails"));
+            TestSendEmail();
         }
 
         private void TestBackup()
@@ -72,7 +71,31 @@ namespace WelshWanderers.Views
 
         private void TestRandomCode()
         {
+            for (int i = 0; i < 3; ++i)
+            {
+                string setCode = Functions.RandomCode.GenerateCode(4);
+                int j = 0;
+                bool found = false;
 
+                Console.WriteLine("\nCode searching for: " + setCode);
+
+                while (found == false)
+                {
+                    if (Functions.RandomCode.GenerateCode(4) == setCode)
+                        break;
+                    j++;
+                }
+                Console.WriteLine("Codes searched for before finding code: " + j.ToString());
+            }
+        }
+
+        private void TestSendEmail()
+        {
+            string subject = "Email Test";
+            string body = "This is a test to check if the email system is working correctly.";
+            string[] emails = { "12nabramovich@stanwell.org", "nimrodabramovich2001@gmail.com" };
+            
+            Functions.SendEmail.Email(subject, body, emails);
         }
     }
 }
