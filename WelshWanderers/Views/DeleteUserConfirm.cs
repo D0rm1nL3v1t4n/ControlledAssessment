@@ -54,6 +54,10 @@ namespace WelshWanderers.Views
             {
                 AlertUser();    //calls on a function to alert the user of their account being deleted
                 DeleteUserData();   //delete's the user's data
+                MessageBox.Show("User has been deleted.");
+                Close();    //closes this form
+                Application.OpenForms["Users"].Close(); //closes the already open Users form
+                new ManageUsers().Show();   //shows the Users form
             }
         }
 
@@ -64,7 +68,7 @@ namespace WelshWanderers.Views
             if (InputTeam.Text != null)
                 team = ", " + InputTeam.Text;
             //sets the body for the email
-            string body = "The following account has been removed from the Welsh Wanderers Waterpolo club system:\n- " + InputFirstName.Text + " " + InputLastName.Text + "\n- " + InputUsername.Text + "\n- " + InputAccessLevel.Text + team + "\n\nFor the following reason:\n" + InputReason.Text + "\n\nWelsh Wanderers.";
+            string body = "The following account has been removed from the Welsh Wanderers Waterpolo club system:\nName - " + InputFirstName.Text + " " + InputLastName.Text + "\nUseranme - " + InputUsername.Text + "\nAccess level - " + InputAccessLevel.Text + team + "\n\nFor the following reason:\n" + InputReason.Text + "\n\nWelsh Wanderers.";
             Functions.SendEmail.Email("Account removed from system.", body, email); //sends an email using the Send Email function
         }
 
@@ -92,7 +96,7 @@ namespace WelshWanderers.Views
 
         private bool ValidName()
         {
-            if (InputName.Text == (InputFirstName.Text.ToLower() + " " + InputLastName.Text.ToLower())) //value check - checks the name of the user to be deleted entered is correct
+            if (InputName.Text.ToLower() == (InputFirstName.Text.ToLower() + " " + InputLastName.Text.ToLower())) //value check - checks the name of the user to be deleted entered is correct
                 return true;    //returns true if validation passes
             MessageBox.Show("Name entered does not match the name of the user.");
             return false;   //returns false if validation fails
@@ -103,7 +107,6 @@ namespace WelshWanderers.Views
             //checks the password entered by the admin is correct through the Check Hashes algorithm
             if (Functions.HashAlgorithm.CheckHashes(Functions.FileSearch.ReturnSegment("userAccountDetails", InputUsername.Text.ToLower(), 1, 2, false), InputPassword.Text) == true)
                 return true;    //returns true if validation passes
-            MessageBox.Show("Password entered is incorrect.");
             return false;   //returns true if validation fails
         }
 
