@@ -50,7 +50,7 @@ namespace WelshWanderers.Functions
 
         public static bool IsTelephoneNumberValid(string telephoneNumber)
         {   //Format check - using regex for telephone number
-            Match compare = new Regex(@"\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})").Match(telephoneNumber);
+            Match compare = new Regex(@"^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$").Match(telephoneNumber);
             if (compare.Success)
                 return true;    //returns true if validation passes
             MessageBox.Show("Telephone number must be of a valid format");
@@ -76,7 +76,7 @@ namespace WelshWanderers.Functions
 
         private static bool UsernameNotDuplicate(string username)
         {
-            if (Functions.FileSearch.ReturnSegment("userAccountDetails", username.ToLower(), 1, 0) == null && Functions.FileSearch.ReturnSegment("userJoinRequests", username.ToLower(), 8, 0) == null)
+            if (Functions.FileSearch.ReturnSegment(@"D:\Welsh Wanderers\WelshWanderers\bin\Debug\userAccountDetails", username.ToLower(), 1, 0) == null && Functions.FileSearch.ReturnSegment(@"D:\Welsh Wanderers\WelshWanderers\bin\Debug\userJoinRequests", username.ToLower(), 8, 0) == null)
                 return true;    //returns true if validation passes
             MessageBox.Show("That username is already taken by another user.\nPlease enter a different username to use.");
             return false;   //returns false if validation fails

@@ -16,18 +16,7 @@ namespace Testing
 
         private static void InitialTest()
         {
-            File.WriteAllText("testingFile.txt", string.Empty);
-
-            //Validation.TestValidation();
-            //FileWrite.TestFileWrite();
-            FileSearch.TestFileSearch();
-            FileEdit.TestFileEdit();
-            FileDelete.TestFileDelete();
-            //SendEmail.TestSendEmail();
-            RandomCode.TestRandomCode();
-            HashAlgorithm.TestHashAlgorithm();
-            
-            
+            Validation.TestValidation();
         }
 
 
